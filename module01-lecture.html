@@ -3533,7 +3533,13 @@ Understanding the Print Function
 <p>The print() function is flexible and can handle different parameters in various ways:</p>
 <p><strong>Basic Print Syntax:</strong></p>
 <div class="sourceCode" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(value1, value2, value3, ...)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p><strong>Key Features:</strong> - Can print multiple values separated by commas - Automatically adds spaces between values - Automatically adds a newline at the end (moves the cursor to the next line) - Can print different data types together (like strings and numbers)</p>
+<p><strong>Key Features:</strong></p>
+<ul>
+<li>Can print multiple values separated by commas</li>
+<li>Automatically adds spaces between values</li>
+<li>Automatically adds a newline at the end (moves the cursor to the next line)</li>
+<li>Can print different data types together (like strings and numbers)</li>
+</ul>
 <p><strong>Example:</strong></p>
 <div class="sourceCode" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Example showing different ways to use print()</span></span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>product_name <span class="op">=</span> <span class="st">&quot;Laptop&quot;</span></span>
@@ -3549,7 +3555,13 @@ Understanding the Print Function
 <p>The interactive visualization below shows how different print statements work. You can step through the code line-by-line to see how the output is generated:</p>
 <iframe width="900" height="450" frameborder="0" data-external="1" src="https://pythontutor.com/iframe-embed.html#code=%23%20Demonstrating%20different%20ways%20to%20use%20print%0A%0A%23%20Basic%20print%20with%20a%20single%20string%0Aprint%28%22Business%20Report%22%29%0A%0A%23%20Print%20with%20multiple%20values%20%28strings%20and%20variables%29%0Aproduct%20%3D%20%22Laptop%22%0Aprice%20%3D%20899.99%20%23%20This%20is%20a%20float%0Aprint%28%22Product%3A%22%2C%20product%2C%20%22Price%3A%22%2C%20price%29%0A%0A%23%20Print%20with%20numbers%20and%20calculations%0Aquantity%20%3D%203%20%23%20This%20is%20an%20integer%0Atotal%20%3D%20price%20*%20quantity%0Aprint%28%22Quantity%3A%22%2C%20quantity%29%0Aprint%28%22Total%20Price%3A%22%2C%20total%29%0A%0A%23%20Print%20with%20the%20round%20function%20to%20format%20currency%0Aprint%28%22Rounded%20Total%3A%22%2C%20round%28total%2C%202%29%29%20%23%20Round%20to%202%20decimal%20places%0A%0A%23%20Print%20with%20a%20custom%20separator%20instead%20of%20a%20space%0Aprint%28%22Business%22%2C%20%22Analytics%22%2C%20%22Report%22%2C%20sep%3D%22-%22%29%0A%0A%23%20Print%20without%20adding%20a%20newline%20at%20the%20end%0Aprint%28%22Processing%20data...%22%2C%20end%3D%22%22%29%20%23%20The%20next%20print%20will%20start%20on%20the%20same%20line%0Aprint%28%22Done%21%22%29&amp;codeDivHeight=400&amp;codeDivWidth=350&amp;cumulative=false&amp;curInstr=0&amp;heapPrimitives=nevernest&amp;origin=opt-frontend.js&amp;py=311&amp;rawInputLstJSON=%5B%5D&amp;textReferences=false">
 </iframe>
-<p>Notice how print automatically: - Inserts spaces between each comma-separated value (unless you change the <code>sep</code> parameter). - Handles different data types (strings, integers, floats) correctly. - Can display the results of calculations directly. - Moves to the next line after printing (unless you change the <code>end</code> parameter).</p>
+<p>Notice how print automatically:</p>
+<ul>
+<li>Inserts spaces between each comma-separated value (unless you change the <code>sep</code> parameter).</li>
+<li>Handles different data types (strings, integers, floats) correctly.</li>
+<li>Can display the results of calculations directly.</li>
+<li>Moves to the next line after printing (unless you change the <code>end</code> parameter).</li>
+</ul>
 </div>
 </div>
 <div class="callout callout-style-simple callout-note callout-titled">
@@ -3718,17 +3730,83 @@ Your Python Learning Journey: Roadmap
 </div>
 <div class="callout-body-container callout-body">
 <p>This module has just introduced the foundational concepts. Here’s how these building blocks will develop throughout the course:</p>
-<p><strong>Module 1: Introduction to Python and Its Business Applications</strong> (Current Module) - Understanding Python’s role in business - Setting up your development environment with Thonny - Writing your first Python program - Basic debugging techniques</p>
-<p><strong>Module 2: Variables and Expressions</strong> - Creating and manipulating variables effectively - Understanding different data types in depth - Working with numeric and logical expressions - Best practices for variable naming in business contexts</p>
-<p><strong>Module 3: Strings, Formatting, and I/O</strong> - Working with text data - String manipulation and formatting techniques - Reading user input and displaying formatted output - Handling business text data (names, addresses, product descriptions)</p>
-<p><strong>Module 4: Lists and Tuples</strong> - Creating and working with ordered collections of data - List operations and methods - When to use tuples vs. lists - Representing business data like product catalogs and transaction histories</p>
-<p><strong>Module 5: Dictionaries and Aggregation</strong> - Using key-value pairs to organize data - Efficient data lookup and modification - Aggregating and filtering data - Representing complex business entities (customers, products, transactions)</p>
-<p><strong>Module 6: Conditional Logic and Branching</strong> - Making decisions in your code with if/else statements - Implementing business rules and logic - Complex conditions and logical operators - Creating business workflows with conditional execution</p>
-<p><strong>Module 7: Looping</strong> - Automating repetitive tasks - Iterating through collections of data - Different types of loops for different scenarios - Processing large datasets efficiently</p>
-<p><strong>Module 8: Functions</strong> - Creating reusable blocks of code - Organizing code for maintainability - Function parameters and return values - Building a library of business utility functions</p>
-<p><strong>Module 9: Pandas and Data Analysis</strong> - Introduction to the powerful Pandas library - Loading and analyzing structured data - Data cleaning and transformation - Performing business analysis on real datasets</p>
-<p><strong>Module 11: Data Visualization</strong> - Turning data into visual insights - Creating charts, graphs, and plots - Choosing the right visualization for your data - Building effective business dashboards</p>
-<p><strong>Module 12: Capstone - Business Analysis Using Python</strong> - Bringing all concepts together in a comprehensive project - Solving real business problems with Python - End-to-end business analysis workflow - Presenting data-driven insights</p>
+<p><strong>Module 1: Introduction to Python and Its Business Applications</strong> (Current Module)</p>
+<ul>
+<li>Understanding Python’s role in business</li>
+<li>Setting up your development environment with Thonny</li>
+<li>Writing your first Python program</li>
+<li>Basic debugging techniques</li>
+</ul>
+<p><strong>Module 2: Variables and Expressions</strong></p>
+<ul>
+<li>Creating and manipulating variables effectively</li>
+<li>Understanding different data types in depth</li>
+<li>Working with numeric and logical expressions</li>
+<li>Best practices for variable naming in business contexts</li>
+</ul>
+<p><strong>Module 3: Strings, Formatting, and I/O</strong></p>
+<ul>
+<li>Working with text data</li>
+<li>String manipulation and formatting techniques</li>
+<li>Reading user input and displaying formatted output</li>
+<li>Handling business text data (names, addresses, product descriptions)</li>
+</ul>
+<p><strong>Module 4: Lists and Tuples</strong></p>
+<ul>
+<li>Creating and working with ordered collections of data</li>
+<li>List operations and methods</li>
+<li>When to use tuples vs. lists</li>
+<li>Representing business data like product catalogs and transaction histories</li>
+</ul>
+<p><strong>Module 5: Dictionaries and Aggregation</strong></p>
+<ul>
+<li>Using key-value pairs to organize data</li>
+<li>Efficient data lookup and modification</li>
+<li>Aggregating and filtering data</li>
+<li>Representing complex business entities (customers, products, transactions)</li>
+</ul>
+<p><strong>Module 6: Conditional Logic and Branching</strong></p>
+<ul>
+<li>Making decisions in your code with if/else statements</li>
+<li>Implementing business rules and logic</li>
+<li>Complex conditions and logical operators</li>
+<li>Creating business workflows with conditional execution</li>
+</ul>
+<p><strong>Module 7: Looping</strong></p>
+<ul>
+<li>Automating repetitive tasks</li>
+<li>Iterating through collections of data</li>
+<li>Different types of loops for different scenarios</li>
+<li>Processing large datasets efficiently</li>
+</ul>
+<p><strong>Module 8: Functions</strong></p>
+<ul>
+<li>Creating reusable blocks of code</li>
+<li>Organizing code for maintainability</li>
+<li>Function parameters and return values</li>
+<li>Building a library of business utility functions</li>
+</ul>
+<p><strong>Module 9: Pandas and Data Analysis</strong></p>
+<ul>
+<li>Introduction to the powerful Pandas library</li>
+<li>Loading and analyzing structured data</li>
+<li>Data cleaning and transformation</li>
+<li>Performing business analysis on real datasets</li>
+</ul>
+<p><strong>Module 11: Data Visualization</strong></p>
+<ul>
+<li>Turning data into visual insights</li>
+<li>Creating charts, graphs, and plots</li>
+<li>Choosing the right visualization for your data</li>
+<li>Building effective business dashboards</li>
+</ul>
+<p><strong>Module 12: Capstone - Business Analysis Using Python</strong></p>
+<ul>
+<li>Bringing all concepts together in a comprehensive project</li>
+<li>Solving real business problems with Python</li>
+<li>End-to-end business analysis workflow</li>
+<li>Presenting data-driven insights</li>
+</ul>
 <p>Each module builds on the previous ones, progressively expanding your Python toolkit for business applications. By the end of the course, you’ll have the skills to analyze business data, automate processes, and create insightful visualizations!</p>
 </div>
 </div>

@@ -8,7 +8,7 @@
 
 <meta name="author" content="Dr. Smith">
 
-<title>Integrative Assignment: Module 3 – String Manipulation, User Input, and Formatted Output</title>
+<title>Integrative Assignment: Module 10 – Data Manipulation and Cleaning with Pandas</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -3088,12 +3088,13 @@ vertical-align: -.125em;
     <h2 id="toc-title">Table of contents</h2>
    
   <ul class="collapse">
-  <li><a href="#integrative-assignment-module-3-string-manipulation-user-input-and-formatted-output" id="toc-integrative-assignment-module-3-string-manipulation-user-input-and-formatted-output" class="nav-link active" data-scroll-target="#integrative-assignment-module-3-string-manipulation-user-input-and-formatted-output">Integrative Assignment: Module 3 – String Manipulation, User Input, and Formatted Output</a>
+  <li><a href="#integrative-assignment-module-10-data-manipulation-and-cleaning-with-pandas" id="toc-integrative-assignment-module-10-data-manipulation-and-cleaning-with-pandas" class="nav-link active" data-scroll-target="#integrative-assignment-module-10-data-manipulation-and-cleaning-with-pandas">Integrative Assignment: Module 10 – Data Manipulation and Cleaning with Pandas</a>
   <ul class="collapse">
   <li><a href="#overview" id="toc-overview" class="nav-link" data-scroll-target="#overview">Overview</a></li>
   <li><a href="#objectives" id="toc-objectives" class="nav-link" data-scroll-target="#objectives">Objectives</a></li>
   <li><a href="#assignment-description" id="toc-assignment-description" class="nav-link" data-scroll-target="#assignment-description">Assignment Description</a></li>
   <li><a href="#starter-code" id="toc-starter-code" class="nav-link" data-scroll-target="#starter-code">Starter Code</a></li>
+  <li><a href="#detailed-task-requirements" id="toc-detailed-task-requirements" class="nav-link" data-scroll-target="#detailed-task-requirements">Detailed Task Requirements</a></li>
   <li><a href="#submission-guidelines" id="toc-submission-guidelines" class="nav-link" data-scroll-target="#submission-guidelines">Submission Guidelines</a></li>
   </ul></li>
   <li><a href="#marking-rubric" id="toc-marking-rubric" class="nav-link" data-scroll-target="#marking-rubric">Marking Rubric</a>
@@ -3109,7 +3110,7 @@ vertical-align: -.125em;
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Integrative Assignment: Module 3 – String Manipulation, User Input, and Formatted Output</h1>
+<h1 class="title">Integrative Assignment: Module 10 – Data Manipulation and Cleaning with Pandas</h1>
 </div>
 
 
@@ -3139,98 +3140,297 @@ vertical-align: -.125em;
 </header>
 
 
-<section id="integrative-assignment-module-3-string-manipulation-user-input-and-formatted-output" class="level1">
-<h1>Integrative Assignment: Module 3 – String Manipulation, User Input, and Formatted Output</h1>
+<section id="integrative-assignment-module-10-data-manipulation-and-cleaning-with-pandas" class="level1">
+<h1>Integrative Assignment: Module 10 – Data Manipulation and Cleaning with Pandas</h1>
 <section id="overview" class="level2">
 <h2 class="anchored" data-anchor-id="overview">Overview</h2>
-<p>In this assignment, you will demonstrate your understanding of Module 3 concepts by creating an interactive customer order processing program. This program will utilize string manipulation, user input, and formatted output to create a professional-looking order summary. This assignment will reinforce your ability to handle text data effectively, interact with users, and present information clearly – key skills for developing business applications.</p>
+<p>In this assignment, you will apply your knowledge of data manipulation and cleaning techniques with Pandas to prepare a messy customer relationship management (CRM) dataset for “UrbanStyle,” a retail fashion company. Real-world business data is rarely analysis-ready, and this assignment will demonstrate your ability to transform raw, problematic data into a clean, structured format suitable for business analysis. You’ll handle missing values, correct data types, standardize formats, remove duplicates, and create meaningful derived variables.</p>
 </section>
 <section id="objectives" class="level2">
 <h2 class="anchored" data-anchor-id="objectives">Objectives</h2>
 <p>By completing this assignment, you will:</p>
 <ul>
-<li><strong>Get and Process User Input:</strong> Use the <code>input()</code> function to collect information from users and process it appropriately.</li>
-<li><strong>Apply String Methods:</strong> Use string methods like <code>.strip()</code>, <code>.title()</code>, and other text manipulation techniques.</li>
-<li><strong>Perform Type Conversion:</strong> Convert string input to appropriate numeric types for calculations.</li>
-<li><strong>Implement Error Handling:</strong> Use basic error handling techniques to deal with invalid input.</li>
-<li><strong>Format Output with F-strings:</strong> Create professional-looking output with proper formatting and alignment.</li>
-<li><strong>Create a Complete Application:</strong> Build a program that follows the input-process-output pattern.</li>
+<li><strong>Handle Missing Data:</strong> Implement appropriate strategies to deal with NaN values using <code>.dropna()</code> and <code>.fillna()</code>.</li>
+<li><strong>Convert Data Types:</strong> Apply type conversions to ensure proper data formats using <code>.astype()</code>, <code>pd.to_numeric()</code>, and <code>pd.to_datetime()</code>.</li>
+<li><strong>Apply String Methods:</strong> Clean and standardize text data using the <code>.str</code> accessor.</li>
+<li><strong>Add and Modify Columns:</strong> Create derived features, calculate metrics, and remove unnecessary columns.</li>
+<li><strong>Apply Functions:</strong> Use <code>.apply()</code> and <code>.map()</code> to transform data based on custom logic.</li>
+<li><strong>Handle Duplicates:</strong> Identify and remove duplicate records.</li>
+<li><strong>Sort Data:</strong> Organize data for better readability and analysis.</li>
+<li><strong>Generate Insights:</strong> Derive meaningful business metrics from the cleaned data.</li>
 </ul>
 </section>
 <section id="assignment-description" class="level2">
 <h2 class="anchored" data-anchor-id="assignment-description">Assignment Description</h2>
-<p>Imagine you work for an e-commerce company that needs a simple order processing system. Your task is to develop a Python program that:</p>
+<p>UrbanStyle has accumulated customer transaction data over the past year, but the information is inconsistent and contains various errors. As their data analyst, you’ve been asked to clean and transform this data to prepare it for a customer segmentation analysis. The dataset contains information about customers, their purchases, demographics, and feedback ratings.</p>
+<p>Your task is to apply the Pandas techniques covered in Module 10 to:</p>
 <ol type="1">
-<li><strong>Collects Customer Information:</strong>
-<ul>
-<li>Asks for the customer’s name</li>
-<li>Asks for the customer’s email address</li>
-</ul></li>
-<li><strong>Collects Order Information:</strong>
-<ul>
-<li>Asks for a product name</li>
-<li>Asks for the quantity ordered</li>
-<li>Asks for the unit price</li>
-</ul></li>
-<li><strong>Processes the Information:</strong>
-<ul>
-<li>Cleans up the input (removing extra spaces, standardizing capitalization)</li>
-<li>Calculates the subtotal (quantity × unit price)</li>
-<li>Calculates sales tax (8.5% of subtotal)</li>
-<li>Calculates the order total (subtotal + tax)</li>
-<li>Applies a 10% discount if quantity is 10 or more</li>
-</ul></li>
-<li><strong>Displays an Order Summary:</strong>
-<ul>
-<li>Shows all customer and order information in a well-formatted layout</li>
-<li>Displays all calculated values formatted as currency with two decimal places</li>
-<li>Shows the discount amount (if applicable)</li>
-</ul></li>
-<li><strong>Validates Input:</strong>
-<ul>
-<li>Ensures the quantity is a positive integer</li>
-<li>Ensures the price is a positive number</li>
-<li>Handles any potential errors in the conversion process</li>
-</ul></li>
+<li><strong>Perform initial data exploration</strong> to understand the dataset’s structure and issues</li>
+<li><strong>Clean and standardize the data</strong> using appropriate methods</li>
+<li><strong>Create derived variables</strong> that will be useful for customer segmentation</li>
+<li><strong>Prepare a final cleaned dataset</strong> ready for analysis</li>
+<li><strong>Calculate key business metrics</strong> from the cleaned data</li>
 </ol>
 </section>
 <section id="starter-code" class="level2">
 <h2 class="anchored" data-anchor-id="starter-code">Starter Code</h2>
 <p>Below is a starter code template to help you begin:</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1"></a><span class="co"># Module 3 Assignment: String Manipulation, User Input, and Formatted Output</span></span>
-<span id="cb1-2"><a href="#cb1-2"></a></span>
-<span id="cb1-3"><a href="#cb1-3"></a><span class="co"># Welcome message</span></span>
-<span id="cb1-4"><a href="#cb1-4"></a><span class="bu">print</span>(<span class="st">&quot;=&quot;</span> <span class="op">*</span> <span class="dv">50</span>)</span>
-<span id="cb1-5"><a href="#cb1-5"></a><span class="bu">print</span>(<span class="st">&quot;CUSTOMER ORDER PROCESSING SYSTEM&quot;</span>)</span>
-<span id="cb1-6"><a href="#cb1-6"></a><span class="bu">print</span>(<span class="st">&quot;=&quot;</span> <span class="op">*</span> <span class="dv">50</span>)</span>
-<span id="cb1-7"><a href="#cb1-7"></a><span class="bu">print</span>(<span class="st">&quot;Please enter the following information:</span><span class="ch">\n</span><span class="st">&quot;</span>)</span>
+<div class="sourceCode" id="cb1"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1"></a><span class="co"># Module 10 Assignment: Data Manipulation and Cleaning with Pandas</span></span>
+<span id="cb1-2"><a href="#cb1-2"></a><span class="co"># UrbanStyle Customer Data Cleaning</span></span>
+<span id="cb1-3"><a href="#cb1-3"></a></span>
+<span id="cb1-4"><a href="#cb1-4"></a><span class="co"># Import required libraries</span></span>
+<span id="cb1-5"><a href="#cb1-5"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb1-6"><a href="#cb1-6"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb1-7"><a href="#cb1-7"></a><span class="im">from</span> datetime <span class="im">import</span> datetime</span>
 <span id="cb1-8"><a href="#cb1-8"></a></span>
-<span id="cb1-9"><a href="#cb1-9"></a><span class="co"># </span><span class="al">TODO</span><span class="co">: Collect customer information</span></span>
-<span id="cb1-10"><a href="#cb1-10"></a><span class="co"># 1. Ask for customer name</span></span>
-<span id="cb1-11"><a href="#cb1-11"></a><span class="co"># 2. Ask for customer email</span></span>
-<span id="cb1-12"><a href="#cb1-12"></a></span>
-<span id="cb1-13"><a href="#cb1-13"></a><span class="co"># </span><span class="al">TODO</span><span class="co">: Collect order information</span></span>
-<span id="cb1-14"><a href="#cb1-14"></a><span class="co"># 1. Ask for product name</span></span>
-<span id="cb1-15"><a href="#cb1-15"></a><span class="co"># 2. Ask for quantity</span></span>
-<span id="cb1-16"><a href="#cb1-16"></a><span class="co"># 3. Ask for unit price</span></span>
-<span id="cb1-17"><a href="#cb1-17"></a></span>
-<span id="cb1-18"><a href="#cb1-18"></a><span class="co"># </span><span class="al">TODO</span><span class="co">: Process the information</span></span>
-<span id="cb1-19"><a href="#cb1-19"></a><span class="co"># 1. Clean up input (remove extra spaces, standardize capitalization)</span></span>
-<span id="cb1-20"><a href="#cb1-20"></a><span class="co"># 2. Convert quantity and price to appropriate numeric types</span></span>
-<span id="cb1-21"><a href="#cb1-21"></a><span class="co"># 3. Calculate subtotal, tax, and total</span></span>
-<span id="cb1-22"><a href="#cb1-22"></a><span class="co"># 4. Apply discount if applicable</span></span>
-<span id="cb1-23"><a href="#cb1-23"></a></span>
-<span id="cb1-24"><a href="#cb1-24"></a><span class="co"># </span><span class="al">TODO</span><span class="co">: Display order summary</span></span>
-<span id="cb1-25"><a href="#cb1-25"></a><span class="co"># Use f-strings to create a well-formatted output</span></span>
-<span id="cb1-26"><a href="#cb1-26"></a></span>
-<span id="cb1-27"><a href="#cb1-27"></a><span class="co"># Implement error handling where appropriate</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb1-9"><a href="#cb1-9"></a><span class="co"># Welcome message</span></span>
+<span id="cb1-10"><a href="#cb1-10"></a><span class="bu">print</span>(<span class="st">&quot;=&quot;</span> <span class="op">*</span> <span class="dv">60</span>)</span>
+<span id="cb1-11"><a href="#cb1-11"></a><span class="bu">print</span>(<span class="st">&quot;URBANSTYLE CUSTOMER DATA CLEANING&quot;</span>)</span>
+<span id="cb1-12"><a href="#cb1-12"></a><span class="bu">print</span>(<span class="st">&quot;=&quot;</span> <span class="op">*</span> <span class="dv">60</span>)</span>
+<span id="cb1-13"><a href="#cb1-13"></a></span>
+<span id="cb1-14"><a href="#cb1-14"></a><span class="co"># ----- USE THE FOLLOWING CODE TO SIMULATE A CSV FILE (DO NOT MODIFY) -----</span></span>
+<span id="cb1-15"><a href="#cb1-15"></a><span class="im">from</span> io <span class="im">import</span> StringIO</span>
+<span id="cb1-16"><a href="#cb1-16"></a></span>
+<span id="cb1-17"><a href="#cb1-17"></a><span class="co"># Simulated CSV content with intentional data issues</span></span>
+<span id="cb1-18"><a href="#cb1-18"></a>csv_content <span class="op">=</span> <span class="st">&quot;&quot;&quot;customer_id,first_name,last_name,email,phone,join_date,last_purchase,total_purchases,total_spent,preferred_category,satisfaction_rating,age,city,state,loyalty_status</span></span>
+<span id="cb1-19"><a href="#cb1-19"></a><span class="st">CS001,John,Smith,johnsmith@email.com,(555) 123-4567,2023-01-15,2023-12-01,12,&quot;1,250.99&quot;,Menswear,4.5,35,Tampa,FL,Gold</span></span>
+<span id="cb1-20"><a href="#cb1-20"></a><span class="st">CS002,Emily,Johnson,emily.j@email.com,555.987.6543,01/25/2023,10/15/2023,8,$875.50,Womenswear,4,28,Miami,FL,Silver</span></span>
+<span id="cb1-21"><a href="#cb1-21"></a><span class="st">CS003,Michael,Williams,mw@email.com,(555)456-7890,2023-02-10,2023-11-20,15,&quot;2,100.75&quot;,Footwear,5,42,Orlando,FL,Gold</span></span>
+<span id="cb1-22"><a href="#cb1-22"></a><span class="st">CS004,JESSICA,BROWN,jess.brown@email.com,5551234567,2023-03-05,2023-12-10,6,659.25,Womenswear,3.5,31,Tampa,FL,Bronze</span></span>
+<span id="cb1-23"><a href="#cb1-23"></a><span class="st">CS005,David,jones,djones@email.com,555-789-1234,2023-03-20,2023-09-18,4,350.00,Menswear,,45,Jacksonville,FL,Bronze</span></span>
+<span id="cb1-24"><a href="#cb1-24"></a><span class="st">CS006,Sarah,Miller,sarah_miller@email.com,(555) 234-5678,2023-04-12,2023-12-05,10,1450.30,Accessories,4,29,Tampa,FL,Silver</span></span>
+<span id="cb1-25"><a href="#cb1-25"></a><span class="st">CS007,Robert,Davis,robert.davis@email.com,555.444.7777,04/30/2023,11/25/2023,7,$725.80,Footwear,4.5,38,Miami,FL,Silver</span></span>
+<span id="cb1-26"><a href="#cb1-26"></a><span class="st">CS008,Jennifer,Garcia,jen.garcia@email.com,(555)876-5432,2023-05-15,2023-10-30,3,280.50,ACCESSORIES,3,25,Orlando,FL,Bronze</span></span>
+<span id="cb1-27"><a href="#cb1-27"></a><span class="st">CS009,Michael,Williams,m.williams@email.com,5558889999,2023-06-01,2023-12-07,9,1100.00,Menswear,4,39,Jacksonville,FL,Silver</span></span>
+<span id="cb1-28"><a href="#cb1-28"></a><span class="st">CS010,Emily,Johnson,emilyjohnson@email.com,555-321-6547,2023-06-15,2023-12-15,14,&quot;1,875.25&quot;,Womenswear,4.5,27,Miami,FL,Gold</span></span>
+<span id="cb1-29"><a href="#cb1-29"></a><span class="st">CS006,Sarah,Miller,sarah_miller@email.com,(555) 234-5678,2023-04-12,2023-12-05,10,1450.30,Accessories,4,29,Tampa,FL,Silver</span></span>
+<span id="cb1-30"><a href="#cb1-30"></a><span class="st">CS011,Amanda,,amanda.p@email.com,(555) 741-8529,2023-07-10,,2,180.00,womenswear,3,32,Tampa,FL,Bronze</span></span>
+<span id="cb1-31"><a href="#cb1-31"></a><span class="st">CS012,Thomas,Wilson,thomas.w@email.com,,2023-07-25,2023-11-02,5,450.75,menswear,4,44,Orlando,FL,Bronze</span></span>
+<span id="cb1-32"><a href="#cb1-32"></a><span class="st">CS013,Lisa,Anderson,lisa.a@email.com,555.159.7530,08/05/2023,,0,0.00,Womenswear,,30,Miami,FL,</span></span>
+<span id="cb1-33"><a href="#cb1-33"></a><span class="st">CS014,James,Taylor,jtaylor@email.com,555-951-7530,2023-08-20,2023-10-10,11,&quot;1,520.65&quot;,Footwear,4.5,,Jacksonville,FL,Gold</span></span>
+<span id="cb1-34"><a href="#cb1-34"></a><span class="st">CS015,Karen,Thomas,karen.t@email.com,(555) 357-9512,2023-09-05,2023-12-12,6,685.30,Womenswear,4,36,Tampa,FL,Silver</span></span>
+<span id="cb1-35"><a href="#cb1-35"></a><span class="st">&quot;&quot;&quot;</span></span>
+<span id="cb1-36"><a href="#cb1-36"></a></span>
+<span id="cb1-37"><a href="#cb1-37"></a><span class="co"># Create a StringIO object (simulates a file)</span></span>
+<span id="cb1-38"><a href="#cb1-38"></a>customer_data_csv <span class="op">=</span> StringIO(csv_content)</span>
+<span id="cb1-39"><a href="#cb1-39"></a></span>
+<span id="cb1-40"><a href="#cb1-40"></a><span class="co"># Now you can load this as if it was a CSV file:</span></span>
+<span id="cb1-41"><a href="#cb1-41"></a><span class="co"># raw_df = pd.read_csv(customer_data_csv)</span></span>
+<span id="cb1-42"><a href="#cb1-42"></a><span class="co"># ----- </span><span class="re">END</span><span class="co"> OF SIMULATION CODE -----</span></span>
+<span id="cb1-43"><a href="#cb1-43"></a></span>
+<span id="cb1-44"><a href="#cb1-44"></a></span>
+<span id="cb1-45"><a href="#cb1-45"></a><span class="co"># </span><span class="al">TODO</span><span class="co"> 1: Load and Explore the Dataset</span></span>
+<span id="cb1-46"><a href="#cb1-46"></a><span class="co"># 1.1 Load the dataset and display basic information</span></span>
+<span id="cb1-47"><a href="#cb1-47"></a><span class="co"># Your code here</span></span>
+<span id="cb1-48"><a href="#cb1-48"></a></span>
+<span id="cb1-49"><a href="#cb1-49"></a></span>
+<span id="cb1-50"><a href="#cb1-50"></a><span class="co"># 1.2 Assess the data quality issues (missing values, incorrect formats, duplicates)</span></span>
+<span id="cb1-51"><a href="#cb1-51"></a><span class="co"># Your code here</span></span>
+<span id="cb1-52"><a href="#cb1-52"></a></span>
+<span id="cb1-53"><a href="#cb1-53"></a></span>
+<span id="cb1-54"><a href="#cb1-54"></a><span class="co"># </span><span class="al">TODO</span><span class="co"> 2: Handle Missing Values</span></span>
+<span id="cb1-55"><a href="#cb1-55"></a><span class="co"># 2.1 Identify and count missing values</span></span>
+<span id="cb1-56"><a href="#cb1-56"></a><span class="co"># Your code here</span></span>
+<span id="cb1-57"><a href="#cb1-57"></a></span>
+<span id="cb1-58"><a href="#cb1-58"></a></span>
+<span id="cb1-59"><a href="#cb1-59"></a><span class="co"># 2.2 Fill missing satisfaction_rating with the median value</span></span>
+<span id="cb1-60"><a href="#cb1-60"></a><span class="co"># Your code here</span></span>
+<span id="cb1-61"><a href="#cb1-61"></a></span>
+<span id="cb1-62"><a href="#cb1-62"></a></span>
+<span id="cb1-63"><a href="#cb1-63"></a><span class="co"># 2.3 Fill missing last_purchase dates appropriately</span></span>
+<span id="cb1-64"><a href="#cb1-64"></a><span class="co"># Your code here</span></span>
+<span id="cb1-65"><a href="#cb1-65"></a></span>
+<span id="cb1-66"><a href="#cb1-66"></a></span>
+<span id="cb1-67"><a href="#cb1-67"></a><span class="co"># 2.4 Handle other missing values as needed</span></span>
+<span id="cb1-68"><a href="#cb1-68"></a><span class="co"># Your code here</span></span>
+<span id="cb1-69"><a href="#cb1-69"></a></span>
+<span id="cb1-70"><a href="#cb1-70"></a></span>
+<span id="cb1-71"><a href="#cb1-71"></a><span class="co"># </span><span class="al">TODO</span><span class="co"> 3: Correct Data Types</span></span>
+<span id="cb1-72"><a href="#cb1-72"></a><span class="co"># 3.1 Convert join_date and last_purchase to datetime</span></span>
+<span id="cb1-73"><a href="#cb1-73"></a><span class="co"># Your code here</span></span>
+<span id="cb1-74"><a href="#cb1-74"></a></span>
+<span id="cb1-75"><a href="#cb1-75"></a></span>
+<span id="cb1-76"><a href="#cb1-76"></a><span class="co"># 3.2 Convert total_spent to numeric (handle currency symbols and commas)</span></span>
+<span id="cb1-77"><a href="#cb1-77"></a><span class="co"># Your code here</span></span>
+<span id="cb1-78"><a href="#cb1-78"></a></span>
+<span id="cb1-79"><a href="#cb1-79"></a></span>
+<span id="cb1-80"><a href="#cb1-80"></a><span class="co"># 3.3 Ensure other numeric fields (total_purchases, age) are correct types</span></span>
+<span id="cb1-81"><a href="#cb1-81"></a><span class="co"># Your code here</span></span>
+<span id="cb1-82"><a href="#cb1-82"></a></span>
+<span id="cb1-83"><a href="#cb1-83"></a></span>
+<span id="cb1-84"><a href="#cb1-84"></a><span class="co"># </span><span class="al">TODO</span><span class="co"> 4: Clean and Standardize Text Data</span></span>
+<span id="cb1-85"><a href="#cb1-85"></a><span class="co"># 4.1 Standardize case for first_name and last_name (proper case)</span></span>
+<span id="cb1-86"><a href="#cb1-86"></a><span class="co"># Your code here</span></span>
+<span id="cb1-87"><a href="#cb1-87"></a></span>
+<span id="cb1-88"><a href="#cb1-88"></a></span>
+<span id="cb1-89"><a href="#cb1-89"></a><span class="co"># 4.2 Standardize category names (consistent capitalization)</span></span>
+<span id="cb1-90"><a href="#cb1-90"></a><span class="co"># Your code here</span></span>
+<span id="cb1-91"><a href="#cb1-91"></a></span>
+<span id="cb1-92"><a href="#cb1-92"></a></span>
+<span id="cb1-93"><a href="#cb1-93"></a><span class="co"># 4.3 Standardize phone numbers to a consistent format</span></span>
+<span id="cb1-94"><a href="#cb1-94"></a><span class="co"># Your code here</span></span>
+<span id="cb1-95"><a href="#cb1-95"></a></span>
+<span id="cb1-96"><a href="#cb1-96"></a></span>
+<span id="cb1-97"><a href="#cb1-97"></a><span class="co"># </span><span class="al">TODO</span><span class="co"> 5: Remove Duplicates</span></span>
+<span id="cb1-98"><a href="#cb1-98"></a><span class="co"># 5.1 Identify duplicate records</span></span>
+<span id="cb1-99"><a href="#cb1-99"></a><span class="co"># Your code here</span></span>
+<span id="cb1-100"><a href="#cb1-100"></a></span>
+<span id="cb1-101"><a href="#cb1-101"></a></span>
+<span id="cb1-102"><a href="#cb1-102"></a><span class="co"># 5.2 Remove duplicates while keeping the appropriate record</span></span>
+<span id="cb1-103"><a href="#cb1-103"></a><span class="co"># Your code here</span></span>
+<span id="cb1-104"><a href="#cb1-104"></a></span>
+<span id="cb1-105"><a href="#cb1-105"></a></span>
+<span id="cb1-106"><a href="#cb1-106"></a><span class="co"># </span><span class="al">TODO</span><span class="co"> 6: Add Derived Features</span></span>
+<span id="cb1-107"><a href="#cb1-107"></a><span class="co"># 6.1 Calculate days_since_last_purchase</span></span>
+<span id="cb1-108"><a href="#cb1-108"></a><span class="co"># Your code here</span></span>
+<span id="cb1-109"><a href="#cb1-109"></a></span>
+<span id="cb1-110"><a href="#cb1-110"></a></span>
+<span id="cb1-111"><a href="#cb1-111"></a><span class="co"># 6.2 Calculate average_purchase_value (total_spent / total_purchases)</span></span>
+<span id="cb1-112"><a href="#cb1-112"></a><span class="co"># Your code here</span></span>
+<span id="cb1-113"><a href="#cb1-113"></a></span>
+<span id="cb1-114"><a href="#cb1-114"></a></span>
+<span id="cb1-115"><a href="#cb1-115"></a><span class="co"># 6.3 Create a purchase_frequency_category (High, Medium, Low)</span></span>
+<span id="cb1-116"><a href="#cb1-116"></a><span class="co"># Your code here</span></span>
+<span id="cb1-117"><a href="#cb1-117"></a></span>
+<span id="cb1-118"><a href="#cb1-118"></a></span>
+<span id="cb1-119"><a href="#cb1-119"></a><span class="co"># </span><span class="al">TODO</span><span class="co"> 7: Clean Up the DataFrame</span></span>
+<span id="cb1-120"><a href="#cb1-120"></a><span class="co"># 7.1 Rename columns to more readable formats</span></span>
+<span id="cb1-121"><a href="#cb1-121"></a><span class="co"># Your code here</span></span>
+<span id="cb1-122"><a href="#cb1-122"></a></span>
+<span id="cb1-123"><a href="#cb1-123"></a></span>
+<span id="cb1-124"><a href="#cb1-124"></a><span class="co"># 7.2 Remove any unnecessary columns</span></span>
+<span id="cb1-125"><a href="#cb1-125"></a><span class="co"># Your code here</span></span>
+<span id="cb1-126"><a href="#cb1-126"></a></span>
+<span id="cb1-127"><a href="#cb1-127"></a></span>
+<span id="cb1-128"><a href="#cb1-128"></a><span class="co"># 7.3 Sort the data by a meaningful attribute</span></span>
+<span id="cb1-129"><a href="#cb1-129"></a><span class="co"># Your code here</span></span>
+<span id="cb1-130"><a href="#cb1-130"></a></span>
+<span id="cb1-131"><a href="#cb1-131"></a></span>
+<span id="cb1-132"><a href="#cb1-132"></a><span class="co"># </span><span class="al">TODO</span><span class="co"> 8: Generate Insights from Cleaned Data</span></span>
+<span id="cb1-133"><a href="#cb1-133"></a><span class="co"># 8.1 Calculate average spent by loyalty_status</span></span>
+<span id="cb1-134"><a href="#cb1-134"></a><span class="co"># Your code here</span></span>
+<span id="cb1-135"><a href="#cb1-135"></a></span>
+<span id="cb1-136"><a href="#cb1-136"></a></span>
+<span id="cb1-137"><a href="#cb1-137"></a><span class="co"># 8.2 Find top preferred categories by total_spent</span></span>
+<span id="cb1-138"><a href="#cb1-138"></a><span class="co"># Your code here</span></span>
+<span id="cb1-139"><a href="#cb1-139"></a></span>
+<span id="cb1-140"><a href="#cb1-140"></a></span>
+<span id="cb1-141"><a href="#cb1-141"></a><span class="co"># 8.3 Calculate correlation between satisfaction_rating and total_spent</span></span>
+<span id="cb1-142"><a href="#cb1-142"></a><span class="co"># Your code here</span></span>
+<span id="cb1-143"><a href="#cb1-143"></a></span>
+<span id="cb1-144"><a href="#cb1-144"></a></span>
+<span id="cb1-145"><a href="#cb1-145"></a><span class="co"># </span><span class="al">TODO</span><span class="co"> 9: Generate Final Report</span></span>
+<span id="cb1-146"><a href="#cb1-146"></a><span class="bu">print</span>(<span class="st">&quot;</span><span class="ch">\n</span><span class="st">&quot;</span> <span class="op">+</span> <span class="st">&quot;=&quot;</span> <span class="op">*</span> <span class="dv">60</span>)</span>
+<span id="cb1-147"><a href="#cb1-147"></a><span class="bu">print</span>(<span class="st">&quot;URBANSTYLE CUSTOMER DATA CLEANING REPORT&quot;</span>)</span>
+<span id="cb1-148"><a href="#cb1-148"></a><span class="bu">print</span>(<span class="st">&quot;=&quot;</span> <span class="op">*</span> <span class="dv">60</span>)</span>
+<span id="cb1-149"><a href="#cb1-149"></a></span>
+<span id="cb1-150"><a href="#cb1-150"></a><span class="co"># 9.1 Report on data quality issues found and how they were addressed</span></span>
+<span id="cb1-151"><a href="#cb1-151"></a><span class="co"># Your code here</span></span>
+<span id="cb1-152"><a href="#cb1-152"></a></span>
+<span id="cb1-153"><a href="#cb1-153"></a></span>
+<span id="cb1-154"><a href="#cb1-154"></a><span class="co"># 9.2 Describe the changes made to standardize the dataset</span></span>
+<span id="cb1-155"><a href="#cb1-155"></a><span class="co"># Your code here</span></span>
+<span id="cb1-156"><a href="#cb1-156"></a></span>
+<span id="cb1-157"><a href="#cb1-157"></a></span>
+<span id="cb1-158"><a href="#cb1-158"></a><span class="co"># 9.3 Present key business insights from the cleaned data</span></span>
+<span id="cb1-159"><a href="#cb1-159"></a><span class="co"># Your code here</span></span>
+<span id="cb1-160"><a href="#cb1-160"></a></span>
+<span id="cb1-161"><a href="#cb1-161"></a></span>
+<span id="cb1-162"><a href="#cb1-162"></a><span class="co"># 9.4 Display the first few rows of the clean, analysis-ready dataset</span></span>
+<span id="cb1-163"><a href="#cb1-163"></a><span class="co"># Your code here</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="detailed-task-requirements" class="level2">
+<h2 class="anchored" data-anchor-id="detailed-task-requirements">Detailed Task Requirements</h2>
+<section id="load-and-explore-the-dataset-3-points" class="level3">
+<h3 class="anchored" data-anchor-id="load-and-explore-the-dataset-3-points">1. Load and Explore the Dataset (3 points)</h3>
+<ul>
+<li>Load the simulated CSV data into a Pandas DataFrame</li>
+<li>Use appropriate Pandas methods to inspect the data and identify issues</li>
+<li>Document key problems observed in the dataset</li>
+</ul>
+</section>
+<section id="handle-missing-values-4-points" class="level3">
+<h3 class="anchored" data-anchor-id="handle-missing-values-4-points">2. Handle Missing Values (4 points)</h3>
+<ul>
+<li>Identify which columns have missing values using appropriate Pandas methods</li>
+<li>Implement suitable strategies for each column:
+<ul>
+<li>Fill missing satisfaction ratings with the median value</li>
+<li>Decide how to handle missing purchase dates (forward fill or other strategy)</li>
+<li>Handle other missing values based on business logic</li>
+</ul></li>
+<li>Justify your approach for handling each type of missing data</li>
+</ul>
+</section>
+<section id="correct-data-types-4-points" class="level3">
+<h3 class="anchored" data-anchor-id="correct-data-types-4-points">3. Correct Data Types (4 points)</h3>
+<ul>
+<li>Convert date columns to datetime objects, handling different date formats</li>
+<li>Convert monetary values to proper numeric format, removing currency symbols</li>
+<li>Ensure other numeric fields have the correct data types</li>
+<li>Use appropriate type conversion functions and error handling</li>
+</ul>
+</section>
+<section id="clean-and-standardize-text-data-5-points" class="level3">
+<h3 class="anchored" data-anchor-id="clean-and-standardize-text-data-5-points">4. Clean and Standardize Text Data (5 points)</h3>
+<ul>
+<li>Standardize name fields to proper case</li>
+<li>Ensure category names have consistent capitalization</li>
+<li>Format phone numbers to a single consistent pattern</li>
+<li>Use Pandas string methods efficiently for text cleaning operations</li>
+</ul>
+</section>
+<section id="remove-duplicates-3-points" class="level3">
+<h3 class="anchored" data-anchor-id="remove-duplicates-3-points">5. Remove Duplicates (3 points)</h3>
+<ul>
+<li>Identify duplicate customer records</li>
+<li>Determine appropriate strategy for which records to keep</li>
+<li>Apply the correct method to remove duplicates while preserving important information</li>
+</ul>
+</section>
+<section id="add-derived-features-4-points" class="level3">
+<h3 class="anchored" data-anchor-id="add-derived-features-4-points">6. Add Derived Features (4 points)</h3>
+<ul>
+<li>Calculate days since last purchase using appropriate datetime operations</li>
+<li>Create average purchase value based on existing fields</li>
+<li>Develop a purchase frequency category using conditional logic</li>
+<li>Ensure derived features are added correctly to the DataFrame</li>
+</ul>
+</section>
+<section id="clean-up-the-dataframe-3-points" class="level3">
+<h3 class="anchored" data-anchor-id="clean-up-the-dataframe-3-points">7. Clean Up the DataFrame (3 points)</h3>
+<ul>
+<li>Rename columns to more intuitive, readable names</li>
+<li>Remove any unnecessary columns that won’t contribute to analysis</li>
+<li>Sort the data by an appropriate business metric</li>
+<li>Ensure the final DataFrame structure is clean and analysis-ready</li>
+</ul>
+</section>
+<section id="generate-insights-from-cleaned-data-3-points" class="level3">
+<h3 class="anchored" data-anchor-id="generate-insights-from-cleaned-data-3-points">8. Generate Insights from Cleaned Data (3 points)</h3>
+<ul>
+<li>Calculate meaningful business metrics using groupby and aggregation</li>
+<li>Identify valuable customer segments using the cleaned data</li>
+<li>Find relationships between customer attributes using correlation or other methods</li>
+</ul>
+</section>
+<section id="generate-final-report-1-point" class="level3">
+<h3 class="anchored" data-anchor-id="generate-final-report-1-point">9. Generate Final Report (1 point)</h3>
+<ul>
+<li>Summarize the data cleaning process</li>
+<li>Present key insights from the cleaned data</li>
+<li>Display the final cleaned dataset in a readable format</li>
+</ul>
+</section>
 </section>
 <section id="submission-guidelines" class="level2">
 <h2 class="anchored" data-anchor-id="submission-guidelines">Submission Guidelines</h2>
 <ul>
-<li>Save your completed assignment as a Python file named <code>module03-assignment.py</code>.</li>
+<li>Save your completed assignment as a Python file named <code>module10-assignment.py</code>.</li>
 <li>Submit your file via Canvas before the deadline.</li>
 <li>Ensure your code runs without errors and meets all the assignment requirements.</li>
+<li>Include comments explaining your data cleaning decisions and the rationale behind them.</li>
+<li>Format your final report section with clear headings and readable output.</li>
 </ul>
 <div class="callout callout-style-simple callout-tip">
 <div class="callout-body d-flex">
@@ -3239,7 +3439,18 @@ vertical-align: -.125em;
 </div>
 <div class="callout-body-container">
 <p><strong>Tip:</strong><br>
-Test your program with various inputs, including edge cases (like entering “ten” instead of “10” for quantity). Your program should handle these gracefully.</p>
+When cleaning real-world data, it’s important to balance thoroughness with practicality. Focus on fixing the issues that would most impact your analysis. For text standardization, consider using functions to apply consistent rules rather than handling each value individually.</p>
+</div>
+</div>
+</div>
+<div class="callout callout-style-simple callout-warning">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-body-container">
+<p><strong>Important:</strong><br>
+Be careful when handling missing values and duplicates! Before removing data, consider if there might be important information being lost. When creating derived features, ensure your calculations are correct and meaningful for business analysis. Document your cleaning process well, as this is a critical part of any data analysis pipeline.</p>
 </div>
 </div>
 </div>
@@ -3247,10 +3458,10 @@ Test your program with various inputs, including edge cases (like entering “te
 </section>
 <section id="marking-rubric" class="level1">
 <h1>Marking Rubric</h1>
-<p>The following rubric will be used to evaluate your assignment. The total possible points for this assignment is <strong>25</strong>.</p>
+<p>The following rubric will be used to evaluate your assignment. The total possible points for this assignment is <strong>30</strong>.</p>
 <table class="caption-top table">
 <colgroup>
-<col style="width: 29%">
+<col style="width: 28%">
 <col style="width: 5%">
 <col style="width: 65%">
 </colgroup>
@@ -3263,38 +3474,53 @@ Test your program with various inputs, including edge cases (like entering “te
 </thead>
 <tbody>
 <tr class="odd">
-<td><strong>Input Collection</strong></td>
-<td>5</td>
-<td>Correctly collects all required information using the <code>input()</code> function with clear prompts.</td>
-</tr>
-<tr class="even">
-<td><strong>String Processing</strong></td>
-<td>5</td>
-<td>Properly cleans and standardizes text input using string methods.</td>
-</tr>
-<tr class="odd">
-<td><strong>Type Conversion &amp; Calculations</strong></td>
-<td>5</td>
-<td>Accurately converts strings to numeric types and performs all required calculations.</td>
-</tr>
-<tr class="even">
-<td><strong>Error Handling</strong></td>
+<td><strong>Data Exploration</strong></td>
 <td>3</td>
-<td>Implements appropriate error handling for invalid input.</td>
-</tr>
-<tr class="odd">
-<td><strong>Output Formatting</strong></td>
-<td>5</td>
-<td>Creates professional, well-aligned output with proper currency formatting using f-strings.</td>
+<td>Effectively loads the dataset and correctly identifies key data quality issues.</td>
 </tr>
 <tr class="even">
-<td><strong>Code Structure &amp; Comments</strong></td>
-<td>2</td>
-<td>Organizes code logically with descriptive comments explaining the process.</td>
+<td><strong>Handling Missing Values</strong></td>
+<td>4</td>
+<td>Implements appropriate strategies for different types of missing data with proper justification.</td>
 </tr>
 <tr class="odd">
+<td><strong>Data Type Correction</strong></td>
+<td>4</td>
+<td>Successfully converts all columns to their appropriate data types with proper error handling.</td>
+</tr>
+<tr class="even">
+<td><strong>Text Data Standardization</strong></td>
+<td>5</td>
+<td>Effectively cleans and standardizes text data using Pandas string methods.</td>
+</tr>
+<tr class="odd">
+<td><strong>Duplicate Management</strong></td>
+<td>3</td>
+<td>Correctly identifies and handles duplicate records with appropriate strategy.</td>
+</tr>
+<tr class="even">
+<td><strong>Derived Feature Creation</strong></td>
+<td>4</td>
+<td>Creates meaningful derived variables that enhance analytical potential.</td>
+</tr>
+<tr class="odd">
+<td><strong>DataFrame Organization</strong></td>
+<td>3</td>
+<td>Properly renames, removes columns, and sorts the data for analysis readiness.</td>
+</tr>
+<tr class="even">
+<td><strong>Business Insight Generation</strong></td>
+<td>3</td>
+<td>Generates valuable business metrics and insights from the cleaned data.</td>
+</tr>
+<tr class="odd">
+<td><strong>Final Report</strong></td>
+<td>1</td>
+<td>Creates a clear, concise report summarizing the cleaning process and results.</td>
+</tr>
+<tr class="even">
 <td><strong>Total</strong></td>
-<td><strong>25</strong></td>
+<td><strong>30</strong></td>
 <td></td>
 </tr>
 </tbody>

@@ -8,7 +8,7 @@
 
 <meta name="author" content="Dr. Smith">
 
-<title>Integrative Assignment: Module 3 – String Manipulation, User Input, and Formatted Output</title>
+<title>Integrative Assignment: Module 6 – Conditional Logic in Business Decision-Making</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -3088,11 +3088,12 @@ vertical-align: -.125em;
     <h2 id="toc-title">Table of contents</h2>
    
   <ul class="collapse">
-  <li><a href="#integrative-assignment-module-3-string-manipulation-user-input-and-formatted-output" id="toc-integrative-assignment-module-3-string-manipulation-user-input-and-formatted-output" class="nav-link active" data-scroll-target="#integrative-assignment-module-3-string-manipulation-user-input-and-formatted-output">Integrative Assignment: Module 3 – String Manipulation, User Input, and Formatted Output</a>
+  <li><a href="#integrative-assignment-module-6-conditional-logic-in-business-decision-making" id="toc-integrative-assignment-module-6-conditional-logic-in-business-decision-making" class="nav-link active" data-scroll-target="#integrative-assignment-module-6-conditional-logic-in-business-decision-making">Integrative Assignment: Module 6 – Conditional Logic in Business Decision-Making</a>
   <ul class="collapse">
   <li><a href="#overview" id="toc-overview" class="nav-link" data-scroll-target="#overview">Overview</a></li>
   <li><a href="#objectives" id="toc-objectives" class="nav-link" data-scroll-target="#objectives">Objectives</a></li>
   <li><a href="#assignment-description" id="toc-assignment-description" class="nav-link" data-scroll-target="#assignment-description">Assignment Description</a></li>
+  <li><a href="#business-rules-to-implement" id="toc-business-rules-to-implement" class="nav-link" data-scroll-target="#business-rules-to-implement">Business Rules to Implement</a></li>
   <li><a href="#starter-code" id="toc-starter-code" class="nav-link" data-scroll-target="#starter-code">Starter Code</a></li>
   <li><a href="#submission-guidelines" id="toc-submission-guidelines" class="nav-link" data-scroll-target="#submission-guidelines">Submission Guidelines</a></li>
   </ul></li>
@@ -3109,7 +3110,7 @@ vertical-align: -.125em;
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Integrative Assignment: Module 3 – String Manipulation, User Input, and Formatted Output</h1>
+<h1 class="title">Integrative Assignment: Module 6 – Conditional Logic in Business Decision-Making</h1>
 </div>
 
 
@@ -3139,98 +3140,170 @@ vertical-align: -.125em;
 </header>
 
 
-<section id="integrative-assignment-module-3-string-manipulation-user-input-and-formatted-output" class="level1">
-<h1>Integrative Assignment: Module 3 – String Manipulation, User Input, and Formatted Output</h1>
+<section id="integrative-assignment-module-6-conditional-logic-in-business-decision-making" class="level1">
+<h1>Integrative Assignment: Module 6 – Conditional Logic in Business Decision-Making</h1>
 <section id="overview" class="level2">
 <h2 class="anchored" data-anchor-id="overview">Overview</h2>
-<p>In this assignment, you will demonstrate your understanding of Module 3 concepts by creating an interactive customer order processing program. This program will utilize string manipulation, user input, and formatted output to create a professional-looking order summary. This assignment will reinforce your ability to handle text data effectively, interact with users, and present information clearly – key skills for developing business applications.</p>
+<p>In this assignment, you will apply your understanding of conditional logic to implement a business loan approval system. This will demonstrate your ability to use <code>if</code>, <code>elif</code>, and <code>else</code> statements along with comparison and logical operators to make complex business decisions. Through this assignment, you’ll create a system that evaluates loan applications based on multiple factors, providing appropriate feedback and implementing business rules through conditional statements.</p>
 </section>
 <section id="objectives" class="level2">
 <h2 class="anchored" data-anchor-id="objectives">Objectives</h2>
 <p>By completing this assignment, you will:</p>
 <ul>
-<li><strong>Get and Process User Input:</strong> Use the <code>input()</code> function to collect information from users and process it appropriately.</li>
-<li><strong>Apply String Methods:</strong> Use string methods like <code>.strip()</code>, <code>.title()</code>, and other text manipulation techniques.</li>
-<li><strong>Perform Type Conversion:</strong> Convert string input to appropriate numeric types for calculations.</li>
-<li><strong>Implement Error Handling:</strong> Use basic error handling techniques to deal with invalid input.</li>
-<li><strong>Format Output with F-strings:</strong> Create professional-looking output with proper formatting and alignment.</li>
-<li><strong>Create a Complete Application:</strong> Build a program that follows the input-process-output pattern.</li>
+<li><strong>Apply Basic Conditional Logic:</strong> Implement fundamental <code>if-else</code> statements to create decision paths in your program.</li>
+<li><strong>Use Comparison Operators:</strong> Apply operators like <code>&gt;</code>, <code>&lt;</code>, <code>&gt;=</code>, <code>&lt;=</code>, <code>==</code>, and <code>!=</code> to compare values and create conditions.</li>
+<li><strong>Combine Logical Operators:</strong> Use <code>and</code>, <code>or</code>, and <code>not</code> to create complex conditions that reflect real business rules.</li>
+<li><strong>Implement Multi-path Decision Trees:</strong> Utilize <code>if-elif-else</code> structures to handle different scenarios and outcomes.</li>
+<li><strong>Develop Nested Conditional Structures:</strong> Create nested decision structures for dependent business rules.</li>
+<li><strong>Create Readable Decision Logic:</strong> Organize and format your conditional code for clarity and maintainability.</li>
+<li><strong>Solve Business Problems:</strong> Apply conditional statements to implement a simplified business loan application system.</li>
 </ul>
 </section>
 <section id="assignment-description" class="level2">
 <h2 class="anchored" data-anchor-id="assignment-description">Assignment Description</h2>
-<p>Imagine you work for an e-commerce company that needs a simple order processing system. Your task is to develop a Python program that:</p>
+<p>Imagine you work at “FastFunds Financial,” a company that provides small business loans. Your task is to develop a Python program that evaluates loan applications based on a set of predefined criteria. The program will:</p>
 <ol type="1">
-<li><strong>Collects Customer Information:</strong>
+<li><p><strong>Collect Applicant Information:</strong></p>
 <ul>
-<li>Asks for the customer’s name</li>
-<li>Asks for the customer’s email address</li>
+<li>Business name</li>
+<li>Years in operation</li>
+<li>Annual revenue</li>
+<li>Credit score</li>
+<li>Amount requested</li>
+<li>Business type (Retail, Service, Manufacturing, Technology)</li>
 </ul></li>
-<li><strong>Collects Order Information:</strong>
+<li><p><strong>Evaluate Eligibility Based on Multiple Criteria:</strong></p>
 <ul>
-<li>Asks for a product name</li>
-<li>Asks for the quantity ordered</li>
-<li>Asks for the unit price</li>
+<li>Basic eligibility (minimum requirements)</li>
+<li>Risk assessment</li>
+<li>Industry-specific considerations</li>
+<li>Loan amount approval</li>
 </ul></li>
-<li><strong>Processes the Information:</strong>
+<li><p><strong>Determine the Interest Rate</strong> based on the applicant’s risk profile.</p></li>
+<li><p><strong>Generate a Detailed Response</strong> explaining the decision, including:</p>
 <ul>
-<li>Cleans up the input (removing extra spaces, standardizing capitalization)</li>
-<li>Calculates the subtotal (quantity × unit price)</li>
-<li>Calculates sales tax (8.5% of subtotal)</li>
-<li>Calculates the order total (subtotal + tax)</li>
-<li>Applies a 10% discount if quantity is 10 or more</li>
-</ul></li>
-<li><strong>Displays an Order Summary:</strong>
-<ul>
-<li>Shows all customer and order information in a well-formatted layout</li>
-<li>Displays all calculated values formatted as currency with two decimal places</li>
-<li>Shows the discount amount (if applicable)</li>
-</ul></li>
-<li><strong>Validates Input:</strong>
-<ul>
-<li>Ensures the quantity is a positive integer</li>
-<li>Ensures the price is a positive number</li>
-<li>Handles any potential errors in the conversion process</li>
+<li>Whether the loan is approved, conditionally approved, or denied</li>
+<li>Maximum approved amount (if different from requested)</li>
+<li>Applicable interest rate (if approved)</li>
+<li>Specific reason(s) for the decision</li>
+<li>Recommendations for improvement (if denied or conditionally approved)</li>
 </ul></li>
 </ol>
+</section>
+<section id="business-rules-to-implement" class="level2">
+<h2 class="anchored" data-anchor-id="business-rules-to-implement">Business Rules to Implement</h2>
+<p>Your loan approval system should apply the following business rules using conditional statements:</p>
+<section id="basic-eligibility-requirements" class="level3">
+<h3 class="anchored" data-anchor-id="basic-eligibility-requirements">1. Basic Eligibility Requirements</h3>
+<ul>
+<li>Business must be in operation for at least 2 years</li>
+<li>Annual revenue must be at least $100,000</li>
+<li>Credit score must be at least 600</li>
+<li>Requested loan amount must be between $25,000 and $500,000</li>
+</ul>
+</section>
+<section id="risk-assessment-tiers" class="level3">
+<h3 class="anchored" data-anchor-id="risk-assessment-tiers">2. Risk Assessment Tiers</h3>
+<ul>
+<li><strong>Low Risk:</strong> Years in business ≥ 5, Credit score ≥ 720, and Revenue ≥ $300,000</li>
+<li><strong>Medium Risk:</strong> Years in business ≥ 3, Credit score ≥ 650, and Revenue ≥ $150,000</li>
+<li><strong>High Risk:</strong> All other eligible applicants</li>
+<li><strong>Very High Risk:</strong> Meets basic requirements but has one or more concerning factors</li>
+</ul>
+</section>
+<section id="loan-amount-approval-rules" class="level3">
+<h3 class="anchored" data-anchor-id="loan-amount-approval-rules">3. Loan Amount Approval Rules</h3>
+<ul>
+<li>Maximum loan amount should not exceed 80% of annual revenue</li>
+<li>High-risk applicants cannot receive more than 50% of annual revenue</li>
+<li>Very high-risk applicants cannot receive more than 25% of annual revenue</li>
+</ul>
+</section>
+<section id="interest-rate-determination" class="level3">
+<h3 class="anchored" data-anchor-id="interest-rate-determination">4. Interest Rate Determination</h3>
+<ul>
+<li>Low Risk: 5.0% - 6.5%</li>
+<li>Medium Risk: 7.0% - 9.0%</li>
+<li>High Risk: 9.5% - 12.0%</li>
+<li>Very High Risk: 12.5% - 15.0%</li>
+<li>Technology businesses receive a 0.5% discount</li>
+<li>Manufacturing businesses with less than 3 years in operation receive a 0.5% increase</li>
+</ul>
+</section>
+<section id="industry-specific-considerations" class="level3">
+<h3 class="anchored" data-anchor-id="industry-specific-considerations">5. Industry-specific Considerations</h3>
+<ul>
+<li>Retail businesses must have at least 3 years in operation to qualify for more than $150,000</li>
+<li>Service businesses must have a credit score of at least 650 to qualify for more than $200,000</li>
+<li>Manufacturing businesses must have annual revenue of at least $250,000</li>
+<li>Technology businesses with less than 3 years in operation must have a credit score of at least 700</li>
+</ul>
+</section>
 </section>
 <section id="starter-code" class="level2">
 <h2 class="anchored" data-anchor-id="starter-code">Starter Code</h2>
 <p>Below is a starter code template to help you begin:</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1"></a><span class="co"># Module 3 Assignment: String Manipulation, User Input, and Formatted Output</span></span>
-<span id="cb1-2"><a href="#cb1-2"></a></span>
-<span id="cb1-3"><a href="#cb1-3"></a><span class="co"># Welcome message</span></span>
-<span id="cb1-4"><a href="#cb1-4"></a><span class="bu">print</span>(<span class="st">&quot;=&quot;</span> <span class="op">*</span> <span class="dv">50</span>)</span>
-<span id="cb1-5"><a href="#cb1-5"></a><span class="bu">print</span>(<span class="st">&quot;CUSTOMER ORDER PROCESSING SYSTEM&quot;</span>)</span>
-<span id="cb1-6"><a href="#cb1-6"></a><span class="bu">print</span>(<span class="st">&quot;=&quot;</span> <span class="op">*</span> <span class="dv">50</span>)</span>
-<span id="cb1-7"><a href="#cb1-7"></a><span class="bu">print</span>(<span class="st">&quot;Please enter the following information:</span><span class="ch">\n</span><span class="st">&quot;</span>)</span>
+<div class="sourceCode" id="cb1"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1"></a><span class="co"># Module 6 Assignment: Conditional Logic in Business Decision-Making</span></span>
+<span id="cb1-2"><a href="#cb1-2"></a><span class="co"># FastFunds Financial - Loan Approval System</span></span>
+<span id="cb1-3"><a href="#cb1-3"></a></span>
+<span id="cb1-4"><a href="#cb1-4"></a><span class="co"># Welcome message</span></span>
+<span id="cb1-5"><a href="#cb1-5"></a><span class="bu">print</span>(<span class="st">&quot;=&quot;</span> <span class="op">*</span> <span class="dv">60</span>)</span>
+<span id="cb1-6"><a href="#cb1-6"></a><span class="bu">print</span>(<span class="st">&quot;FASTFUNDS FINANCIAL - BUSINESS LOAN EVALUATION SYSTEM&quot;</span>)</span>
+<span id="cb1-7"><a href="#cb1-7"></a><span class="bu">print</span>(<span class="st">&quot;=&quot;</span> <span class="op">*</span> <span class="dv">60</span>)</span>
 <span id="cb1-8"><a href="#cb1-8"></a></span>
-<span id="cb1-9"><a href="#cb1-9"></a><span class="co"># </span><span class="al">TODO</span><span class="co">: Collect customer information</span></span>
-<span id="cb1-10"><a href="#cb1-10"></a><span class="co"># 1. Ask for customer name</span></span>
-<span id="cb1-11"><a href="#cb1-11"></a><span class="co"># 2. Ask for customer email</span></span>
-<span id="cb1-12"><a href="#cb1-12"></a></span>
-<span id="cb1-13"><a href="#cb1-13"></a><span class="co"># </span><span class="al">TODO</span><span class="co">: Collect order information</span></span>
-<span id="cb1-14"><a href="#cb1-14"></a><span class="co"># 1. Ask for product name</span></span>
-<span id="cb1-15"><a href="#cb1-15"></a><span class="co"># 2. Ask for quantity</span></span>
-<span id="cb1-16"><a href="#cb1-16"></a><span class="co"># 3. Ask for unit price</span></span>
+<span id="cb1-9"><a href="#cb1-9"></a><span class="co"># In a real system, you would collect this information through input()</span></span>
+<span id="cb1-10"><a href="#cb1-10"></a><span class="co"># For this assignment, we&#39;ll use predefined variables for testing</span></span>
+<span id="cb1-11"><a href="#cb1-11"></a>business_name <span class="op">=</span> <span class="st">&quot;TechSolutions Inc.&quot;</span></span>
+<span id="cb1-12"><a href="#cb1-12"></a>years_in_operation <span class="op">=</span> <span class="fl">3.5</span></span>
+<span id="cb1-13"><a href="#cb1-13"></a>annual_revenue <span class="op">=</span> <span class="dv">280000</span></span>
+<span id="cb1-14"><a href="#cb1-14"></a>credit_score <span class="op">=</span> <span class="dv">690</span></span>
+<span id="cb1-15"><a href="#cb1-15"></a>requested_amount <span class="op">=</span> <span class="dv">150000</span></span>
+<span id="cb1-16"><a href="#cb1-16"></a>business_type <span class="op">=</span> <span class="st">&quot;Technology&quot;</span>  <span class="co"># Options: &quot;Retail&quot;, &quot;Service&quot;, &quot;Manufacturing&quot;, &quot;Technology&quot;</span></span>
 <span id="cb1-17"><a href="#cb1-17"></a></span>
-<span id="cb1-18"><a href="#cb1-18"></a><span class="co"># </span><span class="al">TODO</span><span class="co">: Process the information</span></span>
-<span id="cb1-19"><a href="#cb1-19"></a><span class="co"># 1. Clean up input (remove extra spaces, standardize capitalization)</span></span>
-<span id="cb1-20"><a href="#cb1-20"></a><span class="co"># 2. Convert quantity and price to appropriate numeric types</span></span>
-<span id="cb1-21"><a href="#cb1-21"></a><span class="co"># 3. Calculate subtotal, tax, and total</span></span>
-<span id="cb1-22"><a href="#cb1-22"></a><span class="co"># 4. Apply discount if applicable</span></span>
-<span id="cb1-23"><a href="#cb1-23"></a></span>
-<span id="cb1-24"><a href="#cb1-24"></a><span class="co"># </span><span class="al">TODO</span><span class="co">: Display order summary</span></span>
-<span id="cb1-25"><a href="#cb1-25"></a><span class="co"># Use f-strings to create a well-formatted output</span></span>
-<span id="cb1-26"><a href="#cb1-26"></a></span>
-<span id="cb1-27"><a href="#cb1-27"></a><span class="co"># Implement error handling where appropriate</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb1-18"><a href="#cb1-18"></a><span class="co"># Display the application details</span></span>
+<span id="cb1-19"><a href="#cb1-19"></a><span class="bu">print</span>(<span class="ss">f&quot;</span><span class="ch">\n</span><span class="ss">LOAN APPLICATION DETAILS:&quot;</span>)</span>
+<span id="cb1-20"><a href="#cb1-20"></a><span class="bu">print</span>(<span class="ss">f&quot;Business Name: </span><span class="sc">{</span>business_name<span class="sc">}</span><span class="ss">&quot;</span>)</span>
+<span id="cb1-21"><a href="#cb1-21"></a><span class="bu">print</span>(<span class="ss">f&quot;Years in Operation: </span><span class="sc">{</span>years_in_operation<span class="sc">:.1f}</span><span class="ss"> years&quot;</span>)</span>
+<span id="cb1-22"><a href="#cb1-22"></a><span class="bu">print</span>(<span class="ss">f&quot;Annual Revenue: $</span><span class="sc">{</span>annual_revenue<span class="sc">:,.2f}</span><span class="ss">&quot;</span>)</span>
+<span id="cb1-23"><a href="#cb1-23"></a><span class="bu">print</span>(<span class="ss">f&quot;Credit Score: </span><span class="sc">{</span>credit_score<span class="sc">}</span><span class="ss">&quot;</span>)</span>
+<span id="cb1-24"><a href="#cb1-24"></a><span class="bu">print</span>(<span class="ss">f&quot;Requested Loan Amount: $</span><span class="sc">{</span>requested_amount<span class="sc">:,.2f}</span><span class="ss">&quot;</span>)</span>
+<span id="cb1-25"><a href="#cb1-25"></a><span class="bu">print</span>(<span class="ss">f&quot;Business Type: </span><span class="sc">{</span>business_type<span class="sc">}</span><span class="ss">&quot;</span>)</span>
+<span id="cb1-26"><a href="#cb1-26"></a><span class="bu">print</span>(<span class="st">&quot;</span><span class="ch">\n</span><span class="st">PROCESSING APPLICATION...&quot;</span>)</span>
+<span id="cb1-27"><a href="#cb1-27"></a></span>
+<span id="cb1-28"><a href="#cb1-28"></a><span class="co"># </span><span class="al">TODO</span><span class="co"> 1: Check if applicant meets basic eligibility requirements</span></span>
+<span id="cb1-29"><a href="#cb1-29"></a><span class="co"># Implement the rules for basic eligibility using if-else statements</span></span>
+<span id="cb1-30"><a href="#cb1-30"></a></span>
+<span id="cb1-31"><a href="#cb1-31"></a></span>
+<span id="cb1-32"><a href="#cb1-32"></a><span class="co"># </span><span class="al">TODO</span><span class="co"> 2: Determine risk assessment tier (Low, Medium, High, Very High)</span></span>
+<span id="cb1-33"><a href="#cb1-33"></a><span class="co"># Use nested conditionals or logical operators to implement the risk assessment rules</span></span>
+<span id="cb1-34"><a href="#cb1-34"></a></span>
+<span id="cb1-35"><a href="#cb1-35"></a></span>
+<span id="cb1-36"><a href="#cb1-36"></a><span class="co"># </span><span class="al">TODO</span><span class="co"> 3: Calculate maximum approvable loan amount based on risk tier</span></span>
+<span id="cb1-37"><a href="#cb1-37"></a><span class="co"># Implement the loan amount approval rules</span></span>
+<span id="cb1-38"><a href="#cb1-38"></a></span>
+<span id="cb1-39"><a href="#cb1-39"></a></span>
+<span id="cb1-40"><a href="#cb1-40"></a><span class="co"># </span><span class="al">TODO</span><span class="co"> 4: Apply industry-specific considerations</span></span>
+<span id="cb1-41"><a href="#cb1-41"></a><span class="co"># Implement additional criteria based on business type</span></span>
+<span id="cb1-42"><a href="#cb1-42"></a></span>
+<span id="cb1-43"><a href="#cb1-43"></a></span>
+<span id="cb1-44"><a href="#cb1-44"></a><span class="co"># </span><span class="al">TODO</span><span class="co"> 5: Determine applicable interest rate</span></span>
+<span id="cb1-45"><a href="#cb1-45"></a><span class="co"># Implement interest rate determination rules based on risk tier and business type</span></span>
+<span id="cb1-46"><a href="#cb1-46"></a></span>
+<span id="cb1-47"><a href="#cb1-47"></a></span>
+<span id="cb1-48"><a href="#cb1-48"></a><span class="co"># </span><span class="al">TODO</span><span class="co"> 6: Make final decision (Approved, Conditionally Approved, or Denied)</span></span>
+<span id="cb1-49"><a href="#cb1-49"></a><span class="co"># Combine all the previous assessments to make a final decision</span></span>
+<span id="cb1-50"><a href="#cb1-50"></a></span>
+<span id="cb1-51"><a href="#cb1-51"></a></span>
+<span id="cb1-52"><a href="#cb1-52"></a><span class="co"># </span><span class="al">TODO</span><span class="co"> 7: Generate and display detailed response</span></span>
+<span id="cb1-53"><a href="#cb1-53"></a><span class="co"># Output the final decision with explanations, including reasons and recommendations</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 <section id="submission-guidelines" class="level2">
 <h2 class="anchored" data-anchor-id="submission-guidelines">Submission Guidelines</h2>
 <ul>
-<li>Save your completed assignment as a Python file named <code>module03-assignment.py</code>.</li>
+<li>Save your completed assignment as a Python file named <code>module06-assignment.py</code>.</li>
 <li>Submit your file via Canvas before the deadline.</li>
 <li>Ensure your code runs without errors and meets all the assignment requirements.</li>
+<li>Test your code with different applicant profiles to ensure it correctly handles various scenarios.</li>
 </ul>
 <div class="callout callout-style-simple callout-tip">
 <div class="callout-body d-flex">
@@ -3239,7 +3312,18 @@ vertical-align: -.125em;
 </div>
 <div class="callout-body-container">
 <p><strong>Tip:</strong><br>
-Test your program with various inputs, including edge cases (like entering “ten” instead of “10” for quantity). Your program should handle these gracefully.</p>
+Use meaningful variable names and add comments that clearly explain your conditional logic, especially for complex conditions involving multiple operators. This improves the readability of your code and makes it easier to debug.</p>
+</div>
+</div>
+</div>
+<div class="callout callout-style-simple callout-warning">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-body-container">
+<p><strong>Important:</strong><br>
+Be careful when combining conditions with logical operators. Remember that <code>and</code> requires both conditions to be true, while <code>or</code> only requires one condition to be true. Using parentheses can help clarify the order of evaluation in complex expressions.</p>
 </div>
 </div>
 </div>
@@ -3247,7 +3331,7 @@ Test your program with various inputs, including edge cases (like entering “te
 </section>
 <section id="marking-rubric" class="level1">
 <h1>Marking Rubric</h1>
-<p>The following rubric will be used to evaluate your assignment. The total possible points for this assignment is <strong>25</strong>.</p>
+<p>The following rubric will be used to evaluate your assignment. The total possible points for this assignment is <strong>40</strong>.</p>
 <table class="caption-top table">
 <colgroup>
 <col style="width: 29%">
@@ -3263,38 +3347,48 @@ Test your program with various inputs, including edge cases (like entering “te
 </thead>
 <tbody>
 <tr class="odd">
-<td><strong>Input Collection</strong></td>
+<td><strong>Basic Eligibility Implementation</strong></td>
 <td>5</td>
-<td>Correctly collects all required information using the <code>input()</code> function with clear prompts.</td>
+<td>Correctly implements basic eligibility checks using appropriate conditional structures.</td>
 </tr>
 <tr class="even">
-<td><strong>String Processing</strong></td>
-<td>5</td>
-<td>Properly cleans and standardizes text input using string methods.</td>
+<td><strong>Risk Assessment Logic</strong></td>
+<td>7</td>
+<td>Effectively determines risk tiers using complex conditions and logical operators.</td>
 </tr>
 <tr class="odd">
-<td><strong>Type Conversion &amp; Calculations</strong></td>
+<td><strong>Loan Amount Rules</strong></td>
 <td>5</td>
-<td>Accurately converts strings to numeric types and performs all required calculations.</td>
+<td>Properly calculates maximum loan amount based on risk assessment and revenue.</td>
 </tr>
 <tr class="even">
-<td><strong>Error Handling</strong></td>
+<td><strong>Industry-specific Considerations</strong></td>
+<td>7</td>
+<td>Successfully implements additional criteria based on business type.</td>
+</tr>
+<tr class="odd">
+<td><strong>Interest Rate Determination</strong></td>
+<td>5</td>
+<td>Correctly assigns interest rates based on risk tier and applicable adjustments.</td>
+</tr>
+<tr class="even">
+<td><strong>Final Decision Logic</strong></td>
+<td>5</td>
+<td>Combines all assessments to reach appropriate final decisions with clear reasoning.</td>
+</tr>
+<tr class="odd">
+<td><strong>Code Organization &amp; Readability</strong></td>
 <td>3</td>
-<td>Implements appropriate error handling for invalid input.</td>
-</tr>
-<tr class="odd">
-<td><strong>Output Formatting</strong></td>
-<td>5</td>
-<td>Creates professional, well-aligned output with proper currency formatting using f-strings.</td>
+<td>Organizes conditional structures logically with proper indentation and clear comments.</td>
 </tr>
 <tr class="even">
-<td><strong>Code Structure &amp; Comments</strong></td>
-<td>2</td>
-<td>Organizes code logically with descriptive comments explaining the process.</td>
+<td><strong>Output Quality &amp; Detail</strong></td>
+<td>3</td>
+<td>Provides comprehensive, well-formatted output explaining the decision and recommendations.</td>
 </tr>
 <tr class="odd">
 <td><strong>Total</strong></td>
-<td><strong>25</strong></td>
+<td><strong>40</strong></td>
 <td></td>
 </tr>
 </tbody>

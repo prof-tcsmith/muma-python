@@ -8,7 +8,7 @@
 
 <meta name="author" content="Dr. Smith">
 
-<title>Integrative Assignment: Module 3 – String Manipulation, User Input, and Formatted Output</title>
+<title>Module 11: Data Visualization with Matplotlib</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -3087,19 +3087,16 @@ vertical-align: -.125em;
   <nav id="TOC" role="doc-toc" class="toc-active">
     <h2 id="toc-title">Table of contents</h2>
    
+  <ul>
+  <li><a href="#introduction-seeing-the-story-in-your-data" id="toc-introduction-seeing-the-story-in-your-data" class="nav-link active" data-scroll-target="#introduction-seeing-the-story-in-your-data">Introduction: Seeing the Story in Your Data</a></li>
+  <li><a href="#learning-outcomes" id="toc-learning-outcomes" class="nav-link" data-scroll-target="#learning-outcomes">Learning Outcomes</a></li>
+  <li><a href="#why-visualize-business-data" id="toc-why-visualize-business-data" class="nav-link" data-scroll-target="#why-visualize-business-data">1. Why Visualize Business Data?</a></li>
+  <li><a href="#introduction-to-matplotlib-pyplot" id="toc-introduction-to-matplotlib-pyplot" class="nav-link" data-scroll-target="#introduction-to-matplotlib-pyplot">2. Introduction to Matplotlib <code>pyplot</code></a></li>
+  <li><a href="#common-business-chart-types" id="toc-common-business-chart-types" class="nav-link" data-scroll-target="#common-business-chart-types">3. Common Business Chart Types</a>
   <ul class="collapse">
-  <li><a href="#integrative-assignment-module-3-string-manipulation-user-input-and-formatted-output" id="toc-integrative-assignment-module-3-string-manipulation-user-input-and-formatted-output" class="nav-link active" data-scroll-target="#integrative-assignment-module-3-string-manipulation-user-input-and-formatted-output">Integrative Assignment: Module 3 – String Manipulation, User Input, and Formatted Output</a>
-  <ul class="collapse">
-  <li><a href="#overview" id="toc-overview" class="nav-link" data-scroll-target="#overview">Overview</a></li>
-  <li><a href="#objectives" id="toc-objectives" class="nav-link" data-scroll-target="#objectives">Objectives</a></li>
-  <li><a href="#assignment-description" id="toc-assignment-description" class="nav-link" data-scroll-target="#assignment-description">Assignment Description</a></li>
-  <li><a href="#starter-code" id="toc-starter-code" class="nav-link" data-scroll-target="#starter-code">Starter Code</a></li>
-  <li><a href="#submission-guidelines" id="toc-submission-guidelines" class="nav-link" data-scroll-target="#submission-guidelines">Submission Guidelines</a></li>
+  <li><a href="#line-chart-plt.plot" id="toc-line-chart-plt.plot" class="nav-link" data-scroll-target="#line-chart-plt.plot">3.1 Line Chart (<code>plt.plot()</code>)</a></li>
   </ul></li>
-  <li><a href="#marking-rubric" id="toc-marking-rubric" class="nav-link" data-scroll-target="#marking-rubric">Marking Rubric</a>
-  <ul class="collapse">
-  <li><a href="#academic-integrity-reminder" id="toc-academic-integrity-reminder" class="nav-link" data-scroll-target="#academic-integrity-reminder">Academic Integrity Reminder</a></li>
-  </ul></li>
+  <li><a href="#summary-communicating-insights-visually" id="toc-summary-communicating-insights-visually" class="nav-link" data-scroll-target="#summary-communicating-insights-visually">6. Summary: Communicating Insights Visually</a></li>
   </ul>
 </nav>
 </div>
@@ -3109,27 +3106,20 @@ vertical-align: -.125em;
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Integrative Assignment: Module 3 – String Manipulation, User Input, and Formatted Output</h1>
+<h1 class="title">Module 11: Data Visualization with Matplotlib</h1>
 </div>
 
 
-<div class="quarto-title-meta-author">
-  <div class="quarto-title-meta-heading">Author</div>
-  <div class="quarto-title-meta-heading">Affiliation</div>
-  
-    <div class="quarto-title-meta-contents">
-    <p class="author">Dr. Smith </p>
-  </div>
-  <div class="quarto-title-meta-contents">
-        <p class="affiliation">
-            University of South Florida
-          </p>
-      </div>
-  </div>
 
 <div class="quarto-title-meta">
 
-      
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Dr. Smith </p>
+          </div>
+  </div>
+    
   
     
   </div>
@@ -3139,173 +3129,393 @@ vertical-align: -.125em;
 </header>
 
 
-<section id="integrative-assignment-module-3-string-manipulation-user-input-and-formatted-output" class="level1">
-<h1>Integrative Assignment: Module 3 – String Manipulation, User Input, and Formatted Output</h1>
-<section id="overview" class="level2">
-<h2 class="anchored" data-anchor-id="overview">Overview</h2>
-<p>In this assignment, you will demonstrate your understanding of Module 3 concepts by creating an interactive customer order processing program. This program will utilize string manipulation, user input, and formatted output to create a professional-looking order summary. This assignment will reinforce your ability to handle text data effectively, interact with users, and present information clearly – key skills for developing business applications.</p>
-</section>
-<section id="objectives" class="level2">
-<h2 class="anchored" data-anchor-id="objectives">Objectives</h2>
-<p>By completing this assignment, you will:</p>
+<section id="introduction-seeing-the-story-in-your-data" class="level1">
+<h1>Introduction: Seeing the Story in Your Data</h1>
+<p>Welcome to Module 11! In Modules 9 and 10, we built a strong foundation in manipulating and cleaning data using Pandas. We learned how to load, inspect, reshape, and refine datasets – essential skills for preparing data for analysis. However, raw tables of numbers, even when clean, often don’t effectively communicate the underlying patterns, trends, and insights hidden within.</p>
+<p>This is where <strong>data visualization</strong> comes in. Visualizations transform abstract numbers into intuitive graphical representations, allowing us to:</p>
 <ul>
-<li><strong>Get and Process User Input:</strong> Use the <code>input()</code> function to collect information from users and process it appropriately.</li>
-<li><strong>Apply String Methods:</strong> Use string methods like <code>.strip()</code>, <code>.title()</code>, and other text manipulation techniques.</li>
-<li><strong>Perform Type Conversion:</strong> Convert string input to appropriate numeric types for calculations.</li>
-<li><strong>Implement Error Handling:</strong> Use basic error handling techniques to deal with invalid input.</li>
-<li><strong>Format Output with F-strings:</strong> Create professional-looking output with proper formatting and alignment.</li>
-<li><strong>Create a Complete Application:</strong> Build a program that follows the input-process-output pattern.</li>
+<li><strong>Identify Trends:</strong> Spot increases, decreases, or cycles over time.</li>
+<li><strong>Compare Values:</strong> Easily see differences between categories or groups.</li>
+<li><strong>Understand Distributions:</strong> Grasp how data is spread and identify outliers.</li>
+<li><strong>Discover Relationships:</strong> Uncover correlations between different variables.</li>
+<li><strong>Communicate Findings:</strong> Share insights effectively with stakeholders, regardless of their technical background.</li>
 </ul>
-</section>
-<section id="assignment-description" class="level2">
-<h2 class="anchored" data-anchor-id="assignment-description">Assignment Description</h2>
-<p>Imagine you work for an e-commerce company that needs a simple order processing system. Your task is to develop a Python program that:</p>
-<ol type="1">
-<li><strong>Collects Customer Information:</strong>
-<ul>
-<li>Asks for the customer’s name</li>
-<li>Asks for the customer’s email address</li>
-</ul></li>
-<li><strong>Collects Order Information:</strong>
-<ul>
-<li>Asks for a product name</li>
-<li>Asks for the quantity ordered</li>
-<li>Asks for the unit price</li>
-</ul></li>
-<li><strong>Processes the Information:</strong>
-<ul>
-<li>Cleans up the input (removing extra spaces, standardizing capitalization)</li>
-<li>Calculates the subtotal (quantity × unit price)</li>
-<li>Calculates sales tax (8.5% of subtotal)</li>
-<li>Calculates the order total (subtotal + tax)</li>
-<li>Applies a 10% discount if quantity is 10 or more</li>
-</ul></li>
-<li><strong>Displays an Order Summary:</strong>
-<ul>
-<li>Shows all customer and order information in a well-formatted layout</li>
-<li>Displays all calculated values formatted as currency with two decimal places</li>
-<li>Shows the discount amount (if applicable)</li>
-</ul></li>
-<li><strong>Validates Input:</strong>
-<ul>
-<li>Ensures the quantity is a positive integer</li>
-<li>Ensures the price is a positive number</li>
-<li>Handles any potential errors in the conversion process</li>
-</ul></li>
-</ol>
-</section>
-<section id="starter-code" class="level2">
-<h2 class="anchored" data-anchor-id="starter-code">Starter Code</h2>
-<p>Below is a starter code template to help you begin:</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1"></a><span class="co"># Module 3 Assignment: String Manipulation, User Input, and Formatted Output</span></span>
-<span id="cb1-2"><a href="#cb1-2"></a></span>
-<span id="cb1-3"><a href="#cb1-3"></a><span class="co"># Welcome message</span></span>
-<span id="cb1-4"><a href="#cb1-4"></a><span class="bu">print</span>(<span class="st">&quot;=&quot;</span> <span class="op">*</span> <span class="dv">50</span>)</span>
-<span id="cb1-5"><a href="#cb1-5"></a><span class="bu">print</span>(<span class="st">&quot;CUSTOMER ORDER PROCESSING SYSTEM&quot;</span>)</span>
-<span id="cb1-6"><a href="#cb1-6"></a><span class="bu">print</span>(<span class="st">&quot;=&quot;</span> <span class="op">*</span> <span class="dv">50</span>)</span>
-<span id="cb1-7"><a href="#cb1-7"></a><span class="bu">print</span>(<span class="st">&quot;Please enter the following information:</span><span class="ch">\n</span><span class="st">&quot;</span>)</span>
-<span id="cb1-8"><a href="#cb1-8"></a></span>
-<span id="cb1-9"><a href="#cb1-9"></a><span class="co"># </span><span class="al">TODO</span><span class="co">: Collect customer information</span></span>
-<span id="cb1-10"><a href="#cb1-10"></a><span class="co"># 1. Ask for customer name</span></span>
-<span id="cb1-11"><a href="#cb1-11"></a><span class="co"># 2. Ask for customer email</span></span>
-<span id="cb1-12"><a href="#cb1-12"></a></span>
-<span id="cb1-13"><a href="#cb1-13"></a><span class="co"># </span><span class="al">TODO</span><span class="co">: Collect order information</span></span>
-<span id="cb1-14"><a href="#cb1-14"></a><span class="co"># 1. Ask for product name</span></span>
-<span id="cb1-15"><a href="#cb1-15"></a><span class="co"># 2. Ask for quantity</span></span>
-<span id="cb1-16"><a href="#cb1-16"></a><span class="co"># 3. Ask for unit price</span></span>
-<span id="cb1-17"><a href="#cb1-17"></a></span>
-<span id="cb1-18"><a href="#cb1-18"></a><span class="co"># </span><span class="al">TODO</span><span class="co">: Process the information</span></span>
-<span id="cb1-19"><a href="#cb1-19"></a><span class="co"># 1. Clean up input (remove extra spaces, standardize capitalization)</span></span>
-<span id="cb1-20"><a href="#cb1-20"></a><span class="co"># 2. Convert quantity and price to appropriate numeric types</span></span>
-<span id="cb1-21"><a href="#cb1-21"></a><span class="co"># 3. Calculate subtotal, tax, and total</span></span>
-<span id="cb1-22"><a href="#cb1-22"></a><span class="co"># 4. Apply discount if applicable</span></span>
-<span id="cb1-23"><a href="#cb1-23"></a></span>
-<span id="cb1-24"><a href="#cb1-24"></a><span class="co"># </span><span class="al">TODO</span><span class="co">: Display order summary</span></span>
-<span id="cb1-25"><a href="#cb1-25"></a><span class="co"># Use f-strings to create a well-formatted output</span></span>
-<span id="cb1-26"><a href="#cb1-26"></a></span>
-<span id="cb1-27"><a href="#cb1-27"></a><span class="co"># Implement error handling where appropriate</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</section>
-<section id="submission-guidelines" class="level2">
-<h2 class="anchored" data-anchor-id="submission-guidelines">Submission Guidelines</h2>
-<ul>
-<li>Save your completed assignment as a Python file named <code>module03-assignment.py</code>.</li>
-<li>Submit your file via Canvas before the deadline.</li>
-<li>Ensure your code runs without errors and meets all the assignment requirements.</li>
-</ul>
-<div class="callout callout-style-simple callout-tip">
-<div class="callout-body d-flex">
+<p>As the saying goes, “A picture is worth a thousand words,” and in business, a clear chart can be worth significantly more by informing critical decisions.</p>
+<p><strong>Introducing Matplotlib</strong> Python offers several excellent visualization libraries. We will start with <strong>Matplotlib</strong>, which is the foundational plotting library in the Python scientific ecosystem. While sometimes considered more verbose than newer libraries, understanding Matplotlib provides a solid base and allows for fine-grained control over your plots. Many other libraries, including Pandas’ built-in plotting functions, often use Matplotlib under the hood.</p>
+<p>In this module, we will learn the basics of creating common business charts using Matplotlib, focusing on its integration with Pandas DataFrames. We’ll see how to turn our cleaned data into compelling line charts, bar charts, scatter plots, histograms, and pie charts, and how to customize them to effectively tell a story.</p>
+<div class="callout callout-style-default callout-note callout-titled" title="Code Examples &amp; Setup">
+<div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
-<div class="callout-body-container">
-<p><strong>Tip:</strong><br>
-Test your program with various inputs, including edge cases (like entering “ten” instead of “10” for quantity). Your program should handle these gracefully.</p>
+<div class="callout-title-container flex-fill">
+Code Examples &amp; Setup
 </div>
+</div>
+<div class="callout-body-container callout-body">
+<p>We will primarily use Matplotlib’s <code>pyplot</code> interface, conventionally imported as <code>plt</code>. You’ll also need Pandas (<code>pd</code>) and potentially NumPy (<code>np</code>).</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb1-2"><a href="#cb1-2"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb1-3"><a href="#cb1-3"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb1-4"><a href="#cb1-4"></a></span>
+<span id="cb1-5"><a href="#cb1-5"></a><span class="co"># Important for Jupyter Notebooks/Quarto: Display plots inline</span></span>
+<span id="cb1-6"><a href="#cb1-6"></a><span class="op">%</span>matplotlib inline</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Make sure you have <code>matplotlib</code> installed in your Python environment (<code>pip install matplotlib</code>). The <code>%matplotlib inline</code> command is specific to environments like Jupyter or Quarto and ensures plots appear directly in your output.</p>
 </div>
 </div>
 </section>
+<section id="learning-outcomes" class="level1">
+<h1>Learning Outcomes</h1>
+<p>By the end of this module, you will be able to:</p>
+<ul>
+<li><strong>Explain the Importance of Visualization:</strong> Understand why visualizing data is crucial for business analysis and communication.</li>
+<li><strong>Import Matplotlib:</strong> Import the <code>pyplot</code> module from Matplotlib using the standard alias <code>plt</code>.</li>
+<li><strong>Create Basic Plots:</strong> Generate fundamental chart types (line, bar, scatter, histogram, pie) using Matplotlib functions.</li>
+<li><strong>Utilize Pandas Plotting:</strong> Leverage Pandas’ built-in <code>.plot()</code> method for quick visualizations directly from DataFrames and Series.</li>
+<li><strong>Customize Plots:</strong> Add titles, axis labels, legends, and apply basic styling (color, line style) to enhance clarity and impact.</li>
+<li><strong>Select Appropriate Charts:</strong> Choose suitable chart types based on the data and the analytical question being addressed.</li>
+<li><strong>Integrate Cleaning and Visualization:</strong> Apply visualization techniques to data prepared using the Pandas skills learned in previous modules.</li>
+</ul>
 </section>
-<section id="marking-rubric" class="level1">
-<h1>Marking Rubric</h1>
-<p>The following rubric will be used to evaluate your assignment. The total possible points for this assignment is <strong>25</strong>.</p>
-<table class="caption-top table">
-<colgroup>
-<col style="width: 29%">
-<col style="width: 5%">
-<col style="width: 65%">
-</colgroup>
-<thead>
-<tr class="header">
-<th>Criterion</th>
-<th>Points</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><strong>Input Collection</strong></td>
-<td>5</td>
-<td>Correctly collects all required information using the <code>input()</code> function with clear prompts.</td>
-</tr>
-<tr class="even">
-<td><strong>String Processing</strong></td>
-<td>5</td>
-<td>Properly cleans and standardizes text input using string methods.</td>
-</tr>
-<tr class="odd">
-<td><strong>Type Conversion &amp; Calculations</strong></td>
-<td>5</td>
-<td>Accurately converts strings to numeric types and performs all required calculations.</td>
-</tr>
-<tr class="even">
-<td><strong>Error Handling</strong></td>
-<td>3</td>
-<td>Implements appropriate error handling for invalid input.</td>
-</tr>
-<tr class="odd">
-<td><strong>Output Formatting</strong></td>
-<td>5</td>
-<td>Creates professional, well-aligned output with proper currency formatting using f-strings.</td>
-</tr>
-<tr class="even">
-<td><strong>Code Structure &amp; Comments</strong></td>
-<td>2</td>
-<td>Organizes code logically with descriptive comments explaining the process.</td>
-</tr>
-<tr class="odd">
-<td><strong>Total</strong></td>
-<td><strong>25</strong></td>
-<td></td>
-</tr>
-</tbody>
-</table>
-<section id="academic-integrity-reminder" class="level2">
-<h2 class="anchored" data-anchor-id="academic-integrity-reminder">Academic Integrity Reminder</h2>
-<p>All work must be your own. Unauthorized collaboration or plagiarism is strictly prohibited and will be considered an academic violation. Please adhere to the course policies regarding academic integrity.</p>
+<section id="why-visualize-business-data" class="level1">
+<h1>1. Why Visualize Business Data?</h1>
+<p>Before diving into code, let’s reinforce <em>why</em> visualization is indispensable in a business context:</p>
+<ol type="1">
+<li><strong>Faster Comprehension:</strong> Humans process visual information much faster than text or tables. Charts allow for quick identification of key patterns that might be missed by scanning numbers.</li>
+<li><strong>Identifying Relationships:</strong> Scatter plots, for instance, can immediately suggest correlations (or lack thereof) between variables like advertising spend and sales, or employee experience and performance.</li>
+<li><strong>Spotting Outliers &amp; Anomalies:</strong> Unusual data points often stand out clearly on a chart, prompting further investigation into errors or unique events.</li>
+<li><strong>Comparing Performance:</strong> Bar charts are excellent for comparing metrics across different products, regions, teams, or time periods.</li>
+<li><strong>Tracking Progress:</strong> Line charts effectively show trends over time, helping monitor sales growth, website traffic, customer acquisition cost, etc.</li>
+<li><strong>Communicating Insights:</strong> Visualizations provide a common language for discussing data-driven findings with diverse audiences, facilitating better decision-making. A well-designed chart in a report or presentation is far more engaging and persuasive than a dense table.</li>
+</ol>
+<p>Simply put, visualization transforms data from a passive collection of facts into an active tool for understanding and communication.</p>
+</section>
+<section id="introduction-to-matplotlib-pyplot" class="level1">
+<h1>2. Introduction to Matplotlib <code>pyplot</code></h1>
+<p>Matplotlib is a large library, but its <code>pyplot</code> module provides a convenient interface that works similarly to MATLAB’s plotting functions. The typical workflow involves:</p>
+<ol type="1">
+<li><strong>Prepare Data:</strong> Use Pandas to get your data into the desired format (e.g., a Series or DataFrame).</li>
+<li><strong>Create Plot:</strong> Call a <code>pyplot</code> function (e.g., <code>plt.plot()</code>, <code>plt.bar()</code>) or a Pandas plotting method (<code>df.plot()</code>).</li>
+<li><strong>Customize:</strong> Add labels, titles, legends, etc. using <code>plt</code> functions.</li>
+<li><strong>Show Plot:</strong> Display the plot using <code>plt.show()</code> (though <code>%matplotlib inline</code> often handles this in notebooks).</li>
+</ol>
+<p>Let’s start with the most basic example: a simple line plot.</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1"></a><span class="co">#| caption: &quot;Creating a simple line plot with Matplotlib (Section 2)&quot;</span></span>
+<span id="cb2-2"><a href="#cb2-2"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb2-3"><a href="#cb2-3"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb2-4"><a href="#cb2-4"></a></span>
+<span id="cb2-5"><a href="#cb2-5"></a><span class="co"># Sample data (e.g., Sales over 5 days)</span></span>
+<span id="cb2-6"><a href="#cb2-6"></a>days <span class="op">=</span> np.array([<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">5</span>])</span>
+<span id="cb2-7"><a href="#cb2-7"></a>sales <span class="op">=</span> np.array([<span class="dv">150</span>, <span class="dv">220</span>, <span class="dv">180</span>, <span class="dv">250</span>, <span class="dv">230</span>])</span>
+<span id="cb2-8"><a href="#cb2-8"></a></span>
+<span id="cb2-9"><a href="#cb2-9"></a><span class="co"># 1. Create the plot</span></span>
+<span id="cb2-10"><a href="#cb2-10"></a>plt.plot(days, sales)</span>
+<span id="cb2-11"><a href="#cb2-11"></a></span>
+<span id="cb2-12"><a href="#cb2-12"></a><span class="co"># 2. Customize (Add title and labels)</span></span>
+<span id="cb2-13"><a href="#cb2-13"></a>plt.title(<span class="st">&quot;Daily Sales Trend&quot;</span>)</span>
+<span id="cb2-14"><a href="#cb2-14"></a>plt.xlabel(<span class="st">&quot;Day&quot;</span>)</span>
+<span id="cb2-15"><a href="#cb2-15"></a>plt.ylabel(<span class="st">&quot;Sales ($)&quot;</span>)</span>
+<span id="cb2-16"><a href="#cb2-16"></a></span>
+<span id="cb2-17"><a href="#cb2-17"></a><span class="co"># 3. Add grid for readability (optional)</span></span>
+<span id="cb2-18"><a href="#cb2-18"></a>plt.grid(<span class="va">True</span>)</span>
+<span id="cb2-19"><a href="#cb2-19"></a></span>
+<span id="cb2-20"><a href="#cb2-20"></a><span class="co"># 4. Show the plot</span></span>
+<span id="cb2-21"><a href="#cb2-21"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><a href="#">Download: <code>m11_s2_0_simple_plot.py</code></a> This simple example demonstrates the core idea: pass your x and y data to a plotting function, then use other <code>plt</code> functions to annotate and display it.</p>
+</section>
+<section id="common-business-chart-types" class="level1">
+<h1>3. Common Business Chart Types</h1>
+<p>Let’s explore how to create essential chart types using Matplotlib, often leveraging Pandas DataFrames for data input.</p>
+<section id="line-chart-plt.plot" class="level2">
+<h2 class="anchored" data-anchor-id="line-chart-plt.plot">3.1 Line Chart (<code>plt.plot()</code>)</h2>
+<ul>
+<li><strong>Use Case:</strong> Showing trends over a continuous interval, typically time (e.g., sales over months, stock prices, website visits per day).</li>
+<li>Connects data points with lines, emphasizing sequence and change.</li>
+</ul>
+<div class="sourceCode" id="cb3"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1"></a><span class="co">#| caption: &quot;Creating a line chart from Pandas Series (Section 3.1)&quot;</span></span>
+<span id="cb3-2"><a href="#cb3-2"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb3-3"><a href="#cb3-3"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb3-4"><a href="#cb3-4"></a></span>
+<span id="cb3-5"><a href="#cb3-5"></a><span class="co"># Sample data: Monthly Revenue</span></span>
+<span id="cb3-6"><a href="#cb3-6"></a>months <span class="op">=</span> [<span class="st">&#39;Jan&#39;</span>, <span class="st">&#39;Feb&#39;</span>, <span class="st">&#39;Mar&#39;</span>, <span class="st">&#39;Apr&#39;</span>, <span class="st">&#39;May&#39;</span>, <span class="st">&#39;Jun&#39;</span>]</span>
+<span id="cb3-7"><a href="#cb3-7"></a>revenue <span class="op">=</span> [<span class="dv">10000</span>, <span class="dv">11500</span>, <span class="dv">13000</span>, <span class="dv">12500</span>, <span class="dv">14000</span>, <span class="dv">15500</span>]</span>
+<span id="cb3-8"><a href="#cb3-8"></a>revenue_series <span class="op">=</span> pd.Series(revenue, index<span class="op">=</span>months)</span>
+<span id="cb3-9"><a href="#cb3-9"></a></span>
+<span id="cb3-10"><a href="#cb3-10"></a><span class="co"># Create the plot directly from the Series index and values</span></span>
+<span id="cb3-11"><a href="#cb3-11"></a>plt.plot(revenue_series.index, revenue_series.values, marker<span class="op">=</span><span class="st">&#39;o&#39;</span>) <span class="co"># marker adds dots at points</span></span>
+<span id="cb3-12"><a href="#cb3-12"></a></span>
+<span id="cb3-13"><a href="#cb3-13"></a><span class="co"># Customize</span></span>
+<span id="cb3-14"><a href="#cb3-14"></a>plt.title(<span class="st">&quot;Monthly Revenue Growth&quot;</span>)</span>
+<span id="cb3-15"><a href="#cb3-15"></a>plt.xlabel(<span class="st">&quot;Month&quot;</span>)</span>
+<span id="cb3-16"><a href="#cb3-16"></a>plt.ylabel(<span class="st">&quot;Revenue ($)&quot;</span>)</span>
+<span id="cb3-17"><a href="#cb3-17"></a>plt.grid(<span class="va">True</span>, linestyle<span class="op">=</span><span class="st">&#39;--&#39;</span>, alpha<span class="op">=</span><span class="fl">0.6</span>) <span class="co"># Customize grid</span></span>
+<span id="cb3-18"><a href="#cb3-18"></a></span>
+<span id="cb3-19"><a href="#cb3-19"></a><span class="co"># Show plot</span></span>
+<span id="cb3-20"><a href="#cb3-20"></a>plt.show()</span>
+<span id="cb3-21"><a href="#cb3-21"></a></span>
+<span id="cb3-22"><a href="#cb3-22"></a><span class="co"># --- Plotting multiple lines ---</span></span>
+<span id="cb3-23"><a href="#cb3-23"></a>revenue_last_year <span class="op">=</span> [<span class="dv">9000</span>, <span class="dv">10500</span>, <span class="dv">11000</span>, <span class="dv">11500</span>, <span class="dv">12000</span>, <span class="dv">13000</span>]</span>
+<span id="cb3-24"><a href="#cb3-24"></a>df_revenue <span class="op">=</span> pd.DataFrame({</span>
+<span id="cb3-25"><a href="#cb3-25"></a>    <span class="st">&#39;Current Year&#39;</span>: revenue,</span>
+<span id="cb3-26"><a href="#cb3-26"></a>    <span class="st">&#39;Last Year&#39;</span>: revenue_last_year</span>
+<span id="cb3-27"><a href="#cb3-27"></a>}, index<span class="op">=</span>months)</span>
+<span id="cb3-28"><a href="#cb3-28"></a></span>
+<span id="cb3-29"><a href="#cb3-29"></a>plt.plot(df_revenue.index, df_revenue[<span class="st">&#39;Current Year&#39;</span>], marker<span class="op">=</span><span class="st">&#39;o&#39;</span>, label<span class="op">=</span><span class="st">&#39;Current Year&#39;</span>)</span>
+<span id="cb3-30"><a href="#cb3-30"></a>plt.plot(df_revenue.index, df_revenue[<span class="st">&#39;Last Year&#39;</span>], marker<span class="op">=</span><span class="st">&#39;x&#39;</span>, linestyle<span class="op">=</span><span class="st">&#39;--&#39;</span>, label<span class="op">=</span><span class="st">&#39;Last Year&#39;</span>)</span>
+<span id="cb3-31"><a href="#cb3-31"></a></span>
+<span id="cb3-32"><a href="#cb3-32"></a>plt.title(<span class="st">&quot;Monthly Revenue Comparison&quot;</span>)</span>
+<span id="cb3-33"><a href="#cb3-33"></a>plt.xlabel(<span class="st">&quot;Month&quot;</span>)</span>
+<span id="cb3-34"><a href="#cb3-34"></a>plt.ylabel(<span class="st">&quot;Revenue ($)&quot;</span>)</span>
+<span id="cb3-35"><a href="#cb3-35"></a>plt.legend() <span class="co"># Add legend to identify lines</span></span>
+<span id="cb3-36"><a href="#cb3-36"></a>plt.grid(<span class="va">True</span>, alpha<span class="op">=</span><span class="fl">0.5</span>)</span>
+<span id="cb3-37"><a href="#cb3-37"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><a href="#">Download: <code>m11_s3_1_line_chart.py</code></a> ## 3.2 Bar Chart (<code>plt.bar()</code>, <code>plt.barh()</code>)</p>
+<ul>
+<li><strong>Use Case:</strong> Comparing discrete categories or groups (e.g., sales by product, market share by company, counts by department).</li>
+<li>Uses rectangular bars; length/height is proportional to the value. <code>plt.bar()</code> for vertical, <code>plt.barh()</code> for horizontal bars.</li>
+</ul>
+<div class="sourceCode" id="cb4"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1"></a><span class="co">#| caption: &quot;Creating vertical and horizontal bar charts (Section 3.2)&quot;</span></span>
+<span id="cb4-2"><a href="#cb4-2"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb4-3"><a href="#cb4-3"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb4-4"><a href="#cb4-4"></a></span>
+<span id="cb4-5"><a href="#cb4-5"></a><span class="co"># Sample data: Sales by Product Category</span></span>
+<span id="cb4-6"><a href="#cb4-6"></a>categories <span class="op">=</span> [<span class="st">&#39;Electronics&#39;</span>, <span class="st">&#39;Clothing&#39;</span>, <span class="st">&#39;Groceries&#39;</span>, <span class="st">&#39;Home Goods&#39;</span>]</span>
+<span id="cb4-7"><a href="#cb4-7"></a>sales <span class="op">=</span> [<span class="dv">45000</span>, <span class="dv">32000</span>, <span class="dv">55000</span>, <span class="dv">28000</span>]</span>
+<span id="cb4-8"><a href="#cb4-8"></a>sales_series <span class="op">=</span> pd.Series(sales, index<span class="op">=</span>categories)</span>
+<span id="cb4-9"><a href="#cb4-9"></a></span>
+<span id="cb4-10"><a href="#cb4-10"></a><span class="co"># --- Vertical Bar Chart ---</span></span>
+<span id="cb4-11"><a href="#cb4-11"></a>plt.figure(figsize<span class="op">=</span>(<span class="dv">8</span>, <span class="dv">5</span>)) <span class="co"># Optional: Adjust figure size</span></span>
+<span id="cb4-12"><a href="#cb4-12"></a>plt.bar(sales_series.index, sales_series.values, color<span class="op">=</span>[<span class="st">&#39;skyblue&#39;</span>, <span class="st">&#39;lightcoral&#39;</span>, <span class="st">&#39;lightgreen&#39;</span>, <span class="st">&#39;gold&#39;</span>])</span>
+<span id="cb4-13"><a href="#cb4-13"></a></span>
+<span id="cb4-14"><a href="#cb4-14"></a>plt.title(<span class="st">&quot;Sales by Product Category&quot;</span>)</span>
+<span id="cb4-15"><a href="#cb4-15"></a>plt.xlabel(<span class="st">&quot;Category&quot;</span>)</span>
+<span id="cb4-16"><a href="#cb4-16"></a>plt.ylabel(<span class="st">&quot;Sales ($)&quot;</span>)</span>
+<span id="cb4-17"><a href="#cb4-17"></a>plt.xticks(rotation<span class="op">=</span><span class="dv">45</span>, ha<span class="op">=</span><span class="st">&#39;right&#39;</span>) <span class="co"># Rotate x-axis labels if needed</span></span>
+<span id="cb4-18"><a href="#cb4-18"></a>plt.tight_layout() <span class="co"># Adjust layout to prevent labels overlapping</span></span>
+<span id="cb4-19"><a href="#cb4-19"></a>plt.show()</span>
+<span id="cb4-20"><a href="#cb4-20"></a></span>
+<span id="cb4-21"><a href="#cb4-21"></a><span class="co"># --- Horizontal Bar Chart (often better for many categories or long labels) ---</span></span>
+<span id="cb4-22"><a href="#cb4-22"></a>plt.figure(figsize<span class="op">=</span>(<span class="dv">8</span>, <span class="dv">5</span>))</span>
+<span id="cb4-23"><a href="#cb4-23"></a>plt.barh(sales_series.index, sales_series.values, color<span class="op">=</span><span class="st">&#39;salmon&#39;</span>)</span>
+<span id="cb4-24"><a href="#cb4-24"></a></span>
+<span id="cb4-25"><a href="#cb4-25"></a>plt.title(<span class="st">&quot;Sales by Product Category&quot;</span>)</span>
+<span id="cb4-26"><a href="#cb4-26"></a>plt.xlabel(<span class="st">&quot;Sales ($)&quot;</span>)</span>
+<span id="cb4-27"><a href="#cb4-27"></a>plt.ylabel(<span class="st">&quot;Category&quot;</span>)</span>
+<span id="cb4-28"><a href="#cb4-28"></a>plt.tight_layout()</span>
+<span id="cb4-29"><a href="#cb4-29"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><a href="#">Download: <code>m11_s3_2_bar_chart.py</code></a> ## 3.3 Scatter Plot (<code>plt.scatter()</code>)</p>
+<ul>
+<li><strong>Use Case:</strong> Showing the relationship or correlation between two numerical variables (e.g., advertising spend vs. sales, customer age vs. purchase amount, temperature vs. ice cream sales).</li>
+<li>Each point represents an observation based on its x and y values.</li>
+</ul>
+<div class="sourceCode" id="cb5"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1"></a><span class="co">#| caption: &quot;Creating a scatter plot to show relationships (Section 3.3)&quot;</span></span>
+<span id="cb5-2"><a href="#cb5-2"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb5-3"><a href="#cb5-3"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb5-4"><a href="#cb5-4"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb5-5"><a href="#cb5-5"></a></span>
+<span id="cb5-6"><a href="#cb5-6"></a><span class="co"># Sample data: Advertising Spend vs. Sales</span></span>
+<span id="cb5-7"><a href="#cb5-7"></a>np.random.seed(<span class="dv">42</span>) <span class="co"># for reproducibility</span></span>
+<span id="cb5-8"><a href="#cb5-8"></a>ad_spend <span class="op">=</span> np.random.rand(<span class="dv">50</span>) <span class="op">*</span> <span class="dv">1000</span> <span class="co"># 50 data points, spend up to $1000</span></span>
+<span id="cb5-9"><a href="#cb5-9"></a>sales <span class="op">=</span> <span class="dv">500</span> <span class="op">+</span> (ad_spend <span class="op">*</span> <span class="fl">2.5</span>) <span class="op">+</span> np.random.randn(<span class="dv">50</span>) <span class="op">*</span> <span class="dv">200</span> <span class="co"># Base + trend + noise</span></span>
+<span id="cb5-10"><a href="#cb5-10"></a>df <span class="op">=</span> pd.DataFrame({<span class="st">&#39;AdSpend&#39;</span>: ad_spend, <span class="st">&#39;Sales&#39;</span>: sales})</span>
+<span id="cb5-11"><a href="#cb5-11"></a></span>
+<span id="cb5-12"><a href="#cb5-12"></a><span class="co"># Create scatter plot</span></span>
+<span id="cb5-13"><a href="#cb5-13"></a>plt.figure(figsize<span class="op">=</span>(<span class="dv">8</span>, <span class="dv">5</span>))</span>
+<span id="cb5-14"><a href="#cb5-14"></a>plt.scatter(df[<span class="st">&#39;AdSpend&#39;</span>], df[<span class="st">&#39;Sales&#39;</span>], alpha<span class="op">=</span><span class="fl">0.7</span>, c<span class="op">=</span>df[<span class="st">&#39;AdSpend&#39;</span>], cmap<span class="op">=</span><span class="st">&#39;viridis&#39;</span>) <span class="co"># alpha for transparency, c/cmap for color based on value</span></span>
+<span id="cb5-15"><a href="#cb5-15"></a></span>
+<span id="cb5-16"><a href="#cb5-16"></a>plt.title(<span class="st">&quot;Advertising Spend vs. Sales&quot;</span>)</span>
+<span id="cb5-17"><a href="#cb5-17"></a>plt.xlabel(<span class="st">&quot;Advertising Spend ($)&quot;</span>)</span>
+<span id="cb5-18"><a href="#cb5-18"></a>plt.ylabel(<span class="st">&quot;Sales ($)&quot;</span>)</span>
+<span id="cb5-19"><a href="#cb5-19"></a>plt.grid(<span class="va">True</span>, linestyle<span class="op">=</span><span class="st">&#39;--&#39;</span>, alpha<span class="op">=</span><span class="fl">0.5</span>)</span>
+<span id="cb5-20"><a href="#cb5-20"></a>cbar <span class="op">=</span> plt.colorbar() <span class="co"># Add a color bar if using color mapping</span></span>
+<span id="cb5-21"><a href="#cb5-21"></a>cbar.set_label(<span class="st">&#39;Ad Spend Intensity&#39;</span>)</span>
+<span id="cb5-22"><a href="#cb5-22"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><a href="#">Download: <code>m11_s3_3_scatter_plot.py</code></a> ## 3.4 Histogram (<code>plt.hist()</code>)</p>
+<ul>
+<li><strong>Use Case:</strong> Understanding the distribution of a single numerical variable (e.g., distribution of customer ages, product prices, order values).</li>
+<li>Groups data into bins (intervals) and plots the frequency (count) of observations in each bin as bars.</li>
+</ul>
+<div class="sourceCode" id="cb6"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1"></a><span class="co">#| caption: &quot;Creating a histogram to show distribution (Section 3.4)&quot;</span></span>
+<span id="cb6-2"><a href="#cb6-2"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb6-3"><a href="#cb6-3"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb6-4"><a href="#cb6-4"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb6-5"><a href="#cb6-5"></a></span>
+<span id="cb6-6"><a href="#cb6-6"></a><span class="co"># Sample data: Distribution of Order Values</span></span>
+<span id="cb6-7"><a href="#cb6-7"></a>np.random.seed(<span class="dv">10</span>)</span>
+<span id="cb6-8"><a href="#cb6-8"></a>order_values <span class="op">=</span> np.random.normal(loc<span class="op">=</span><span class="dv">100</span>, scale<span class="op">=</span><span class="dv">30</span>, size<span class="op">=</span><span class="dv">500</span>) <span class="co"># Normally distributed around $100</span></span>
+<span id="cb6-9"><a href="#cb6-9"></a>order_values <span class="op">=</span> order_values[order_values <span class="op">&gt;</span> <span class="dv">0</span>] <span class="co"># Ensure positive values</span></span>
+<span id="cb6-10"><a href="#cb6-10"></a>s_orders <span class="op">=</span> pd.Series(order_values)</span>
+<span id="cb6-11"><a href="#cb6-11"></a></span>
+<span id="cb6-12"><a href="#cb6-12"></a><span class="co"># Create histogram</span></span>
+<span id="cb6-13"><a href="#cb6-13"></a>plt.figure(figsize<span class="op">=</span>(<span class="dv">8</span>, <span class="dv">5</span>))</span>
+<span id="cb6-14"><a href="#cb6-14"></a>plt.hist(s_orders, bins<span class="op">=</span><span class="dv">15</span>, color<span class="op">=</span><span class="st">&#39;teal&#39;</span>, edgecolor<span class="op">=</span><span class="st">&#39;black&#39;</span>) <span class="co"># bins controls number of intervals</span></span>
+<span id="cb6-15"><a href="#cb6-15"></a></span>
+<span id="cb6-16"><a href="#cb6-16"></a>plt.title(<span class="st">&quot;Distribution of Order Values&quot;</span>)</span>
+<span id="cb6-17"><a href="#cb6-17"></a>plt.xlabel(<span class="st">&quot;Order Value ($)&quot;</span>)</span>
+<span id="cb6-18"><a href="#cb6-18"></a>plt.ylabel(<span class="st">&quot;Frequency (Number of Orders)&quot;</span>)</span>
+<span id="cb6-19"><a href="#cb6-19"></a>plt.grid(axis<span class="op">=</span><span class="st">&#39;y&#39;</span>, linestyle<span class="op">=</span><span class="st">&#39;--&#39;</span>, alpha<span class="op">=</span><span class="fl">0.6</span>) <span class="co"># Grid lines on y-axis only</span></span>
+<span id="cb6-20"><a href="#cb6-20"></a>plt.show()</span>
+<span id="cb6-21"><a href="#cb6-21"></a></span>
+<span id="cb6-22"><a href="#cb6-22"></a><span class="co"># You can get the bin edges and counts returned by plt.hist if needed</span></span>
+<span id="cb6-23"><a href="#cb6-23"></a>counts, bin_edges, _ <span class="op">=</span> plt.hist(s_orders, bins<span class="op">=</span><span class="dv">15</span>)</span>
+<span id="cb6-24"><a href="#cb6-24"></a><span class="co"># print(&quot;Counts:&quot;, counts)</span></span>
+<span id="cb6-25"><a href="#cb6-25"></a><span class="co"># print(&quot;Bin Edges:&quot;, bin_edges)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><a href="#">Download: <code>m11_s3_4_histogram.py</code></a> ## 3.5 Pie Chart (<code>plt.pie()</code>)</p>
+<ul>
+<li><strong>Use Case:</strong> Showing proportions or percentages of a whole (e.g., market share, budget allocation, survey response breakdown).</li>
+<li><strong>Caution:</strong> Best used for a small number of categories (&lt;= 5-7). Bar charts are often better for comparing sizes accurately.</li>
+</ul>
+<div class="sourceCode" id="cb7"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1"></a><span class="co">#| caption: &quot;Creating a pie chart to show proportions (Section 3.5)&quot;</span></span>
+<span id="cb7-2"><a href="#cb7-2"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb7-3"><a href="#cb7-3"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb7-4"><a href="#cb7-4"></a></span>
+<span id="cb7-5"><a href="#cb7-5"></a><span class="co"># Sample data: Market Share</span></span>
+<span id="cb7-6"><a href="#cb7-6"></a>companies <span class="op">=</span> [<span class="st">&#39;Company A&#39;</span>, <span class="st">&#39;Company B&#39;</span>, <span class="st">&#39;Company C&#39;</span>, <span class="st">&#39;Others&#39;</span>]</span>
+<span id="cb7-7"><a href="#cb7-7"></a>market_share <span class="op">=</span> [<span class="dv">35</span>, <span class="dv">28</span>, <span class="dv">17</span>, <span class="dv">20</span>] <span class="co"># Percentages</span></span>
+<span id="cb7-8"><a href="#cb7-8"></a>s_share <span class="op">=</span> pd.Series(market_share, index<span class="op">=</span>companies)</span>
+<span id="cb7-9"><a href="#cb7-9"></a></span>
+<span id="cb7-10"><a href="#cb7-10"></a><span class="co"># Create pie chart</span></span>
+<span id="cb7-11"><a href="#cb7-11"></a>plt.figure(figsize<span class="op">=</span>(<span class="dv">7</span>, <span class="dv">7</span>)) <span class="co"># Make it circular</span></span>
+<span id="cb7-12"><a href="#cb7-12"></a>plt.pie(s_share, labels<span class="op">=</span>s_share.index, autopct<span class="op">=</span><span class="st">&#39;</span><span class="sc">%1.1f%%</span><span class="st">&#39;</span>, startangle<span class="op">=</span><span class="dv">90</span>,</span>
+<span id="cb7-13"><a href="#cb7-13"></a>        colors<span class="op">=</span>[<span class="st">&#39;#ff9999&#39;</span>,<span class="st">&#39;#66b3ff&#39;</span>,<span class="st">&#39;#99ff99&#39;</span>,<span class="st">&#39;#ffcc99&#39;</span>],</span>
+<span id="cb7-14"><a href="#cb7-14"></a>        explode<span class="op">=</span>(<span class="fl">0.05</span>, <span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">0</span>)) <span class="co"># autopct formats percentage, startangle rotates, explode pulls out a slice</span></span>
+<span id="cb7-15"><a href="#cb7-15"></a></span>
+<span id="cb7-16"><a href="#cb7-16"></a>plt.title(<span class="st">&quot;Market Share Distribution&quot;</span>)</span>
+<span id="cb7-17"><a href="#cb7-17"></a><span class="co"># plt.ylabel(&#39;&#39;) # Optional: Remove the default y-label if not needed</span></span>
+<span id="cb7-18"><a href="#cb7-18"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><a href="#">Download: <code>m11_s3_5_pie_chart.py</code></a> # 4. Customizing Your Plots</p>
+<p>A basic plot conveys information, but customization makes it clearer, more professional, and more impactful.</p>
+<p>Common Customizations (many seen in examples above):</p>
+<ul>
+<li><strong><code>plt.title(&quot;Your Title&quot;)</code>:</strong> Adds a title to the plot.</li>
+<li><strong><code>plt.xlabel(&quot;X-axis Label&quot;)</code>:</strong> Labels the horizontal axis.</li>
+<li><strong><code>plt.ylabel(&quot;Y-axis Label&quot;)</code>:</strong> Labels the vertical axis.</li>
+<li><strong><code>plt.legend()</code>:</strong> Displays the legend (useful when plotting multiple lines or groups). Requires <code>label=&#39;...&#39;</code> in your plotting commands.</li>
+<li><strong><code>plt.grid(True)</code>:</strong> Adds a grid for easier value reading. Can be customized (<code>linestyle</code>, <code>alpha</code>).</li>
+<li><strong><code>plt.figure(figsize=(width, height))</code>:</strong> Sets the size of the plot in inches. Place <em>before</em> plotting commands.</li>
+<li><strong><code>color=&#39;...&#39;</code>:</strong> Sets the color of plot elements (lines, bars, markers). Accepts names (‘red’, ‘blue’), hex codes (‘#FF5733’), etc.</li>
+<li><strong><code>linestyle=&#39;...&#39;</code>:</strong> Changes line style (<code>&#39;-&#39;</code> solid, <code>&#39;--&#39;</code> dashed, <code>&#39;:&#39;</code> dotted, <code>&#39;-.&#39;</code> dash-dot).</li>
+<li><strong><code>marker=&#39;...&#39;</code>:</strong> Adds markers to points on a line plot (<code>&#39;o&#39;</code>, <code>&#39;x&#39;</code>, <code>&#39;s&#39;</code>, <code>&#39;+&#39;</code>, etc.).</li>
+<li><strong><code>plt.xticks()</code>, <code>plt.yticks()</code>:</strong> Get or set the locations and labels of ticks on axes (e.g., <code>plt.xticks(rotation=45)</code>).</li>
+<li><strong><code>plt.tight_layout()</code>:</strong> Automatically adjusts plot parameters for a tight layout, often preventing labels from overlapping. Call <em>before</em> <code>plt.show()</code>.</li>
+<li><strong><code>plt.savefig(&quot;filename.png&quot;)</code>:</strong> Saves the current figure to a file. Use <em>before</em> <code>plt.show()</code>.</li>
+</ul>
+<div class="sourceCode" id="cb8"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1"></a><span class="co">#| caption: &quot;Example demonstrating various plot customizations (Section 4)&quot;</span></span>
+<span id="cb8-2"><a href="#cb8-2"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb8-3"><a href="#cb8-3"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb8-4"><a href="#cb8-4"></a></span>
+<span id="cb8-5"><a href="#cb8-5"></a><span class="co"># Sample Data</span></span>
+<span id="cb8-6"><a href="#cb8-6"></a>months <span class="op">=</span> pd.date_range(start<span class="op">=</span><span class="st">&#39;2024-01-01&#39;</span>, periods<span class="op">=</span><span class="dv">6</span>, freq<span class="op">=</span><span class="st">&#39;M&#39;</span>) <span class="co"># Monthly dates</span></span>
+<span id="cb8-7"><a href="#cb8-7"></a>product_A_sales <span class="op">=</span> [<span class="dv">50</span>, <span class="dv">55</span>, <span class="dv">65</span>, <span class="dv">60</span>, <span class="dv">70</span>, <span class="dv">75</span>]</span>
+<span id="cb8-8"><a href="#cb8-8"></a>product_B_sales <span class="op">=</span> [<span class="dv">40</span>, <span class="dv">42</span>, <span class="dv">48</span>, <span class="dv">50</span>, <span class="dv">55</span>, <span class="dv">58</span>]</span>
+<span id="cb8-9"><a href="#cb8-9"></a>df <span class="op">=</span> pd.DataFrame({<span class="st">&#39;Product A&#39;</span>: product_A_sales, <span class="st">&#39;Product B&#39;</span>: product_B_sales}, index<span class="op">=</span>months)</span>
+<span id="cb8-10"><a href="#cb8-10"></a></span>
+<span id="cb8-11"><a href="#cb8-11"></a><span class="co"># Create plot with customizations</span></span>
+<span id="cb8-12"><a href="#cb8-12"></a>plt.figure(figsize<span class="op">=</span>(<span class="dv">10</span>, <span class="dv">6</span>)) <span class="co"># Set figure size</span></span>
+<span id="cb8-13"><a href="#cb8-13"></a></span>
+<span id="cb8-14"><a href="#cb8-14"></a>plt.plot(df.index, df[<span class="st">&#39;Product A&#39;</span>], color<span class="op">=</span><span class="st">&#39;navy&#39;</span>, linestyle<span class="op">=</span><span class="st">&#39;-&#39;</span>, marker<span class="op">=</span><span class="st">&#39;o&#39;</span>, linewidth<span class="op">=</span><span class="dv">2</span>, label<span class="op">=</span><span class="st">&#39;Product A&#39;</span>)</span>
+<span id="cb8-15"><a href="#cb8-15"></a>plt.plot(df.index, df[<span class="st">&#39;Product B&#39;</span>], color<span class="op">=</span><span class="st">&#39;crimson&#39;</span>, linestyle<span class="op">=</span><span class="st">&#39;--&#39;</span>, marker<span class="op">=</span><span class="st">&#39;s&#39;</span>, markersize<span class="op">=</span><span class="dv">6</span>, label<span class="op">=</span><span class="st">&#39;Product B&#39;</span>)</span>
+<span id="cb8-16"><a href="#cb8-16"></a></span>
+<span id="cb8-17"><a href="#cb8-17"></a><span class="co"># Add title and labels with specific font sizes</span></span>
+<span id="cb8-18"><a href="#cb8-18"></a>plt.title(<span class="st">&quot;Monthly Sales Performance&quot;</span>, fontsize<span class="op">=</span><span class="dv">16</span>)</span>
+<span id="cb8-19"><a href="#cb8-19"></a>plt.xlabel(<span class="st">&quot;Month&quot;</span>, fontsize<span class="op">=</span><span class="dv">12</span>)</span>
+<span id="cb8-20"><a href="#cb8-20"></a>plt.ylabel(<span class="st">&quot;Units Sold&quot;</span>, fontsize<span class="op">=</span><span class="dv">12</span>)</span>
+<span id="cb8-21"><a href="#cb8-21"></a></span>
+<span id="cb8-22"><a href="#cb8-22"></a><span class="co"># Add annotations (example: highlight peak)</span></span>
+<span id="cb8-23"><a href="#cb8-23"></a>peak_month_A <span class="op">=</span> df[<span class="st">&#39;Product A&#39;</span>].idxmax()</span>
+<span id="cb8-24"><a href="#cb8-24"></a>peak_value_A <span class="op">=</span> df[<span class="st">&#39;Product A&#39;</span>].<span class="bu">max</span>()</span>
+<span id="cb8-25"><a href="#cb8-25"></a>plt.annotate(<span class="ss">f&#39;Peak A (</span><span class="sc">{</span>peak_value_A<span class="sc">}</span><span class="ss">)&#39;</span>, xy<span class="op">=</span>(peak_month_A, peak_value_A),</span>
+<span id="cb8-26"><a href="#cb8-26"></a>             xytext<span class="op">=</span>(peak_month_A, peak_value_A <span class="op">+</span> <span class="dv">5</span>), <span class="co"># Text position offset</span></span>
+<span id="cb8-27"><a href="#cb8-27"></a>             arrowprops<span class="op">=</span><span class="bu">dict</span>(facecolor<span class="op">=</span><span class="st">&#39;black&#39;</span>, shrink<span class="op">=</span><span class="fl">0.05</span>, width<span class="op">=</span><span class="dv">1</span>, headwidth<span class="op">=</span><span class="dv">8</span>))</span>
+<span id="cb8-28"><a href="#cb8-28"></a></span>
+<span id="cb8-29"><a href="#cb8-29"></a><span class="co"># Customize grid and legend</span></span>
+<span id="cb8-30"><a href="#cb8-30"></a>plt.grid(<span class="va">True</span>, linestyle<span class="op">=</span><span class="st">&#39;:&#39;</span>, alpha<span class="op">=</span><span class="fl">0.7</span>)</span>
+<span id="cb8-31"><a href="#cb8-31"></a>plt.legend(fontsize<span class="op">=</span><span class="dv">10</span>, loc<span class="op">=</span><span class="st">&#39;upper left&#39;</span>) <span class="co"># Position legend</span></span>
+<span id="cb8-32"><a href="#cb8-32"></a></span>
+<span id="cb8-33"><a href="#cb8-33"></a><span class="co"># Improve date formatting on x-axis</span></span>
+<span id="cb8-34"><a href="#cb8-34"></a>plt.gcf().autofmt_xdate() <span class="co"># Auto-formats dates nicely</span></span>
+<span id="cb8-35"><a href="#cb8-35"></a></span>
+<span id="cb8-36"><a href="#cb8-36"></a><span class="co"># Add overall text note</span></span>
+<span id="cb8-37"><a href="#cb8-37"></a>plt.text(df.index[<span class="dv">0</span>], df[<span class="st">&#39;Product A&#39;</span>].<span class="bu">min</span>() <span class="op">-</span> <span class="dv">5</span>, <span class="st">&quot;Data source: Internal Sales DB&quot;</span>, fontsize<span class="op">=</span><span class="dv">9</span>, style<span class="op">=</span><span class="st">&#39;italic&#39;</span>)</span>
+<span id="cb8-38"><a href="#cb8-38"></a></span>
+<span id="cb8-39"><a href="#cb8-39"></a><span class="co"># Final adjustments and display</span></span>
+<span id="cb8-40"><a href="#cb8-40"></a>plt.tight_layout()</span>
+<span id="cb8-41"><a href="#cb8-41"></a><span class="co"># plt.savefig(&quot;monthly_sales_comparison.png&quot;, dpi=300) # Example saving plot</span></span>
+<span id="cb8-42"><a href="#cb8-42"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><a href="#">Download: <code>m11_s4_0_customization.py</code></a> # 5. Pandas Integration: The <code>.plot()</code> Method</p>
+<p>Pandas DataFrames and Series have a convenient built-in <code>.plot()</code> method that acts as a wrapper around Matplotlib’s <code>pyplot</code> functions. It simplifies creating plots directly from your data structure.</p>
+<ul>
+<li><code>series.plot()</code> or <code>df.plot()</code>: Creates a plot.</li>
+<li><code>kind=&#39;...&#39;</code>: Specifies the type of plot (<code>&#39;line&#39;</code>, <code>&#39;bar&#39;</code>, <code>&#39;barh&#39;</code>, <code>&#39;hist&#39;</code>, <code>&#39;scatter&#39;</code>, <code>&#39;pie&#39;</code>, etc.).</li>
+<li>Many Matplotlib parameters (<code>figsize</code>, <code>title</code>, <code>xlabel</code>, <code>ylabel</code>, <code>legend</code>, <code>color</code>, etc.) can often be passed directly to <code>.plot()</code>.</li>
+<li>You can still use <code>plt</code> functions <em>after</em> calling <code>.plot()</code> for further customization.</li>
+</ul>
+<div class="sourceCode" id="cb9"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1"></a><span class="co">#| caption: &quot;Using Pandas .plot() method for quick visualizations (Section 5)&quot;</span></span>
+<span id="cb9-2"><a href="#cb9-2"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb9-3"><a href="#cb9-3"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb9-4"><a href="#cb9-4"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb9-5"><a href="#cb9-5"></a></span>
+<span id="cb9-6"><a href="#cb9-6"></a><span class="co"># Sample data</span></span>
+<span id="cb9-7"><a href="#cb9-7"></a>np.random.seed(<span class="dv">0</span>)</span>
+<span id="cb9-8"><a href="#cb9-8"></a>dates <span class="op">=</span> pd.date_range(<span class="st">&#39;20240101&#39;</span>, periods<span class="op">=</span><span class="dv">100</span>)</span>
+<span id="cb9-9"><a href="#cb9-9"></a>df <span class="op">=</span> pd.DataFrame(np.random.randn(<span class="dv">100</span>, <span class="dv">3</span>), index<span class="op">=</span>dates, columns<span class="op">=</span>[<span class="st">&#39;Metric A&#39;</span>, <span class="st">&#39;Metric B&#39;</span>, <span class="st">&#39;Metric C&#39;</span>]).cumsum() <span class="co"># Cumulative sum</span></span>
+<span id="cb9-10"><a href="#cb9-10"></a></span>
+<span id="cb9-11"><a href="#cb9-11"></a><span class="bu">print</span>(<span class="st">&quot;Sample DataFrame Head:&quot;</span>)</span>
+<span id="cb9-12"><a href="#cb9-12"></a><span class="bu">print</span>(df.head())</span>
+<span id="cb9-13"><a href="#cb9-13"></a></span>
+<span id="cb9-14"><a href="#cb9-14"></a><span class="co"># --- Line plot directly from DataFrame ---</span></span>
+<span id="cb9-15"><a href="#cb9-15"></a><span class="co"># Plots each column as a separate line</span></span>
+<span id="cb9-16"><a href="#cb9-16"></a>df.plot(figsize<span class="op">=</span>(<span class="dv">10</span>, <span class="dv">5</span>), title<span class="op">=</span><span class="st">&#39;Cumulative Metrics Over Time&#39;</span>, grid<span class="op">=</span><span class="va">True</span>, ylabel<span class="op">=</span><span class="st">&#39;Cumulative Value&#39;</span>)</span>
+<span id="cb9-17"><a href="#cb9-17"></a>plt.show() <span class="co"># Need plt.show() even after df.plot()</span></span>
+<span id="cb9-18"><a href="#cb9-18"></a></span>
+<span id="cb9-19"><a href="#cb9-19"></a><span class="co"># --- Bar plot from a Series ---</span></span>
+<span id="cb9-20"><a href="#cb9-20"></a><span class="co"># Example: Average value per metric</span></span>
+<span id="cb9-21"><a href="#cb9-21"></a>df.mean().plot(kind<span class="op">=</span><span class="st">&#39;bar&#39;</span>, figsize<span class="op">=</span>(<span class="dv">7</span>, <span class="dv">4</span>), title<span class="op">=</span><span class="st">&#39;Average Value per Metric&#39;</span>,</span>
+<span id="cb9-22"><a href="#cb9-22"></a>               xlabel<span class="op">=</span><span class="st">&#39;Metric&#39;</span>, ylabel<span class="op">=</span><span class="st">&#39;Average Value&#39;</span>, rot<span class="op">=</span><span class="dv">0</span>, color<span class="op">=</span>[<span class="st">&#39;#1f77b4&#39;</span>, <span class="st">&#39;#ff7f0e&#39;</span>, <span class="st">&#39;#2ca02c&#39;</span>])</span>
+<span id="cb9-23"><a href="#cb9-23"></a>plt.grid(axis<span class="op">=</span><span class="st">&#39;y&#39;</span>, linestyle<span class="op">=</span><span class="st">&#39;--&#39;</span>)</span>
+<span id="cb9-24"><a href="#cb9-24"></a>plt.tight_layout()</span>
+<span id="cb9-25"><a href="#cb9-25"></a>plt.show()</span>
+<span id="cb9-26"><a href="#cb9-26"></a></span>
+<span id="cb9-27"><a href="#cb9-27"></a><span class="co"># --- Scatter plot using .plot() ---</span></span>
+<span id="cb9-28"><a href="#cb9-28"></a><span class="co"># Need to specify x and y columns</span></span>
+<span id="cb9-29"><a href="#cb9-29"></a>df.plot(kind<span class="op">=</span><span class="st">&#39;scatter&#39;</span>, x<span class="op">=</span><span class="st">&#39;Metric A&#39;</span>, y<span class="op">=</span><span class="st">&#39;Metric B&#39;</span>, figsize<span class="op">=</span>(<span class="dv">7</span>, <span class="dv">5</span>),</span>
+<span id="cb9-30"><a href="#cb9-30"></a>        title<span class="op">=</span><span class="st">&#39;Relationship between Metric A and Metric B&#39;</span>, grid<span class="op">=</span><span class="va">True</span>,</span>
+<span id="cb9-31"><a href="#cb9-31"></a>        alpha<span class="op">=</span><span class="fl">0.6</span>, c<span class="op">=</span><span class="st">&#39;Metric C&#39;</span>, cmap<span class="op">=</span><span class="st">&#39;coolwarm&#39;</span>) <span class="co"># Color points by Metric C</span></span>
+<span id="cb9-32"><a href="#cb9-32"></a>plt.show()</span>
+<span id="cb9-33"><a href="#cb9-33"></a></span>
+<span id="cb9-34"><a href="#cb9-34"></a><span class="co"># --- Histogram of a column ---</span></span>
+<span id="cb9-35"><a href="#cb9-35"></a>df[<span class="st">&#39;Metric A&#39;</span>].plot(kind<span class="op">=</span><span class="st">&#39;hist&#39;</span>, bins<span class="op">=</span><span class="dv">20</span>, figsize<span class="op">=</span>(<span class="dv">8</span>, <span class="dv">4</span>),</span>
+<span id="cb9-36"><a href="#cb9-36"></a>                    title<span class="op">=</span><span class="st">&#39;Distribution of Metric A&#39;</span>, edgecolor<span class="op">=</span><span class="st">&#39;black&#39;</span>)</span>
+<span id="cb9-37"><a href="#cb9-37"></a>plt.xlabel(<span class="st">&#39;Metric A Value&#39;</span>)</span>
+<span id="cb9-38"><a href="#cb9-38"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><a href="#">Download: <code>m11_s5_0_pandas_plot.py</code></a> The <code>.plot()</code> method is excellent for quick explorations and standard plots. For highly customized or complex visualizations, using <code>plt</code> functions directly often provides more flexibility.</p>
+</section>
+</section>
+<section id="summary-communicating-insights-visually" class="level1">
+<h1>6. Summary: Communicating Insights Visually</h1>
+<p>Module 11 has introduced the fundamental concepts and techniques of data visualization in Python using Matplotlib, emphasizing its integration with Pandas. You’ve learned why visualization is critical in business and how to create and customize common chart types to represent different kinds of data and answer various analytical questions.</p>
+<p>Key Takeaways:</p>
+<ul>
+<li><strong>Visualization’s Role:</strong> Transforms data into easily understandable visual formats, aiding insight discovery and communication.</li>
+<li><strong>Matplotlib <code>pyplot</code>:</strong> The foundational plotting library, imported as <code>plt</code>. Used for creating and customizing plots.</li>
+<li><strong>Basic Workflow:</strong> Prepare data -&gt; Create plot (<code>plt.plot</code>, <code>plt.bar</code>, etc.) -&gt; Customize (<code>plt.title</code>, <code>plt.xlabel</code>, etc.) -&gt; Show (<code>plt.show</code>).</li>
+<li><strong>Common Charts &amp; Uses:</strong>
+<ul>
+<li><strong>Line:</strong> Trends over time.</li>
+<li><strong>Bar:</strong> Comparing categories.</li>
+<li><strong>Scatter:</strong> Relationships between two numeric variables.</li>
+<li><strong>Histogram:</strong> Distribution of a single numeric variable.</li>
+<li><strong>Pie:</strong> Proportions of a whole (use sparingly).</li>
+</ul></li>
+<li><strong>Customization:</strong> Essential for clarity and impact (titles, labels, legends, colors, styles).</li>
+<li><strong>Pandas <code>.plot()</code>:</strong> A convenient wrapper for creating standard plots directly from DataFrames and Series (<code>kind=&#39;...&#39;</code>).</li>
+<li><strong>Choosing the Right Chart:</strong> Match the visualization type to the data and the message you want to convey.</li>
+</ul>
+<p>Being able to create clear, informative visualizations is a highly valuable skill for any business professional working with data. It allows you to explore your data more effectively and share your findings persuasively. As you continue your journey, you might explore other libraries like Seaborn (often built on Matplotlib, providing higher-level interfaces for statistical plots) or interactive libraries like Plotly. However, the grounding in Matplotlib provided here is an essential first step.</p>
+<p>Practice creating different plots with the datasets you cleaned in Module 10. Experiment with customizations to see how they affect the chart’s message!</p>
 <hr>
-<p>Sincerely,<br>
-Dr. Smith</p>
-</section>
+<p><strong>Dr. Smith</strong> University of South Florida</p>
+<p>Next: Proceed to Module 11 Practice Exercises.</p>
 </section>
 
 </main>

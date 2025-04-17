@@ -8,7 +8,7 @@
 
 <meta name="author" content="Dr. Smith">
 
-<title>Integrative Assignment: Module 3 – String Manipulation, User Input, and Formatted Output</title>
+<title>Integrative Assignment: Module 11 – Data Visualization with Matplotlib</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -3088,12 +3088,13 @@ vertical-align: -.125em;
     <h2 id="toc-title">Table of contents</h2>
    
   <ul class="collapse">
-  <li><a href="#integrative-assignment-module-3-string-manipulation-user-input-and-formatted-output" id="toc-integrative-assignment-module-3-string-manipulation-user-input-and-formatted-output" class="nav-link active" data-scroll-target="#integrative-assignment-module-3-string-manipulation-user-input-and-formatted-output">Integrative Assignment: Module 3 – String Manipulation, User Input, and Formatted Output</a>
+  <li><a href="#integrative-assignment-module-11-data-visualization-with-matplotlib" id="toc-integrative-assignment-module-11-data-visualization-with-matplotlib" class="nav-link active" data-scroll-target="#integrative-assignment-module-11-data-visualization-with-matplotlib">Integrative Assignment: Module 11 – Data Visualization with Matplotlib</a>
   <ul class="collapse">
   <li><a href="#overview" id="toc-overview" class="nav-link" data-scroll-target="#overview">Overview</a></li>
   <li><a href="#objectives" id="toc-objectives" class="nav-link" data-scroll-target="#objectives">Objectives</a></li>
   <li><a href="#assignment-description" id="toc-assignment-description" class="nav-link" data-scroll-target="#assignment-description">Assignment Description</a></li>
   <li><a href="#starter-code" id="toc-starter-code" class="nav-link" data-scroll-target="#starter-code">Starter Code</a></li>
+  <li><a href="#detailed-task-requirements" id="toc-detailed-task-requirements" class="nav-link" data-scroll-target="#detailed-task-requirements">Detailed Task Requirements</a></li>
   <li><a href="#submission-guidelines" id="toc-submission-guidelines" class="nav-link" data-scroll-target="#submission-guidelines">Submission Guidelines</a></li>
   </ul></li>
   <li><a href="#marking-rubric" id="toc-marking-rubric" class="nav-link" data-scroll-target="#marking-rubric">Marking Rubric</a>
@@ -3109,7 +3110,7 @@ vertical-align: -.125em;
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Integrative Assignment: Module 3 – String Manipulation, User Input, and Formatted Output</h1>
+<h1 class="title">Integrative Assignment: Module 11 – Data Visualization with Matplotlib</h1>
 </div>
 
 
@@ -3139,98 +3140,406 @@ vertical-align: -.125em;
 </header>
 
 
-<section id="integrative-assignment-module-3-string-manipulation-user-input-and-formatted-output" class="level1">
-<h1>Integrative Assignment: Module 3 – String Manipulation, User Input, and Formatted Output</h1>
+<section id="integrative-assignment-module-11-data-visualization-with-matplotlib" class="level1">
+<h1>Integrative Assignment: Module 11 – Data Visualization with Matplotlib</h1>
 <section id="overview" class="level2">
 <h2 class="anchored" data-anchor-id="overview">Overview</h2>
-<p>In this assignment, you will demonstrate your understanding of Module 3 concepts by creating an interactive customer order processing program. This program will utilize string manipulation, user input, and formatted output to create a professional-looking order summary. This assignment will reinforce your ability to handle text data effectively, interact with users, and present information clearly – key skills for developing business applications.</p>
+<p>In this assignment, you will apply your knowledge of data visualization with Matplotlib to create meaningful and informative visualizations for “SunCoast Retail,” a mid-size retail company with multiple locations across Florida. You’ll work with a dataset containing quarterly sales information, customer demographics, and product category performance. This assignment will demonstrate your ability to transform raw data into compelling visual narratives that can inform business decisions and effectively communicate insights to stakeholders.</p>
 </section>
 <section id="objectives" class="level2">
 <h2 class="anchored" data-anchor-id="objectives">Objectives</h2>
 <p>By completing this assignment, you will:</p>
 <ul>
-<li><strong>Get and Process User Input:</strong> Use the <code>input()</code> function to collect information from users and process it appropriately.</li>
-<li><strong>Apply String Methods:</strong> Use string methods like <code>.strip()</code>, <code>.title()</code>, and other text manipulation techniques.</li>
-<li><strong>Perform Type Conversion:</strong> Convert string input to appropriate numeric types for calculations.</li>
-<li><strong>Implement Error Handling:</strong> Use basic error handling techniques to deal with invalid input.</li>
-<li><strong>Format Output with F-strings:</strong> Create professional-looking output with proper formatting and alignment.</li>
-<li><strong>Create a Complete Application:</strong> Build a program that follows the input-process-output pattern.</li>
+<li><strong>Apply Matplotlib for Business Visualization:</strong> Create and customize various chart types to represent business data.</li>
+<li><strong>Select Appropriate Chart Types:</strong> Choose suitable visualizations based on the data and analytical question.</li>
+<li><strong>Customize Plot Appearance:</strong> Enhance visualizations with titles, labels, legends, and styling.</li>
+<li><strong>Use Pandas with Matplotlib:</strong> Leverage the integration between Pandas and Matplotlib for efficient plotting.</li>
+<li><strong>Tell a Visual Data Story:</strong> Use a series of visualizations to communicate a coherent narrative about the business.</li>
+<li><strong>Present Actionable Insights:</strong> Translate visual findings into clear business recommendations.</li>
+<li><strong>Combine Data Cleaning and Visualization:</strong> Apply visualization techniques to data prepared using Pandas.</li>
 </ul>
 </section>
 <section id="assignment-description" class="level2">
 <h2 class="anchored" data-anchor-id="assignment-description">Assignment Description</h2>
-<p>Imagine you work for an e-commerce company that needs a simple order processing system. Your task is to develop a Python program that:</p>
+<p>SunCoast Retail has compiled sales data from the past two years and wants to gain insights into their performance trends, customer behavior, and product category success. As their data analyst, you’ve been asked to create a visual report that addresses the following business questions:</p>
 <ol type="1">
-<li><strong>Collects Customer Information:</strong>
-<ul>
-<li>Asks for the customer’s name</li>
-<li>Asks for the customer’s email address</li>
-</ul></li>
-<li><strong>Collects Order Information:</strong>
-<ul>
-<li>Asks for a product name</li>
-<li>Asks for the quantity ordered</li>
-<li>Asks for the unit price</li>
-</ul></li>
-<li><strong>Processes the Information:</strong>
-<ul>
-<li>Cleans up the input (removing extra spaces, standardizing capitalization)</li>
-<li>Calculates the subtotal (quantity × unit price)</li>
-<li>Calculates sales tax (8.5% of subtotal)</li>
-<li>Calculates the order total (subtotal + tax)</li>
-<li>Applies a 10% discount if quantity is 10 or more</li>
-</ul></li>
-<li><strong>Displays an Order Summary:</strong>
-<ul>
-<li>Shows all customer and order information in a well-formatted layout</li>
-<li>Displays all calculated values formatted as currency with two decimal places</li>
-<li>Shows the discount amount (if applicable)</li>
-</ul></li>
-<li><strong>Validates Input:</strong>
-<ul>
-<li>Ensures the quantity is a positive integer</li>
-<li>Ensures the price is a positive number</li>
-<li>Handles any potential errors in the conversion process</li>
-</ul></li>
+<li><strong>How have overall sales trended over time?</strong></li>
+<li><strong>Which product categories perform best in different store locations?</strong></li>
+<li><strong>Is there a relationship between advertising spend and sales?</strong></li>
+<li><strong>What is the age distribution of customers, and does it vary by location?</strong></li>
+<li><strong>How are sales distributed across different pricing tiers?</strong></li>
+<li><strong>What is the market share breakdown by product category?</strong></li>
 </ol>
+<p>Your task is to create appropriate visualizations for each question and compile them into a comprehensive visual analysis with clear explanations and business recommendations.</p>
 </section>
 <section id="starter-code" class="level2">
 <h2 class="anchored" data-anchor-id="starter-code">Starter Code</h2>
 <p>Below is a starter code template to help you begin:</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1"></a><span class="co"># Module 3 Assignment: String Manipulation, User Input, and Formatted Output</span></span>
-<span id="cb1-2"><a href="#cb1-2"></a></span>
-<span id="cb1-3"><a href="#cb1-3"></a><span class="co"># Welcome message</span></span>
-<span id="cb1-4"><a href="#cb1-4"></a><span class="bu">print</span>(<span class="st">&quot;=&quot;</span> <span class="op">*</span> <span class="dv">50</span>)</span>
-<span id="cb1-5"><a href="#cb1-5"></a><span class="bu">print</span>(<span class="st">&quot;CUSTOMER ORDER PROCESSING SYSTEM&quot;</span>)</span>
-<span id="cb1-6"><a href="#cb1-6"></a><span class="bu">print</span>(<span class="st">&quot;=&quot;</span> <span class="op">*</span> <span class="dv">50</span>)</span>
-<span id="cb1-7"><a href="#cb1-7"></a><span class="bu">print</span>(<span class="st">&quot;Please enter the following information:</span><span class="ch">\n</span><span class="st">&quot;</span>)</span>
+<div class="sourceCode" id="cb1"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1"></a><span class="co"># Module 11 Assignment: Data Visualization with Matplotlib</span></span>
+<span id="cb1-2"><a href="#cb1-2"></a><span class="co"># SunCoast Retail Visual Analysis</span></span>
+<span id="cb1-3"><a href="#cb1-3"></a></span>
+<span id="cb1-4"><a href="#cb1-4"></a><span class="co"># Import required libraries</span></span>
+<span id="cb1-5"><a href="#cb1-5"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb1-6"><a href="#cb1-6"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb1-7"><a href="#cb1-7"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
 <span id="cb1-8"><a href="#cb1-8"></a></span>
-<span id="cb1-9"><a href="#cb1-9"></a><span class="co"># </span><span class="al">TODO</span><span class="co">: Collect customer information</span></span>
-<span id="cb1-10"><a href="#cb1-10"></a><span class="co"># 1. Ask for customer name</span></span>
-<span id="cb1-11"><a href="#cb1-11"></a><span class="co"># 2. Ask for customer email</span></span>
-<span id="cb1-12"><a href="#cb1-12"></a></span>
-<span id="cb1-13"><a href="#cb1-13"></a><span class="co"># </span><span class="al">TODO</span><span class="co">: Collect order information</span></span>
-<span id="cb1-14"><a href="#cb1-14"></a><span class="co"># 1. Ask for product name</span></span>
-<span id="cb1-15"><a href="#cb1-15"></a><span class="co"># 2. Ask for quantity</span></span>
-<span id="cb1-16"><a href="#cb1-16"></a><span class="co"># 3. Ask for unit price</span></span>
+<span id="cb1-9"><a href="#cb1-9"></a><span class="co"># Welcome message</span></span>
+<span id="cb1-10"><a href="#cb1-10"></a><span class="bu">print</span>(<span class="st">&quot;=&quot;</span> <span class="op">*</span> <span class="dv">60</span>)</span>
+<span id="cb1-11"><a href="#cb1-11"></a><span class="bu">print</span>(<span class="st">&quot;SUNCOAST RETAIL VISUAL ANALYSIS&quot;</span>)</span>
+<span id="cb1-12"><a href="#cb1-12"></a><span class="bu">print</span>(<span class="st">&quot;=&quot;</span> <span class="op">*</span> <span class="dv">60</span>)</span>
+<span id="cb1-13"><a href="#cb1-13"></a></span>
+<span id="cb1-14"><a href="#cb1-14"></a><span class="co"># ----- USE THE FOLLOWING CODE TO CREATE SAMPLE DATA (DO NOT MODIFY) -----</span></span>
+<span id="cb1-15"><a href="#cb1-15"></a><span class="co"># Create a seed for reproducibility</span></span>
+<span id="cb1-16"><a href="#cb1-16"></a>np.random.seed(<span class="dv">42</span>)</span>
 <span id="cb1-17"><a href="#cb1-17"></a></span>
-<span id="cb1-18"><a href="#cb1-18"></a><span class="co"># </span><span class="al">TODO</span><span class="co">: Process the information</span></span>
-<span id="cb1-19"><a href="#cb1-19"></a><span class="co"># 1. Clean up input (remove extra spaces, standardize capitalization)</span></span>
-<span id="cb1-20"><a href="#cb1-20"></a><span class="co"># 2. Convert quantity and price to appropriate numeric types</span></span>
-<span id="cb1-21"><a href="#cb1-21"></a><span class="co"># 3. Calculate subtotal, tax, and total</span></span>
-<span id="cb1-22"><a href="#cb1-22"></a><span class="co"># 4. Apply discount if applicable</span></span>
-<span id="cb1-23"><a href="#cb1-23"></a></span>
-<span id="cb1-24"><a href="#cb1-24"></a><span class="co"># </span><span class="al">TODO</span><span class="co">: Display order summary</span></span>
-<span id="cb1-25"><a href="#cb1-25"></a><span class="co"># Use f-strings to create a well-formatted output</span></span>
-<span id="cb1-26"><a href="#cb1-26"></a></span>
-<span id="cb1-27"><a href="#cb1-27"></a><span class="co"># Implement error handling where appropriate</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb1-18"><a href="#cb1-18"></a><span class="co"># Generate dates for 8 quarters (Q1 2022 - Q4 2023)</span></span>
+<span id="cb1-19"><a href="#cb1-19"></a>quarters <span class="op">=</span> pd.date_range(start<span class="op">=</span><span class="st">&#39;2022-01-01&#39;</span>, periods<span class="op">=</span><span class="dv">8</span>, freq<span class="op">=</span><span class="st">&#39;Q&#39;</span>)</span>
+<span id="cb1-20"><a href="#cb1-20"></a>quarter_labels <span class="op">=</span> [<span class="st">&#39;Q1 2022&#39;</span>, <span class="st">&#39;Q2 2022&#39;</span>, <span class="st">&#39;Q3 2022&#39;</span>, <span class="st">&#39;Q4 2022&#39;</span>, </span>
+<span id="cb1-21"><a href="#cb1-21"></a>                 <span class="st">&#39;Q1 2023&#39;</span>, <span class="st">&#39;Q2 2023&#39;</span>, <span class="st">&#39;Q3 2023&#39;</span>, <span class="st">&#39;Q4 2023&#39;</span>]</span>
+<span id="cb1-22"><a href="#cb1-22"></a></span>
+<span id="cb1-23"><a href="#cb1-23"></a><span class="co"># Store locations</span></span>
+<span id="cb1-24"><a href="#cb1-24"></a>locations <span class="op">=</span> [<span class="st">&#39;Tampa&#39;</span>, <span class="st">&#39;Miami&#39;</span>, <span class="st">&#39;Orlando&#39;</span>, <span class="st">&#39;Jacksonville&#39;</span>]</span>
+<span id="cb1-25"><a href="#cb1-25"></a></span>
+<span id="cb1-26"><a href="#cb1-26"></a><span class="co"># Product categories</span></span>
+<span id="cb1-27"><a href="#cb1-27"></a>categories <span class="op">=</span> [<span class="st">&#39;Electronics&#39;</span>, <span class="st">&#39;Clothing&#39;</span>, <span class="st">&#39;Home Goods&#39;</span>, <span class="st">&#39;Sporting Goods&#39;</span>, <span class="st">&#39;Beauty&#39;</span>]</span>
+<span id="cb1-28"><a href="#cb1-28"></a></span>
+<span id="cb1-29"><a href="#cb1-29"></a><span class="co"># Generate quarterly sales data for each location and category</span></span>
+<span id="cb1-30"><a href="#cb1-30"></a>quarterly_data <span class="op">=</span> []</span>
+<span id="cb1-31"><a href="#cb1-31"></a></span>
+<span id="cb1-32"><a href="#cb1-32"></a><span class="cf">for</span> quarter_idx, quarter <span class="kw">in</span> <span class="bu">enumerate</span>(quarters):</span>
+<span id="cb1-33"><a href="#cb1-33"></a>    <span class="cf">for</span> location <span class="kw">in</span> locations:</span>
+<span id="cb1-34"><a href="#cb1-34"></a>        <span class="cf">for</span> category <span class="kw">in</span> categories:</span>
+<span id="cb1-35"><a href="#cb1-35"></a>            <span class="co"># Base sales with seasonal pattern (Q4 higher, Q1 lower)</span></span>
+<span id="cb1-36"><a href="#cb1-36"></a>            base_sales <span class="op">=</span> np.random.normal(loc<span class="op">=</span><span class="dv">100000</span>, scale<span class="op">=</span><span class="dv">20000</span>)</span>
+<span id="cb1-37"><a href="#cb1-37"></a>            seasonal_factor <span class="op">=</span> <span class="fl">1.0</span></span>
+<span id="cb1-38"><a href="#cb1-38"></a>            <span class="cf">if</span> quarter.quarter <span class="op">==</span> <span class="dv">4</span>:  <span class="co"># Q4 (holiday boost)</span></span>
+<span id="cb1-39"><a href="#cb1-39"></a>                seasonal_factor <span class="op">=</span> <span class="fl">1.3</span></span>
+<span id="cb1-40"><a href="#cb1-40"></a>            <span class="cf">elif</span> quarter.quarter <span class="op">==</span> <span class="dv">1</span>:  <span class="co"># Q1 (post-holiday dip)</span></span>
+<span id="cb1-41"><a href="#cb1-41"></a>                seasonal_factor <span class="op">=</span> <span class="fl">0.8</span></span>
+<span id="cb1-42"><a href="#cb1-42"></a>            </span>
+<span id="cb1-43"><a href="#cb1-43"></a>            <span class="co"># Location effect</span></span>
+<span id="cb1-44"><a href="#cb1-44"></a>            location_factor <span class="op">=</span> {</span>
+<span id="cb1-45"><a href="#cb1-45"></a>                <span class="st">&#39;Tampa&#39;</span>: <span class="fl">1.0</span>,</span>
+<span id="cb1-46"><a href="#cb1-46"></a>                <span class="st">&#39;Miami&#39;</span>: <span class="fl">1.2</span>,</span>
+<span id="cb1-47"><a href="#cb1-47"></a>                <span class="st">&#39;Orlando&#39;</span>: <span class="fl">0.9</span>,</span>
+<span id="cb1-48"><a href="#cb1-48"></a>                <span class="st">&#39;Jacksonville&#39;</span>: <span class="fl">0.8</span></span>
+<span id="cb1-49"><a href="#cb1-49"></a>            }[location]</span>
+<span id="cb1-50"><a href="#cb1-50"></a>            </span>
+<span id="cb1-51"><a href="#cb1-51"></a>            <span class="co"># Category effect</span></span>
+<span id="cb1-52"><a href="#cb1-52"></a>            category_factor <span class="op">=</span> {</span>
+<span id="cb1-53"><a href="#cb1-53"></a>                <span class="st">&#39;Electronics&#39;</span>: <span class="fl">1.5</span>,</span>
+<span id="cb1-54"><a href="#cb1-54"></a>                <span class="st">&#39;Clothing&#39;</span>: <span class="fl">1.0</span>,</span>
+<span id="cb1-55"><a href="#cb1-55"></a>                <span class="st">&#39;Home Goods&#39;</span>: <span class="fl">0.8</span>,</span>
+<span id="cb1-56"><a href="#cb1-56"></a>                <span class="st">&#39;Sporting Goods&#39;</span>: <span class="fl">0.7</span>,</span>
+<span id="cb1-57"><a href="#cb1-57"></a>                <span class="st">&#39;Beauty&#39;</span>: <span class="fl">0.9</span></span>
+<span id="cb1-58"><a href="#cb1-58"></a>            }[category]</span>
+<span id="cb1-59"><a href="#cb1-59"></a>            </span>
+<span id="cb1-60"><a href="#cb1-60"></a>            <span class="co"># Growth trend over time (5% per year, quarterly compounded)</span></span>
+<span id="cb1-61"><a href="#cb1-61"></a>            growth_factor <span class="op">=</span> (<span class="dv">1</span> <span class="op">+</span> <span class="fl">0.05</span><span class="op">/</span><span class="dv">4</span>) <span class="op">**</span> quarter_idx</span>
+<span id="cb1-62"><a href="#cb1-62"></a>            </span>
+<span id="cb1-63"><a href="#cb1-63"></a>            <span class="co"># Calculate sales with some randomness</span></span>
+<span id="cb1-64"><a href="#cb1-64"></a>            sales <span class="op">=</span> base_sales <span class="op">*</span> seasonal_factor <span class="op">*</span> location_factor <span class="op">*</span> category_factor <span class="op">*</span> growth_factor</span>
+<span id="cb1-65"><a href="#cb1-65"></a>            sales <span class="op">=</span> sales <span class="op">*</span> np.random.normal(loc<span class="op">=</span><span class="fl">1.0</span>, scale<span class="op">=</span><span class="fl">0.1</span>)  <span class="co"># Add noise</span></span>
+<span id="cb1-66"><a href="#cb1-66"></a>            </span>
+<span id="cb1-67"><a href="#cb1-67"></a>            <span class="co"># Advertising spend (correlated with sales but with diminishing returns)</span></span>
+<span id="cb1-68"><a href="#cb1-68"></a>            ad_spend <span class="op">=</span> (sales <span class="op">**</span> <span class="fl">0.7</span>) <span class="op">*</span> <span class="fl">0.05</span> <span class="op">*</span> np.random.normal(loc<span class="op">=</span><span class="fl">1.0</span>, scale<span class="op">=</span><span class="fl">0.2</span>)</span>
+<span id="cb1-69"><a href="#cb1-69"></a>            </span>
+<span id="cb1-70"><a href="#cb1-70"></a>            <span class="co"># Record</span></span>
+<span id="cb1-71"><a href="#cb1-71"></a>            quarterly_data.append({</span>
+<span id="cb1-72"><a href="#cb1-72"></a>                <span class="st">&#39;Quarter&#39;</span>: quarter,</span>
+<span id="cb1-73"><a href="#cb1-73"></a>                <span class="st">&#39;QuarterLabel&#39;</span>: quarter_labels[quarter_idx],</span>
+<span id="cb1-74"><a href="#cb1-74"></a>                <span class="st">&#39;Location&#39;</span>: location,</span>
+<span id="cb1-75"><a href="#cb1-75"></a>                <span class="st">&#39;Category&#39;</span>: category,</span>
+<span id="cb1-76"><a href="#cb1-76"></a>                <span class="st">&#39;Sales&#39;</span>: <span class="bu">round</span>(sales, <span class="dv">2</span>),</span>
+<span id="cb1-77"><a href="#cb1-77"></a>                <span class="st">&#39;AdSpend&#39;</span>: <span class="bu">round</span>(ad_spend, <span class="dv">2</span>),</span>
+<span id="cb1-78"><a href="#cb1-78"></a>                <span class="st">&#39;Year&#39;</span>: quarter.year</span>
+<span id="cb1-79"><a href="#cb1-79"></a>            })</span>
+<span id="cb1-80"><a href="#cb1-80"></a></span>
+<span id="cb1-81"><a href="#cb1-81"></a><span class="co"># Create customer data</span></span>
+<span id="cb1-82"><a href="#cb1-82"></a>customer_data <span class="op">=</span> []</span>
+<span id="cb1-83"><a href="#cb1-83"></a>total_customers <span class="op">=</span> <span class="dv">2000</span></span>
+<span id="cb1-84"><a href="#cb1-84"></a></span>
+<span id="cb1-85"><a href="#cb1-85"></a><span class="co"># Age distribution parameters for each location</span></span>
+<span id="cb1-86"><a href="#cb1-86"></a>age_params <span class="op">=</span> {</span>
+<span id="cb1-87"><a href="#cb1-87"></a>    <span class="st">&#39;Tampa&#39;</span>: (<span class="dv">45</span>, <span class="dv">15</span>),      <span class="co"># Older demographic</span></span>
+<span id="cb1-88"><a href="#cb1-88"></a>    <span class="st">&#39;Miami&#39;</span>: (<span class="dv">35</span>, <span class="dv">12</span>),      <span class="co"># Younger demographic</span></span>
+<span id="cb1-89"><a href="#cb1-89"></a>    <span class="st">&#39;Orlando&#39;</span>: (<span class="dv">38</span>, <span class="dv">14</span>),    <span class="co"># Mixed demographic</span></span>
+<span id="cb1-90"><a href="#cb1-90"></a>    <span class="st">&#39;Jacksonville&#39;</span>: (<span class="dv">42</span>, <span class="dv">13</span>)  <span class="co"># Middle-aged demographic</span></span>
+<span id="cb1-91"><a href="#cb1-91"></a>}</span>
+<span id="cb1-92"><a href="#cb1-92"></a></span>
+<span id="cb1-93"><a href="#cb1-93"></a><span class="cf">for</span> location <span class="kw">in</span> locations:</span>
+<span id="cb1-94"><a href="#cb1-94"></a>    <span class="co"># Generate ages based on location demographics</span></span>
+<span id="cb1-95"><a href="#cb1-95"></a>    mean_age, std_age <span class="op">=</span> age_params[location]</span>
+<span id="cb1-96"><a href="#cb1-96"></a>    customer_count <span class="op">=</span> <span class="bu">int</span>(total_customers <span class="op">*</span> {</span>
+<span id="cb1-97"><a href="#cb1-97"></a>        <span class="st">&#39;Tampa&#39;</span>: <span class="fl">0.3</span>,</span>
+<span id="cb1-98"><a href="#cb1-98"></a>        <span class="st">&#39;Miami&#39;</span>: <span class="fl">0.35</span>,</span>
+<span id="cb1-99"><a href="#cb1-99"></a>        <span class="st">&#39;Orlando&#39;</span>: <span class="fl">0.2</span>,</span>
+<span id="cb1-100"><a href="#cb1-100"></a>        <span class="st">&#39;Jacksonville&#39;</span>: <span class="fl">0.15</span></span>
+<span id="cb1-101"><a href="#cb1-101"></a>    }[location])</span>
+<span id="cb1-102"><a href="#cb1-102"></a>    </span>
+<span id="cb1-103"><a href="#cb1-103"></a>    ages <span class="op">=</span> np.random.normal(loc<span class="op">=</span>mean_age, scale<span class="op">=</span>std_age, size<span class="op">=</span>customer_count)</span>
+<span id="cb1-104"><a href="#cb1-104"></a>    ages <span class="op">=</span> np.clip(ages, <span class="dv">18</span>, <span class="dv">80</span>).astype(<span class="bu">int</span>)  <span class="co"># Ensure ages are between 18-80</span></span>
+<span id="cb1-105"><a href="#cb1-105"></a>    </span>
+<span id="cb1-106"><a href="#cb1-106"></a>    <span class="co"># Generate purchase amounts</span></span>
+<span id="cb1-107"><a href="#cb1-107"></a>    <span class="cf">for</span> age <span class="kw">in</span> ages:</span>
+<span id="cb1-108"><a href="#cb1-108"></a>        <span class="co"># Younger and older customers spend differently across categories</span></span>
+<span id="cb1-109"><a href="#cb1-109"></a>        <span class="cf">if</span> age <span class="op">&lt;</span> <span class="dv">30</span>:</span>
+<span id="cb1-110"><a href="#cb1-110"></a>            category_preference <span class="op">=</span> np.random.choice(categories, p<span class="op">=</span>[<span class="fl">0.3</span>, <span class="fl">0.3</span>, <span class="fl">0.1</span>, <span class="fl">0.2</span>, <span class="fl">0.1</span>])</span>
+<span id="cb1-111"><a href="#cb1-111"></a>        <span class="cf">elif</span> age <span class="op">&lt;</span> <span class="dv">50</span>:</span>
+<span id="cb1-112"><a href="#cb1-112"></a>            category_preference <span class="op">=</span> np.random.choice(categories, p<span class="op">=</span>[<span class="fl">0.25</span>, <span class="fl">0.2</span>, <span class="fl">0.25</span>, <span class="fl">0.15</span>, <span class="fl">0.15</span>])</span>
+<span id="cb1-113"><a href="#cb1-113"></a>        <span class="cf">else</span>:</span>
+<span id="cb1-114"><a href="#cb1-114"></a>            category_preference <span class="op">=</span> np.random.choice(categories, p<span class="op">=</span>[<span class="fl">0.15</span>, <span class="fl">0.1</span>, <span class="fl">0.35</span>, <span class="fl">0.1</span>, <span class="fl">0.3</span>])</span>
+<span id="cb1-115"><a href="#cb1-115"></a>        </span>
+<span id="cb1-116"><a href="#cb1-116"></a>        <span class="co"># Purchase amount based on age and category</span></span>
+<span id="cb1-117"><a href="#cb1-117"></a>        base_amount <span class="op">=</span> np.random.gamma(shape<span class="op">=</span><span class="dv">5</span>, scale<span class="op">=</span><span class="dv">20</span>)</span>
+<span id="cb1-118"><a href="#cb1-118"></a>        </span>
+<span id="cb1-119"><a href="#cb1-119"></a>        <span class="co"># Product tier (budget, mid-range, premium)</span></span>
+<span id="cb1-120"><a href="#cb1-120"></a>        price_tier <span class="op">=</span> np.random.choice([<span class="st">&#39;Budget&#39;</span>, <span class="st">&#39;Mid-range&#39;</span>, <span class="st">&#39;Premium&#39;</span>], </span>
+<span id="cb1-121"><a href="#cb1-121"></a>                                     p<span class="op">=</span>[<span class="fl">0.3</span>, <span class="fl">0.5</span>, <span class="fl">0.2</span>])</span>
+<span id="cb1-122"><a href="#cb1-122"></a>        </span>
+<span id="cb1-123"><a href="#cb1-123"></a>        tier_factor <span class="op">=</span> {<span class="st">&#39;Budget&#39;</span>: <span class="fl">0.7</span>, <span class="st">&#39;Mid-range&#39;</span>: <span class="fl">1.0</span>, <span class="st">&#39;Premium&#39;</span>: <span class="fl">1.8</span>}[price_tier]</span>
+<span id="cb1-124"><a href="#cb1-124"></a>        </span>
+<span id="cb1-125"><a href="#cb1-125"></a>        purchase_amount <span class="op">=</span> base_amount <span class="op">*</span> tier_factor</span>
+<span id="cb1-126"><a href="#cb1-126"></a>        </span>
+<span id="cb1-127"><a href="#cb1-127"></a>        customer_data.append({</span>
+<span id="cb1-128"><a href="#cb1-128"></a>            <span class="st">&#39;Location&#39;</span>: location,</span>
+<span id="cb1-129"><a href="#cb1-129"></a>            <span class="st">&#39;Age&#39;</span>: age,</span>
+<span id="cb1-130"><a href="#cb1-130"></a>            <span class="st">&#39;Category&#39;</span>: category_preference,</span>
+<span id="cb1-131"><a href="#cb1-131"></a>            <span class="st">&#39;PurchaseAmount&#39;</span>: <span class="bu">round</span>(purchase_amount, <span class="dv">2</span>),</span>
+<span id="cb1-132"><a href="#cb1-132"></a>            <span class="st">&#39;PriceTier&#39;</span>: price_tier</span>
+<span id="cb1-133"><a href="#cb1-133"></a>        })</span>
+<span id="cb1-134"><a href="#cb1-134"></a></span>
+<span id="cb1-135"><a href="#cb1-135"></a><span class="co"># Create DataFrames</span></span>
+<span id="cb1-136"><a href="#cb1-136"></a>sales_df <span class="op">=</span> pd.DataFrame(quarterly_data)</span>
+<span id="cb1-137"><a href="#cb1-137"></a>customer_df <span class="op">=</span> pd.DataFrame(customer_data)</span>
+<span id="cb1-138"><a href="#cb1-138"></a></span>
+<span id="cb1-139"><a href="#cb1-139"></a><span class="co"># Add some calculated columns</span></span>
+<span id="cb1-140"><a href="#cb1-140"></a>sales_df[<span class="st">&#39;Quarter_Num&#39;</span>] <span class="op">=</span> sales_df[<span class="st">&#39;Quarter&#39;</span>].dt.quarter</span>
+<span id="cb1-141"><a href="#cb1-141"></a>sales_df[<span class="st">&#39;SalesPerDollarSpent&#39;</span>] <span class="op">=</span> sales_df[<span class="st">&#39;Sales&#39;</span>] <span class="op">/</span> sales_df[<span class="st">&#39;AdSpend&#39;</span>]</span>
+<span id="cb1-142"><a href="#cb1-142"></a></span>
+<span id="cb1-143"><a href="#cb1-143"></a><span class="co"># Print data info</span></span>
+<span id="cb1-144"><a href="#cb1-144"></a><span class="bu">print</span>(<span class="st">&quot;</span><span class="ch">\n</span><span class="st">Sales Data Sample:&quot;</span>)</span>
+<span id="cb1-145"><a href="#cb1-145"></a><span class="bu">print</span>(sales_df.head())</span>
+<span id="cb1-146"><a href="#cb1-146"></a><span class="bu">print</span>(<span class="st">&quot;</span><span class="ch">\n</span><span class="st">Customer Data Sample:&quot;</span>)</span>
+<span id="cb1-147"><a href="#cb1-147"></a><span class="bu">print</span>(customer_df.head())</span>
+<span id="cb1-148"><a href="#cb1-148"></a><span class="bu">print</span>(<span class="st">&quot;</span><span class="ch">\n</span><span class="st">DataFrames created successfully. Ready for visualization!&quot;</span>)</span>
+<span id="cb1-149"><a href="#cb1-149"></a><span class="co"># ----- </span><span class="re">END</span><span class="co"> OF DATA CREATION -----</span></span>
+<span id="cb1-150"><a href="#cb1-150"></a></span>
+<span id="cb1-151"><a href="#cb1-151"></a></span>
+<span id="cb1-152"><a href="#cb1-152"></a><span class="co"># </span><span class="al">TODO</span><span class="co"> 1: Time Series Visualization - Sales Trends</span></span>
+<span id="cb1-153"><a href="#cb1-153"></a><span class="co"># 1.1 Create a line chart showing overall quarterly sales trends</span></span>
+<span id="cb1-154"><a href="#cb1-154"></a><span class="kw">def</span> plot_quarterly_sales_trend():</span>
+<span id="cb1-155"><a href="#cb1-155"></a>    <span class="co">&quot;&quot;&quot;</span></span>
+<span id="cb1-156"><a href="#cb1-156"></a><span class="co">    Create a line chart showing total sales for each quarter.</span></span>
+<span id="cb1-157"><a href="#cb1-157"></a><span class="co">    &quot;&quot;&quot;</span></span>
+<span id="cb1-158"><a href="#cb1-158"></a>    <span class="co"># Your code here</span></span>
+<span id="cb1-159"><a href="#cb1-159"></a>    <span class="cf">pass</span></span>
+<span id="cb1-160"><a href="#cb1-160"></a></span>
+<span id="cb1-161"><a href="#cb1-161"></a><span class="co"># 1.2 Create a multi-line chart comparing sales trends across locations</span></span>
+<span id="cb1-162"><a href="#cb1-162"></a><span class="kw">def</span> plot_location_sales_comparison():</span>
+<span id="cb1-163"><a href="#cb1-163"></a>    <span class="co">&quot;&quot;&quot;</span></span>
+<span id="cb1-164"><a href="#cb1-164"></a><span class="co">    Create a multi-line chart comparing quarterly sales across different locations.</span></span>
+<span id="cb1-165"><a href="#cb1-165"></a><span class="co">    &quot;&quot;&quot;</span></span>
+<span id="cb1-166"><a href="#cb1-166"></a>    <span class="co"># Your code here</span></span>
+<span id="cb1-167"><a href="#cb1-167"></a>    <span class="cf">pass</span></span>
+<span id="cb1-168"><a href="#cb1-168"></a></span>
+<span id="cb1-169"><a href="#cb1-169"></a></span>
+<span id="cb1-170"><a href="#cb1-170"></a><span class="co"># </span><span class="al">TODO</span><span class="co"> 2: Categorical Comparison - Product Performance by Location</span></span>
+<span id="cb1-171"><a href="#cb1-171"></a><span class="co"># 2.1 Create a grouped bar chart comparing category performance by location</span></span>
+<span id="cb1-172"><a href="#cb1-172"></a><span class="kw">def</span> plot_category_performance_by_location():</span>
+<span id="cb1-173"><a href="#cb1-173"></a>    <span class="co">&quot;&quot;&quot;</span></span>
+<span id="cb1-174"><a href="#cb1-174"></a><span class="co">    Create a grouped bar chart showing how each product category performs in different locations.</span></span>
+<span id="cb1-175"><a href="#cb1-175"></a><span class="co">    &quot;&quot;&quot;</span></span>
+<span id="cb1-176"><a href="#cb1-176"></a>    <span class="co"># Your code here</span></span>
+<span id="cb1-177"><a href="#cb1-177"></a>    <span class="cf">pass</span></span>
+<span id="cb1-178"><a href="#cb1-178"></a></span>
+<span id="cb1-179"><a href="#cb1-179"></a><span class="co"># 2.2 Create a stacked bar chart showing the composition of sales in each location</span></span>
+<span id="cb1-180"><a href="#cb1-180"></a><span class="kw">def</span> plot_sales_composition_by_location():</span>
+<span id="cb1-181"><a href="#cb1-181"></a>    <span class="co">&quot;&quot;&quot;</span></span>
+<span id="cb1-182"><a href="#cb1-182"></a><span class="co">    Create a stacked bar chart showing the composition of sales across categories for each location.</span></span>
+<span id="cb1-183"><a href="#cb1-183"></a><span class="co">    &quot;&quot;&quot;</span></span>
+<span id="cb1-184"><a href="#cb1-184"></a>    <span class="co"># Your code here</span></span>
+<span id="cb1-185"><a href="#cb1-185"></a>    <span class="cf">pass</span></span>
+<span id="cb1-186"><a href="#cb1-186"></a></span>
+<span id="cb1-187"><a href="#cb1-187"></a></span>
+<span id="cb1-188"><a href="#cb1-188"></a><span class="co"># </span><span class="al">TODO</span><span class="co"> 3: Relationship Analysis - Advertising and Sales</span></span>
+<span id="cb1-189"><a href="#cb1-189"></a><span class="co"># 3.1 Create a scatter plot to examine the relationship between ad spend and sales</span></span>
+<span id="cb1-190"><a href="#cb1-190"></a><span class="kw">def</span> plot_ad_spend_vs_sales():</span>
+<span id="cb1-191"><a href="#cb1-191"></a>    <span class="co">&quot;&quot;&quot;</span></span>
+<span id="cb1-192"><a href="#cb1-192"></a><span class="co">    Create a scatter plot to visualize the relationship between advertising spend and sales.</span></span>
+<span id="cb1-193"><a href="#cb1-193"></a><span class="co">    &quot;&quot;&quot;</span></span>
+<span id="cb1-194"><a href="#cb1-194"></a>    <span class="co"># Your code here</span></span>
+<span id="cb1-195"><a href="#cb1-195"></a>    <span class="cf">pass</span></span>
+<span id="cb1-196"><a href="#cb1-196"></a></span>
+<span id="cb1-197"><a href="#cb1-197"></a><span class="co"># 3.2 Create a line chart showing sales per dollar spent on advertising over time</span></span>
+<span id="cb1-198"><a href="#cb1-198"></a><span class="kw">def</span> plot_ad_efficiency_over_time():</span>
+<span id="cb1-199"><a href="#cb1-199"></a>    <span class="co">&quot;&quot;&quot;</span></span>
+<span id="cb1-200"><a href="#cb1-200"></a><span class="co">    Create a line chart showing how efficient advertising spend has been over time.</span></span>
+<span id="cb1-201"><a href="#cb1-201"></a><span class="co">    &quot;&quot;&quot;</span></span>
+<span id="cb1-202"><a href="#cb1-202"></a>    <span class="co"># Your code here</span></span>
+<span id="cb1-203"><a href="#cb1-203"></a>    <span class="cf">pass</span></span>
+<span id="cb1-204"><a href="#cb1-204"></a></span>
+<span id="cb1-205"><a href="#cb1-205"></a></span>
+<span id="cb1-206"><a href="#cb1-206"></a><span class="co"># </span><span class="al">TODO</span><span class="co"> 4: Distribution Analysis - Customer Demographics</span></span>
+<span id="cb1-207"><a href="#cb1-207"></a><span class="co"># 4.1 Create histograms of customer age distribution</span></span>
+<span id="cb1-208"><a href="#cb1-208"></a><span class="kw">def</span> plot_customer_age_distribution():</span>
+<span id="cb1-209"><a href="#cb1-209"></a>    <span class="co">&quot;&quot;&quot;</span></span>
+<span id="cb1-210"><a href="#cb1-210"></a><span class="co">    Create histograms showing the age distribution of customers, both overall and by location.</span></span>
+<span id="cb1-211"><a href="#cb1-211"></a><span class="co">    &quot;&quot;&quot;</span></span>
+<span id="cb1-212"><a href="#cb1-212"></a>    <span class="co"># Your code here</span></span>
+<span id="cb1-213"><a href="#cb1-213"></a>    <span class="cf">pass</span></span>
+<span id="cb1-214"><a href="#cb1-214"></a></span>
+<span id="cb1-215"><a href="#cb1-215"></a><span class="co"># 4.2 Create box plots comparing purchase amounts by age groups</span></span>
+<span id="cb1-216"><a href="#cb1-216"></a><span class="kw">def</span> plot_purchase_by_age_group():</span>
+<span id="cb1-217"><a href="#cb1-217"></a>    <span class="co">&quot;&quot;&quot;</span></span>
+<span id="cb1-218"><a href="#cb1-218"></a><span class="co">    Create box plots showing purchase amounts across different age groups.</span></span>
+<span id="cb1-219"><a href="#cb1-219"></a><span class="co">    &quot;&quot;&quot;</span></span>
+<span id="cb1-220"><a href="#cb1-220"></a>    <span class="co"># Your code here</span></span>
+<span id="cb1-221"><a href="#cb1-221"></a>    <span class="cf">pass</span></span>
+<span id="cb1-222"><a href="#cb1-222"></a></span>
+<span id="cb1-223"><a href="#cb1-223"></a></span>
+<span id="cb1-224"><a href="#cb1-224"></a><span class="co"># </span><span class="al">TODO</span><span class="co"> 5: Sales Distribution - Pricing Tiers</span></span>
+<span id="cb1-225"><a href="#cb1-225"></a><span class="co"># 5.1 Create a histogram of purchase amounts</span></span>
+<span id="cb1-226"><a href="#cb1-226"></a><span class="kw">def</span> plot_purchase_amount_distribution():</span>
+<span id="cb1-227"><a href="#cb1-227"></a>    <span class="co">&quot;&quot;&quot;</span></span>
+<span id="cb1-228"><a href="#cb1-228"></a><span class="co">    Create a histogram showing the distribution of purchase amounts.</span></span>
+<span id="cb1-229"><a href="#cb1-229"></a><span class="co">    &quot;&quot;&quot;</span></span>
+<span id="cb1-230"><a href="#cb1-230"></a>    <span class="co"># Your code here</span></span>
+<span id="cb1-231"><a href="#cb1-231"></a>    <span class="cf">pass</span></span>
+<span id="cb1-232"><a href="#cb1-232"></a></span>
+<span id="cb1-233"><a href="#cb1-233"></a><span class="co"># 5.2 Create a pie chart showing sales breakdown by price tier</span></span>
+<span id="cb1-234"><a href="#cb1-234"></a><span class="kw">def</span> plot_sales_by_price_tier():</span>
+<span id="cb1-235"><a href="#cb1-235"></a>    <span class="co">&quot;&quot;&quot;</span></span>
+<span id="cb1-236"><a href="#cb1-236"></a><span class="co">    Create a pie chart showing the breakdown of sales by price tier.</span></span>
+<span id="cb1-237"><a href="#cb1-237"></a><span class="co">    &quot;&quot;&quot;</span></span>
+<span id="cb1-238"><a href="#cb1-238"></a>    <span class="co"># Your code here</span></span>
+<span id="cb1-239"><a href="#cb1-239"></a>    <span class="cf">pass</span></span>
+<span id="cb1-240"><a href="#cb1-240"></a></span>
+<span id="cb1-241"><a href="#cb1-241"></a></span>
+<span id="cb1-242"><a href="#cb1-242"></a><span class="co"># </span><span class="al">TODO</span><span class="co"> 6: Market Share Analysis</span></span>
+<span id="cb1-243"><a href="#cb1-243"></a><span class="co"># 6.1 Create a pie chart showing sales breakdown by category</span></span>
+<span id="cb1-244"><a href="#cb1-244"></a><span class="kw">def</span> plot_category_market_share():</span>
+<span id="cb1-245"><a href="#cb1-245"></a>    <span class="co">&quot;&quot;&quot;</span></span>
+<span id="cb1-246"><a href="#cb1-246"></a><span class="co">    Create a pie chart showing the market share of each product category.</span></span>
+<span id="cb1-247"><a href="#cb1-247"></a><span class="co">    &quot;&quot;&quot;</span></span>
+<span id="cb1-248"><a href="#cb1-248"></a>    <span class="co"># Your code here</span></span>
+<span id="cb1-249"><a href="#cb1-249"></a>    <span class="cf">pass</span></span>
+<span id="cb1-250"><a href="#cb1-250"></a></span>
+<span id="cb1-251"><a href="#cb1-251"></a><span class="co"># 6.2 Create a pie chart showing sales breakdown by location</span></span>
+<span id="cb1-252"><a href="#cb1-252"></a><span class="kw">def</span> plot_location_sales_distribution():</span>
+<span id="cb1-253"><a href="#cb1-253"></a>    <span class="co">&quot;&quot;&quot;</span></span>
+<span id="cb1-254"><a href="#cb1-254"></a><span class="co">    Create a pie chart showing the distribution of sales across different store locations.</span></span>
+<span id="cb1-255"><a href="#cb1-255"></a><span class="co">    &quot;&quot;&quot;</span></span>
+<span id="cb1-256"><a href="#cb1-256"></a>    <span class="co"># Your code here</span></span>
+<span id="cb1-257"><a href="#cb1-257"></a>    <span class="cf">pass</span></span>
+<span id="cb1-258"><a href="#cb1-258"></a></span>
+<span id="cb1-259"><a href="#cb1-259"></a></span>
+<span id="cb1-260"><a href="#cb1-260"></a><span class="co"># </span><span class="al">TODO</span><span class="co"> 7: Comprehensive Dashboard</span></span>
+<span id="cb1-261"><a href="#cb1-261"></a><span class="kw">def</span> create_business_dashboard():</span>
+<span id="cb1-262"><a href="#cb1-262"></a>    <span class="co">&quot;&quot;&quot;</span></span>
+<span id="cb1-263"><a href="#cb1-263"></a><span class="co">    Create a comprehensive dashboard with multiple subplots highlighting key business insights.</span></span>
+<span id="cb1-264"><a href="#cb1-264"></a><span class="co">    &quot;&quot;&quot;</span></span>
+<span id="cb1-265"><a href="#cb1-265"></a>    <span class="co"># Your code here</span></span>
+<span id="cb1-266"><a href="#cb1-266"></a>    <span class="cf">pass</span></span>
+<span id="cb1-267"><a href="#cb1-267"></a></span>
+<span id="cb1-268"><a href="#cb1-268"></a></span>
+<span id="cb1-269"><a href="#cb1-269"></a><span class="co"># Main function to execute all visualizations</span></span>
+<span id="cb1-270"><a href="#cb1-270"></a><span class="kw">def</span> main():</span>
+<span id="cb1-271"><a href="#cb1-271"></a>    <span class="bu">print</span>(<span class="st">&quot;</span><span class="ch">\n</span><span class="st">&quot;</span> <span class="op">+</span> <span class="st">&quot;=&quot;</span> <span class="op">*</span> <span class="dv">60</span>)</span>
+<span id="cb1-272"><a href="#cb1-272"></a>    <span class="bu">print</span>(<span class="st">&quot;SUNCOAST RETAIL VISUAL ANALYSIS RESULTS&quot;</span>)</span>
+<span id="cb1-273"><a href="#cb1-273"></a>    <span class="bu">print</span>(<span class="st">&quot;=&quot;</span> <span class="op">*</span> <span class="dv">60</span>)</span>
+<span id="cb1-274"><a href="#cb1-274"></a>    </span>
+<span id="cb1-275"><a href="#cb1-275"></a>    <span class="co"># Uncomment and run each visualization function</span></span>
+<span id="cb1-276"><a href="#cb1-276"></a>    <span class="co"># Time Series Analysis</span></span>
+<span id="cb1-277"><a href="#cb1-277"></a>    plot_quarterly_sales_trend()</span>
+<span id="cb1-278"><a href="#cb1-278"></a>    <span class="co"># plot_location_sales_comparison()</span></span>
+<span id="cb1-279"><a href="#cb1-279"></a>    </span>
+<span id="cb1-280"><a href="#cb1-280"></a>    <span class="co"># Categorical Comparison</span></span>
+<span id="cb1-281"><a href="#cb1-281"></a>    <span class="co"># plot_category_performance_by_location()</span></span>
+<span id="cb1-282"><a href="#cb1-282"></a>    <span class="co"># plot_sales_composition_by_location()</span></span>
+<span id="cb1-283"><a href="#cb1-283"></a>    </span>
+<span id="cb1-284"><a href="#cb1-284"></a>    <span class="co"># Relationship Analysis</span></span>
+<span id="cb1-285"><a href="#cb1-285"></a>    <span class="co"># plot_ad_spend_vs_sales()</span></span>
+<span id="cb1-286"><a href="#cb1-286"></a>    <span class="co"># plot_ad_efficiency_over_time()</span></span>
+<span id="cb1-287"><a href="#cb1-287"></a>    </span>
+<span id="cb1-288"><a href="#cb1-288"></a>    <span class="co"># Distribution Analysis</span></span>
+<span id="cb1-289"><a href="#cb1-289"></a>    <span class="co"># plot_customer_age_distribution()</span></span>
+<span id="cb1-290"><a href="#cb1-290"></a>    <span class="co"># plot_purchase_by_age_group()</span></span>
+<span id="cb1-291"><a href="#cb1-291"></a>    </span>
+<span id="cb1-292"><a href="#cb1-292"></a>    <span class="co"># Sales Distribution</span></span>
+<span id="cb1-293"><a href="#cb1-293"></a>    <span class="co"># plot_purchase_amount_distribution()</span></span>
+<span id="cb1-294"><a href="#cb1-294"></a>    <span class="co"># plot_sales_by_price_tier()</span></span>
+<span id="cb1-295"><a href="#cb1-295"></a>    </span>
+<span id="cb1-296"><a href="#cb1-296"></a>    <span class="co"># Market Share Analysis</span></span>
+<span id="cb1-297"><a href="#cb1-297"></a>    <span class="co"># plot_category_market_share()</span></span>
+<span id="cb1-298"><a href="#cb1-298"></a>    <span class="co"># plot_location_sales_distribution()</span></span>
+<span id="cb1-299"><a href="#cb1-299"></a>    </span>
+<span id="cb1-300"><a href="#cb1-300"></a>    <span class="co"># Comprehensive Dashboard</span></span>
+<span id="cb1-301"><a href="#cb1-301"></a>    <span class="co"># create_business_dashboard()</span></span>
+<span id="cb1-302"><a href="#cb1-302"></a></span>
+<span id="cb1-303"><a href="#cb1-303"></a><span class="co"># Run the main function</span></span>
+<span id="cb1-304"><a href="#cb1-304"></a><span class="cf">if</span> <span class="va">__name__</span> <span class="op">==</span> <span class="st">&quot;__main__&quot;</span>:</span>
+<span id="cb1-305"><a href="#cb1-305"></a>    main()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="detailed-task-requirements" class="level2">
+<h2 class="anchored" data-anchor-id="detailed-task-requirements">Detailed Task Requirements</h2>
+<section id="time-series-visualization-5-points" class="level3">
+<h3 class="anchored" data-anchor-id="time-series-visualization-5-points">1. Time Series Visualization (5 points)</h3>
+<ul>
+<li><strong>1.1 Quarterly Sales Trend (2 points)</strong>: Create a line chart showing total sales across all locations and categories for each quarter. Include appropriate labels, title, and gridlines.</li>
+<li><strong>1.2 Location Sales Comparison (3 points)</strong>: Create a multi-line chart comparing quarterly sales trends across different store locations. Use different colors and markers for each location and include a legend.</li>
+</ul>
+</section>
+<section id="categorical-comparison-5-points" class="level3">
+<h3 class="anchored" data-anchor-id="categorical-comparison-5-points">2. Categorical Comparison (5 points)</h3>
+<ul>
+<li><strong>2.1 Category Performance by Location (3 points)</strong>: Create a grouped bar chart showing how each product category performs across different locations. Focus on the most recent quarter.</li>
+<li><strong>2.2 Sales Composition by Location (2 points)</strong>: Create a stacked bar chart showing the breakdown of sales by product category for each location. Calculate the percentage of total sales each category represents at each location.</li>
+</ul>
+</section>
+<section id="relationship-analysis-5-points" class="level3">
+<h3 class="anchored" data-anchor-id="relationship-analysis-5-points">3. Relationship Analysis (5 points)</h3>
+<ul>
+<li><strong>3.1 Ad Spend vs. Sales Scatter Plot (3 points)</strong>: Create a scatter plot showing the relationship between advertising spend and sales. Include a best-fit line and annotate any notable outliers.</li>
+<li><strong>3.2 Advertising Efficiency Over Time (2 points)</strong>: Create a line chart showing the trend of sales per dollar spent on advertising over time (the SalesPerDollarSpent column). Add appropriate annotations.</li>
+</ul>
+</section>
+<section id="distribution-analysis-5-points" class="level3">
+<h3 class="anchored" data-anchor-id="distribution-analysis-5-points">4. Distribution Analysis (5 points)</h3>
+<ul>
+<li><strong>4.1 Customer Age Distribution (3 points)</strong>: Create histograms showing the age distribution of customers, both overall and by location (using subplots). Add vertical lines for the mean and median ages.</li>
+<li><strong>4.2 Purchase by Age Group (2 points)</strong>: Create box plots comparing purchase amounts across different age groups (e.g., 18-30, 31-45, 46-60, 61+).</li>
+</ul>
+</section>
+<section id="sales-distribution-3-points" class="level3">
+<h3 class="anchored" data-anchor-id="sales-distribution-3-points">5. Sales Distribution (3 points)</h3>
+<ul>
+<li><strong>5.1 Purchase Amount Distribution (1 point)</strong>: Create a histogram showing the distribution of purchase amounts with appropriate bins.</li>
+<li><strong>5.2 Sales by Price Tier (2 points)</strong>: Create a pie chart showing the breakdown of sales by price tier (Budget, Mid-range, Premium). Include percentages and pull out the largest slice.</li>
+</ul>
+</section>
+<section id="market-share-analysis-3-points" class="level3">
+<h3 class="anchored" data-anchor-id="market-share-analysis-3-points">6. Market Share Analysis (3 points)</h3>
+<ul>
+<li><strong>6.1 Category Market Share (1.5 points)</strong>: Create a pie chart showing the market share of each product category. Include percentages and explode the largest segment.</li>
+<li><strong>6.2 Location Sales Distribution (1.5 points)</strong>: Create a pie chart showing the distribution of sales across different store locations.</li>
+</ul>
+</section>
+<section id="business-dashboard-4-points" class="level3">
+<h3 class="anchored" data-anchor-id="business-dashboard-4-points">7. Business Dashboard (4 points)</h3>
+<ul>
+<li>Create a comprehensive dashboard with at least 4 subplots arranged in a grid, featuring the most insightful visualizations that tell a coherent story about the business. Include a title and ensure each subplot is properly labeled and readable.</li>
+</ul>
+</section>
 </section>
 <section id="submission-guidelines" class="level2">
 <h2 class="anchored" data-anchor-id="submission-guidelines">Submission Guidelines</h2>
 <ul>
-<li>Save your completed assignment as a Python file named <code>module03-assignment.py</code>.</li>
+<li>Save your completed assignment as a Python file named <code>module11-assignment.py</code>.</li>
 <li>Submit your file via Canvas before the deadline.</li>
 <li>Ensure your code runs without errors and meets all the assignment requirements.</li>
+<li>Include comments explaining your visualization choices and any insights derived.</li>
+<li>Add concise business recommendations based on your visual findings.</li>
 </ul>
 <div class="callout callout-style-simple callout-tip">
 <div class="callout-body d-flex">
@@ -3239,7 +3548,18 @@ vertical-align: -.125em;
 </div>
 <div class="callout-body-container">
 <p><strong>Tip:</strong><br>
-Test your program with various inputs, including edge cases (like entering “ten” instead of “10” for quantity). Your program should handle these gracefully.</p>
+Focus on making your visualizations clear and informative rather than overly complex. Use appropriate customizations (colors, labels, legends) to make your charts easy to understand. Consider what message each visualization is trying to convey and tailor your design choices accordingly.</p>
+</div>
+</div>
+</div>
+<div class="callout callout-style-simple callout-warning">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-body-container">
+<p><strong>Important:</strong><br>
+For each visualization, make sure you’re selecting an appropriate chart type that matches the question being asked. For example, use line charts for time series data, bar charts for comparing categories, scatter plots for examining relationships, histograms for distributions, and pie charts for compositions (but only with a small number of categories).</p>
 </div>
 </div>
 </div>
@@ -3247,10 +3567,10 @@ Test your program with various inputs, including edge cases (like entering “te
 </section>
 <section id="marking-rubric" class="level1">
 <h1>Marking Rubric</h1>
-<p>The following rubric will be used to evaluate your assignment. The total possible points for this assignment is <strong>25</strong>.</p>
+<p>The following rubric will be used to evaluate your assignment. The total possible points for this assignment is <strong>30</strong>.</p>
 <table class="caption-top table">
 <colgroup>
-<col style="width: 29%">
+<col style="width: 28%">
 <col style="width: 5%">
 <col style="width: 65%">
 </colgroup>
@@ -3263,38 +3583,43 @@ Test your program with various inputs, including edge cases (like entering “te
 </thead>
 <tbody>
 <tr class="odd">
-<td><strong>Input Collection</strong></td>
+<td><strong>Time Series Visualization</strong></td>
 <td>5</td>
-<td>Correctly collects all required information using the <code>input()</code> function with clear prompts.</td>
+<td>Effectively creates line charts that clearly show sales trends over time.</td>
 </tr>
 <tr class="even">
-<td><strong>String Processing</strong></td>
+<td><strong>Categorical Comparison</strong></td>
 <td>5</td>
-<td>Properly cleans and standardizes text input using string methods.</td>
+<td>Successfully implements bar charts comparing product performance across locations.</td>
 </tr>
 <tr class="odd">
-<td><strong>Type Conversion &amp; Calculations</strong></td>
+<td><strong>Relationship Analysis</strong></td>
 <td>5</td>
-<td>Accurately converts strings to numeric types and performs all required calculations.</td>
+<td>Creates informative scatter and line plots showing relationships between variables.</td>
 </tr>
 <tr class="even">
-<td><strong>Error Handling</strong></td>
+<td><strong>Distribution Analysis</strong></td>
+<td>5</td>
+<td>Generates clear histograms and box plots showing customer demographic distributions.</td>
+</tr>
+<tr class="odd">
+<td><strong>Sales Distribution</strong></td>
 <td>3</td>
-<td>Implements appropriate error handling for invalid input.</td>
-</tr>
-<tr class="odd">
-<td><strong>Output Formatting</strong></td>
-<td>5</td>
-<td>Creates professional, well-aligned output with proper currency formatting using f-strings.</td>
+<td>Effectively visualizes purchase amount distribution and price tier breakdown.</td>
 </tr>
 <tr class="even">
-<td><strong>Code Structure &amp; Comments</strong></td>
-<td>2</td>
-<td>Organizes code logically with descriptive comments explaining the process.</td>
+<td><strong>Market Share Analysis</strong></td>
+<td>3</td>
+<td>Successfully creates pie charts showing market share by category and location.</td>
 </tr>
 <tr class="odd">
+<td><strong>Business Dashboard</strong></td>
+<td>4</td>
+<td>Creates a well-organized dashboard with multiple visualizations that tell a coherent story.</td>
+</tr>
+<tr class="even">
 <td><strong>Total</strong></td>
-<td><strong>25</strong></td>
+<td><strong>30</strong></td>
 <td></td>
 </tr>
 </tbody>

@@ -8,7 +8,7 @@
 
 <meta name="author" content="Dr. Smith">
 
-<title>Integrative Assignment: Module 3 – String Manipulation, User Input, and Formatted Output</title>
+<title>Module 8: Problem Set</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -3087,19 +3087,8 @@ vertical-align: -.125em;
   <nav id="TOC" role="doc-toc" class="toc-active">
     <h2 id="toc-title">Table of contents</h2>
    
-  <ul class="collapse">
-  <li><a href="#integrative-assignment-module-3-string-manipulation-user-input-and-formatted-output" id="toc-integrative-assignment-module-3-string-manipulation-user-input-and-formatted-output" class="nav-link active" data-scroll-target="#integrative-assignment-module-3-string-manipulation-user-input-and-formatted-output">Integrative Assignment: Module 3 – String Manipulation, User Input, and Formatted Output</a>
-  <ul class="collapse">
-  <li><a href="#overview" id="toc-overview" class="nav-link" data-scroll-target="#overview">Overview</a></li>
-  <li><a href="#objectives" id="toc-objectives" class="nav-link" data-scroll-target="#objectives">Objectives</a></li>
-  <li><a href="#assignment-description" id="toc-assignment-description" class="nav-link" data-scroll-target="#assignment-description">Assignment Description</a></li>
-  <li><a href="#starter-code" id="toc-starter-code" class="nav-link" data-scroll-target="#starter-code">Starter Code</a></li>
-  <li><a href="#submission-guidelines" id="toc-submission-guidelines" class="nav-link" data-scroll-target="#submission-guidelines">Submission Guidelines</a></li>
-  </ul></li>
-  <li><a href="#marking-rubric" id="toc-marking-rubric" class="nav-link" data-scroll-target="#marking-rubric">Marking Rubric</a>
-  <ul class="collapse">
-  <li><a href="#academic-integrity-reminder" id="toc-academic-integrity-reminder" class="nav-link" data-scroll-target="#academic-integrity-reminder">Academic Integrity Reminder</a></li>
-  </ul></li>
+  <ul>
+  <li><a href="#appendix-solutions-and-explanations" id="toc-appendix-solutions-and-explanations" class="nav-link active" data-scroll-target="#appendix-solutions-and-explanations">Appendix: Solutions and Explanations</a></li>
   </ul>
 </nav>
 </div>
@@ -3109,27 +3098,20 @@ vertical-align: -.125em;
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Integrative Assignment: Module 3 – String Manipulation, User Input, and Formatted Output</h1>
+<h1 class="title">Module 8: Problem Set</h1>
 </div>
 
 
-<div class="quarto-title-meta-author">
-  <div class="quarto-title-meta-heading">Author</div>
-  <div class="quarto-title-meta-heading">Affiliation</div>
-  
-    <div class="quarto-title-meta-contents">
-    <p class="author">Dr. Smith </p>
-  </div>
-  <div class="quarto-title-meta-contents">
-        <p class="affiliation">
-            University of South Florida
-          </p>
-      </div>
-  </div>
 
 <div class="quarto-title-meta">
 
-      
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Dr. Smith </p>
+          </div>
+  </div>
+    
   
     
   </div>
@@ -3139,173 +3121,309 @@ vertical-align: -.125em;
 </header>
 
 
-<section id="integrative-assignment-module-3-string-manipulation-user-input-and-formatted-output" class="level1">
-<h1>Integrative Assignment: Module 3 – String Manipulation, User Input, and Formatted Output</h1>
-<section id="overview" class="level2">
-<h2 class="anchored" data-anchor-id="overview">Overview</h2>
-<p>In this assignment, you will demonstrate your understanding of Module 3 concepts by creating an interactive customer order processing program. This program will utilize string manipulation, user input, and formatted output to create a professional-looking order summary. This assignment will reinforce your ability to handle text data effectively, interact with users, and present information clearly – key skills for developing business applications.</p>
-</section>
-<section id="objectives" class="level2">
-<h2 class="anchored" data-anchor-id="objectives">Objectives</h2>
-<p>By completing this assignment, you will:</p>
-<ul>
-<li><strong>Get and Process User Input:</strong> Use the <code>input()</code> function to collect information from users and process it appropriately.</li>
-<li><strong>Apply String Methods:</strong> Use string methods like <code>.strip()</code>, <code>.title()</code>, and other text manipulation techniques.</li>
-<li><strong>Perform Type Conversion:</strong> Convert string input to appropriate numeric types for calculations.</li>
-<li><strong>Implement Error Handling:</strong> Use basic error handling techniques to deal with invalid input.</li>
-<li><strong>Format Output with F-strings:</strong> Create professional-looking output with proper formatting and alignment.</li>
-<li><strong>Create a Complete Application:</strong> Build a program that follows the input-process-output pattern.</li>
-</ul>
-</section>
-<section id="assignment-description" class="level2">
-<h2 class="anchored" data-anchor-id="assignment-description">Assignment Description</h2>
-<p>Imagine you work for an e-commerce company that needs a simple order processing system. Your task is to develop a Python program that:</p>
-<ol type="1">
-<li><strong>Collects Customer Information:</strong>
-<ul>
-<li>Asks for the customer’s name</li>
-<li>Asks for the customer’s email address</li>
-</ul></li>
-<li><strong>Collects Order Information:</strong>
-<ul>
-<li>Asks for a product name</li>
-<li>Asks for the quantity ordered</li>
-<li>Asks for the unit price</li>
-</ul></li>
-<li><strong>Processes the Information:</strong>
-<ul>
-<li>Cleans up the input (removing extra spaces, standardizing capitalization)</li>
-<li>Calculates the subtotal (quantity × unit price)</li>
-<li>Calculates sales tax (8.5% of subtotal)</li>
-<li>Calculates the order total (subtotal + tax)</li>
-<li>Applies a 10% discount if quantity is 10 or more</li>
-</ul></li>
-<li><strong>Displays an Order Summary:</strong>
-<ul>
-<li>Shows all customer and order information in a well-formatted layout</li>
-<li>Displays all calculated values formatted as currency with two decimal places</li>
-<li>Shows the discount amount (if applicable)</li>
-</ul></li>
-<li><strong>Validates Input:</strong>
-<ul>
-<li>Ensures the quantity is a positive integer</li>
-<li>Ensures the price is a positive number</li>
-<li>Handles any potential errors in the conversion process</li>
-</ul></li>
-</ol>
-</section>
-<section id="starter-code" class="level2">
-<h2 class="anchored" data-anchor-id="starter-code">Starter Code</h2>
-<p>Below is a starter code template to help you begin:</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1"></a><span class="co"># Module 3 Assignment: String Manipulation, User Input, and Formatted Output</span></span>
-<span id="cb1-2"><a href="#cb1-2"></a></span>
-<span id="cb1-3"><a href="#cb1-3"></a><span class="co"># Welcome message</span></span>
-<span id="cb1-4"><a href="#cb1-4"></a><span class="bu">print</span>(<span class="st">&quot;=&quot;</span> <span class="op">*</span> <span class="dv">50</span>)</span>
-<span id="cb1-5"><a href="#cb1-5"></a><span class="bu">print</span>(<span class="st">&quot;CUSTOMER ORDER PROCESSING SYSTEM&quot;</span>)</span>
-<span id="cb1-6"><a href="#cb1-6"></a><span class="bu">print</span>(<span class="st">&quot;=&quot;</span> <span class="op">*</span> <span class="dv">50</span>)</span>
-<span id="cb1-7"><a href="#cb1-7"></a><span class="bu">print</span>(<span class="st">&quot;Please enter the following information:</span><span class="ch">\n</span><span class="st">&quot;</span>)</span>
-<span id="cb1-8"><a href="#cb1-8"></a></span>
-<span id="cb1-9"><a href="#cb1-9"></a><span class="co"># </span><span class="al">TODO</span><span class="co">: Collect customer information</span></span>
-<span id="cb1-10"><a href="#cb1-10"></a><span class="co"># 1. Ask for customer name</span></span>
-<span id="cb1-11"><a href="#cb1-11"></a><span class="co"># 2. Ask for customer email</span></span>
-<span id="cb1-12"><a href="#cb1-12"></a></span>
-<span id="cb1-13"><a href="#cb1-13"></a><span class="co"># </span><span class="al">TODO</span><span class="co">: Collect order information</span></span>
-<span id="cb1-14"><a href="#cb1-14"></a><span class="co"># 1. Ask for product name</span></span>
-<span id="cb1-15"><a href="#cb1-15"></a><span class="co"># 2. Ask for quantity</span></span>
-<span id="cb1-16"><a href="#cb1-16"></a><span class="co"># 3. Ask for unit price</span></span>
-<span id="cb1-17"><a href="#cb1-17"></a></span>
-<span id="cb1-18"><a href="#cb1-18"></a><span class="co"># </span><span class="al">TODO</span><span class="co">: Process the information</span></span>
-<span id="cb1-19"><a href="#cb1-19"></a><span class="co"># 1. Clean up input (remove extra spaces, standardize capitalization)</span></span>
-<span id="cb1-20"><a href="#cb1-20"></a><span class="co"># 2. Convert quantity and price to appropriate numeric types</span></span>
-<span id="cb1-21"><a href="#cb1-21"></a><span class="co"># 3. Calculate subtotal, tax, and total</span></span>
-<span id="cb1-22"><a href="#cb1-22"></a><span class="co"># 4. Apply discount if applicable</span></span>
-<span id="cb1-23"><a href="#cb1-23"></a></span>
-<span id="cb1-24"><a href="#cb1-24"></a><span class="co"># </span><span class="al">TODO</span><span class="co">: Display order summary</span></span>
-<span id="cb1-25"><a href="#cb1-25"></a><span class="co"># Use f-strings to create a well-formatted output</span></span>
-<span id="cb1-26"><a href="#cb1-26"></a></span>
-<span id="cb1-27"><a href="#cb1-27"></a><span class="co"># Implement error handling where appropriate</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</section>
-<section id="submission-guidelines" class="level2">
-<h2 class="anchored" data-anchor-id="submission-guidelines">Submission Guidelines</h2>
-<ul>
-<li>Save your completed assignment as a Python file named <code>module03-assignment.py</code>.</li>
-<li>Submit your file via Canvas before the deadline.</li>
-<li>Ensure your code runs without errors and meets all the assignment requirements.</li>
-</ul>
-<div class="callout callout-style-simple callout-tip">
-<div class="callout-body d-flex">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-body-container">
-<p><strong>Tip:</strong><br>
-Test your program with various inputs, including edge cases (like entering “ten” instead of “10” for quantity). Your program should handle these gracefully.</p>
-</div>
-</div>
-</div>
-</section>
-</section>
-<section id="marking-rubric" class="level1">
-<h1>Marking Rubric</h1>
-<p>The following rubric will be used to evaluate your assignment. The total possible points for this assignment is <strong>25</strong>.</p>
-<table class="caption-top table">
-<colgroup>
-<col style="width: 29%">
-<col style="width: 5%">
-<col style="width: 65%">
-</colgroup>
-<thead>
-<tr class="header">
-<th>Criterion</th>
-<th>Points</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><strong>Input Collection</strong></td>
-<td>5</td>
-<td>Correctly collects all required information using the <code>input()</code> function with clear prompts.</td>
-</tr>
-<tr class="even">
-<td><strong>String Processing</strong></td>
-<td>5</td>
-<td>Properly cleans and standardizes text input using string methods.</td>
-</tr>
-<tr class="odd">
-<td><strong>Type Conversion &amp; Calculations</strong></td>
-<td>5</td>
-<td>Accurately converts strings to numeric types and performs all required calculations.</td>
-</tr>
-<tr class="even">
-<td><strong>Error Handling</strong></td>
-<td>3</td>
-<td>Implements appropriate error handling for invalid input.</td>
-</tr>
-<tr class="odd">
-<td><strong>Output Formatting</strong></td>
-<td>5</td>
-<td>Creates professional, well-aligned output with proper currency formatting using f-strings.</td>
-</tr>
-<tr class="even">
-<td><strong>Code Structure &amp; Comments</strong></td>
-<td>2</td>
-<td>Organizes code logically with descriptive comments explaining the process.</td>
-</tr>
-<tr class="odd">
-<td><strong>Total</strong></td>
-<td><strong>25</strong></td>
-<td></td>
-</tr>
-</tbody>
-</table>
-<section id="academic-integrity-reminder" class="level2">
-<h2 class="anchored" data-anchor-id="academic-integrity-reminder">Academic Integrity Reminder</h2>
-<p>All work must be your own. Unauthorized collaboration or plagiarism is strictly prohibited and will be considered an academic violation. Please adhere to the course policies regarding academic integrity.</p>
 <hr>
-<p>Sincerely,<br>
-Dr. Smith</p>
-</section>
+<p><strong>Instructions:</strong> Write Python code to solve each problem by defining and using functions as described. Pay attention to parameters, arguments, return values, and scope. Integrate concepts from previous modules (lists, dictionaries, conditionals, loops) where appropriate.</p>
+<hr>
+<p><strong>Problem 1: Simple Welcome Function</strong></p>
+<p>Define a function called <code>print_welcome_message</code> that takes no arguments and simply prints the message “Welcome to the Business Analytics Dashboard!”. After defining it, call the function to execute it.</p>
+<p><strong>Problem 2: Displaying Product Information</strong></p>
+<p>Define a function called <code>display_product_info</code> that takes two arguments: <code>product_name</code> (a string) and <code>product_price</code> (a float). Inside the function, print the information in a formatted string, like “Product: [Name], Price: $[Price]”. Call this function with sample data, like “Wireless Mouse” and <code>24.99</code>.</p>
+<p><strong>Problem 3: Calculating Area (Return Value)</strong></p>
+<p>Define a function called <code>calculate_rectangle_area</code> that takes two parameters: <code>length</code> and <code>width</code>. Inside the function, calculate the area (<code>length * width</code>). Use the <code>return</code> keyword to send this calculated area back. Call the function with <code>length=15.5</code> and <code>width=10</code>. Store the returned value in a variable called <code>rect_area</code> and print the value of <code>rect_area</code>.</p>
+<p><strong>Problem 4: <code>print</code> vs. <code>return</code></strong></p>
+<p>Create two functions: a) <code>print_division(numerator, denominator)</code>: Calculates <code>numerator / denominator</code> (assume denominator is not zero) and <em>prints</em> the result inside the function (e.g., “Result of division: [value]”). This function should not have an explicit <code>return</code> statement. b) <code>return_division(numerator, denominator)</code>: Calculates <code>numerator / denominator</code> and <em>returns</em> the result. Now, call both functions with <code>numerator=100</code> and <code>denominator=4</code>. Capture the result of each function call into separate variables (<code>result_from_print</code>, <code>result_from_return</code>). Print the values of these two variables <em>after</em> calling the functions. What difference do you observe?</p>
+<p><strong>Problem 5: Tax Calculation with Default Rate</strong></p>
+<p>Define a function <code>calculate_sales_tax(amount, tax_rate=0.07)</code> that calculates and returns the sales tax amount (<code>amount * tax_rate</code>). Notice the default value for <code>tax_rate</code>. a) Call the function providing only the <code>amount</code>, e.g., <code>calculate_sales_tax(500.00)</code>, and print the returned tax amount. b) Call the function providing <em>both</em> the <code>amount</code> and a different <code>tax_rate</code>, e.g., <code>calculate_sales_tax(500.00, 0.09)</code>, and print the returned tax amount.</p>
+<p><strong>Problem 6: Using Keyword Arguments</strong></p>
+<p>Using the <code>calculate_sales_tax</code> function defined in Problem 5: a) Call the function for an <code>amount</code> of <code>1200.00</code> but specify a <code>tax_rate</code> of <code>0.06</code> using keyword arguments (e.g., <code>parameter_name=value</code>). Store and print the result. b) Call the function again using keyword arguments, but provide the <code>tax_rate</code> argument <em>before</em> the <code>amount</code> argument. Store and print the result.</p>
+<p><strong>Problem 7: Analyze Sales Data (Return Multiple Values)</strong></p>
+<p>Define a function <code>analyze_sales(sales_figures_list)</code> that takes a list of sales figures. Inside the function, calculate: a) The total sales (sum of the list). b) The number of sales transactions (length of the list). c) The average sales value (total / number of sales - handle the case of an empty list to avoid division by zero, perhaps returning 0.0 for the average in that case). The function should <em>return</em> all three calculated values (total, count, average). Call the function with a sample list like <code>[150.00, 210.50, 180.00, 305.75]</code>. Capture the returned tuple, then unpack the tuple into three separate variables (<code>total</code>, <code>count</code>, <code>average</code>), and print each of these variables.</p>
+<p><strong>Problem 8: Variable Scope Illustration</strong></p>
+<ol type="a">
+<li>Define a global variable <code>discount_percentage = 0.10</code>.</li>
+<li>Define a function <code>calculate_discount(price)</code> that reads the <em>global</em> <code>discount_percentage</code>, calculates the discount amount (<code>price * discount_percentage</code>), and returns the discount amount.</li>
+<li>Define another function <code>apply_local_discount(price)</code> that creates a <em>local</em> variable also named <code>discount_percentage</code> inside it and sets it to <code>0.15</code>. This function should calculate the discount using its <em>local</em> rate and return the discounted price (<code>price - (price * local_discount_percentage)</code>).</li>
+<li>Call <code>calculate_discount(100)</code> and print the result.</li>
+<li>Call <code>apply_local_discount(100)</code> and print the result.</li>
+<li>After calling both functions, print the value of the <em>global</em> <code>discount_percentage</code> variable again to show it wasn’t affected by the local variable in <code>apply_local_discount</code>.</li>
+</ol>
+<p><strong>Problem 9: Simple Lambda Function</strong></p>
+<p>Create a lambda function assigned to the variable <code>get_double</code>. This lambda function should take one argument <code>x</code> and return <code>x * 2</code>. Call this lambda function with the value <code>25</code> and print the returned result.</p>
+<p><strong>Problem 10: Function with Loop and Conditional</strong></p>
+<p>Define a function <code>find_products_above_price(product_prices_dict, threshold)</code> that takes two arguments: * <code>product_prices_dict</code>: A dictionary where keys are product names (strings) and values are prices (floats), e.g., <code>{&quot;Laptop&quot;: 1200.00, &quot;Mouse&quot;: 25.00, &quot;Keyboard&quot;: 75.00}</code>. * <code>threshold</code>: A float representing the price threshold. Inside the function: a) Create an empty list called <code>expensive_products</code>. b) Use a <code>for</code> loop to iterate through the <code>.items()</code> of the input dictionary. c) Inside the loop, use an <code>if</code> statement to check if the product’s price (the value) is greater than the <code>threshold</code>. d) If it is greater, append the product’s <em>name</em> (the key) to the <code>expensive_products</code> list. e) After the loop, <code>return</code> the <code>expensive_products</code> list. Call this function with a sample dictionary and a threshold (e.g., <code>100.00</code>). Print the list of expensive product names returned by the function.</p>
+<hr>
+<section id="appendix-solutions-and-explanations" class="level2">
+<h2 class="anchored" data-anchor-id="appendix-solutions-and-explanations">Appendix: Solutions and Explanations</h2>
+<hr>
+<p><strong>Solution 1: Simple Welcome Function</strong></p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1"></a><span class="co"># Define the function</span></span>
+<span id="cb1-2"><a href="#cb1-2"></a><span class="kw">def</span> print_welcome_message():</span>
+<span id="cb1-3"><a href="#cb1-3"></a>    <span class="co">&quot;&quot;&quot;Prints a standard welcome message.&quot;&quot;&quot;</span></span>
+<span id="cb1-4"><a href="#cb1-4"></a>    <span class="bu">print</span>(<span class="st">&quot;Welcome to the Business Analytics Dashboard!&quot;</span>)</span>
+<span id="cb1-5"><a href="#cb1-5"></a></span>
+<span id="cb1-6"><a href="#cb1-6"></a><span class="co"># Call the function</span></span>
+<span id="cb1-7"><a href="#cb1-7"></a><span class="bu">print</span>(<span class="st">&quot;Calling the welcome function:&quot;</span>)</span>
+<span id="cb1-8"><a href="#cb1-8"></a>print_welcome_message()</span>
+<span id="cb1-9"><a href="#cb1-9"></a></span>
+<span id="cb1-10"><a href="#cb1-10"></a><span class="co"># Expected Output:</span></span>
+<span id="cb1-11"><a href="#cb1-11"></a><span class="co"># Calling the welcome function:</span></span>
+<span id="cb1-12"><a href="#cb1-12"></a><span class="co"># Welcome to the Business Analytics Dashboard!</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><strong>Explanation:</strong> * The <code>def print_welcome_message():</code> line defines a function named <code>print_welcome_message</code>. The empty parentheses <code>()</code> indicate it takes no parameters. * The indented line <code>print(...)</code> is the function’s body. * The line <code>print_welcome_message()</code> is the function call, which executes the code inside the function’s body.</p>
+<hr>
+<p><strong>Solution 2: Displaying Product Information</strong></p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1"></a><span class="co"># Define the function with parameters</span></span>
+<span id="cb2-2"><a href="#cb2-2"></a><span class="kw">def</span> display_product_info(product_name, product_price):</span>
+<span id="cb2-3"><a href="#cb2-3"></a>    <span class="co">&quot;&quot;&quot;Prints formatted product name and price.&quot;&quot;&quot;</span></span>
+<span id="cb2-4"><a href="#cb2-4"></a>    <span class="bu">print</span>(<span class="ss">f&quot;Product: </span><span class="sc">{</span>product_name<span class="sc">}</span><span class="ss">, Price: $</span><span class="sc">{</span>product_price<span class="sc">:.2f}</span><span class="ss">&quot;</span>)</span>
+<span id="cb2-5"><a href="#cb2-5"></a></span>
+<span id="cb2-6"><a href="#cb2-6"></a><span class="co"># Call the function with arguments</span></span>
+<span id="cb2-7"><a href="#cb2-7"></a><span class="bu">print</span>(<span class="st">&quot;Displaying product info:&quot;</span>)</span>
+<span id="cb2-8"><a href="#cb2-8"></a>display_product_info(<span class="st">&quot;Wireless Mouse&quot;</span>, <span class="fl">24.99</span>)</span>
+<span id="cb2-9"><a href="#cb2-9"></a>display_product_info(<span class="st">&quot;USB Cable&quot;</span>, <span class="fl">9.50</span>)</span>
+<span id="cb2-10"><a href="#cb2-10"></a></span>
+<span id="cb2-11"><a href="#cb2-11"></a><span class="co"># Expected Output:</span></span>
+<span id="cb2-12"><a href="#cb2-12"></a><span class="co"># Displaying product info:</span></span>
+<span id="cb2-13"><a href="#cb2-13"></a><span class="co"># Product: Wireless Mouse, Price: $24.99</span></span>
+<span id="cb2-14"><a href="#cb2-14"></a><span class="co"># Product: USB Cable, Price: $9.50</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><strong>Explanation:</strong> * <code>product_name</code> and <code>product_price</code> are <strong>parameters</strong> defined in the function signature. They act as placeholders. * When calling the function, <code>&quot;Wireless Mouse&quot;</code> and <code>24.99</code> are <strong>arguments</strong>. These values are assigned to the corresponding parameters (<code>product_name</code> and <code>product_price</code>) inside the function for that specific call. * The function uses an f-string to print the formatted output, using the values passed in via the parameters.</p>
+<hr>
+<p><strong>Solution 3: Calculating Area (Return Value)</strong></p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1"></a><span class="co"># Define the function with parameters and return statement</span></span>
+<span id="cb3-2"><a href="#cb3-2"></a><span class="kw">def</span> calculate_rectangle_area(length, width):</span>
+<span id="cb3-3"><a href="#cb3-3"></a>    <span class="co">&quot;&quot;&quot;Calculates and returns the area of a rectangle.&quot;&quot;&quot;</span></span>
+<span id="cb3-4"><a href="#cb3-4"></a>    area <span class="op">=</span> length <span class="op">*</span> width</span>
+<span id="cb3-5"><a href="#cb3-5"></a>    <span class="cf">return</span> area <span class="co"># Sends the calculated value back</span></span>
+<span id="cb3-6"><a href="#cb3-6"></a></span>
+<span id="cb3-7"><a href="#cb3-7"></a><span class="co"># Call the function and store the returned value</span></span>
+<span id="cb3-8"><a href="#cb3-8"></a>rect_area <span class="op">=</span> calculate_rectangle_area(<span class="fl">15.5</span>, <span class="dv">10</span>)</span>
+<span id="cb3-9"><a href="#cb3-9"></a></span>
+<span id="cb3-10"><a href="#cb3-10"></a><span class="co"># Print the stored result</span></span>
+<span id="cb3-11"><a href="#cb3-11"></a><span class="bu">print</span>(<span class="ss">f&quot;The calculated area is: </span><span class="sc">{</span>rect_area<span class="sc">}</span><span class="ss">&quot;</span>)</span>
+<span id="cb3-12"><a href="#cb3-12"></a></span>
+<span id="cb3-13"><a href="#cb3-13"></a><span class="co"># Expected Output:</span></span>
+<span id="cb3-14"><a href="#cb3-14"></a><span class="co"># The calculated area is: 155.0</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><strong>Explanation:</strong> * The function takes <code>length</code> and <code>width</code> as parameters. * It calculates the <code>area</code> locally. * The <code>return area</code> statement does two things: it exits the function and sends the <em>value</em> stored in the <code>area</code> variable back to where the function was called. * The line <code>rect_area = calculate_rectangle_area(15.5, 10)</code> calls the function, and the returned value (<code>155.0</code>) is assigned to the <code>rect_area</code> variable.</p>
+<hr>
+<p><strong>Solution 4: <code>print</code> vs. <code>return</code></strong></p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1"></a><span class="co"># a) Function using print</span></span>
+<span id="cb4-2"><a href="#cb4-2"></a><span class="kw">def</span> print_division(numerator, denominator):</span>
+<span id="cb4-3"><a href="#cb4-3"></a>    <span class="co">&quot;&quot;&quot;Calculates and prints the division result.&quot;&quot;&quot;</span></span>
+<span id="cb4-4"><a href="#cb4-4"></a>    <span class="cf">if</span> denominator <span class="op">!=</span> <span class="dv">0</span>: <span class="co"># Basic check to avoid error</span></span>
+<span id="cb4-5"><a href="#cb4-5"></a>        result <span class="op">=</span> numerator <span class="op">/</span> denominator</span>
+<span id="cb4-6"><a href="#cb4-6"></a>        <span class="bu">print</span>(<span class="ss">f&quot;Result of division: </span><span class="sc">{</span>result<span class="sc">}</span><span class="ss">&quot;</span>)</span>
+<span id="cb4-7"><a href="#cb4-7"></a>    <span class="cf">else</span>:</span>
+<span id="cb4-8"><a href="#cb4-8"></a>        <span class="bu">print</span>(<span class="st">&quot;Cannot divide by zero.&quot;</span>)</span>
+<span id="cb4-9"><a href="#cb4-9"></a>    <span class="co"># No explicit return, so it returns None implicitly</span></span>
+<span id="cb4-10"><a href="#cb4-10"></a></span>
+<span id="cb4-11"><a href="#cb4-11"></a><span class="co"># b) Function using return</span></span>
+<span id="cb4-12"><a href="#cb4-12"></a><span class="kw">def</span> return_division(numerator, denominator):</span>
+<span id="cb4-13"><a href="#cb4-13"></a>    <span class="co">&quot;&quot;&quot;Calculates and returns the division result.&quot;&quot;&quot;</span></span>
+<span id="cb4-14"><a href="#cb4-14"></a>    <span class="cf">if</span> denominator <span class="op">!=</span> <span class="dv">0</span>:</span>
+<span id="cb4-15"><a href="#cb4-15"></a>        result <span class="op">=</span> numerator <span class="op">/</span> denominator</span>
+<span id="cb4-16"><a href="#cb4-16"></a>        <span class="cf">return</span> result <span class="co"># Return the calculated value</span></span>
+<span id="cb4-17"><a href="#cb4-17"></a>    <span class="cf">else</span>:</span>
+<span id="cb4-18"><a href="#cb4-18"></a>        <span class="bu">print</span>(<span class="st">&quot;Cannot divide by zero.&quot;</span>)</span>
+<span id="cb4-19"><a href="#cb4-19"></a>        <span class="cf">return</span> <span class="va">None</span> <span class="co"># Good practice to return None if calculation fails</span></span>
+<span id="cb4-20"><a href="#cb4-20"></a></span>
+<span id="cb4-21"><a href="#cb4-21"></a><span class="co"># Call both functions and capture results</span></span>
+<span id="cb4-22"><a href="#cb4-22"></a><span class="bu">print</span>(<span class="st">&quot;Calling print_division(100, 4):&quot;</span>)</span>
+<span id="cb4-23"><a href="#cb4-23"></a>result_from_print <span class="op">=</span> print_division(<span class="dv">100</span>, <span class="dv">4</span>) <span class="co"># This line will print output</span></span>
+<span id="cb4-24"><a href="#cb4-24"></a></span>
+<span id="cb4-25"><a href="#cb4-25"></a><span class="bu">print</span>(<span class="st">&quot;</span><span class="ch">\n</span><span class="st">Calling return_division(100, 4):&quot;</span>)</span>
+<span id="cb4-26"><a href="#cb4-26"></a>result_from_return <span class="op">=</span> return_division(<span class="dv">100</span>, <span class="dv">4</span>) <span class="co"># This line will NOT print output</span></span>
+<span id="cb4-27"><a href="#cb4-27"></a></span>
+<span id="cb4-28"><a href="#cb4-28"></a><span class="co"># Print the captured variables</span></span>
+<span id="cb4-29"><a href="#cb4-29"></a><span class="bu">print</span>(<span class="ss">f&quot;</span><span class="ch">\n</span><span class="ss">Value stored from print_division: </span><span class="sc">{</span>result_from_print<span class="sc">}</span><span class="ss">&quot;</span>)</span>
+<span id="cb4-30"><a href="#cb4-30"></a><span class="bu">print</span>(<span class="ss">f&quot;Value stored from return_division: </span><span class="sc">{</span>result_from_return<span class="sc">}</span><span class="ss">&quot;</span>)</span>
+<span id="cb4-31"><a href="#cb4-31"></a></span>
+<span id="cb4-32"><a href="#cb4-32"></a><span class="co"># Expected Output:</span></span>
+<span id="cb4-33"><a href="#cb4-33"></a><span class="co"># Calling print_division(100, 4):</span></span>
+<span id="cb4-34"><a href="#cb4-34"></a><span class="co"># Result of division: 25.0</span></span>
+<span id="cb4-35"><a href="#cb4-35"></a><span class="co">#</span></span>
+<span id="cb4-36"><a href="#cb4-36"></a><span class="co"># Calling return_division(100, 4):</span></span>
+<span id="cb4-37"><a href="#cb4-37"></a><span class="co">#</span></span>
+<span id="cb4-38"><a href="#cb4-38"></a><span class="co"># Value stored from print_division: None</span></span>
+<span id="cb4-39"><a href="#cb4-39"></a><span class="co"># Value stored from return_division: 25.0</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><strong>Explanation:</strong> * <code>print_division</code> displays the result (<code>25.0</code>) directly to the console when called. However, since it lacks an explicit <code>return</code> statement, it implicitly returns <code>None</code>. Therefore, <code>result_from_print</code> becomes <code>None</code>. * <code>return_division</code> calculates the result but does <em>not</em> print it automatically. Instead, it uses <code>return result</code> to send the calculated value (<code>25.0</code>) back. This returned value is then captured and stored in the <code>result_from_return</code> variable. * This clearly shows that <code>print</code> is for display, while <code>return</code> is for sending back a value to be used by the calling code.</p>
+<hr>
+<p><strong>Solution 5: Tax Calculation with Default Rate</strong></p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1"></a><span class="co"># Define function with a default value for tax_rate</span></span>
+<span id="cb5-2"><a href="#cb5-2"></a><span class="kw">def</span> calculate_sales_tax(amount, tax_rate<span class="op">=</span><span class="fl">0.07</span>):</span>
+<span id="cb5-3"><a href="#cb5-3"></a>    <span class="co">&quot;&quot;&quot;Calculates sales tax, using a default rate if none provided.&quot;&quot;&quot;</span></span>
+<span id="cb5-4"><a href="#cb5-4"></a>    tax_amount <span class="op">=</span> amount <span class="op">*</span> tax_rate</span>
+<span id="cb5-5"><a href="#cb5-5"></a>    <span class="cf">return</span> tax_amount</span>
+<span id="cb5-6"><a href="#cb5-6"></a></span>
+<span id="cb5-7"><a href="#cb5-7"></a><span class="co"># a) Call using the default tax_rate (0.07)</span></span>
+<span id="cb5-8"><a href="#cb5-8"></a>default_tax <span class="op">=</span> calculate_sales_tax(<span class="fl">500.00</span>)</span>
+<span id="cb5-9"><a href="#cb5-9"></a><span class="bu">print</span>(<span class="ss">f&quot;Tax on $500.00 (default rate): $</span><span class="sc">{</span>default_tax<span class="sc">:.2f}</span><span class="ss">&quot;</span>)</span>
+<span id="cb5-10"><a href="#cb5-10"></a></span>
+<span id="cb5-11"><a href="#cb5-11"></a><span class="co"># b) Call providing a specific tax_rate (0.09)</span></span>
+<span id="cb5-12"><a href="#cb5-12"></a>specific_tax <span class="op">=</span> calculate_sales_tax(<span class="fl">500.00</span>, <span class="fl">0.09</span>)</span>
+<span id="cb5-13"><a href="#cb5-13"></a><span class="bu">print</span>(<span class="ss">f&quot;Tax on $500.00 (specific rate 9%): $</span><span class="sc">{</span>specific_tax<span class="sc">:.2f}</span><span class="ss">&quot;</span>)</span>
+<span id="cb5-14"><a href="#cb5-14"></a></span>
+<span id="cb5-15"><a href="#cb5-15"></a><span class="co"># Expected Output:</span></span>
+<span id="cb5-16"><a href="#cb5-16"></a><span class="co"># Tax on $500.00 (default rate): $35.00</span></span>
+<span id="cb5-17"><a href="#cb5-17"></a><span class="co"># Tax on $500.00 (specific rate 9%): $45.00</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><strong>Explanation:</strong> * In the definition <code>def calculate_sales_tax(amount, tax_rate=0.07):</code>, <code>tax_rate</code> is given a default value of <code>0.07</code>. Parameters with defaults must come after those without. * When called with only one argument (<code>calculate_sales_tax(500.00)</code>), the <code>amount</code> parameter gets <code>500.00</code>, and <code>tax_rate</code> automatically uses its default value (<code>0.07</code>). * When called with two arguments (<code>calculate_sales_tax(500.00, 0.09)</code>), the provided value <code>0.09</code> overrides the default for <code>tax_rate</code>.</p>
+<hr>
+<p><strong>Solution 6: Using Keyword Arguments</strong></p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1"></a><span class="co"># Function definition from Problem 5</span></span>
+<span id="cb6-2"><a href="#cb6-2"></a><span class="kw">def</span> calculate_sales_tax(amount, tax_rate<span class="op">=</span><span class="fl">0.07</span>):</span>
+<span id="cb6-3"><a href="#cb6-3"></a>    <span class="co">&quot;&quot;&quot;Calculates sales tax, using a default rate if none provided.&quot;&quot;&quot;</span></span>
+<span id="cb6-4"><a href="#cb6-4"></a>    tax_amount <span class="op">=</span> amount <span class="op">*</span> tax_rate</span>
+<span id="cb6-5"><a href="#cb6-5"></a>    <span class="cf">return</span> tax_amount</span>
+<span id="cb6-6"><a href="#cb6-6"></a></span>
+<span id="cb6-7"><a href="#cb6-7"></a><span class="co"># a) Call using keyword arguments</span></span>
+<span id="cb6-8"><a href="#cb6-8"></a>tax1 <span class="op">=</span> calculate_sales_tax(amount<span class="op">=</span><span class="fl">1200.00</span>, tax_rate<span class="op">=</span><span class="fl">0.06</span>)</span>
+<span id="cb6-9"><a href="#cb6-9"></a><span class="bu">print</span>(<span class="ss">f&quot;Tax using keyword args (amount=1200, rate=0.06): $</span><span class="sc">{</span>tax1<span class="sc">:.2f}</span><span class="ss">&quot;</span>)</span>
+<span id="cb6-10"><a href="#cb6-10"></a></span>
+<span id="cb6-11"><a href="#cb6-11"></a><span class="co"># b) Call using keyword arguments in a different order</span></span>
+<span id="cb6-12"><a href="#cb6-12"></a>tax2 <span class="op">=</span> calculate_sales_tax(tax_rate<span class="op">=</span><span class="fl">0.08</span>, amount<span class="op">=</span><span class="fl">500.00</span>)</span>
+<span id="cb6-13"><a href="#cb6-13"></a><span class="bu">print</span>(<span class="ss">f&quot;Tax using keyword args (rate=0.08, amount=500): $</span><span class="sc">{</span>tax2<span class="sc">:.2f}</span><span class="ss">&quot;</span>)</span>
+<span id="cb6-14"><a href="#cb6-14"></a></span>
+<span id="cb6-15"><a href="#cb6-15"></a><span class="co"># Expected Output:</span></span>
+<span id="cb6-16"><a href="#cb6-16"></a><span class="co"># Tax using keyword args (amount=1200, rate=0.06): $72.00</span></span>
+<span id="cb6-17"><a href="#cb6-17"></a><span class="co"># Tax using keyword args (rate=0.08, amount=500): $40.00</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><strong>Explanation:</strong> * <strong>Keyword arguments</strong> use the format <code>parameter_name=value</code> in the function call. * This explicitly assigns the value to the named parameter, regardless of its position. * As shown in call (b), the order of keyword arguments does not matter (<code>tax_rate</code> is provided before <code>amount</code>). This improves readability, especially for functions with many parameters or optional parameters.</p>
+<hr>
+<p><strong>Solution 7: Analyze Sales Data (Return Multiple Values)</strong></p>
+<div class="sourceCode" id="cb7"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1"></a><span class="im">import</span> math <span class="co"># Using math just for demonstration, sum/len are built-in</span></span>
+<span id="cb7-2"><a href="#cb7-2"></a></span>
+<span id="cb7-3"><a href="#cb7-3"></a><span class="kw">def</span> analyze_sales(sales_figures_list):</span>
+<span id="cb7-4"><a href="#cb7-4"></a>    <span class="co">&quot;&quot;&quot;Calculates total sales, count, and average from a list.&quot;&quot;&quot;</span></span>
+<span id="cb7-5"><a href="#cb7-5"></a>    <span class="cf">if</span> <span class="kw">not</span> sales_figures_list: <span class="co"># Check if the list is empty</span></span>
+<span id="cb7-6"><a href="#cb7-6"></a>        <span class="cf">return</span> <span class="fl">0.0</span>, <span class="dv">0</span>, <span class="fl">0.0</span> <span class="co"># Return zeros/default values</span></span>
+<span id="cb7-7"><a href="#cb7-7"></a></span>
+<span id="cb7-8"><a href="#cb7-8"></a>    total <span class="op">=</span> <span class="bu">sum</span>(sales_figures_list) <span class="co"># Module 5 aggregation</span></span>
+<span id="cb7-9"><a href="#cb7-9"></a>    count <span class="op">=</span> <span class="bu">len</span>(sales_figures_list) <span class="co"># Module 5 aggregation</span></span>
+<span id="cb7-10"><a href="#cb7-10"></a>    average <span class="op">=</span> total <span class="op">/</span> count</span>
+<span id="cb7-11"><a href="#cb7-11"></a></span>
+<span id="cb7-12"><a href="#cb7-12"></a>    <span class="cf">return</span> total, count, average <span class="co"># Return multiple values</span></span>
+<span id="cb7-13"><a href="#cb7-13"></a></span>
+<span id="cb7-14"><a href="#cb7-14"></a><span class="co"># Sample data</span></span>
+<span id="cb7-15"><a href="#cb7-15"></a>sales_data <span class="op">=</span> [<span class="fl">150.00</span>, <span class="fl">210.50</span>, <span class="fl">180.00</span>, <span class="fl">305.75</span>]</span>
+<span id="cb7-16"><a href="#cb7-16"></a></span>
+<span id="cb7-17"><a href="#cb7-17"></a><span class="co"># Call the function and capture the returned tuple</span></span>
+<span id="cb7-18"><a href="#cb7-18"></a>analysis_results <span class="op">=</span> analyze_sales(sales_data)</span>
+<span id="cb7-19"><a href="#cb7-19"></a><span class="bu">print</span>(<span class="ss">f&quot;Returned tuple: </span><span class="sc">{</span>analysis_results<span class="sc">}</span><span class="ss">&quot;</span>)</span>
+<span id="cb7-20"><a href="#cb7-20"></a></span>
+<span id="cb7-21"><a href="#cb7-21"></a><span class="co"># Unpack the tuple into separate variables</span></span>
+<span id="cb7-22"><a href="#cb7-22"></a>total_sales, num_transactions, avg_sale <span class="op">=</span> analysis_results</span>
+<span id="cb7-23"><a href="#cb7-23"></a></span>
+<span id="cb7-24"><a href="#cb7-24"></a><span class="co"># Print the unpacked variables</span></span>
+<span id="cb7-25"><a href="#cb7-25"></a><span class="bu">print</span>(<span class="ss">f&quot;Total Sales: $</span><span class="sc">{</span>total_sales<span class="sc">:.2f}</span><span class="ss">&quot;</span>)</span>
+<span id="cb7-26"><a href="#cb7-26"></a><span class="bu">print</span>(<span class="ss">f&quot;Number of Transactions: </span><span class="sc">{</span>num_transactions<span class="sc">}</span><span class="ss">&quot;</span>)</span>
+<span id="cb7-27"><a href="#cb7-27"></a><span class="bu">print</span>(<span class="ss">f&quot;Average Sale Value: $</span><span class="sc">{</span>avg_sale<span class="sc">:.2f}</span><span class="ss">&quot;</span>)</span>
+<span id="cb7-28"><a href="#cb7-28"></a></span>
+<span id="cb7-29"><a href="#cb7-29"></a><span class="co"># Call with empty list</span></span>
+<span id="cb7-30"><a href="#cb7-30"></a>total_e, count_e, avg_e <span class="op">=</span> analyze_sales([])</span>
+<span id="cb7-31"><a href="#cb7-31"></a><span class="bu">print</span>(<span class="ss">f&quot;</span><span class="ch">\n</span><span class="ss">Analysis for empty list: Total=$</span><span class="sc">{</span>total_e<span class="sc">}</span><span class="ss">, Count=</span><span class="sc">{</span>count_e<span class="sc">}</span><span class="ss">, Avg=$</span><span class="sc">{</span>avg_e<span class="sc">}</span><span class="ss">&quot;</span>)</span>
+<span id="cb7-32"><a href="#cb7-32"></a></span>
+<span id="cb7-33"><a href="#cb7-33"></a></span>
+<span id="cb7-34"><a href="#cb7-34"></a><span class="co"># Expected Output:</span></span>
+<span id="cb7-35"><a href="#cb7-35"></a><span class="co"># Returned tuple: (846.25, 4, 211.5625)</span></span>
+<span id="cb7-36"><a href="#cb7-36"></a><span class="co"># Total Sales: $846.25</span></span>
+<span id="cb7-37"><a href="#cb7-37"></a><span class="co"># Number of Transactions: 4</span></span>
+<span id="cb7-38"><a href="#cb7-38"></a><span class="co"># Average Sale Value: $211.56</span></span>
+<span id="cb7-39"><a href="#cb7-39"></a><span class="co">#</span></span>
+<span id="cb7-40"><a href="#cb7-40"></a><span class="co"># Analysis for empty list: Total=$0.0, Count=0, Avg=$0.0</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><strong>Explanation:</strong> * The function <code>analyze_sales</code> calculates three values: <code>total</code>, <code>count</code>, and <code>average</code>. * The line <code>return total, count, average</code> returns these three values. Python automatically packages them into a <strong>tuple</strong>: <code>(846.25, 4, 211.5625)</code>. * The first call captures this entire tuple into the <code>analysis_results</code> variable. * The line <code>total_sales, num_transactions, avg_sale = analysis_results</code> uses <strong>tuple unpacking</strong> (from Module 4) to assign each element of the returned tuple to a corresponding variable on the left side. This is a very common and readable way to handle functions returning multiple results. * An <code>if not sales_figures_list:</code> check handles the edge case of an empty list to prevent division by zero.</p>
+<hr>
+<p><strong>Solution 8: Variable Scope Illustration</strong></p>
+<div class="sourceCode" id="cb8"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1"></a><span class="co"># a) Global variable</span></span>
+<span id="cb8-2"><a href="#cb8-2"></a>global_rate <span class="op">=</span> <span class="fl">0.10</span></span>
+<span id="cb8-3"><a href="#cb8-3"></a><span class="bu">print</span>(<span class="ss">f&quot;Initial global rate: </span><span class="sc">{</span>global_rate<span class="sc">}</span><span class="ss">&quot;</span>)</span>
+<span id="cb8-4"><a href="#cb8-4"></a></span>
+<span id="cb8-5"><a href="#cb8-5"></a><span class="co"># b) Function reading global variable</span></span>
+<span id="cb8-6"><a href="#cb8-6"></a><span class="kw">def</span> calculate_discount(price):</span>
+<span id="cb8-7"><a href="#cb8-7"></a>    <span class="co">&quot;&quot;&quot;Calculates discount using the global rate.&quot;&quot;&quot;</span></span>
+<span id="cb8-8"><a href="#cb8-8"></a>    <span class="co"># Reads global_rate (no &#39;global&#39; keyword needed for reading)</span></span>
+<span id="cb8-9"><a href="#cb8-9"></a>    discount <span class="op">=</span> price <span class="op">*</span> global_rate</span>
+<span id="cb8-10"><a href="#cb8-10"></a>    <span class="bu">print</span>(<span class="ss">f&quot; Inside calculate_discount: Global rate used = </span><span class="sc">{</span>global_rate<span class="sc">}</span><span class="ss">&quot;</span>)</span>
+<span id="cb8-11"><a href="#cb8-11"></a>    <span class="cf">return</span> discount</span>
+<span id="cb8-12"><a href="#cb8-12"></a></span>
+<span id="cb8-13"><a href="#cb8-13"></a><span class="co"># c) Function using a local variable with the same name</span></span>
+<span id="cb8-14"><a href="#cb8-14"></a><span class="kw">def</span> apply_local_discount(price):</span>
+<span id="cb8-15"><a href="#cb8-15"></a>    <span class="co">&quot;&quot;&quot;Uses a local variable that shadows the global one.&quot;&quot;&quot;</span></span>
+<span id="cb8-16"><a href="#cb8-16"></a>    discount_percentage <span class="op">=</span> <span class="fl">0.15</span> <span class="co"># This is LOCAL, different from the global one</span></span>
+<span id="cb8-17"><a href="#cb8-17"></a>    <span class="bu">print</span>(<span class="ss">f&quot; Inside apply_local_discount: Local rate used = </span><span class="sc">{</span>discount_percentage<span class="sc">}</span><span class="ss">&quot;</span>)</span>
+<span id="cb8-18"><a href="#cb8-18"></a>    discounted_price <span class="op">=</span> price <span class="op">-</span> (price <span class="op">*</span> discount_percentage)</span>
+<span id="cb8-19"><a href="#cb8-19"></a>    <span class="cf">return</span> discounted_price</span>
+<span id="cb8-20"><a href="#cb8-20"></a></span>
+<span id="cb8-21"><a href="#cb8-21"></a><span class="co"># d) Call function reading global</span></span>
+<span id="cb8-22"><a href="#cb8-22"></a>global_discount <span class="op">=</span> calculate_discount(<span class="dv">100</span>)</span>
+<span id="cb8-23"><a href="#cb8-23"></a><span class="bu">print</span>(<span class="ss">f&quot;Discount using global rate: $</span><span class="sc">{</span>global_discount<span class="sc">:.2f}</span><span class="ss">&quot;</span>)</span>
+<span id="cb8-24"><a href="#cb8-24"></a></span>
+<span id="cb8-25"><a href="#cb8-25"></a><span class="co"># e) Call function using local</span></span>
+<span id="cb8-26"><a href="#cb8-26"></a>local_discounted_price <span class="op">=</span> apply_local_discount(<span class="dv">100</span>)</span>
+<span id="cb8-27"><a href="#cb8-27"></a><span class="bu">print</span>(<span class="ss">f&quot;Price after local discount: $</span><span class="sc">{</span>local_discounted_price<span class="sc">:.2f}</span><span class="ss">&quot;</span>)</span>
+<span id="cb8-28"><a href="#cb8-28"></a></span>
+<span id="cb8-29"><a href="#cb8-29"></a><span class="co"># f) Check global variable value after calls</span></span>
+<span id="cb8-30"><a href="#cb8-30"></a><span class="bu">print</span>(<span class="ss">f&quot;Final global rate (unchanged): </span><span class="sc">{</span>global_rate<span class="sc">}</span><span class="ss">&quot;</span>)</span>
+<span id="cb8-31"><a href="#cb8-31"></a></span>
+<span id="cb8-32"><a href="#cb8-32"></a><span class="co"># Expected Output:</span></span>
+<span id="cb8-33"><a href="#cb8-33"></a><span class="co"># Initial global rate: 0.1</span></span>
+<span id="cb8-34"><a href="#cb8-34"></a><span class="co">#  Inside calculate_discount: Global rate used = 0.1</span></span>
+<span id="cb8-35"><a href="#cb8-35"></a><span class="co"># Discount using global rate: $10.00</span></span>
+<span id="cb8-36"><a href="#cb8-36"></a><span class="co">#  Inside apply_local_discount: Local rate used = 0.15</span></span>
+<span id="cb8-37"><a href="#cb8-37"></a><span class="co"># Price after local discount: $85.00</span></span>
+<span id="cb8-38"><a href="#cb8-38"></a><span class="co"># Final global rate (unchanged): 0.1</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><strong>Explanation:</strong> * <code>global_rate = 0.10</code> defines a variable outside any function, making it <strong>global</strong>. * <code>calculate_discount</code> can <em>read</em> <code>global_rate</code> without needing the <code>global</code> keyword. * <code>apply_local_discount</code> defines its <em>own</em> variable <code>discount_percentage = 0.15</code>. This is a <strong>local</strong> variable, distinct from the global one, even though it has the same name (it “shadows” the global within the function). Changes to this local variable do not affect the global one. * The final print shows that the global <code>global_rate</code> remained <code>0.10</code>, demonstrating that the local variable in <code>apply_local_discount</code> did not modify the global scope.</p>
+<hr>
+<p><strong>Solution 9: Simple Lambda Function</strong></p>
+<div class="sourceCode" id="cb9"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1"></a><span class="co"># Define the lambda function and assign it to a variable</span></span>
+<span id="cb9-2"><a href="#cb9-2"></a>get_double <span class="op">=</span> <span class="kw">lambda</span> x: x <span class="op">*</span> <span class="dv">2</span></span>
+<span id="cb9-3"><a href="#cb9-3"></a></span>
+<span id="cb9-4"><a href="#cb9-4"></a><span class="co"># Call the lambda function via the variable</span></span>
+<span id="cb9-5"><a href="#cb9-5"></a>result <span class="op">=</span> get_double(<span class="dv">25</span>)</span>
+<span id="cb9-6"><a href="#cb9-6"></a></span>
+<span id="cb9-7"><a href="#cb9-7"></a><span class="bu">print</span>(<span class="ss">f&quot;Using lambda: double of 25 is </span><span class="sc">{</span>result<span class="sc">}</span><span class="ss">&quot;</span>)</span>
+<span id="cb9-8"><a href="#cb9-8"></a></span>
+<span id="cb9-9"><a href="#cb9-9"></a><span class="co"># You could also use it immediately (less common for named operations)</span></span>
+<span id="cb9-10"><a href="#cb9-10"></a><span class="bu">print</span>(<span class="ss">f&quot;Using lambda immediately: </span><span class="sc">{</span>(<span class="kw">lambda</span> y: y <span class="op">*</span> <span class="dv">2</span>)(<span class="dv">30</span>)<span class="sc">}</span><span class="ss">&quot;</span>)</span>
+<span id="cb9-11"><a href="#cb9-11"></a></span>
+<span id="cb9-12"><a href="#cb9-12"></a><span class="co"># Expected Output:</span></span>
+<span id="cb9-13"><a href="#cb9-13"></a><span class="co"># Using lambda: double of 25 is 50</span></span>
+<span id="cb9-14"><a href="#cb9-14"></a><span class="co"># Using lambda immediately: 60</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><strong>Explanation:</strong> * <code>lambda x: x * 2</code> defines an anonymous function. * <code>lambda</code>: Keyword indicating a lambda function. * <code>x</code>: The argument (parameter) the function takes. * <code>:</code>: Separates arguments from the expression. * <code>x * 2</code>: The single expression whose result will be returned. * We assign this lambda function object to the variable <code>get_double</code>. * We then call the function using <code>get_double(25)</code>, passing <code>25</code> as the argument for <code>x</code>. The lambda evaluates <code>25 * 2</code> and returns <code>50</code>.</p>
+<hr>
+<p><strong>Solution 10: Function with Loop and Conditional</strong></p>
+<div class="sourceCode" id="cb10"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1"></a><span class="kw">def</span> find_expensive_items(product_prices_dict, threshold):</span>
+<span id="cb10-2"><a href="#cb10-2"></a>    <span class="co">&quot;&quot;&quot;</span></span>
+<span id="cb10-3"><a href="#cb10-3"></a><span class="co">    Finds product names with prices above a given threshold.</span></span>
+<span id="cb10-4"><a href="#cb10-4"></a></span>
+<span id="cb10-5"><a href="#cb10-5"></a><span class="co">    Args:</span></span>
+<span id="cb10-6"><a href="#cb10-6"></a><span class="co">        product_prices_dict (dict): Dictionary of {product_name: price}.</span></span>
+<span id="cb10-7"><a href="#cb10-7"></a><span class="co">        threshold (float): The price threshold.</span></span>
+<span id="cb10-8"><a href="#cb10-8"></a></span>
+<span id="cb10-9"><a href="#cb10-9"></a><span class="co">    Returns:</span></span>
+<span id="cb10-10"><a href="#cb10-10"></a><span class="co">        list: A list of names of products exceeding the threshold.</span></span>
+<span id="cb10-11"><a href="#cb10-11"></a><span class="co">    &quot;&quot;&quot;</span></span>
+<span id="cb10-12"><a href="#cb10-12"></a>    expensive_products <span class="op">=</span> [] <span class="co"># Initialize empty list to store results</span></span>
+<span id="cb10-13"><a href="#cb10-13"></a></span>
+<span id="cb10-14"><a href="#cb10-14"></a>    <span class="co"># Loop through key-value pairs (Module 7 loop, Module 5 dict items)</span></span>
+<span id="cb10-15"><a href="#cb10-15"></a>    <span class="cf">for</span> name, price <span class="kw">in</span> product_prices_dict.items():</span>
+<span id="cb10-16"><a href="#cb10-16"></a>        <span class="co"># Conditional check (Module 6)</span></span>
+<span id="cb10-17"><a href="#cb10-17"></a>        <span class="cf">if</span> price <span class="op">&gt;</span> threshold:</span>
+<span id="cb10-18"><a href="#cb10-18"></a>            <span class="co"># Append name to the list (Module 4 list method)</span></span>
+<span id="cb10-19"><a href="#cb10-19"></a>            expensive_products.append(name)</span>
+<span id="cb10-20"><a href="#cb10-20"></a></span>
+<span id="cb10-21"><a href="#cb10-21"></a>    <span class="cf">return</span> expensive_products <span class="co"># Return the list of names</span></span>
+<span id="cb10-22"><a href="#cb10-22"></a></span>
+<span id="cb10-23"><a href="#cb10-23"></a><span class="co"># Sample data</span></span>
+<span id="cb10-24"><a href="#cb10-24"></a>products <span class="op">=</span> {<span class="st">&quot;Laptop&quot;</span>: <span class="fl">1200.00</span>, <span class="st">&quot;Mouse&quot;</span>: <span class="fl">25.00</span>, <span class="st">&quot;Keyboard&quot;</span>: <span class="fl">75.00</span>, <span class="st">&quot;Monitor&quot;</span>: <span class="fl">250.00</span>}</span>
+<span id="cb10-25"><a href="#cb10-25"></a>price_limit <span class="op">=</span> <span class="fl">100.00</span></span>
+<span id="cb10-26"><a href="#cb10-26"></a></span>
+<span id="cb10-27"><a href="#cb10-27"></a><span class="co"># Call the function</span></span>
+<span id="cb10-28"><a href="#cb10-28"></a>high_value_list <span class="op">=</span> find_expensive_items(products, price_limit)</span>
+<span id="cb10-29"><a href="#cb10-29"></a></span>
+<span id="cb10-30"><a href="#cb10-30"></a><span class="co"># Print the returned list</span></span>
+<span id="cb10-31"><a href="#cb10-31"></a><span class="bu">print</span>(<span class="ss">f&quot;Products costing more than $</span><span class="sc">{</span>price_limit<span class="sc">:.2f}</span><span class="ss">: </span><span class="sc">{</span>high_value_list<span class="sc">}</span><span class="ss">&quot;</span>)</span>
+<span id="cb10-32"><a href="#cb10-32"></a></span>
+<span id="cb10-33"><a href="#cb10-33"></a><span class="co"># Expected Output:</span></span>
+<span id="cb10-34"><a href="#cb10-34"></a><span class="co"># Products costing more than $100.00: [&#39;Laptop&#39;, &#39;Monitor&#39;]</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><strong>Explanation:</strong> * The function <code>find_expensive_items</code> takes a dictionary and a threshold as input. * It initializes an empty list <code>expensive_products</code> to store the results (accumulator pattern for lists). * It uses a <code>for</code> loop with <code>.items()</code> to iterate through each product name (key) and price (value) in the input dictionary. * Inside the loop, an <code>if price &gt; threshold:</code> statement checks if the current product’s price exceeds the limit. * If the condition is true, the product’s <code>name</code> (the key) is added to the <code>expensive_products</code> list using <code>.append()</code>. * After checking all items in the dictionary, the function <code>return</code>s the <code>expensive_products</code> list, containing the names of all products that met the condition.</p>
+<hr>
 </section>
 
 </main>

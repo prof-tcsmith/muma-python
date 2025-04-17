@@ -8,7 +8,7 @@
 
 <meta name="author" content="Dr. Smith">
 
-<title>Integrative Assignment: Module 3 – String Manipulation, User Input, and Formatted Output</title>
+<title>Module 11: Problem Set</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -3087,19 +3087,9 @@ vertical-align: -.125em;
   <nav id="TOC" role="doc-toc" class="toc-active">
     <h2 id="toc-title">Table of contents</h2>
    
-  <ul class="collapse">
-  <li><a href="#integrative-assignment-module-3-string-manipulation-user-input-and-formatted-output" id="toc-integrative-assignment-module-3-string-manipulation-user-input-and-formatted-output" class="nav-link active" data-scroll-target="#integrative-assignment-module-3-string-manipulation-user-input-and-formatted-output">Integrative Assignment: Module 3 – String Manipulation, User Input, and Formatted Output</a>
-  <ul class="collapse">
-  <li><a href="#overview" id="toc-overview" class="nav-link" data-scroll-target="#overview">Overview</a></li>
-  <li><a href="#objectives" id="toc-objectives" class="nav-link" data-scroll-target="#objectives">Objectives</a></li>
-  <li><a href="#assignment-description" id="toc-assignment-description" class="nav-link" data-scroll-target="#assignment-description">Assignment Description</a></li>
-  <li><a href="#starter-code" id="toc-starter-code" class="nav-link" data-scroll-target="#starter-code">Starter Code</a></li>
-  <li><a href="#submission-guidelines" id="toc-submission-guidelines" class="nav-link" data-scroll-target="#submission-guidelines">Submission Guidelines</a></li>
-  </ul></li>
-  <li><a href="#marking-rubric" id="toc-marking-rubric" class="nav-link" data-scroll-target="#marking-rubric">Marking Rubric</a>
-  <ul class="collapse">
-  <li><a href="#academic-integrity-reminder" id="toc-academic-integrity-reminder" class="nav-link" data-scroll-target="#academic-integrity-reminder">Academic Integrity Reminder</a></li>
-  </ul></li>
+  <ul>
+  <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction">Introduction</a></li>
+  <li><a href="#appendix-solutions-and-explanations" id="toc-appendix-solutions-and-explanations" class="nav-link" data-scroll-target="#appendix-solutions-and-explanations">Appendix: Solutions and Explanations</a></li>
   </ul>
 </nav>
 </div>
@@ -3109,27 +3099,20 @@ vertical-align: -.125em;
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Integrative Assignment: Module 3 – String Manipulation, User Input, and Formatted Output</h1>
+<h1 class="title">Module 11: Problem Set</h1>
 </div>
 
 
-<div class="quarto-title-meta-author">
-  <div class="quarto-title-meta-heading">Author</div>
-  <div class="quarto-title-meta-heading">Affiliation</div>
-  
-    <div class="quarto-title-meta-contents">
-    <p class="author">Dr. Smith </p>
-  </div>
-  <div class="quarto-title-meta-contents">
-        <p class="affiliation">
-            University of South Florida
-          </p>
-      </div>
-  </div>
 
 <div class="quarto-title-meta">
 
-      
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Dr. Smith </p>
+          </div>
+  </div>
+    
   
     
   </div>
@@ -3139,173 +3122,385 @@ vertical-align: -.125em;
 </header>
 
 
-<section id="integrative-assignment-module-3-string-manipulation-user-input-and-formatted-output" class="level1">
-<h1>Integrative Assignment: Module 3 – String Manipulation, User Input, and Formatted Output</h1>
-<section id="overview" class="level2">
-<h2 class="anchored" data-anchor-id="overview">Overview</h2>
-<p>In this assignment, you will demonstrate your understanding of Module 3 concepts by creating an interactive customer order processing program. This program will utilize string manipulation, user input, and formatted output to create a professional-looking order summary. This assignment will reinforce your ability to handle text data effectively, interact with users, and present information clearly – key skills for developing business applications.</p>
-</section>
-<section id="objectives" class="level2">
-<h2 class="anchored" data-anchor-id="objectives">Objectives</h2>
-<p>By completing this assignment, you will:</p>
-<ul>
-<li><strong>Get and Process User Input:</strong> Use the <code>input()</code> function to collect information from users and process it appropriately.</li>
-<li><strong>Apply String Methods:</strong> Use string methods like <code>.strip()</code>, <code>.title()</code>, and other text manipulation techniques.</li>
-<li><strong>Perform Type Conversion:</strong> Convert string input to appropriate numeric types for calculations.</li>
-<li><strong>Implement Error Handling:</strong> Use basic error handling techniques to deal with invalid input.</li>
-<li><strong>Format Output with F-strings:</strong> Create professional-looking output with proper formatting and alignment.</li>
-<li><strong>Create a Complete Application:</strong> Build a program that follows the input-process-output pattern.</li>
-</ul>
-</section>
-<section id="assignment-description" class="level2">
-<h2 class="anchored" data-anchor-id="assignment-description">Assignment Description</h2>
-<p>Imagine you work for an e-commerce company that needs a simple order processing system. Your task is to develop a Python program that:</p>
-<ol type="1">
-<li><strong>Collects Customer Information:</strong>
-<ul>
-<li>Asks for the customer’s name</li>
-<li>Asks for the customer’s email address</li>
-</ul></li>
-<li><strong>Collects Order Information:</strong>
-<ul>
-<li>Asks for a product name</li>
-<li>Asks for the quantity ordered</li>
-<li>Asks for the unit price</li>
-</ul></li>
-<li><strong>Processes the Information:</strong>
-<ul>
-<li>Cleans up the input (removing extra spaces, standardizing capitalization)</li>
-<li>Calculates the subtotal (quantity × unit price)</li>
-<li>Calculates sales tax (8.5% of subtotal)</li>
-<li>Calculates the order total (subtotal + tax)</li>
-<li>Applies a 10% discount if quantity is 10 or more</li>
-</ul></li>
-<li><strong>Displays an Order Summary:</strong>
-<ul>
-<li>Shows all customer and order information in a well-formatted layout</li>
-<li>Displays all calculated values formatted as currency with two decimal places</li>
-<li>Shows the discount amount (if applicable)</li>
-</ul></li>
-<li><strong>Validates Input:</strong>
-<ul>
-<li>Ensures the quantity is a positive integer</li>
-<li>Ensures the price is a positive number</li>
-<li>Handles any potential errors in the conversion process</li>
-</ul></li>
-</ol>
-</section>
-<section id="starter-code" class="level2">
-<h2 class="anchored" data-anchor-id="starter-code">Starter Code</h2>
-<p>Below is a starter code template to help you begin:</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1"></a><span class="co"># Module 3 Assignment: String Manipulation, User Input, and Formatted Output</span></span>
-<span id="cb1-2"><a href="#cb1-2"></a></span>
-<span id="cb1-3"><a href="#cb1-3"></a><span class="co"># Welcome message</span></span>
-<span id="cb1-4"><a href="#cb1-4"></a><span class="bu">print</span>(<span class="st">&quot;=&quot;</span> <span class="op">*</span> <span class="dv">50</span>)</span>
-<span id="cb1-5"><a href="#cb1-5"></a><span class="bu">print</span>(<span class="st">&quot;CUSTOMER ORDER PROCESSING SYSTEM&quot;</span>)</span>
-<span id="cb1-6"><a href="#cb1-6"></a><span class="bu">print</span>(<span class="st">&quot;=&quot;</span> <span class="op">*</span> <span class="dv">50</span>)</span>
-<span id="cb1-7"><a href="#cb1-7"></a><span class="bu">print</span>(<span class="st">&quot;Please enter the following information:</span><span class="ch">\n</span><span class="st">&quot;</span>)</span>
-<span id="cb1-8"><a href="#cb1-8"></a></span>
-<span id="cb1-9"><a href="#cb1-9"></a><span class="co"># </span><span class="al">TODO</span><span class="co">: Collect customer information</span></span>
-<span id="cb1-10"><a href="#cb1-10"></a><span class="co"># 1. Ask for customer name</span></span>
-<span id="cb1-11"><a href="#cb1-11"></a><span class="co"># 2. Ask for customer email</span></span>
-<span id="cb1-12"><a href="#cb1-12"></a></span>
-<span id="cb1-13"><a href="#cb1-13"></a><span class="co"># </span><span class="al">TODO</span><span class="co">: Collect order information</span></span>
-<span id="cb1-14"><a href="#cb1-14"></a><span class="co"># 1. Ask for product name</span></span>
-<span id="cb1-15"><a href="#cb1-15"></a><span class="co"># 2. Ask for quantity</span></span>
-<span id="cb1-16"><a href="#cb1-16"></a><span class="co"># 3. Ask for unit price</span></span>
-<span id="cb1-17"><a href="#cb1-17"></a></span>
-<span id="cb1-18"><a href="#cb1-18"></a><span class="co"># </span><span class="al">TODO</span><span class="co">: Process the information</span></span>
-<span id="cb1-19"><a href="#cb1-19"></a><span class="co"># 1. Clean up input (remove extra spaces, standardize capitalization)</span></span>
-<span id="cb1-20"><a href="#cb1-20"></a><span class="co"># 2. Convert quantity and price to appropriate numeric types</span></span>
-<span id="cb1-21"><a href="#cb1-21"></a><span class="co"># 3. Calculate subtotal, tax, and total</span></span>
-<span id="cb1-22"><a href="#cb1-22"></a><span class="co"># 4. Apply discount if applicable</span></span>
-<span id="cb1-23"><a href="#cb1-23"></a></span>
-<span id="cb1-24"><a href="#cb1-24"></a><span class="co"># </span><span class="al">TODO</span><span class="co">: Display order summary</span></span>
-<span id="cb1-25"><a href="#cb1-25"></a><span class="co"># Use f-strings to create a well-formatted output</span></span>
-<span id="cb1-26"><a href="#cb1-26"></a></span>
-<span id="cb1-27"><a href="#cb1-27"></a><span class="co"># Implement error handling where appropriate</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</section>
-<section id="submission-guidelines" class="level2">
-<h2 class="anchored" data-anchor-id="submission-guidelines">Submission Guidelines</h2>
-<ul>
-<li>Save your completed assignment as a Python file named <code>module03-assignment.py</code>.</li>
-<li>Submit your file via Canvas before the deadline.</li>
-<li>Ensure your code runs without errors and meets all the assignment requirements.</li>
-</ul>
-<div class="callout callout-style-simple callout-tip">
-<div class="callout-body d-flex">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-body-container">
-<p><strong>Tip:</strong><br>
-Test your program with various inputs, including edge cases (like entering “ten” instead of “10” for quantity). Your program should handle these gracefully.</p>
-</div>
-</div>
-</div>
-</section>
-</section>
-<section id="marking-rubric" class="level1">
-<h1>Marking Rubric</h1>
-<p>The following rubric will be used to evaluate your assignment. The total possible points for this assignment is <strong>25</strong>.</p>
-<table class="caption-top table">
-<colgroup>
-<col style="width: 29%">
-<col style="width: 5%">
-<col style="width: 65%">
-</colgroup>
-<thead>
-<tr class="header">
-<th>Criterion</th>
-<th>Points</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><strong>Input Collection</strong></td>
-<td>5</td>
-<td>Correctly collects all required information using the <code>input()</code> function with clear prompts.</td>
-</tr>
-<tr class="even">
-<td><strong>String Processing</strong></td>
-<td>5</td>
-<td>Properly cleans and standardizes text input using string methods.</td>
-</tr>
-<tr class="odd">
-<td><strong>Type Conversion &amp; Calculations</strong></td>
-<td>5</td>
-<td>Accurately converts strings to numeric types and performs all required calculations.</td>
-</tr>
-<tr class="even">
-<td><strong>Error Handling</strong></td>
-<td>3</td>
-<td>Implements appropriate error handling for invalid input.</td>
-</tr>
-<tr class="odd">
-<td><strong>Output Formatting</strong></td>
-<td>5</td>
-<td>Creates professional, well-aligned output with proper currency formatting using f-strings.</td>
-</tr>
-<tr class="even">
-<td><strong>Code Structure &amp; Comments</strong></td>
-<td>2</td>
-<td>Organizes code logically with descriptive comments explaining the process.</td>
-</tr>
-<tr class="odd">
-<td><strong>Total</strong></td>
-<td><strong>25</strong></td>
-<td></td>
-</tr>
-</tbody>
-</table>
-<section id="academic-integrity-reminder" class="level2">
-<h2 class="anchored" data-anchor-id="academic-integrity-reminder">Academic Integrity Reminder</h2>
-<p>All work must be your own. Unauthorized collaboration or plagiarism is strictly prohibited and will be considered an academic violation. Please adhere to the course policies regarding academic integrity.</p>
+<section id="introduction" class="level2">
+<h2 class="anchored" data-anchor-id="introduction">Introduction</h2>
+<p>Excellent progress! We’ve explored the fundamentals of data analysis with Pandas in Modules 9 &amp; 10. Now, in Module 11, we’ve learned how to bring data to life using visualizations with Matplotlib. Being able to create clear and informative plots is essential for understanding trends, comparing values, identifying patterns, and communicating your findings effectively.</p>
+<p>This problem set will test your ability to create various standard business charts using both Matplotlib’s <code>pyplot</code> interface (<code>plt</code>) and Pandas’ built-in <code>.plot()</code> methods. Remember to import the necessary libraries:</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb1-2"><a href="#cb1-2"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb1-3"><a href="#cb1-3"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb1-4"><a href="#cb1-4"></a></span>
+<span id="cb1-5"><a href="#cb1-5"></a><span class="co"># Optional for Jupyter/Quarto environments to display plots inline</span></span>
+<span id="cb1-6"><a href="#cb1-6"></a><span class="op">%</span>matplotlib inline</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <hr>
-<p>Sincerely,<br>
-Dr. Smith</p>
+<p><strong>Instructions:</strong> Write Python code using the Pandas and Matplotlib libraries to solve each problem. Create the specified plots and apply basic customizations as requested. Ensure your plots have titles and axis labels for clarity.</p>
+<hr>
+<p><strong>Problem 1: Basic Line Plot (<code>plt</code>)</strong></p>
+<ol type="a">
+<li>Import <code>matplotlib.pyplot</code> with the alias <code>plt</code>.</li>
+<li>Create two Python lists: <code>months = [1, 2, 3, 4, 5, 6]</code> and <code>units_sold = [500, 550, 620, 580, 650, 700]</code>.</li>
+<li>Create a line plot using <code>plt.plot()</code> with <code>months</code> on the x-axis and <code>units_sold</code> on the y-axis.</li>
+<li>Add a title “Monthly Units Sold”.</li>
+<li>Add an x-axis label “Month Number” and a y-axis label “Units Sold”.</li>
+<li>Display the plot using <code>plt.show()</code>.</li>
+</ol>
+<p><strong>Problem 2: Line Plot from Pandas Series (<code>.plot()</code>)</strong></p>
+<ol type="a">
+<li>Import <code>pandas</code> as <code>pd</code> and <code>matplotlib.pyplot</code> as <code>plt</code>.</li>
+<li>Create a Pandas Series called <code>avg_temperature</code> with temperatures <code>[65, 68, 72, 75, 78, 80]</code> and use month names <code>[&#39;Jan&#39;, &#39;Feb&#39;, &#39;Mar&#39;, &#39;Apr&#39;, &#39;May&#39;, &#39;Jun&#39;]</code> as the index.</li>
+<li>Create a line plot directly from the <code>avg_temperature</code> Series using its <code>.plot()</code> method. Add circle markers (<code>marker=&#39;o&#39;</code>).</li>
+<li>Use <code>plt.title()</code>, <code>plt.xlabel()</code>, and <code>plt.ylabel()</code> to add the title “Average Monthly Temperature” and appropriate axis labels.</li>
+<li>Add a grid to the plot using <code>plt.grid(True)</code>.</li>
+<li>Display the plot using <code>plt.show()</code>.</li>
+</ol>
+<p><strong>Problem 3: Vertical Bar Chart (<code>plt</code>)</strong></p>
+<ol type="a">
+<li>Create two lists: <code>categories = [&#39;Electronics&#39;, &#39;Apparel&#39;, &#39;Groceries&#39;]</code> and <code>revenue = [150000, 85000, 110000]</code>.</li>
+<li>Create a vertical bar chart using <code>plt.bar()</code> showing the revenue for each category.</li>
+<li>Add the title “Revenue by Category”.</li>
+<li>Add appropriate x-axis (“Category”) and y-axis (“Revenue ($)”) labels.</li>
+<li>Display the plot.</li>
+</ol>
+<p><strong>Problem 4: Horizontal Bar Chart from Series (<code>.plot()</code>)</strong></p>
+<ol type="a">
+<li>Create a Pandas Series called <code>website_traffic</code> mapping sources to visit counts: <code>{&#39;Organic Search&#39;: 1200, &#39;Direct&#39;: 800, &#39;Referral&#39;: 450, &#39;Social Media&#39;: 950}</code>.</li>
+<li>Create a horizontal bar chart directly from the <code>website_traffic</code> Series using the <code>.plot()</code> method with <code>kind=&#39;barh&#39;</code>.</li>
+<li>Add the title “Website Traffic Sources”.</li>
+<li>Use <code>plt.xlabel()</code> and <code>plt.ylabel()</code> for appropriate labels.</li>
+<li>Use <code>plt.tight_layout()</code> before showing the plot to prevent labels from overlapping.</li>
+<li>Display the plot.</li>
+</ol>
+<p><strong>Problem 5: Scatter Plot (<code>.plot()</code>)</strong></p>
+<ol type="a">
+<li>Create a Pandas DataFrame <code>df_adv</code> with two columns: ‘AdvertisingSpend’ (<code>[500, 800, 1200, 400, 1000]</code>) and ‘CustomersAcquired’ (<code>[20, 35, 55, 15, 45]</code>).</li>
+<li>Create a scatter plot using <code>df_adv.plot()</code> with <code>kind=&#39;scatter&#39;</code>. Specify ‘AdvertisingSpend’ for the x-axis and ‘CustomersAcquired’ for the y-axis.</li>
+<li>Add the title “Advertising Spend vs. Customers Acquired”.</li>
+<li>Add appropriate axis labels.</li>
+<li>Display the plot.</li>
+</ol>
+<p><strong>Problem 6: Histogram (<code>.plot()</code>)</strong></p>
+<ol type="a">
+<li>Create a Pandas Series <code>order_values</code> containing various order amounts: <code>pd.Series([25, 55, 80, 110, 45, 90, 120, 30, 60, 75, 95, 105, 50])</code>.</li>
+<li>Create a histogram directly from the <code>order_values</code> Series using <code>.plot(kind=&#39;hist&#39;, bins=6)</code>. Add <code>edgecolor=&#39;black&#39;</code> for better visibility of bins.</li>
+<li>Add the title “Distribution of Order Values”.</li>
+<li>Add appropriate x-axis (“Order Value ($)”) and y-axis (“Frequency”) labels.</li>
+<li>Display the plot.</li>
+</ol>
+<p><strong>Problem 7: Pie Chart (<code>.plot()</code>)</strong></p>
+<ol type="a">
+<li>Create a Pandas Series <code>survey_results</code> showing response counts: <code>pd.Series({&#39;Satisfied&#39;: 150, &#39;Neutral&#39;: 80, &#39;Dissatisfied&#39;: 30})</code>.</li>
+<li>Create a pie chart directly from the <code>survey_results</code> Series using <code>.plot(kind=&#39;pie&#39;, autopct=&#39;%1.1f%%&#39;)</code> to display percentages.</li>
+<li>Add the title “Customer Satisfaction Survey Results”.</li>
+<li>Remove the default y-axis label by calling <code>plt.ylabel(&#39;&#39;)</code>.</li>
+<li>Display the plot.</li>
+</ol>
+<p><strong>Problem 8: Plot Customization</strong></p>
+<ol type="a">
+<li><p>Reuse the data and the basic line plot code from Problem 1:</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1"></a>months <span class="op">=</span> [<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">5</span>, <span class="dv">6</span>]</span>
+<span id="cb2-2"><a href="#cb2-2"></a>units_sold <span class="op">=</span> [<span class="dv">500</span>, <span class="dv">550</span>, <span class="dv">620</span>, <span class="dv">580</span>, <span class="dv">650</span>, <span class="dv">700</span>]</span>
+<span id="cb2-3"><a href="#cb2-3"></a><span class="co"># plt.plot(months, units_sold) # Basic plot</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
+<li><p>Customize the plot as follows:</p>
+<ul>
+<li>Set the figure size to 8 inches wide by 5 inches tall using <code>plt.figure()</code>.</li>
+<li>Plot the data with a ‘red’ dashed line (<code>linestyle=&#39;--&#39;</code>) and square markers (<code>marker=&#39;s&#39;</code>).</li>
+<li>Add a grid using <code>plt.grid(True, linestyle=&#39;:&#39;)</code>.</li>
+<li>Add the title “Monthly Units Sold (Customized)”.</li>
+<li>Add axis labels “Month” and “Units”.</li>
+</ul></li>
+<li><p>Display the customized plot.</p></li>
+</ol>
+<p><strong>Problem 9: Integration - Clean and Plot</strong></p>
+<ol type="a">
+<li><p>Create a DataFrame where ‘Sales’ are strings with ‘k’ representing thousands:</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb3-2"><a href="#cb3-2"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb3-3"><a href="#cb3-3"></a>monthly_data <span class="op">=</span> {<span class="st">&#39;Month&#39;</span>: [<span class="st">&#39;Jan&#39;</span>, <span class="st">&#39;Feb&#39;</span>, <span class="st">&#39;Mar&#39;</span>, <span class="st">&#39;Apr&#39;</span>], <span class="st">&#39;SalesStr&#39;</span>: [<span class="st">&#39;55k&#39;</span>, <span class="st">&#39;61k&#39;</span>, <span class="st">&#39;58k&#39;</span>, <span class="st">&#39;65k&#39;</span>]}</span>
+<span id="cb3-4"><a href="#cb3-4"></a>df_monthly <span class="op">=</span> pd.DataFrame(monthly_data)</span>
+<span id="cb3-5"><a href="#cb3-5"></a><span class="bu">print</span>(<span class="st">&quot;Original DataFrame:&quot;</span>)</span>
+<span id="cb3-6"><a href="#cb3-6"></a><span class="bu">print</span>(df_monthly)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
+<li><p>Clean the ‘SalesStr’ column: Remove the ‘k’, convert the remaining string to numeric (integer or float) using <code>pd.to_numeric(errors=&#39;coerce&#39;)</code>, and multiply by 1000. Store this in a new column named ‘SalesValue’.</p></li>
+<li><p>Create a line plot showing the ‘SalesValue’ over the ‘Month’. Use the <code>.plot()</code> method directly on the relevant columns/data.</p></li>
+<li><p>Add title “Cleaned Monthly Sales Trend” and appropriate axis labels.</p></li>
+<li><p>Display the plot.</p></li>
+</ol>
+<p><strong>Problem 10: Integration - Filter and Plot</strong></p>
+<ol type="a">
+<li><p>Create a DataFrame with product data including categories:</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb4-2"><a href="#cb4-2"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb4-3"><a href="#cb4-3"></a>product_data <span class="op">=</span> {</span>
+<span id="cb4-4"><a href="#cb4-4"></a>    <span class="st">&#39;Product&#39;</span>: [<span class="st">&#39;A&#39;</span>, <span class="st">&#39;B&#39;</span>, <span class="st">&#39;C&#39;</span>, <span class="st">&#39;D&#39;</span>, <span class="st">&#39;E&#39;</span>, <span class="st">&#39;F&#39;</span>],</span>
+<span id="cb4-5"><a href="#cb4-5"></a>    <span class="st">&#39;Category&#39;</span>: [<span class="st">&#39;Electronics&#39;</span>, <span class="st">&#39;Apparel&#39;</span>, <span class="st">&#39;Electronics&#39;</span>, <span class="st">&#39;Groceries&#39;</span>, <span class="st">&#39;Apparel&#39;</span>, <span class="st">&#39;Electronics&#39;</span>],</span>
+<span id="cb4-6"><a href="#cb4-6"></a>    <span class="st">&#39;Price&#39;</span>: [<span class="dv">500</span>, <span class="dv">45</span>, <span class="dv">120</span>, <span class="dv">15</span>, <span class="dv">60</span>, <span class="dv">850</span>]</span>
+<span id="cb4-7"><a href="#cb4-7"></a>}</span>
+<span id="cb4-8"><a href="#cb4-8"></a>df_products <span class="op">=</span> pd.DataFrame(product_data)</span>
+<span id="cb4-9"><a href="#cb4-9"></a><span class="bu">print</span>(<span class="st">&quot;Product DataFrame:&quot;</span>)</span>
+<span id="cb4-10"><a href="#cb4-10"></a><span class="bu">print</span>(df_products)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
+<li><p>Filter this DataFrame using boolean indexing to create a new DataFrame <code>df_electronics</code> containing only the rows where ‘Category’ is ‘Electronics’.</p></li>
+<li><p>Create a histogram of the ‘Price’ column for <em>only</em> the <code>df_electronics</code> DataFrame using <code>.plot(kind=&#39;hist&#39;)</code>.</p></li>
+<li><p>Add the title “Price Distribution for Electronics”.</p></li>
+<li><p>Add appropriate axis labels.</p></li>
+<li><p>Display the plot.</p></li>
+</ol>
+<hr>
 </section>
+<section id="appendix-solutions-and-explanations" class="level2">
+<h2 class="anchored" data-anchor-id="appendix-solutions-and-explanations">Appendix: Solutions and Explanations</h2>
+<hr>
+<p><strong>Solution 1: Basic Line Plot (<code>plt</code>)</strong></p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb5-2"><a href="#cb5-2"></a></span>
+<span id="cb5-3"><a href="#cb5-3"></a><span class="co"># b) Data lists</span></span>
+<span id="cb5-4"><a href="#cb5-4"></a>months <span class="op">=</span> [<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">5</span>, <span class="dv">6</span>]</span>
+<span id="cb5-5"><a href="#cb5-5"></a>units_sold <span class="op">=</span> [<span class="dv">500</span>, <span class="dv">550</span>, <span class="dv">620</span>, <span class="dv">580</span>, <span class="dv">650</span>, <span class="dv">700</span>]</span>
+<span id="cb5-6"><a href="#cb5-6"></a></span>
+<span id="cb5-7"><a href="#cb5-7"></a><span class="co"># c) Create the plot</span></span>
+<span id="cb5-8"><a href="#cb5-8"></a>plt.plot(months, units_sold)</span>
+<span id="cb5-9"><a href="#cb5-9"></a></span>
+<span id="cb5-10"><a href="#cb5-10"></a><span class="co"># d) Add title</span></span>
+<span id="cb5-11"><a href="#cb5-11"></a>plt.title(<span class="st">&quot;Monthly Units Sold&quot;</span>)</span>
+<span id="cb5-12"><a href="#cb5-12"></a></span>
+<span id="cb5-13"><a href="#cb5-13"></a><span class="co"># e) Add labels</span></span>
+<span id="cb5-14"><a href="#cb5-14"></a>plt.xlabel(<span class="st">&quot;Month Number&quot;</span>)</span>
+<span id="cb5-15"><a href="#cb5-15"></a>plt.ylabel(<span class="st">&quot;Units Sold&quot;</span>)</span>
+<span id="cb5-16"><a href="#cb5-16"></a></span>
+<span id="cb5-17"><a href="#cb5-17"></a><span class="co"># f) Display the plot</span></span>
+<span id="cb5-18"><a href="#cb5-18"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><strong>Explanation:</strong> * We import the <code>pyplot</code> module as <code>plt</code>. * <code>plt.plot(x, y)</code> creates the line plot, taking the x-axis data (months) and y-axis data (units_sold) as arguments. * <code>plt.title()</code>, <code>plt.xlabel()</code>, <code>plt.ylabel()</code> are used to add descriptive text to the plot components. * <code>plt.show()</code> renders and displays the created plot.</p>
+<hr>
+<p><strong>Solution 2: Line Plot from Pandas Series (<code>.plot()</code>)</strong></p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb6-2"><a href="#cb6-2"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb6-3"><a href="#cb6-3"></a></span>
+<span id="cb6-4"><a href="#cb6-4"></a><span class="co"># b) Create Pandas Series</span></span>
+<span id="cb6-5"><a href="#cb6-5"></a>avg_temperature <span class="op">=</span> pd.Series([<span class="dv">65</span>, <span class="dv">68</span>, <span class="dv">72</span>, <span class="dv">75</span>, <span class="dv">78</span>, <span class="dv">80</span>], index<span class="op">=</span>[<span class="st">&#39;Jan&#39;</span>, <span class="st">&#39;Feb&#39;</span>, <span class="st">&#39;Mar&#39;</span>, <span class="st">&#39;Apr&#39;</span>, <span class="st">&#39;May&#39;</span>, <span class="st">&#39;Jun&#39;</span>])</span>
+<span id="cb6-6"><a href="#cb6-6"></a></span>
+<span id="cb6-7"><a href="#cb6-7"></a><span class="co"># c) Create line plot from Series using .plot()</span></span>
+<span id="cb6-8"><a href="#cb6-8"></a>avg_temperature.plot(kind<span class="op">=</span><span class="st">&#39;line&#39;</span>, marker<span class="op">=</span><span class="st">&#39;o&#39;</span>, figsize<span class="op">=</span>(<span class="dv">8</span>,<span class="dv">4</span>)) <span class="co"># figsize is optional</span></span>
+<span id="cb6-9"><a href="#cb6-9"></a></span>
+<span id="cb6-10"><a href="#cb6-10"></a><span class="co"># d) Add title and labels using plt functions</span></span>
+<span id="cb6-11"><a href="#cb6-11"></a>plt.title(<span class="st">&quot;Average Monthly Temperature&quot;</span>)</span>
+<span id="cb6-12"><a href="#cb6-12"></a>plt.xlabel(<span class="st">&quot;Month&quot;</span>)</span>
+<span id="cb6-13"><a href="#cb6-13"></a>plt.ylabel(<span class="st">&quot;Temperature (°F)&quot;</span>)</span>
+<span id="cb6-14"><a href="#cb6-14"></a></span>
+<span id="cb6-15"><a href="#cb6-15"></a><span class="co"># e) Add grid</span></span>
+<span id="cb6-16"><a href="#cb6-16"></a>plt.grid(<span class="va">True</span>)</span>
+<span id="cb6-17"><a href="#cb6-17"></a></span>
+<span id="cb6-18"><a href="#cb6-18"></a><span class="co"># f) Display the plot</span></span>
+<span id="cb6-19"><a href="#cb6-19"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><strong>Explanation:</strong> * We create a Pandas Series where the index holds the month names (x-axis labels) and the values hold the temperatures (y-axis values). * We call the <code>.plot()</code> method directly on the Series object. * <code>kind=&#39;line&#39;</code> specifies the desired plot type. * <code>marker=&#39;o&#39;</code> adds circular markers at each data point. * We can still use <code>plt</code> functions like <code>plt.title</code>, <code>plt.xlabel</code>, <code>plt.ylabel</code>, and <code>plt.grid</code> to customize the plot generated by Pandas.</p>
+<hr>
+<p><strong>Solution 3: Vertical Bar Chart (<code>plt</code>)</strong></p>
+<div class="sourceCode" id="cb7"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb7-2"><a href="#cb7-2"></a></span>
+<span id="cb7-3"><a href="#cb7-3"></a><span class="co"># a) Data lists</span></span>
+<span id="cb7-4"><a href="#cb7-4"></a>categories <span class="op">=</span> [<span class="st">&#39;Electronics&#39;</span>, <span class="st">&#39;Apparel&#39;</span>, <span class="st">&#39;Groceries&#39;</span>]</span>
+<span id="cb7-5"><a href="#cb7-5"></a>revenue <span class="op">=</span> [<span class="dv">150000</span>, <span class="dv">85000</span>, <span class="dv">110000</span>]</span>
+<span id="cb7-6"><a href="#cb7-6"></a></span>
+<span id="cb7-7"><a href="#cb7-7"></a><span class="co"># b) Create vertical bar chart</span></span>
+<span id="cb7-8"><a href="#cb7-8"></a>plt.bar(categories, revenue, color<span class="op">=</span>[<span class="st">&#39;#1f77b4&#39;</span>, <span class="st">&#39;#ff7f0e&#39;</span>, <span class="st">&#39;#2ca02c&#39;</span>]) <span class="co"># Optional colors</span></span>
+<span id="cb7-9"><a href="#cb7-9"></a></span>
+<span id="cb7-10"><a href="#cb7-10"></a><span class="co"># c) Add title</span></span>
+<span id="cb7-11"><a href="#cb7-11"></a>plt.title(<span class="st">&quot;Revenue by Category&quot;</span>)</span>
+<span id="cb7-12"><a href="#cb7-12"></a></span>
+<span id="cb7-13"><a href="#cb7-13"></a><span class="co"># d) Add labels</span></span>
+<span id="cb7-14"><a href="#cb7-14"></a>plt.xlabel(<span class="st">&quot;Category&quot;</span>)</span>
+<span id="cb7-15"><a href="#cb7-15"></a>plt.ylabel(<span class="st">&quot;Revenue ($)&quot;</span>)</span>
+<span id="cb7-16"><a href="#cb7-16"></a></span>
+<span id="cb7-17"><a href="#cb7-17"></a><span class="co"># e) Display the plot</span></span>
+<span id="cb7-18"><a href="#cb7-18"></a>plt.tight_layout() <span class="co"># Adjust layout</span></span>
+<span id="cb7-19"><a href="#cb7-19"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><strong>Explanation:</strong> * <code>plt.bar(x, height)</code> creates a vertical bar chart. * The first argument (<code>categories</code>) provides the positions/labels for the bars on the x-axis. * The second argument (<code>revenue</code>) provides the heights for the bars on the y-axis. * Optional <code>color</code> argument can take a list of colors for the bars. * <code>plt.tight_layout()</code> helps ensure labels don’t overlap, especially useful if x-axis labels were longer or rotated.</p>
+<hr>
+<p><strong>Solution 4: Horizontal Bar Chart from Series (<code>.plot()</code>)</strong></p>
+<div class="sourceCode" id="cb8"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb8-2"><a href="#cb8-2"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb8-3"><a href="#cb8-3"></a></span>
+<span id="cb8-4"><a href="#cb8-4"></a><span class="co"># a) Create Pandas Series</span></span>
+<span id="cb8-5"><a href="#cb8-5"></a>website_traffic <span class="op">=</span> pd.Series({<span class="st">&#39;Organic Search&#39;</span>: <span class="dv">1200</span>, <span class="st">&#39;Direct&#39;</span>: <span class="dv">800</span>, <span class="st">&#39;Referral&#39;</span>: <span class="dv">450</span>, <span class="st">&#39;Social Media&#39;</span>: <span class="dv">950</span>})</span>
+<span id="cb8-6"><a href="#cb8-6"></a></span>
+<span id="cb8-7"><a href="#cb8-7"></a><span class="co"># b) Create horizontal bar chart using .plot()</span></span>
+<span id="cb8-8"><a href="#cb8-8"></a>website_traffic.plot(kind<span class="op">=</span><span class="st">&#39;barh&#39;</span>, figsize<span class="op">=</span>(<span class="dv">8</span>, <span class="dv">5</span>), color<span class="op">=</span><span class="st">&#39;skyblue&#39;</span>)</span>
+<span id="cb8-9"><a href="#cb8-9"></a></span>
+<span id="cb8-10"><a href="#cb8-10"></a><span class="co"># c) Add title</span></span>
+<span id="cb8-11"><a href="#cb8-11"></a>plt.title(<span class="st">&quot;Website Traffic Sources&quot;</span>)</span>
+<span id="cb8-12"><a href="#cb8-12"></a></span>
+<span id="cb8-13"><a href="#cb8-13"></a><span class="co"># d) Add labels</span></span>
+<span id="cb8-14"><a href="#cb8-14"></a>plt.xlabel(<span class="st">&quot;Number of Visits&quot;</span>)</span>
+<span id="cb8-15"><a href="#cb8-15"></a>plt.ylabel(<span class="st">&quot;Source&quot;</span>)</span>
+<span id="cb8-16"><a href="#cb8-16"></a></span>
+<span id="cb8-17"><a href="#cb8-17"></a><span class="co"># e) Adjust layout</span></span>
+<span id="cb8-18"><a href="#cb8-18"></a>plt.tight_layout()</span>
+<span id="cb8-19"><a href="#cb8-19"></a></span>
+<span id="cb8-20"><a href="#cb8-20"></a><span class="co"># f) Display the plot</span></span>
+<span id="cb8-21"><a href="#cb8-21"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><strong>Explanation:</strong> * We create a Series where the index represents the categories (traffic sources) and the values represent the counts. * We use <code>series.plot(kind=&#39;barh&#39;)</code> to create a horizontal bar chart. Pandas automatically uses the Series index for the y-axis labels and the Series values for the bar lengths on the x-axis. * <code>figsize</code> adjusts the plot dimensions. * <code>plt.xlabel</code> and <code>plt.ylabel</code> are used for clarity. <code>plt.tight_layout()</code> is often useful for horizontal bar charts to prevent labels from getting cut off.</p>
+<hr>
+<p><strong>Solution 5: Scatter Plot (<code>.plot()</code>)</strong></p>
+<div class="sourceCode" id="cb9"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb9-2"><a href="#cb9-2"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb9-3"><a href="#cb9-3"></a></span>
+<span id="cb9-4"><a href="#cb9-4"></a><span class="co"># a) Create DataFrame</span></span>
+<span id="cb9-5"><a href="#cb9-5"></a>df_adv <span class="op">=</span> pd.DataFrame({</span>
+<span id="cb9-6"><a href="#cb9-6"></a>    <span class="st">&#39;AdvertisingSpend&#39;</span>: [<span class="dv">500</span>, <span class="dv">800</span>, <span class="dv">1200</span>, <span class="dv">400</span>, <span class="dv">1000</span>],</span>
+<span id="cb9-7"><a href="#cb9-7"></a>    <span class="st">&#39;CustomersAcquired&#39;</span>: [<span class="dv">20</span>, <span class="dv">35</span>, <span class="dv">55</span>, <span class="dv">15</span>, <span class="dv">45</span>]</span>
+<span id="cb9-8"><a href="#cb9-8"></a>})</span>
+<span id="cb9-9"><a href="#cb9-9"></a></span>
+<span id="cb9-10"><a href="#cb9-10"></a><span class="co"># b) Create scatter plot using .plot()</span></span>
+<span id="cb9-11"><a href="#cb9-11"></a>df_adv.plot(kind<span class="op">=</span><span class="st">&#39;scatter&#39;</span>, x<span class="op">=</span><span class="st">&#39;AdvertisingSpend&#39;</span>, y<span class="op">=</span><span class="st">&#39;CustomersAcquired&#39;</span>, alpha<span class="op">=</span><span class="fl">0.8</span>, figsize<span class="op">=</span>(<span class="dv">7</span>,<span class="dv">5</span>))</span>
+<span id="cb9-12"><a href="#cb9-12"></a></span>
+<span id="cb9-13"><a href="#cb9-13"></a><span class="co"># c) Add title</span></span>
+<span id="cb9-14"><a href="#cb9-14"></a>plt.title(<span class="st">&quot;Advertising Spend vs. Customers Acquired&quot;</span>)</span>
+<span id="cb9-15"><a href="#cb9-15"></a></span>
+<span id="cb9-16"><a href="#cb9-16"></a><span class="co"># d) Add labels (optional, as .plot() often infers from column names)</span></span>
+<span id="cb9-17"><a href="#cb9-17"></a>plt.xlabel(<span class="st">&quot;Advertising Spend ($)&quot;</span>)</span>
+<span id="cb9-18"><a href="#cb9-18"></a>plt.ylabel(<span class="st">&quot;Customers Acquired&quot;</span>)</span>
+<span id="cb9-19"><a href="#cb9-19"></a>plt.grid(<span class="va">True</span>, linestyle<span class="op">=</span><span class="st">&#39;:&#39;</span>) <span class="co"># Optional grid</span></span>
+<span id="cb9-20"><a href="#cb9-20"></a></span>
+<span id="cb9-21"><a href="#cb9-21"></a><span class="co"># e) Display the plot</span></span>
+<span id="cb9-22"><a href="#cb9-22"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><strong>Explanation:</strong> * We create a DataFrame with the two numerical variables we want to compare. * We use <code>df.plot(kind=&#39;scatter&#39;, x=&#39;ColumnName1&#39;, y=&#39;ColumnName2&#39;)</code>. * The <code>x</code> and <code>y</code> arguments specify which columns provide the coordinates for each point. * <code>alpha=0.8</code> makes the points slightly transparent, useful if points overlap.</p>
+<hr>
+<p><strong>Solution 6: Histogram (<code>.plot()</code>)</strong></p>
+<div class="sourceCode" id="cb10"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb10-2"><a href="#cb10-2"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb10-3"><a href="#cb10-3"></a></span>
+<span id="cb10-4"><a href="#cb10-4"></a><span class="co"># a) Create Pandas Series</span></span>
+<span id="cb10-5"><a href="#cb10-5"></a>order_values <span class="op">=</span> pd.Series([<span class="dv">25</span>, <span class="dv">55</span>, <span class="dv">80</span>, <span class="dv">110</span>, <span class="dv">45</span>, <span class="dv">90</span>, <span class="dv">120</span>, <span class="dv">30</span>, <span class="dv">60</span>, <span class="dv">75</span>, <span class="dv">95</span>, <span class="dv">105</span>, <span class="dv">50</span>])</span>
+<span id="cb10-6"><a href="#cb10-6"></a></span>
+<span id="cb10-7"><a href="#cb10-7"></a><span class="co"># b) Create histogram using .plot()</span></span>
+<span id="cb10-8"><a href="#cb10-8"></a>order_values.plot(kind<span class="op">=</span><span class="st">&#39;hist&#39;</span>, bins<span class="op">=</span><span class="dv">6</span>, edgecolor<span class="op">=</span><span class="st">&#39;black&#39;</span>, figsize<span class="op">=</span>(<span class="dv">8</span>,<span class="dv">4</span>))</span>
+<span id="cb10-9"><a href="#cb10-9"></a></span>
+<span id="cb10-10"><a href="#cb10-10"></a><span class="co"># c) Add title</span></span>
+<span id="cb10-11"><a href="#cb10-11"></a>plt.title(<span class="st">&quot;Distribution of Order Values&quot;</span>)</span>
+<span id="cb10-12"><a href="#cb10-12"></a></span>
+<span id="cb10-13"><a href="#cb10-13"></a><span class="co"># d) Add labels</span></span>
+<span id="cb10-14"><a href="#cb10-14"></a>plt.xlabel(<span class="st">&quot;Order Value ($)&quot;</span>)</span>
+<span id="cb10-15"><a href="#cb10-15"></a>plt.ylabel(<span class="st">&quot;Frequency&quot;</span>) <span class="co"># Histograms show frequency (count)</span></span>
+<span id="cb10-16"><a href="#cb10-16"></a></span>
+<span id="cb10-17"><a href="#cb10-17"></a><span class="co"># e) Display the plot</span></span>
+<span id="cb10-18"><a href="#cb10-18"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><strong>Explanation:</strong> * We create a Series containing the numerical data whose distribution we want to visualize. * We use <code>series.plot(kind=&#39;hist&#39;)</code>. * The <code>bins=6</code> argument suggests how many intervals (bars) the data range should be divided into. Matplotlib/Pandas might adjust this slightly. * <code>edgecolor=&#39;black&#39;</code> draws lines around the bars, making them more distinct.</p>
+<hr>
+<p><strong>Solution 7: Pie Chart (<code>.plot()</code>)</strong></p>
+<div class="sourceCode" id="cb11"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb11-2"><a href="#cb11-2"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb11-3"><a href="#cb11-3"></a></span>
+<span id="cb11-4"><a href="#cb11-4"></a><span class="co"># a) Create Pandas Series</span></span>
+<span id="cb11-5"><a href="#cb11-5"></a>survey_results <span class="op">=</span> pd.Series({<span class="st">&#39;Satisfied&#39;</span>: <span class="dv">150</span>, <span class="st">&#39;Neutral&#39;</span>: <span class="dv">80</span>, <span class="st">&#39;Dissatisfied&#39;</span>: <span class="dv">30</span>})</span>
+<span id="cb11-6"><a href="#cb11-6"></a></span>
+<span id="cb11-7"><a href="#cb11-7"></a><span class="co"># b) Create pie chart using .plot()</span></span>
+<span id="cb11-8"><a href="#cb11-8"></a>survey_results.plot(kind<span class="op">=</span><span class="st">&#39;pie&#39;</span>, autopct<span class="op">=</span><span class="st">&#39;</span><span class="sc">%1.1f%%</span><span class="st">&#39;</span>, startangle<span class="op">=</span><span class="dv">90</span>, figsize<span class="op">=</span>(<span class="dv">6</span>, <span class="dv">6</span>))</span>
+<span id="cb11-9"><a href="#cb11-9"></a><span class="co"># autopct displays percentages on slices, startangle rotates the start position</span></span>
+<span id="cb11-10"><a href="#cb11-10"></a></span>
+<span id="cb11-11"><a href="#cb11-11"></a><span class="co"># c) Add title</span></span>
+<span id="cb11-12"><a href="#cb11-12"></a>plt.title(<span class="st">&quot;Customer Satisfaction Survey Results&quot;</span>)</span>
+<span id="cb11-13"><a href="#cb11-13"></a></span>
+<span id="cb11-14"><a href="#cb11-14"></a><span class="co"># d) Remove default y-axis label (often not needed for pie charts)</span></span>
+<span id="cb11-15"><a href="#cb11-15"></a>plt.ylabel(<span class="st">&#39;&#39;</span>)</span>
+<span id="cb11-16"><a href="#cb11-16"></a></span>
+<span id="cb11-17"><a href="#cb11-17"></a><span class="co"># e) Display the plot</span></span>
+<span id="cb11-18"><a href="#cb11-18"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><strong>Explanation:</strong> * We create a Series where the index represents the categories and the values represent their counts or proportions. * We use <code>series.plot(kind=&#39;pie&#39;)</code>. Pandas uses the index for labels and the values for slice sizes. * <code>autopct=&#39;%1.1f%%&#39;</code> is a format string that automatically calculates and displays the percentage for each slice, formatted to one decimal place. * <code>startangle=90</code> rotates the starting point of the first slice to the top. * Setting <code>plt.ylabel(&#39;&#39;)</code> removes the automatic label (often the Series name) that Pandas might add, which can clutter a pie chart.</p>
+<hr>
+<p><strong>Solution 8: Plot Customization</strong></p>
+<div class="sourceCode" id="cb12"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb12-2"><a href="#cb12-2"></a></span>
+<span id="cb12-3"><a href="#cb12-3"></a><span class="co"># a) Original data</span></span>
+<span id="cb12-4"><a href="#cb12-4"></a>months <span class="op">=</span> [<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">5</span>, <span class="dv">6</span>]</span>
+<span id="cb12-5"><a href="#cb12-5"></a>units_sold <span class="op">=</span> [<span class="dv">500</span>, <span class="dv">550</span>, <span class="dv">620</span>, <span class="dv">580</span>, <span class="dv">650</span>, <span class="dv">700</span>]</span>
+<span id="cb12-6"><a href="#cb12-6"></a></span>
+<span id="cb12-7"><a href="#cb12-7"></a><span class="co"># b) Customize the plot</span></span>
+<span id="cb12-8"><a href="#cb12-8"></a><span class="co"># Set figure size</span></span>
+<span id="cb12-9"><a href="#cb12-9"></a>plt.figure(figsize<span class="op">=</span>(<span class="dv">8</span>, <span class="dv">5</span>))</span>
+<span id="cb12-10"><a href="#cb12-10"></a></span>
+<span id="cb12-11"><a href="#cb12-11"></a><span class="co"># Plot with specified color, linestyle, and marker</span></span>
+<span id="cb12-12"><a href="#cb12-12"></a>plt.plot(months, units_sold, color<span class="op">=</span><span class="st">&#39;red&#39;</span>, linestyle<span class="op">=</span><span class="st">&#39;--&#39;</span>, marker<span class="op">=</span><span class="st">&#39;s&#39;</span>) <span class="co"># Changed marker to square &#39;s&#39;</span></span>
+<span id="cb12-13"><a href="#cb12-13"></a></span>
+<span id="cb12-14"><a href="#cb12-14"></a><span class="co"># Add grid with specified style</span></span>
+<span id="cb12-15"><a href="#cb12-15"></a>plt.grid(<span class="va">True</span>, linestyle<span class="op">=</span><span class="st">&#39;:&#39;</span>)</span>
+<span id="cb12-16"><a href="#cb12-16"></a></span>
+<span id="cb12-17"><a href="#cb12-17"></a><span class="co"># Add title and labels</span></span>
+<span id="cb12-18"><a href="#cb12-18"></a>plt.title(<span class="st">&quot;Monthly Units Sold (Customized)&quot;</span>)</span>
+<span id="cb12-19"><a href="#cb12-19"></a>plt.xlabel(<span class="st">&quot;Month&quot;</span>)</span>
+<span id="cb12-20"><a href="#cb12-20"></a>plt.ylabel(<span class="st">&quot;Units&quot;</span>)</span>
+<span id="cb12-21"><a href="#cb12-21"></a></span>
+<span id="cb12-22"><a href="#cb12-22"></a><span class="co"># c) Display the customized plot</span></span>
+<span id="cb12-23"><a href="#cb12-23"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><strong>Explanation:</strong> * <code>plt.figure(figsize=(8, 5))</code> sets the plot dimensions <em>before</em> the <code>plt.plot</code> command. * Inside <code>plt.plot()</code>, we added arguments: * <code>color=&#39;red&#39;</code> sets the line color. * <code>linestyle=&#39;--&#39;</code> creates a dashed line. * <code>marker=&#39;s&#39;</code> places square markers at each data point. * <code>plt.grid(True, linestyle=&#39;:&#39;)</code> enables the grid and makes the lines dotted.</p>
+<hr>
+<p><strong>Solution 9: Integration - Clean and Plot</strong></p>
+<div class="sourceCode" id="cb13"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb13-2"><a href="#cb13-2"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb13-3"><a href="#cb13-3"></a></span>
+<span id="cb13-4"><a href="#cb13-4"></a><span class="co"># a) Create original DataFrame</span></span>
+<span id="cb13-5"><a href="#cb13-5"></a>monthly_data <span class="op">=</span> {<span class="st">&#39;Month&#39;</span>: [<span class="st">&#39;Jan&#39;</span>, <span class="st">&#39;Feb&#39;</span>, <span class="st">&#39;Mar&#39;</span>, <span class="st">&#39;Apr&#39;</span>], <span class="st">&#39;SalesStr&#39;</span>: [<span class="st">&#39;55k&#39;</span>, <span class="st">&#39;61k&#39;</span>, <span class="st">&#39;58k&#39;</span>, <span class="st">&#39;65k&#39;</span>]}</span>
+<span id="cb13-6"><a href="#cb13-6"></a>df_monthly <span class="op">=</span> pd.DataFrame(monthly_data)</span>
+<span id="cb13-7"><a href="#cb13-7"></a><span class="bu">print</span>(<span class="st">&quot;Original DataFrame:&quot;</span>)</span>
+<span id="cb13-8"><a href="#cb13-8"></a><span class="bu">print</span>(df_monthly)</span>
+<span id="cb13-9"><a href="#cb13-9"></a></span>
+<span id="cb13-10"><a href="#cb13-10"></a><span class="co"># b) Clean &#39;SalesStr&#39; column</span></span>
+<span id="cb13-11"><a href="#cb13-11"></a><span class="co"># Remove &#39;k&#39;, convert to numeric, multiply by 1000</span></span>
+<span id="cb13-12"><a href="#cb13-12"></a>sales_numeric <span class="op">=</span> df_monthly[<span class="st">&#39;SalesStr&#39;</span>].<span class="bu">str</span>.replace(<span class="st">&#39;k&#39;</span>, <span class="st">&#39;&#39;</span>)</span>
+<span id="cb13-13"><a href="#cb13-13"></a><span class="co"># Use pd.to_numeric to handle potential errors robustly</span></span>
+<span id="cb13-14"><a href="#cb13-14"></a>sales_numeric <span class="op">=</span> pd.to_numeric(sales_numeric, errors<span class="op">=</span><span class="st">&#39;coerce&#39;</span>)</span>
+<span id="cb13-15"><a href="#cb13-15"></a>df_monthly[<span class="st">&#39;SalesValue&#39;</span>] <span class="op">=</span> sales_numeric <span class="op">*</span> <span class="dv">1000</span></span>
+<span id="cb13-16"><a href="#cb13-16"></a></span>
+<span id="cb13-17"><a href="#cb13-17"></a><span class="bu">print</span>(<span class="st">&quot;</span><span class="ch">\n</span><span class="st">DataFrame after cleaning and conversion:&quot;</span>)</span>
+<span id="cb13-18"><a href="#cb13-18"></a><span class="bu">print</span>(df_monthly)</span>
+<span id="cb13-19"><a href="#cb13-19"></a><span class="bu">print</span>(<span class="st">&quot;</span><span class="ch">\n</span><span class="st">Data Types:&quot;</span>)</span>
+<span id="cb13-20"><a href="#cb13-20"></a><span class="bu">print</span>(df_monthly.dtypes) <span class="co"># Check SalesValue type</span></span>
+<span id="cb13-21"><a href="#cb13-21"></a></span>
+<span id="cb13-22"><a href="#cb13-22"></a><span class="co"># c) Create line plot using .plot()</span></span>
+<span id="cb13-23"><a href="#cb13-23"></a>df_monthly.plot(kind<span class="op">=</span><span class="st">&#39;line&#39;</span>, x<span class="op">=</span><span class="st">&#39;Month&#39;</span>, y<span class="op">=</span><span class="st">&#39;SalesValue&#39;</span>, marker<span class="op">=</span><span class="st">&#39;o&#39;</span>, figsize<span class="op">=</span>(<span class="dv">8</span>, <span class="dv">4</span>))</span>
+<span id="cb13-24"><a href="#cb13-24"></a></span>
+<span id="cb13-25"><a href="#cb13-25"></a><span class="co"># d) Add title and labels</span></span>
+<span id="cb13-26"><a href="#cb13-26"></a>plt.title(<span class="st">&quot;Cleaned Monthly Sales Trend&quot;</span>)</span>
+<span id="cb13-27"><a href="#cb13-27"></a>plt.xlabel(<span class="st">&quot;Month&quot;</span>)</span>
+<span id="cb13-28"><a href="#cb13-28"></a>plt.ylabel(<span class="st">&quot;Sales ($)&quot;</span>)</span>
+<span id="cb13-29"><a href="#cb13-29"></a>plt.grid(<span class="va">True</span>)</span>
+<span id="cb13-30"><a href="#cb13-30"></a>plt.ylim(bottom<span class="op">=</span><span class="dv">0</span>) <span class="co"># Ensure y-axis starts at 0</span></span>
+<span id="cb13-31"><a href="#cb13-31"></a></span>
+<span id="cb13-32"><a href="#cb13-32"></a><span class="co"># e) Display the plot</span></span>
+<span id="cb13-33"><a href="#cb13-33"></a>plt.tight_layout()</span>
+<span id="cb13-34"><a href="#cb13-34"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><strong>Explanation:</strong> * We first use Pandas string methods (<code>.str.replace</code>) to remove the ‘k’ from the ‘SalesStr’ column (Module 10). * <code>pd.to_numeric</code> converts the cleaned strings to numbers (Module 10). * We then multiply by 1000 to get the actual sales value. * Finally, we use the DataFrame’s <code>.plot()</code> method, specifying <code>x=&#39;Month&#39;</code> and <code>y=&#39;SalesValue&#39;</code>, to create the line plot visualization (Module 11). This combines data cleaning/transformation with visualization.</p>
+<hr>
+<p><strong>Solution 10: Integration - Filter and Plot</strong></p>
+<div class="sourceCode" id="cb14"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb14-2"><a href="#cb14-2"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb14-3"><a href="#cb14-3"></a></span>
+<span id="cb14-4"><a href="#cb14-4"></a><span class="co"># a) Create original DataFrame</span></span>
+<span id="cb14-5"><a href="#cb14-5"></a>product_data <span class="op">=</span> {</span>
+<span id="cb14-6"><a href="#cb14-6"></a>    <span class="st">&#39;Product&#39;</span>: [<span class="st">&#39;A&#39;</span>, <span class="st">&#39;B&#39;</span>, <span class="st">&#39;C&#39;</span>, <span class="st">&#39;D&#39;</span>, <span class="st">&#39;E&#39;</span>, <span class="st">&#39;F&#39;</span>],</span>
+<span id="cb14-7"><a href="#cb14-7"></a>    <span class="st">&#39;Category&#39;</span>: [<span class="st">&#39;Electronics&#39;</span>, <span class="st">&#39;Apparel&#39;</span>, <span class="st">&#39;Electronics&#39;</span>, <span class="st">&#39;Groceries&#39;</span>, <span class="st">&#39;Apparel&#39;</span>, <span class="st">&#39;Electronics&#39;</span>],</span>
+<span id="cb14-8"><a href="#cb14-8"></a>    <span class="st">&#39;Price&#39;</span>: [<span class="dv">500</span>, <span class="dv">45</span>, <span class="dv">120</span>, <span class="dv">15</span>, <span class="dv">60</span>, <span class="dv">850</span>]</span>
+<span id="cb14-9"><a href="#cb14-9"></a>}</span>
+<span id="cb14-10"><a href="#cb14-10"></a>df_products <span class="op">=</span> pd.DataFrame(product_data)</span>
+<span id="cb14-11"><a href="#cb14-11"></a><span class="bu">print</span>(<span class="st">&quot;Product DataFrame:&quot;</span>)</span>
+<span id="cb14-12"><a href="#cb14-12"></a><span class="bu">print</span>(df_products)</span>
+<span id="cb14-13"><a href="#cb14-13"></a></span>
+<span id="cb14-14"><a href="#cb14-14"></a><span class="co"># b) Filter for &#39;Electronics&#39; category using boolean indexing</span></span>
+<span id="cb14-15"><a href="#cb14-15"></a>is_electronics <span class="op">=</span> df_products[<span class="st">&#39;Category&#39;</span>] <span class="op">==</span> <span class="st">&#39;Electronics&#39;</span></span>
+<span id="cb14-16"><a href="#cb14-16"></a>df_electronics <span class="op">=</span> df_products[is_electronics]</span>
+<span id="cb14-17"><a href="#cb14-17"></a><span class="bu">print</span>(<span class="st">&quot;</span><span class="ch">\n</span><span class="st">Electronics Only DataFrame:&quot;</span>)</span>
+<span id="cb14-18"><a href="#cb14-18"></a><span class="bu">print</span>(df_electronics)</span>
+<span id="cb14-19"><a href="#cb14-19"></a></span>
+<span id="cb14-20"><a href="#cb14-20"></a><span class="co"># c) Create histogram of &#39;Price&#39; for the filtered DataFrame</span></span>
+<span id="cb14-21"><a href="#cb14-21"></a>df_electronics[<span class="st">&#39;Price&#39;</span>].plot(kind<span class="op">=</span><span class="st">&#39;hist&#39;</span>, bins<span class="op">=</span><span class="dv">5</span>, edgecolor<span class="op">=</span><span class="st">&#39;black&#39;</span>, figsize<span class="op">=</span>(<span class="dv">8</span>,<span class="dv">4</span>))</span>
+<span id="cb14-22"><a href="#cb14-22"></a></span>
+<span id="cb14-23"><a href="#cb14-23"></a><span class="co"># d) Add title</span></span>
+<span id="cb14-24"><a href="#cb14-24"></a>plt.title(<span class="st">&quot;Price Distribution for Electronics&quot;</span>)</span>
+<span id="cb14-25"><a href="#cb14-25"></a></span>
+<span id="cb14-26"><a href="#cb14-26"></a><span class="co"># e) Add labels</span></span>
+<span id="cb14-27"><a href="#cb14-27"></a>plt.xlabel(<span class="st">&quot;Price ($)&quot;</span>)</span>
+<span id="cb14-28"><a href="#cb14-28"></a>plt.ylabel(<span class="st">&quot;Frequency&quot;</span>)</span>
+<span id="cb14-29"><a href="#cb14-29"></a></span>
+<span id="cb14-30"><a href="#cb14-30"></a><span class="co"># f) Display the plot</span></span>
+<span id="cb14-31"><a href="#cb14-31"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><strong>Explanation:</strong> * We first use boolean indexing (<code>df_products[&#39;Category&#39;] == &#39;Electronics&#39;</code>) to select only the rows belonging to the ‘Electronics’ category, creating a new DataFrame <code>df_electronics</code> (Module 9). * We then call the <code>.plot(kind=&#39;hist&#39;)</code> method specifically on the ‘Price’ column of this <em>filtered</em> DataFrame (<code>df_electronics[&#39;Price&#39;]</code>). * This creates a histogram showing the price distribution for only the electronic products, demonstrating how filtering (data manipulation) and visualization work together to analyze specific subsets of data.</p>
+<hr>
 </section>
 
 </main>

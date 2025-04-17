@@ -8,7 +8,7 @@
 
 <meta name="author" content="Dr. Smith">
 
-<title>Integrative Assignment: Module 3 – String Manipulation, User Input, and Formatted Output</title>
+<title>Module 5: Problem Set</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -3087,19 +3087,10 @@ vertical-align: -.125em;
   <nav id="TOC" role="doc-toc" class="toc-active">
     <h2 id="toc-title">Table of contents</h2>
    
-  <ul class="collapse">
-  <li><a href="#integrative-assignment-module-3-string-manipulation-user-input-and-formatted-output" id="toc-integrative-assignment-module-3-string-manipulation-user-input-and-formatted-output" class="nav-link active" data-scroll-target="#integrative-assignment-module-3-string-manipulation-user-input-and-formatted-output">Integrative Assignment: Module 3 – String Manipulation, User Input, and Formatted Output</a>
-  <ul class="collapse">
-  <li><a href="#overview" id="toc-overview" class="nav-link" data-scroll-target="#overview">Overview</a></li>
-  <li><a href="#objectives" id="toc-objectives" class="nav-link" data-scroll-target="#objectives">Objectives</a></li>
-  <li><a href="#assignment-description" id="toc-assignment-description" class="nav-link" data-scroll-target="#assignment-description">Assignment Description</a></li>
-  <li><a href="#starter-code" id="toc-starter-code" class="nav-link" data-scroll-target="#starter-code">Starter Code</a></li>
-  <li><a href="#submission-guidelines" id="toc-submission-guidelines" class="nav-link" data-scroll-target="#submission-guidelines">Submission Guidelines</a></li>
-  </ul></li>
-  <li><a href="#marking-rubric" id="toc-marking-rubric" class="nav-link" data-scroll-target="#marking-rubric">Marking Rubric</a>
-  <ul class="collapse">
-  <li><a href="#academic-integrity-reminder" id="toc-academic-integrity-reminder" class="nav-link" data-scroll-target="#academic-integrity-reminder">Academic Integrity Reminder</a></li>
-  </ul></li>
+  <ul>
+  <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction">Introduction</a></li>
+  <li><a href="#module-5-problem-set" id="toc-module-5-problem-set" class="nav-link" data-scroll-target="#module-5-problem-set">Module 5 Problem Set</a></li>
+  <li><a href="#appendix-solutions-and-explanations" id="toc-appendix-solutions-and-explanations" class="nav-link" data-scroll-target="#appendix-solutions-and-explanations">Appendix: Solutions and Explanations</a></li>
   </ul>
 </nav>
 </div>
@@ -3109,27 +3100,20 @@ vertical-align: -.125em;
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Integrative Assignment: Module 3 – String Manipulation, User Input, and Formatted Output</h1>
+<h1 class="title">Module 5: Problem Set</h1>
 </div>
 
 
-<div class="quarto-title-meta-author">
-  <div class="quarto-title-meta-heading">Author</div>
-  <div class="quarto-title-meta-heading">Affiliation</div>
-  
-    <div class="quarto-title-meta-contents">
-    <p class="author">Dr. Smith </p>
-  </div>
-  <div class="quarto-title-meta-contents">
-        <p class="affiliation">
-            University of South Florida
-          </p>
-      </div>
-  </div>
 
 <div class="quarto-title-meta">
 
-      
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Dr. Smith </p>
+          </div>
+  </div>
+    
   
     
   </div>
@@ -3139,173 +3123,234 @@ vertical-align: -.125em;
 </header>
 
 
-<section id="integrative-assignment-module-3-string-manipulation-user-input-and-formatted-output" class="level1">
-<h1>Integrative Assignment: Module 3 – String Manipulation, User Input, and Formatted Output</h1>
-<section id="overview" class="level2">
-<h2 class="anchored" data-anchor-id="overview">Overview</h2>
-<p>In this assignment, you will demonstrate your understanding of Module 3 concepts by creating an interactive customer order processing program. This program will utilize string manipulation, user input, and formatted output to create a professional-looking order summary. This assignment will reinforce your ability to handle text data effectively, interact with users, and present information clearly – key skills for developing business applications.</p>
-</section>
-<section id="objectives" class="level2">
-<h2 class="anchored" data-anchor-id="objectives">Objectives</h2>
-<p>By completing this assignment, you will:</p>
-<ul>
-<li><strong>Get and Process User Input:</strong> Use the <code>input()</code> function to collect information from users and process it appropriately.</li>
-<li><strong>Apply String Methods:</strong> Use string methods like <code>.strip()</code>, <code>.title()</code>, and other text manipulation techniques.</li>
-<li><strong>Perform Type Conversion:</strong> Convert string input to appropriate numeric types for calculations.</li>
-<li><strong>Implement Error Handling:</strong> Use basic error handling techniques to deal with invalid input.</li>
-<li><strong>Format Output with F-strings:</strong> Create professional-looking output with proper formatting and alignment.</li>
-<li><strong>Create a Complete Application:</strong> Build a program that follows the input-process-output pattern.</li>
-</ul>
-</section>
-<section id="assignment-description" class="level2">
-<h2 class="anchored" data-anchor-id="assignment-description">Assignment Description</h2>
-<p>Imagine you work for an e-commerce company that needs a simple order processing system. Your task is to develop a Python program that:</p>
-<ol type="1">
-<li><strong>Collects Customer Information:</strong>
-<ul>
-<li>Asks for the customer’s name</li>
-<li>Asks for the customer’s email address</li>
-</ul></li>
-<li><strong>Collects Order Information:</strong>
-<ul>
-<li>Asks for a product name</li>
-<li>Asks for the quantity ordered</li>
-<li>Asks for the unit price</li>
-</ul></li>
-<li><strong>Processes the Information:</strong>
-<ul>
-<li>Cleans up the input (removing extra spaces, standardizing capitalization)</li>
-<li>Calculates the subtotal (quantity × unit price)</li>
-<li>Calculates sales tax (8.5% of subtotal)</li>
-<li>Calculates the order total (subtotal + tax)</li>
-<li>Applies a 10% discount if quantity is 10 or more</li>
-</ul></li>
-<li><strong>Displays an Order Summary:</strong>
-<ul>
-<li>Shows all customer and order information in a well-formatted layout</li>
-<li>Displays all calculated values formatted as currency with two decimal places</li>
-<li>Shows the discount amount (if applicable)</li>
-</ul></li>
-<li><strong>Validates Input:</strong>
-<ul>
-<li>Ensures the quantity is a positive integer</li>
-<li>Ensures the price is a positive number</li>
-<li>Handles any potential errors in the conversion process</li>
-</ul></li>
-</ol>
-</section>
-<section id="starter-code" class="level2">
-<h2 class="anchored" data-anchor-id="starter-code">Starter Code</h2>
-<p>Below is a starter code template to help you begin:</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1"></a><span class="co"># Module 3 Assignment: String Manipulation, User Input, and Formatted Output</span></span>
-<span id="cb1-2"><a href="#cb1-2"></a></span>
-<span id="cb1-3"><a href="#cb1-3"></a><span class="co"># Welcome message</span></span>
-<span id="cb1-4"><a href="#cb1-4"></a><span class="bu">print</span>(<span class="st">&quot;=&quot;</span> <span class="op">*</span> <span class="dv">50</span>)</span>
-<span id="cb1-5"><a href="#cb1-5"></a><span class="bu">print</span>(<span class="st">&quot;CUSTOMER ORDER PROCESSING SYSTEM&quot;</span>)</span>
-<span id="cb1-6"><a href="#cb1-6"></a><span class="bu">print</span>(<span class="st">&quot;=&quot;</span> <span class="op">*</span> <span class="dv">50</span>)</span>
-<span id="cb1-7"><a href="#cb1-7"></a><span class="bu">print</span>(<span class="st">&quot;Please enter the following information:</span><span class="ch">\n</span><span class="st">&quot;</span>)</span>
-<span id="cb1-8"><a href="#cb1-8"></a></span>
-<span id="cb1-9"><a href="#cb1-9"></a><span class="co"># </span><span class="al">TODO</span><span class="co">: Collect customer information</span></span>
-<span id="cb1-10"><a href="#cb1-10"></a><span class="co"># 1. Ask for customer name</span></span>
-<span id="cb1-11"><a href="#cb1-11"></a><span class="co"># 2. Ask for customer email</span></span>
-<span id="cb1-12"><a href="#cb1-12"></a></span>
-<span id="cb1-13"><a href="#cb1-13"></a><span class="co"># </span><span class="al">TODO</span><span class="co">: Collect order information</span></span>
-<span id="cb1-14"><a href="#cb1-14"></a><span class="co"># 1. Ask for product name</span></span>
-<span id="cb1-15"><a href="#cb1-15"></a><span class="co"># 2. Ask for quantity</span></span>
-<span id="cb1-16"><a href="#cb1-16"></a><span class="co"># 3. Ask for unit price</span></span>
-<span id="cb1-17"><a href="#cb1-17"></a></span>
-<span id="cb1-18"><a href="#cb1-18"></a><span class="co"># </span><span class="al">TODO</span><span class="co">: Process the information</span></span>
-<span id="cb1-19"><a href="#cb1-19"></a><span class="co"># 1. Clean up input (remove extra spaces, standardize capitalization)</span></span>
-<span id="cb1-20"><a href="#cb1-20"></a><span class="co"># 2. Convert quantity and price to appropriate numeric types</span></span>
-<span id="cb1-21"><a href="#cb1-21"></a><span class="co"># 3. Calculate subtotal, tax, and total</span></span>
-<span id="cb1-22"><a href="#cb1-22"></a><span class="co"># 4. Apply discount if applicable</span></span>
-<span id="cb1-23"><a href="#cb1-23"></a></span>
-<span id="cb1-24"><a href="#cb1-24"></a><span class="co"># </span><span class="al">TODO</span><span class="co">: Display order summary</span></span>
-<span id="cb1-25"><a href="#cb1-25"></a><span class="co"># Use f-strings to create a well-formatted output</span></span>
-<span id="cb1-26"><a href="#cb1-26"></a></span>
-<span id="cb1-27"><a href="#cb1-27"></a><span class="co"># Implement error handling where appropriate</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</section>
-<section id="submission-guidelines" class="level2">
-<h2 class="anchored" data-anchor-id="submission-guidelines">Submission Guidelines</h2>
-<ul>
-<li>Save your completed assignment as a Python file named <code>module03-assignment.py</code>.</li>
-<li>Submit your file via Canvas before the deadline.</li>
-<li>Ensure your code runs without errors and meets all the assignment requirements.</li>
-</ul>
-<div class="callout callout-style-simple callout-tip">
-<div class="callout-body d-flex">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-body-container">
-<p><strong>Tip:</strong><br>
-Test your program with various inputs, including edge cases (like entering “ten” instead of “10” for quantity). Your program should handle these gracefully.</p>
-</div>
-</div>
-</div>
-</section>
-</section>
-<section id="marking-rubric" class="level1">
-<h1>Marking Rubric</h1>
-<p>The following rubric will be used to evaluate your assignment. The total possible points for this assignment is <strong>25</strong>.</p>
-<table class="caption-top table">
-<colgroup>
-<col style="width: 29%">
-<col style="width: 5%">
-<col style="width: 65%">
-</colgroup>
-<thead>
-<tr class="header">
-<th>Criterion</th>
-<th>Points</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><strong>Input Collection</strong></td>
-<td>5</td>
-<td>Correctly collects all required information using the <code>input()</code> function with clear prompts.</td>
-</tr>
-<tr class="even">
-<td><strong>String Processing</strong></td>
-<td>5</td>
-<td>Properly cleans and standardizes text input using string methods.</td>
-</tr>
-<tr class="odd">
-<td><strong>Type Conversion &amp; Calculations</strong></td>
-<td>5</td>
-<td>Accurately converts strings to numeric types and performs all required calculations.</td>
-</tr>
-<tr class="even">
-<td><strong>Error Handling</strong></td>
-<td>3</td>
-<td>Implements appropriate error handling for invalid input.</td>
-</tr>
-<tr class="odd">
-<td><strong>Output Formatting</strong></td>
-<td>5</td>
-<td>Creates professional, well-aligned output with proper currency formatting using f-strings.</td>
-</tr>
-<tr class="even">
-<td><strong>Code Structure &amp; Comments</strong></td>
-<td>2</td>
-<td>Organizes code logically with descriptive comments explaining the process.</td>
-</tr>
-<tr class="odd">
-<td><strong>Total</strong></td>
-<td><strong>25</strong></td>
-<td></td>
-</tr>
-</tbody>
-</table>
-<section id="academic-integrity-reminder" class="level2">
-<h2 class="anchored" data-anchor-id="academic-integrity-reminder">Academic Integrity Reminder</h2>
-<p>All work must be your own. Unauthorized collaboration or plagiarism is strictly prohibited and will be considered an academic violation. Please adhere to the course policies regarding academic integrity.</p>
+<section id="introduction" class="level2">
+<h2 class="anchored" data-anchor-id="introduction">Introduction</h2>
+<p>Alright class, building on our knowledge of lists and tuples, let’s dive into dictionaries and basic aggregation with this next set of practice problems. Dictionaries are essential for mapping identifiers to data, a very common task in business programming. Aggregation functions help us quickly summarize data collections.</p>
+<p>Remember: * <strong>Dictionaries <code>{}</code> store <code>key: value</code> pairs.</strong> Access is by <em>key</em>, not index. Keys must be unique and immutable. Dictionaries <em>are</em> mutable. * <strong>Aggregation functions (<code>len</code>, <code>sum</code>, <code>min</code>, <code>max</code>)</strong> summarize data, but pay close attention to the data types they work with.</p>
 <hr>
-<p>Sincerely,<br>
-Dr. Smith</p>
 </section>
+<section id="module-5-problem-set" class="level2">
+<h2 class="anchored" data-anchor-id="module-5-problem-set">Module 5 Problem Set</h2>
+<p><strong>Instructions:</strong> Write Python code to solve each problem. Use the concepts from Module 5 (and Module 4 where relevant). Focus on using dictionaries for lookups and the basic aggregation functions <code>len()</code>, <code>sum()</code>, <code>min()</code>, <code>max()</code>.</p>
+<hr>
+<p><strong>Problem 1: Creating a Stock Price Dictionary</strong></p>
+<p>You want to store the current prices of a few stocks using their ticker symbols as unique identifiers. a) Create a dictionary named <code>stock_prices</code> that maps the following stock tickers (keys, strings) to their prices (values, floats): * “AAPL”: 175.30 * “GOOG”: 2800.50 * “MSFT”: 310.75 b) Print the <code>stock_prices</code> dictionary.</p>
+<p><strong>Problem 2: Accessing and Updating Stock Prices</strong></p>
+<p>Using the <code>stock_prices</code> dictionary from Problem 1: a) Access and print the price of the stock with the ticker “GOOG”. b) The price of “AAPL” has changed to 176.05. Update the value associated with the “AAPL” key in the dictionary. c) Print the updated <code>stock_prices</code> dictionary.</p>
+<p><strong>Problem 3: Adding New Stock and Checking Existence</strong></p>
+<p>Continuing with the <code>stock_prices</code> dictionary: a) A new stock, “TSLA”, needs to be added with a price of 950.20. Add this new key-value pair to the dictionary. b) Check if the ticker “MSFT” exists as a key in the dictionary. Print the boolean result (<code>True</code> or <code>False</code>). c) Check if the ticker “AMZN” exists as a key in the dictionary. Print the boolean result. d) Print the final <code>stock_prices</code> dictionary.</p>
+<p><strong>Problem 4: Removing Stock and Dictionary Size</strong></p>
+<p>Using the <code>stock_prices</code> dictionary after the additions in Problem 3: a) The “GOOG” stock is being removed from tracking. Remove the key-value pair associated with “GOOG” using the appropriate method. Store the removed price in a variable called <code>removed_price</code>. b) Print the value of <code>removed_price</code>. c) How many key-value pairs (stocks) are now in the <code>stock_prices</code> dictionary? Print this count using the <code>len()</code> function. d) Print the final <code>stock_prices</code> dictionary.</p>
+<p><strong>Problem 5: Viewing Dictionary Components</strong></p>
+<p>Using the final <code>stock_prices</code> dictionary from Problem 4: a) Get the view object containing all the keys (stock tickers) from the dictionary. Convert this view object into a list called <code>ticker_symbols</code> and print it. b) Get the view object containing all the values (current prices) from the dictionary. Convert this view object into a list called <code>current_prices</code> and print it. c) Get the view object containing all the key-value pairs (items) as tuples. Convert this view object into a list called <code>stock_items</code> and print it.</p>
+<p><strong>Problem 6: Predicting <code>KeyError</code></strong></p>
+<p>Consider the final <code>stock_prices</code> dictionary from Problem 4. a) Write the line of code that <em>attempts</em> to access the price using the key “GOOG” (which was removed). b) What <em>specific type of error</em> do you expect Python to raise? Explain <em>why</em> this error occurs when accessing a non-existent key in a dictionary.</p>
+<p><strong>Problem 7: Predicting <code>TypeError</code> (Invalid Key)</strong></p>
+<p>Suppose you try to create a dictionary mapping a list of region names to a sales manager ID, like this: <code>regional_managers = { [&quot;North&quot;, &quot;East&quot;]: &quot;MGR01&quot;, [&quot;West&quot;]: &quot;MGR02&quot; }</code> a) Do you expect this code to work? b) If not, what <em>specific type of error</em> do you expect Python to raise during the creation of this dictionary? Explain <em>why</em> this error occurs based on the requirements for dictionary keys.</p>
+<p><strong>Problem 8: Aggregating Order Quantities (List)</strong></p>
+<p>You have a list representing the number of items in several recent orders: <code>order_quantities = [5, 12, 3, 8, 5, 21, 8]</code>. a) How many orders are in the list? Print the result. b) What is the total number of items ordered across all these orders? Print the result. c) What is the smallest number of items in a single order? Print the result. d) What is the largest number of items in a single order? Print the result.</p>
+<p><strong>Problem 9: Aggregating Product Prices (Dictionary Values)</strong></p>
+<p>Use the <code>current_prices</code> list you created in Problem 5b (containing the prices from the final <code>stock_prices</code> dictionary after removing “GOOG”). If you don’t have it, recreate it from the expected final dictionary in Problem 4: <code>{&#39;AAPL&#39;: 176.05, &#39;MSFT&#39;: 310.75, &#39;TSLA&#39;: 950.20}</code>. a) How many stock prices are in the list? Print the result. b) What is the sum of all the stock prices in the list? Print the result, formatted to two decimal places. c) What is the minimum stock price in the list? Print the result. d) What is the maximum stock price in the list? Print the result.</p>
+<p><strong>Problem 10: Aggregating Dictionary Keys</strong></p>
+<p>Using the final <code>stock_prices</code> dictionary from Problem 4: <code>{&#39;AAPL&#39;: 176.05, &#39;MSFT&#39;: 310.75, &#39;TSLA&#39;: 950.20}</code>. a) If you apply the <code>min()</code> function directly to the <code>stock_prices</code> dictionary (i.e., <code>min(stock_prices)</code>), what result do you expect? Explain <em>what</em> <code>min()</code> operates on by default in a dictionary. b) If you apply the <code>max()</code> function directly to the <code>stock_prices</code> dictionary (i.e., <code>max(stock_prices)</code>), what result do you expect? Explain <em>what</em> <code>max()</code> operates on by default in a dictionary.</p>
+<hr>
+</section>
+<section id="appendix-solutions-and-explanations" class="level2">
+<h2 class="anchored" data-anchor-id="appendix-solutions-and-explanations">Appendix: Solutions and Explanations</h2>
+<hr>
+<p><strong>Solution 1: Creating a Stock Price Dictionary</strong></p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1"></a><span class="co"># a) Create the dictionary</span></span>
+<span id="cb1-2"><a href="#cb1-2"></a>stock_prices <span class="op">=</span> {</span>
+<span id="cb1-3"><a href="#cb1-3"></a>    <span class="st">&quot;AAPL&quot;</span>: <span class="fl">175.30</span>,</span>
+<span id="cb1-4"><a href="#cb1-4"></a>    <span class="st">&quot;GOOG&quot;</span>: <span class="fl">2800.50</span>,</span>
+<span id="cb1-5"><a href="#cb1-5"></a>    <span class="st">&quot;MSFT&quot;</span>: <span class="fl">310.75</span></span>
+<span id="cb1-6"><a href="#cb1-6"></a>}</span>
+<span id="cb1-7"><a href="#cb1-7"></a></span>
+<span id="cb1-8"><a href="#cb1-8"></a><span class="co"># b) Print the dictionary</span></span>
+<span id="cb1-9"><a href="#cb1-9"></a><span class="bu">print</span>(<span class="ss">f&quot;Stock Prices: </span><span class="sc">{</span>stock_prices<span class="sc">}</span><span class="ss">&quot;</span>)</span>
+<span id="cb1-10"><a href="#cb1-10"></a><span class="co"># Expected Output: Stock Prices: {&#39;AAPL&#39;: 175.3, &#39;GOOG&#39;: 2800.5, &#39;MSFT&#39;: 310.75}</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><strong>Explanation:</strong> * Dictionaries are created using curly braces <code>{}</code>. * Inside the braces, we define <code>key: value</code> pairs, separated by commas. * Here, the keys are strings (ticker symbols) and the values are floats (prices). Keys must be unique and immutable (strings are immutable).</p>
+<hr>
+<p><strong>Solution 2: Accessing and Updating Stock Prices</strong></p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1"></a>stock_prices <span class="op">=</span> {<span class="st">&#39;AAPL&#39;</span>: <span class="fl">175.3</span>, <span class="st">&#39;GOOG&#39;</span>: <span class="fl">2800.5</span>, <span class="st">&#39;MSFT&#39;</span>: <span class="fl">310.75</span>} <span class="co"># From Prob 1</span></span>
+<span id="cb2-2"><a href="#cb2-2"></a></span>
+<span id="cb2-3"><a href="#cb2-3"></a><span class="co"># a) Access price of &quot;GOOG&quot;</span></span>
+<span id="cb2-4"><a href="#cb2-4"></a>goog_price <span class="op">=</span> stock_prices[<span class="st">&quot;GOOG&quot;</span>]</span>
+<span id="cb2-5"><a href="#cb2-5"></a><span class="bu">print</span>(<span class="ss">f&quot;Price of GOOG: </span><span class="sc">{</span>goog_price<span class="sc">}</span><span class="ss">&quot;</span>)</span>
+<span id="cb2-6"><a href="#cb2-6"></a><span class="co"># Expected Output: Price of GOOG: 2800.5</span></span>
+<span id="cb2-7"><a href="#cb2-7"></a></span>
+<span id="cb2-8"><a href="#cb2-8"></a><span class="co"># b) Update price of &quot;AAPL&quot;</span></span>
+<span id="cb2-9"><a href="#cb2-9"></a>stock_prices[<span class="st">&quot;AAPL&quot;</span>] <span class="op">=</span> <span class="fl">176.05</span></span>
+<span id="cb2-10"><a href="#cb2-10"></a><span class="bu">print</span>(<span class="ss">f&quot;Updated AAPL price in dict: </span><span class="sc">{</span>stock_prices[<span class="st">&#39;AAPL&#39;</span>]<span class="sc">}</span><span class="ss">&quot;</span>)</span>
+<span id="cb2-11"><a href="#cb2-11"></a><span class="co"># Expected Output: Updated AAPL price in dict: 176.05</span></span>
+<span id="cb2-12"><a href="#cb2-12"></a></span>
+<span id="cb2-13"><a href="#cb2-13"></a><span class="co"># c) Print updated dictionary</span></span>
+<span id="cb2-14"><a href="#cb2-14"></a><span class="bu">print</span>(<span class="ss">f&quot;Updated Stock Prices: </span><span class="sc">{</span>stock_prices<span class="sc">}</span><span class="ss">&quot;</span>)</span>
+<span id="cb2-15"><a href="#cb2-15"></a><span class="co"># Expected Output: Updated Stock Prices: {&#39;AAPL&#39;: 176.05, &#39;GOOG&#39;: 2800.5, &#39;MSFT&#39;: 310.75}</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><strong>Explanation:</strong> * You access a value in a dictionary using square brackets <code>[]</code> with the <em>key</em> inside: <code>dictionary[key]</code>. This retrieves the value associated with that key. * Dictionaries are <strong>mutable</strong>. To update the value for an existing key, you simply assign a new value using the same <code>dictionary[key] = new_value</code> syntax.</p>
+<hr>
+<p><strong>Solution 3: Adding New Stock and Checking Existence</strong></p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1"></a>stock_prices <span class="op">=</span> {<span class="st">&#39;AAPL&#39;</span>: <span class="fl">176.05</span>, <span class="st">&#39;GOOG&#39;</span>: <span class="fl">2800.5</span>, <span class="st">&#39;MSFT&#39;</span>: <span class="fl">310.75</span>} <span class="co"># From Prob 2</span></span>
+<span id="cb3-2"><a href="#cb3-2"></a></span>
+<span id="cb3-3"><a href="#cb3-3"></a><span class="co"># a) Add &quot;TSLA&quot;</span></span>
+<span id="cb3-4"><a href="#cb3-4"></a>stock_prices[<span class="st">&quot;TSLA&quot;</span>] <span class="op">=</span> <span class="fl">950.20</span></span>
+<span id="cb3-5"><a href="#cb3-5"></a><span class="bu">print</span>(<span class="ss">f&quot;Added TSLA: </span><span class="sc">{</span>stock_prices<span class="sc">}</span><span class="ss">&quot;</span>)</span>
+<span id="cb3-6"><a href="#cb3-6"></a><span class="co"># Expected Output: Added TSLA: {&#39;AAPL&#39;: 176.05, &#39;GOOG&#39;: 2800.5, &#39;MSFT&#39;: 310.75, &#39;TSLA&#39;: 950.2}</span></span>
+<span id="cb3-7"><a href="#cb3-7"></a></span>
+<span id="cb3-8"><a href="#cb3-8"></a><span class="co"># b) Check if &quot;MSFT&quot; exists</span></span>
+<span id="cb3-9"><a href="#cb3-9"></a>msft_exists <span class="op">=</span> <span class="st">&quot;MSFT&quot;</span> <span class="kw">in</span> stock_prices</span>
+<span id="cb3-10"><a href="#cb3-10"></a><span class="bu">print</span>(<span class="ss">f&quot;Does &#39;MSFT&#39; exist? </span><span class="sc">{</span>msft_exists<span class="sc">}</span><span class="ss">&quot;</span>)</span>
+<span id="cb3-11"><a href="#cb3-11"></a><span class="co"># Expected Output: Does &#39;MSFT&#39; exist? True</span></span>
+<span id="cb3-12"><a href="#cb3-12"></a></span>
+<span id="cb3-13"><a href="#cb3-13"></a><span class="co"># c) Check if &quot;AMZN&quot; exists</span></span>
+<span id="cb3-14"><a href="#cb3-14"></a>amzn_exists <span class="op">=</span> <span class="st">&quot;AMZN&quot;</span> <span class="kw">in</span> stock_prices</span>
+<span id="cb3-15"><a href="#cb3-15"></a><span class="bu">print</span>(<span class="ss">f&quot;Does &#39;AMZN&#39; exist? </span><span class="sc">{</span>amzn_exists<span class="sc">}</span><span class="ss">&quot;</span>)</span>
+<span id="cb3-16"><a href="#cb3-16"></a><span class="co"># Expected Output: Does &#39;AMZN&#39; exist? False</span></span>
+<span id="cb3-17"><a href="#cb3-17"></a></span>
+<span id="cb3-18"><a href="#cb3-18"></a><span class="co"># d) Print final dictionary</span></span>
+<span id="cb3-19"><a href="#cb3-19"></a><span class="bu">print</span>(<span class="ss">f&quot;Final Stock Prices: </span><span class="sc">{</span>stock_prices<span class="sc">}</span><span class="ss">&quot;</span>)</span>
+<span id="cb3-20"><a href="#cb3-20"></a><span class="co"># Expected Output: Final Stock Prices: {&#39;AAPL&#39;: 176.05, &#39;GOOG&#39;: 2800.5, &#39;MSFT&#39;: 310.75, &#39;TSLA&#39;: 950.2}</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><strong>Explanation:</strong> * Adding a new key-value pair uses the same syntax as updating: <code>dictionary[new_key] = value</code>. If <code>new_key</code> doesn’t already exist, it’s added. * The <code>in</code> operator checks for the presence of a <strong>key</strong> in the dictionary. It returns <code>True</code> if the key exists and <code>False</code> otherwise. This is useful for avoiding <code>KeyError</code> before trying to access a key.</p>
+<hr>
+<p><strong>Solution 4: Removing Stock and Dictionary Size</strong></p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1"></a>stock_prices <span class="op">=</span> {<span class="st">&#39;AAPL&#39;</span>: <span class="fl">176.05</span>, <span class="st">&#39;GOOG&#39;</span>: <span class="fl">2800.5</span>, <span class="st">&#39;MSFT&#39;</span>: <span class="fl">310.75</span>, <span class="st">&#39;TSLA&#39;</span>: <span class="fl">950.2</span>} <span class="co"># From Prob 3</span></span>
+<span id="cb4-2"><a href="#cb4-2"></a></span>
+<span id="cb4-3"><a href="#cb4-3"></a><span class="co"># a) Remove &quot;GOOG&quot; using .pop()</span></span>
+<span id="cb4-4"><a href="#cb4-4"></a>removed_price <span class="op">=</span> stock_prices.pop(<span class="st">&quot;GOOG&quot;</span>)</span>
+<span id="cb4-5"><a href="#cb4-5"></a></span>
+<span id="cb4-6"><a href="#cb4-6"></a><span class="co"># b) Print the removed price</span></span>
+<span id="cb4-7"><a href="#cb4-7"></a><span class="bu">print</span>(<span class="ss">f&quot;Removed Price (GOOG): </span><span class="sc">{</span>removed_price<span class="sc">}</span><span class="ss">&quot;</span>)</span>
+<span id="cb4-8"><a href="#cb4-8"></a><span class="co"># Expected Output: Removed Price (GOOG): 2800.5</span></span>
+<span id="cb4-9"><a href="#cb4-9"></a></span>
+<span id="cb4-10"><a href="#cb4-10"></a><span class="co"># c) Get the current number of items</span></span>
+<span id="cb4-11"><a href="#cb4-11"></a>num_stocks <span class="op">=</span> <span class="bu">len</span>(stock_prices)</span>
+<span id="cb4-12"><a href="#cb4-12"></a><span class="bu">print</span>(<span class="ss">f&quot;Number of stocks remaining: </span><span class="sc">{</span>num_stocks<span class="sc">}</span><span class="ss">&quot;</span>)</span>
+<span id="cb4-13"><a href="#cb4-13"></a><span class="co"># Expected Output: Number of stocks remaining: 3</span></span>
+<span id="cb4-14"><a href="#cb4-14"></a></span>
+<span id="cb4-15"><a href="#cb4-15"></a><span class="co"># d) Print the final dictionary</span></span>
+<span id="cb4-16"><a href="#cb4-16"></a><span class="bu">print</span>(<span class="ss">f&quot;Final Stock Prices after removal: </span><span class="sc">{</span>stock_prices<span class="sc">}</span><span class="ss">&quot;</span>)</span>
+<span id="cb4-17"><a href="#cb4-17"></a><span class="co"># Expected Output: Final Stock Prices after removal: {&#39;AAPL&#39;: 176.05, &#39;MSFT&#39;: 310.75, &#39;TSLA&#39;: 950.2}</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><strong>Explanation:</strong> * The <code>.pop(key)</code> method removes the key-value pair associated with the given <code>key</code> from the dictionary. It modifies the dictionary in-place. * <code>.pop(key)</code> also <em>returns</em> the value that was removed, which we stored in <code>removed_price</code>. * The <code>len()</code> function, when used with a dictionary, returns the number of key-value pairs currently in it.</p>
+<hr>
+<p><strong>Solution 5: Viewing Dictionary Components</strong></p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1"></a>stock_prices <span class="op">=</span> {<span class="st">&#39;AAPL&#39;</span>: <span class="fl">176.05</span>, <span class="st">&#39;MSFT&#39;</span>: <span class="fl">310.75</span>, <span class="st">&#39;TSLA&#39;</span>: <span class="fl">950.2</span>} <span class="co"># From Prob 4</span></span>
+<span id="cb5-2"><a href="#cb5-2"></a></span>
+<span id="cb5-3"><a href="#cb5-3"></a><span class="co"># a) Get keys as a list</span></span>
+<span id="cb5-4"><a href="#cb5-4"></a>keys_view <span class="op">=</span> stock_prices.keys()</span>
+<span id="cb5-5"><a href="#cb5-5"></a>ticker_symbols <span class="op">=</span> <span class="bu">list</span>(keys_view)</span>
+<span id="cb5-6"><a href="#cb5-6"></a><span class="bu">print</span>(<span class="ss">f&quot;Ticker Symbols (Keys): </span><span class="sc">{</span>ticker_symbols<span class="sc">}</span><span class="ss">&quot;</span>)</span>
+<span id="cb5-7"><a href="#cb5-7"></a><span class="co"># Expected Output: Ticker Symbols (Keys): [&#39;AAPL&#39;, &#39;MSFT&#39;, &#39;TSLA&#39;] (Order may vary in very old Python, but usually insertion order now)</span></span>
+<span id="cb5-8"><a href="#cb5-8"></a></span>
+<span id="cb5-9"><a href="#cb5-9"></a><span class="co"># b) Get values as a list</span></span>
+<span id="cb5-10"><a href="#cb5-10"></a>values_view <span class="op">=</span> stock_prices.values()</span>
+<span id="cb5-11"><a href="#cb5-11"></a>current_prices <span class="op">=</span> <span class="bu">list</span>(values_view)</span>
+<span id="cb5-12"><a href="#cb5-12"></a><span class="bu">print</span>(<span class="ss">f&quot;Current Prices (Values): </span><span class="sc">{</span>current_prices<span class="sc">}</span><span class="ss">&quot;</span>)</span>
+<span id="cb5-13"><a href="#cb5-13"></a><span class="co"># Expected Output: Current Prices (Values): [176.05, 310.75, 950.2]</span></span>
+<span id="cb5-14"><a href="#cb5-14"></a></span>
+<span id="cb5-15"><a href="#cb5-15"></a><span class="co"># c) Get items (key-value pairs) as a list</span></span>
+<span id="cb5-16"><a href="#cb5-16"></a>items_view <span class="op">=</span> stock_prices.items()</span>
+<span id="cb5-17"><a href="#cb5-17"></a>stock_items <span class="op">=</span> <span class="bu">list</span>(items_view)</span>
+<span id="cb5-18"><a href="#cb5-18"></a><span class="bu">print</span>(<span class="ss">f&quot;Stock Items (Key-Value Tuples): </span><span class="sc">{</span>stock_items<span class="sc">}</span><span class="ss">&quot;</span>)</span>
+<span id="cb5-19"><a href="#cb5-19"></a><span class="co"># Expected Output: Stock Items (Key-Value Tuples): [(&#39;AAPL&#39;, 176.05), (&#39;MSFT&#39;, 310.75), (&#39;TSLA&#39;, 950.2)]</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><strong>Explanation:</strong> * <code>.keys()</code>, <code>.values()</code>, and <code>.items()</code> return special “view objects”, not lists directly. * To easily see the contents or use them with functions expecting lists (like <code>sum()</code>, <code>min()</code>, <code>max()</code> often applied to values), we convert these view objects into lists using <code>list()</code>. * <code>.keys()</code> gives the keys. * <code>.values()</code> gives the values. * <code>.items()</code> gives key-value pairs, represented as tuples <code>(key, value)</code> within the list.</p>
+<hr>
+<p><strong>Solution 6: Predicting <code>KeyError</code></strong></p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1"></a>stock_prices <span class="op">=</span> {<span class="st">&#39;AAPL&#39;</span>: <span class="fl">176.05</span>, <span class="st">&#39;MSFT&#39;</span>: <span class="fl">310.75</span>, <span class="st">&#39;TSLA&#39;</span>: <span class="fl">950.2</span>} <span class="co"># From Prob 4</span></span>
+<span id="cb6-2"><a href="#cb6-2"></a></span>
+<span id="cb6-3"><a href="#cb6-3"></a><span class="co"># a) Attempt to access the removed key:</span></span>
+<span id="cb6-4"><a href="#cb6-4"></a><span class="co"># price = stock_prices[&quot;GOOG&quot;]</span></span>
+<span id="cb6-5"><a href="#cb6-5"></a></span>
+<span id="cb6-6"><a href="#cb6-6"></a><span class="co"># b) Predicted Error and Explanation:</span></span>
+<span id="cb6-7"><a href="#cb6-7"></a><span class="bu">print</span>(<span class="st">&quot;Predicted Error: KeyError&quot;</span>)</span>
+<span id="cb6-8"><a href="#cb6-8"></a><span class="bu">print</span>(<span class="st">&quot;Explanation: Dictionaries map keys to values. When you try to access a value using square brackets `[]`, Python looks for the specific key provided inside the brackets.&quot;</span>)</span>
+<span id="cb6-9"><a href="#cb6-9"></a><span class="bu">print</span>(<span class="st">&quot;If that key does not exist in the dictionary (like &#39;GOOG&#39; after it was removed with .pop()), Python cannot find an associated value and raises a KeyError to signal that the lookup failed.&quot;</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><strong>Explanation:</strong> * Accessing a dictionary with <code>dictionary[key]</code> requires that <code>key</code> actually exists within the dictionary. * If the key is not found, a <code>KeyError</code> is raised. This is the standard way Python indicates a failed lookup in a dictionary by key.</p>
+<hr>
+<p><strong>Solution 7: Predicting <code>TypeError</code> (Invalid Key)</strong></p>
+<div class="sourceCode" id="cb7"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1"></a><span class="co"># The problematic code:</span></span>
+<span id="cb7-2"><a href="#cb7-2"></a><span class="co"># regional_managers = { [&quot;North&quot;, &quot;East&quot;]: &quot;MGR01&quot;, [&quot;West&quot;]: &quot;MGR02&quot; }</span></span>
+<span id="cb7-3"><a href="#cb7-3"></a></span>
+<span id="cb7-4"><a href="#cb7-4"></a><span class="co"># a) Will it work?</span></span>
+<span id="cb7-5"><a href="#cb7-5"></a><span class="bu">print</span>(<span class="st">&quot;Prediction: No, this code will not work.&quot;</span>)</span>
+<span id="cb7-6"><a href="#cb7-6"></a></span>
+<span id="cb7-7"><a href="#cb7-7"></a><span class="co"># b) Predicted Error and Explanation:</span></span>
+<span id="cb7-8"><a href="#cb7-8"></a><span class="bu">print</span>(<span class="st">&quot;Predicted Error: TypeError&quot;</span>)</span>
+<span id="cb7-9"><a href="#cb7-9"></a><span class="bu">print</span>(<span class="st">&quot;Explanation: Dictionary keys must be of an immutable type. Immutable types are those whose value cannot be changed after creation (e.g., strings, numbers, tuples containing only immutables).&quot;</span>)</span>
+<span id="cb7-10"><a href="#cb7-10"></a><span class="bu">print</span>(<span class="st">&quot;Lists, however, are mutable (you can change their contents using methods like .append(), .pop(), or index assignment). Because lists can change, they cannot be reliably used as dictionary keys.&quot;</span>)</span>
+<span id="cb7-11"><a href="#cb7-11"></a><span class="bu">print</span>(<span class="st">&quot;Python raises a TypeError: &#39;unhashable type: &#39;list&#39;&#39; when you try to use a list (or other mutable type) as a dictionary key.&quot;</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><strong>Explanation:</strong> * A fundamental rule for dictionaries is that <strong>keys must be immutable</strong>. This is related to how dictionaries efficiently find keys using a technique called “hashing”. Mutable objects like lists don’t have a consistent hash value because their content can change. * Trying to use a list <code>[&quot;North&quot;, &quot;East&quot;]</code> as a key violates this rule, resulting in a <code>TypeError</code>. Common immutable types used as keys are strings, integers, floats, and tuples (if the tuple itself only contains immutable elements).</p>
+<hr>
+<p><strong>Solution 8: Aggregating Order Quantities (List)</strong></p>
+<div class="sourceCode" id="cb8"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1"></a>order_quantities <span class="op">=</span> [<span class="dv">5</span>, <span class="dv">12</span>, <span class="dv">3</span>, <span class="dv">8</span>, <span class="dv">5</span>, <span class="dv">21</span>, <span class="dv">8</span>]</span>
+<span id="cb8-2"><a href="#cb8-2"></a><span class="bu">print</span>(<span class="ss">f&quot;Order Quantities: </span><span class="sc">{</span>order_quantities<span class="sc">}</span><span class="ss">&quot;</span>)</span>
+<span id="cb8-3"><a href="#cb8-3"></a></span>
+<span id="cb8-4"><a href="#cb8-4"></a><span class="co"># a) Number of orders</span></span>
+<span id="cb8-5"><a href="#cb8-5"></a>num_orders <span class="op">=</span> <span class="bu">len</span>(order_quantities)</span>
+<span id="cb8-6"><a href="#cb8-6"></a><span class="bu">print</span>(<span class="ss">f&quot;Number of orders: </span><span class="sc">{</span>num_orders<span class="sc">}</span><span class="ss">&quot;</span>)</span>
+<span id="cb8-7"><a href="#cb8-7"></a><span class="co"># Expected Output: Number of orders: 7</span></span>
+<span id="cb8-8"><a href="#cb8-8"></a></span>
+<span id="cb8-9"><a href="#cb8-9"></a><span class="co"># b) Total items ordered</span></span>
+<span id="cb8-10"><a href="#cb8-10"></a>total_items <span class="op">=</span> <span class="bu">sum</span>(order_quantities)</span>
+<span id="cb8-11"><a href="#cb8-11"></a><span class="bu">print</span>(<span class="ss">f&quot;Total items ordered: </span><span class="sc">{</span>total_items<span class="sc">}</span><span class="ss">&quot;</span>)</span>
+<span id="cb8-12"><a href="#cb8-12"></a><span class="co"># Expected Output: Total items ordered: 62</span></span>
+<span id="cb8-13"><a href="#cb8-13"></a></span>
+<span id="cb8-14"><a href="#cb8-14"></a><span class="co"># c) Smallest order size</span></span>
+<span id="cb8-15"><a href="#cb8-15"></a>min_order <span class="op">=</span> <span class="bu">min</span>(order_quantities)</span>
+<span id="cb8-16"><a href="#cb8-16"></a><span class="bu">print</span>(<span class="ss">f&quot;Smallest order size: </span><span class="sc">{</span>min_order<span class="sc">}</span><span class="ss">&quot;</span>)</span>
+<span id="cb8-17"><a href="#cb8-17"></a><span class="co"># Expected Output: Smallest order size: 3</span></span>
+<span id="cb8-18"><a href="#cb8-18"></a></span>
+<span id="cb8-19"><a href="#cb8-19"></a><span class="co"># d) Largest order size</span></span>
+<span id="cb8-20"><a href="#cb8-20"></a>max_order <span class="op">=</span> <span class="bu">max</span>(order_quantities)</span>
+<span id="cb8-21"><a href="#cb8-21"></a><span class="bu">print</span>(<span class="ss">f&quot;Largest order size: </span><span class="sc">{</span>max_order<span class="sc">}</span><span class="ss">&quot;</span>)</span>
+<span id="cb8-22"><a href="#cb8-22"></a><span class="co"># Expected Output: Largest order size: 21</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><strong>Explanation:</strong> * This problem applies the basic aggregation functions directly to a <strong>list of numbers</strong>. * <code>len()</code> returns the number of elements in the list. * <code>sum()</code> adds all the numeric elements in the list. * <code>min()</code> finds the smallest numeric element. * <code>max()</code> finds the largest numeric element.</p>
+<hr>
+<p><strong>Solution 9: Aggregating Product Prices (Dictionary Values)</strong></p>
+<div class="sourceCode" id="cb9"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1"></a><span class="co"># Recreate the price list from the final state of stock_prices in Problem 4</span></span>
+<span id="cb9-2"><a href="#cb9-2"></a><span class="co"># final_stock_prices = {&#39;AAPL&#39;: 176.05, &#39;MSFT&#39;: 310.75, &#39;TSLA&#39;: 950.2}</span></span>
+<span id="cb9-3"><a href="#cb9-3"></a>current_prices <span class="op">=</span> [<span class="fl">176.05</span>, <span class="fl">310.75</span>, <span class="fl">950.2</span>] <span class="co"># Or list(final_stock_prices.values())</span></span>
+<span id="cb9-4"><a href="#cb9-4"></a><span class="bu">print</span>(<span class="ss">f&quot;Current Prices List: </span><span class="sc">{</span>current_prices<span class="sc">}</span><span class="ss">&quot;</span>)</span>
+<span id="cb9-5"><a href="#cb9-5"></a></span>
+<span id="cb9-6"><a href="#cb9-6"></a><span class="co"># a) Number of prices</span></span>
+<span id="cb9-7"><a href="#cb9-7"></a>num_prices <span class="op">=</span> <span class="bu">len</span>(current_prices)</span>
+<span id="cb9-8"><a href="#cb9-8"></a><span class="bu">print</span>(<span class="ss">f&quot;Number of prices: </span><span class="sc">{</span>num_prices<span class="sc">}</span><span class="ss">&quot;</span>)</span>
+<span id="cb9-9"><a href="#cb9-9"></a><span class="co"># Expected Output: Number of prices: 3</span></span>
+<span id="cb9-10"><a href="#cb9-10"></a></span>
+<span id="cb9-11"><a href="#cb9-11"></a><span class="co"># b) Sum of prices</span></span>
+<span id="cb9-12"><a href="#cb9-12"></a>total_value <span class="op">=</span> <span class="bu">sum</span>(current_prices)</span>
+<span id="cb9-13"><a href="#cb9-13"></a><span class="bu">print</span>(<span class="ss">f&quot;Sum of prices: $</span><span class="sc">{</span>total_value<span class="sc">:.2f}</span><span class="ss">&quot;</span>)</span>
+<span id="cb9-14"><a href="#cb9-14"></a><span class="co"># Expected Output: Sum of prices: $1437.00</span></span>
+<span id="cb9-15"><a href="#cb9-15"></a></span>
+<span id="cb9-16"><a href="#cb9-16"></a><span class="co"># c) Minimum price</span></span>
+<span id="cb9-17"><a href="#cb9-17"></a>min_price <span class="op">=</span> <span class="bu">min</span>(current_prices)</span>
+<span id="cb9-18"><a href="#cb9-18"></a><span class="bu">print</span>(<span class="ss">f&quot;Minimum price: $</span><span class="sc">{</span>min_price<span class="sc">:.2f}</span><span class="ss">&quot;</span>)</span>
+<span id="cb9-19"><a href="#cb9-19"></a><span class="co"># Expected Output: Minimum price: $176.05</span></span>
+<span id="cb9-20"><a href="#cb9-20"></a></span>
+<span id="cb9-21"><a href="#cb9-21"></a><span class="co"># d) Maximum price</span></span>
+<span id="cb9-22"><a href="#cb9-22"></a>max_price <span class="op">=</span> <span class="bu">max</span>(current_prices)</span>
+<span id="cb9-23"><a href="#cb9-23"></a><span class="bu">print</span>(<span class="ss">f&quot;Maximum price: $</span><span class="sc">{</span>max_price<span class="sc">:.2f}</span><span class="ss">&quot;</span>)</span>
+<span id="cb9-24"><a href="#cb9-24"></a><span class="co"># Expected Output: Maximum price: $950.20</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><strong>Explanation:</strong> * To perform aggregation on the <em>values</em> of a dictionary, we first need to get those values. As shown in Problem 5, <code>list(dictionary.values())</code> creates a list of the values. * Once we have the <code>current_prices</code> list (which contains only numbers), we can apply <code>len()</code>, <code>sum()</code>, <code>min()</code>, and <code>max()</code> just like we did in Problem 8. * <code>sum()</code> requires the list elements to be numeric (which they are here). * <code>min()</code> and <code>max()</code> work because floats are comparable.</p>
+<hr>
+<p><strong>Solution 10: Aggregating Dictionary Keys</strong></p>
+<div class="sourceCode" id="cb10"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1"></a>stock_prices <span class="op">=</span> {<span class="st">&#39;AAPL&#39;</span>: <span class="fl">176.05</span>, <span class="st">&#39;MSFT&#39;</span>: <span class="fl">310.75</span>, <span class="st">&#39;TSLA&#39;</span>: <span class="fl">950.2</span>} <span class="co"># From Prob 4</span></span>
+<span id="cb10-2"><a href="#cb10-2"></a></span>
+<span id="cb10-3"><a href="#cb10-3"></a><span class="co"># a) min() directly on dictionary</span></span>
+<span id="cb10-4"><a href="#cb10-4"></a>min_key <span class="op">=</span> <span class="bu">min</span>(stock_prices)</span>
+<span id="cb10-5"><a href="#cb10-5"></a><span class="bu">print</span>(<span class="ss">f&quot;Result of min(stock_prices): </span><span class="sc">{</span>min_key<span class="sc">}</span><span class="ss">&quot;</span>)</span>
+<span id="cb10-6"><a href="#cb10-6"></a><span class="co"># Expected Output: Result of min(stock_prices): AAPL</span></span>
+<span id="cb10-7"><a href="#cb10-7"></a><span class="bu">print</span>(<span class="st">&quot;Explanation: By default, min() applied to a dictionary compares the KEYS.&quot;</span>)</span>
+<span id="cb10-8"><a href="#cb10-8"></a><span class="bu">print</span>(<span class="st">&quot;          It finds the key that comes first alphabetically (&#39;AAPL&#39;).&quot;</span>)</span>
+<span id="cb10-9"><a href="#cb10-9"></a></span>
+<span id="cb10-10"><a href="#cb10-10"></a></span>
+<span id="cb10-11"><a href="#cb10-11"></a><span class="co"># b) max() directly on dictionary</span></span>
+<span id="cb10-12"><a href="#cb10-12"></a>max_key <span class="op">=</span> <span class="bu">max</span>(stock_prices)</span>
+<span id="cb10-13"><a href="#cb10-13"></a><span class="bu">print</span>(<span class="ss">f&quot;</span><span class="ch">\n</span><span class="ss">Result of max(stock_prices): </span><span class="sc">{</span>max_key<span class="sc">}</span><span class="ss">&quot;</span>)</span>
+<span id="cb10-14"><a href="#cb10-14"></a><span class="co"># Expected Output: Result of max(stock_prices): TSLA</span></span>
+<span id="cb10-15"><a href="#cb10-15"></a><span class="bu">print</span>(<span class="st">&quot;Explanation: By default, max() applied to a dictionary compares the KEYS.&quot;</span>)</span>
+<span id="cb10-16"><a href="#cb10-16"></a><span class="bu">print</span>(<span class="st">&quot;          It finds the key that comes last alphabetically (&#39;TSLA&#39;).&quot;</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><strong>Explanation:</strong> * When <code>min()</code> or <code>max()</code> are applied <em>directly</em> to a dictionary (without using <code>.values()</code> or <code>.keys()</code>), they operate on the <strong>keys</strong> by default. * Since the keys in <code>stock_prices</code> are strings (“AAPL”, “MSFT”, “TSLA”), <code>min()</code> finds the string key that comes first alphabetically, and <code>max()</code> finds the string key that comes last alphabetically. * This is distinct from finding the minimum or maximum <em>value</em> (price), which required extracting the values into a list first (as done in Problem 9).</p>
+<hr>
 </section>
 
 </main>

@@ -8,7 +8,7 @@
 
 <meta name="author" content="Dr. Smith">
 
-<title>Integrative Assignment: Module 3 – String Manipulation, User Input, and Formatted Output</title>
+<title>Module 12: Business Analytics Fundamentals and Applications</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -3087,19 +3087,8 @@ vertical-align: -.125em;
   <nav id="TOC" role="doc-toc" class="toc-active">
     <h2 id="toc-title">Table of contents</h2>
    
-  <ul class="collapse">
-  <li><a href="#integrative-assignment-module-3-string-manipulation-user-input-and-formatted-output" id="toc-integrative-assignment-module-3-string-manipulation-user-input-and-formatted-output" class="nav-link active" data-scroll-target="#integrative-assignment-module-3-string-manipulation-user-input-and-formatted-output">Integrative Assignment: Module 3 – String Manipulation, User Input, and Formatted Output</a>
-  <ul class="collapse">
-  <li><a href="#overview" id="toc-overview" class="nav-link" data-scroll-target="#overview">Overview</a></li>
-  <li><a href="#objectives" id="toc-objectives" class="nav-link" data-scroll-target="#objectives">Objectives</a></li>
-  <li><a href="#assignment-description" id="toc-assignment-description" class="nav-link" data-scroll-target="#assignment-description">Assignment Description</a></li>
-  <li><a href="#starter-code" id="toc-starter-code" class="nav-link" data-scroll-target="#starter-code">Starter Code</a></li>
-  <li><a href="#submission-guidelines" id="toc-submission-guidelines" class="nav-link" data-scroll-target="#submission-guidelines">Submission Guidelines</a></li>
-  </ul></li>
-  <li><a href="#marking-rubric" id="toc-marking-rubric" class="nav-link" data-scroll-target="#marking-rubric">Marking Rubric</a>
-  <ul class="collapse">
-  <li><a href="#academic-integrity-reminder" id="toc-academic-integrity-reminder" class="nav-link" data-scroll-target="#academic-integrity-reminder">Academic Integrity Reminder</a></li>
-  </ul></li>
+  <ul>
+  <li><a href="#appendix-solutions-and-explanations" id="toc-appendix-solutions-and-explanations" class="nav-link active" data-scroll-target="#appendix-solutions-and-explanations">Appendix: Solutions and Explanations</a></li>
   </ul>
 </nav>
 </div>
@@ -3109,27 +3098,20 @@ vertical-align: -.125em;
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Integrative Assignment: Module 3 – String Manipulation, User Input, and Formatted Output</h1>
+<h1 class="title">Module 12: Business Analytics Fundamentals and Applications</h1>
 </div>
 
 
-<div class="quarto-title-meta-author">
-  <div class="quarto-title-meta-heading">Author</div>
-  <div class="quarto-title-meta-heading">Affiliation</div>
-  
-    <div class="quarto-title-meta-contents">
-    <p class="author">Dr. Smith </p>
-  </div>
-  <div class="quarto-title-meta-contents">
-        <p class="affiliation">
-            University of South Florida
-          </p>
-      </div>
-  </div>
 
 <div class="quarto-title-meta">
 
-      
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Dr. Smith </p>
+          </div>
+  </div>
+    
   
     
   </div>
@@ -3139,173 +3121,310 @@ vertical-align: -.125em;
 </header>
 
 
-<section id="integrative-assignment-module-3-string-manipulation-user-input-and-formatted-output" class="level1">
-<h1>Integrative Assignment: Module 3 – String Manipulation, User Input, and Formatted Output</h1>
-<section id="overview" class="level2">
-<h2 class="anchored" data-anchor-id="overview">Overview</h2>
-<p>In this assignment, you will demonstrate your understanding of Module 3 concepts by creating an interactive customer order processing program. This program will utilize string manipulation, user input, and formatted output to create a professional-looking order summary. This assignment will reinforce your ability to handle text data effectively, interact with users, and present information clearly – key skills for developing business applications.</p>
-</section>
-<section id="objectives" class="level2">
-<h2 class="anchored" data-anchor-id="objectives">Objectives</h2>
-<p>By completing this assignment, you will:</p>
-<ul>
-<li><strong>Get and Process User Input:</strong> Use the <code>input()</code> function to collect information from users and process it appropriately.</li>
-<li><strong>Apply String Methods:</strong> Use string methods like <code>.strip()</code>, <code>.title()</code>, and other text manipulation techniques.</li>
-<li><strong>Perform Type Conversion:</strong> Convert string input to appropriate numeric types for calculations.</li>
-<li><strong>Implement Error Handling:</strong> Use basic error handling techniques to deal with invalid input.</li>
-<li><strong>Format Output with F-strings:</strong> Create professional-looking output with proper formatting and alignment.</li>
-<li><strong>Create a Complete Application:</strong> Build a program that follows the input-process-output pattern.</li>
-</ul>
-</section>
-<section id="assignment-description" class="level2">
-<h2 class="anchored" data-anchor-id="assignment-description">Assignment Description</h2>
-<p>Imagine you work for an e-commerce company that needs a simple order processing system. Your task is to develop a Python program that:</p>
+<p>Excellent work so far! Let’s bring together everything we’ve learned! Module 12 focused on the broader context of Business Analytics, connecting our Python skills with data-driven decision-making principles. These exercises will test your understanding of different analytics types, your ability to interpret statistical measures in a business context, and your grasp of how Python tools support the analytics process. While some problems involve coding (using Pandas and Matplotlib as illustrations), the emphasis is often on the interpretation and application of the results.</p>
+<p>Remember our key libraries:</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb1-2"><a href="#cb1-2"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb1-3"><a href="#cb1-3"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb1-4"><a href="#cb1-4"></a></span>
+<span id="cb1-5"><a href="#cb1-5"></a><span class="co"># Optional for Jupyter/Quarto environments</span></span>
+<span id="cb1-6"><a href="#cb1-6"></a><span class="op">%</span>matplotlib inline</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<hr>
+<p><strong>Instructions:</strong> Answer the following questions. For problems requiring code, use Python with Pandas and Matplotlib where appropriate. For conceptual problems, provide clear explanations based on the Module 12 lecture notes.</p>
+<hr>
+<p><strong>Problem 1: Identifying Analytics Types</strong></p>
+<p>For each business question below, identify the primary type of analytics being used (Descriptive, Diagnostic, Predictive, or Prescriptive) and briefly explain why.</p>
+<ol type="a">
+<li>“What were our total sales revenue and units sold for each product category last quarter?”</li>
+<li>“Based on historical trends and current market conditions, what is the expected customer lifetime value for customers acquired through our new social media campaign?”</li>
+<li>“Why did customer complaints increase significantly in the West region during July?”</li>
+<li>“Which inventory reordering strategy should we implement to minimize stockouts while also minimizing holding costs, given the demand forecast?”</li>
+</ol>
+<p><strong>Problem 2: Interpreting Mean vs. Median</strong></p>
+<p>You are analyzing the salaries of employees in a small department. The salaries (in thousands of dollars) are stored in a Pandas Series:</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb2-2"><a href="#cb2-2"></a>salaries <span class="op">=</span> pd.Series([<span class="dv">55</span>, <span class="dv">60</span>, <span class="dv">58</span>, <span class="dv">62</span>, <span class="dv">59</span>, <span class="dv">150</span>, <span class="dv">57</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ol type="a">
+<li>Calculate both the mean and the median salary using Pandas.</li>
+<li>Which measure (mean or median) do you think better represents the “typical” salary for an employee in this department? Explain your reasoning, considering the data provided.</li>
+</ol>
+<p><strong>Problem 3: Interpreting Standard Deviation</strong></p>
+<p>Two different suppliers provide delivery times (in days) for components. Their recent delivery times are recorded in two Pandas Series:</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb3-2"><a href="#cb3-2"></a>supplier_A_times <span class="op">=</span> pd.Series([<span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">3</span>, <span class="dv">5</span>, <span class="dv">4</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">5</span>])</span>
+<span id="cb3-3"><a href="#cb3-3"></a>supplier_B_times <span class="op">=</span> pd.Series([<span class="dv">1</span>, <span class="dv">6</span>, <span class="dv">2</span>, <span class="dv">7</span>, <span class="dv">1</span>, <span class="dv">5</span>, <span class="dv">2</span>, <span class="dv">6</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ol type="a">
+<li>Calculate the mean delivery time for each supplier.</li>
+<li>Calculate the standard deviation of delivery times for each supplier.</li>
+<li>Based <em>only</em> on the standard deviation, which supplier is more consistent or predictable in their delivery times? Explain why.</li>
+</ol>
+<p><strong>Problem 4: Calculating and Interpreting Correlation</strong></p>
+<p>You have data on the number of hours employees spent in training and their subsequent performance score (on a scale of 1-100):</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb4-2"><a href="#cb4-2"></a>training_data <span class="op">=</span> pd.DataFrame({</span>
+<span id="cb4-3"><a href="#cb4-3"></a>    <span class="st">&#39;TrainingHours&#39;</span>: [<span class="dv">10</span>, <span class="dv">15</span>, <span class="dv">8</span>, <span class="dv">20</span>, <span class="dv">12</span>, <span class="dv">18</span>, <span class="dv">5</span>, <span class="dv">22</span>],</span>
+<span id="cb4-4"><a href="#cb4-4"></a>    <span class="st">&#39;PerformanceScore&#39;</span>: [<span class="dv">75</span>, <span class="dv">85</span>, <span class="dv">70</span>, <span class="dv">92</span>, <span class="dv">80</span>, <span class="dv">88</span>, <span class="dv">60</span>, <span class="dv">95</span>]</span>
+<span id="cb4-5"><a href="#cb4-5"></a>})</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ol type="a">
+<li>Calculate the correlation matrix for this DataFrame using <code>.corr()</code>.</li>
+<li>Extract the specific correlation coefficient between ‘TrainingHours’ and ‘PerformanceScore’.</li>
+<li>Interpret this correlation coefficient. What does it suggest about the linear relationship between training hours and performance score in this dataset? Remember to mention the caveat about causation.</li>
+</ol>
+<p><strong>Problem 5: Visualizing Correlation</strong></p>
+<p>Using the <code>training_data</code> DataFrame from Problem 4: a) Create a scatter plot with ‘TrainingHours’ on the x-axis and ‘PerformanceScore’ on the y-axis. b) Add a title (“Training Hours vs. Performance Score”) and appropriate axis labels. c) Display the plot. Does the visual pattern roughly support the correlation coefficient you calculated in Problem 4?</p>
+<p><strong>Problem 6: Interpreting a Simple Regression Model</strong></p>
+<p>Suppose a simple linear regression model predicts website ‘ConversionRate’ based on ‘PageLoadTime’ (in seconds) using the following equation: <code>ConversionRate = 8.5 - 1.5 * PageLoadTime</code> a) What is the predicted Conversion Rate if the Page Load Time is 2.0 seconds? b) Interpret the meaning of the slope coefficient (-1.5) in the context of this model. What does it suggest happens to the conversion rate for each additional second of page load time?</p>
+<p><strong>Problem 7: Applying Descriptive Analytics</strong></p>
+<p>You are given a DataFrame of customer data:</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb5-2"><a href="#cb5-2"></a>customer_df <span class="op">=</span> pd.DataFrame({</span>
+<span id="cb5-3"><a href="#cb5-3"></a>    <span class="st">&#39;CustomerID&#39;</span>: [<span class="st">&#39;C1&#39;</span>, <span class="st">&#39;C2&#39;</span>, <span class="st">&#39;C3&#39;</span>, <span class="st">&#39;C4&#39;</span>, <span class="st">&#39;C5&#39;</span>],</span>
+<span id="cb5-4"><a href="#cb5-4"></a>    <span class="st">&#39;Segment&#39;</span>: [<span class="st">&#39;Retail&#39;</span>, <span class="st">&#39;Wholesale&#39;</span>, <span class="st">&#39;Retail&#39;</span>, <span class="st">&#39;Retail&#39;</span>, <span class="st">&#39;Wholesale&#39;</span>],</span>
+<span id="cb5-5"><a href="#cb5-5"></a>    <span class="st">&#39;PurchaseAmount&#39;</span>: [<span class="dv">120</span>, <span class="dv">850</span>, <span class="dv">210</span>, <span class="dv">150</span>, <span class="dv">980</span>]</span>
+<span id="cb5-6"><a href="#cb5-6"></a>})</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ol type="a">
+<li>Use Pandas to calculate the <em>total</em> purchase amount for each customer ‘Segment’.</li>
+<li>Print the results.</li>
+<li>What <em>type</em> of business analytics (Descriptive, Diagnostic, Predictive, Prescriptive) does this calculation primarily represent?</li>
+</ol>
+<p><strong>Problem 8: Applying Visualization for Comparison</strong></p>
+<p>Using the results calculated in Problem 7 (total purchase amount per segment): a) Choose the most appropriate chart type (line, bar, scatter, histogram, pie) to visually compare the total purchase amounts between the ‘Retail’ and ‘Wholesale’ segments. b) Create this chart using either Matplotlib directly or the Pandas <code>.plot()</code> method. c) Ensure the chart has a clear title and axis labels. d) Display the chart.</p>
+<p><strong>Problem 9: Analytics Process Outline</strong></p>
+<p>Imagine your manager asks: “How have our online sales figures changed month-over-month for the past year, and which product category saw the biggest percentage growth during that time?” Outline the key steps you would take to answer this question using Python, Pandas, and Matplotlib. Mention specific Pandas/Matplotlib functions or methods you might use at each step (you don’t need to write the full code, just describe the process). Focus on the data preparation, analysis, and visualization stages.</p>
+<p><strong>Problem 10: Interpreting a Visualization</strong></p>
+<p>Suppose you are presented with the following bar chart:</p>
+<p><em>(Imagine a bar chart titled “Average Customer Rating by Support Channel” with three bars: “Phone” at 3.5 stars, “Email” at 4.1 stars, and “Chat” at 4.6 stars).</em></p>
+<p>Write 2-3 sentences interpreting what this chart shows. Then, state <em>one</em> potential diagnostic question this chart might prompt a business manager to ask.</p>
+<hr>
+<section id="appendix-solutions-and-explanations" class="level2">
+<h2 class="anchored" data-anchor-id="appendix-solutions-and-explanations">Appendix: Solutions and Explanations</h2>
+<hr>
+<p><strong>Solution 1: Identifying Analytics Types</strong></p>
+<ol type="a">
+<li><strong>Descriptive Analytics:</strong> This question asks “What happened?” by requesting a summary of past sales data (total revenue and units) broken down by category. It describes the past performance.</li>
+<li><strong>Predictive Analytics:</strong> This question asks “What will happen?” by requesting an <em>expected</em> future value (customer lifetime value) based on historical data and current factors. It involves forecasting/prediction.</li>
+<li><strong>Diagnostic Analytics:</strong> This question asks “Why did it happen?” by seeking the root cause or reasons behind a specific past event (increase in complaints). It requires exploring data to find explanations.</li>
+<li><strong>Prescriptive Analytics:</strong> This question asks “What should we do?” by seeking a recommended <em>action</em> (inventory strategy) to achieve specific goals (minimize costs/stockouts) based on analysis (likely including predictive demand forecasts).</li>
+</ol>
+<p><strong>Explanation:</strong> The key is to match the question being asked to the goal of each analytics type: describing the past, explaining the past, predicting the future, or recommending actions for the future.</p>
+<hr>
+<p><strong>Solution 2: Interpreting Mean vs. Median</strong></p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb6-2"><a href="#cb6-2"></a></span>
+<span id="cb6-3"><a href="#cb6-3"></a>salaries <span class="op">=</span> pd.Series([<span class="dv">55</span>, <span class="dv">60</span>, <span class="dv">58</span>, <span class="dv">62</span>, <span class="dv">59</span>, <span class="dv">150</span>, <span class="dv">57</span>])</span>
+<span id="cb6-4"><a href="#cb6-4"></a></span>
+<span id="cb6-5"><a href="#cb6-5"></a><span class="co"># a) Calculate mean and median</span></span>
+<span id="cb6-6"><a href="#cb6-6"></a>mean_salary <span class="op">=</span> salaries.mean()</span>
+<span id="cb6-7"><a href="#cb6-7"></a>median_salary <span class="op">=</span> salaries.median()</span>
+<span id="cb6-8"><a href="#cb6-8"></a></span>
+<span id="cb6-9"><a href="#cb6-9"></a><span class="bu">print</span>(<span class="ss">f&quot;Mean Salary: $</span><span class="sc">{</span>mean_salary <span class="op">*</span> <span class="dv">1000</span><span class="sc">:,.2f}</span><span class="ss">&quot;</span>)   <span class="co"># Multiply by 1000 for display</span></span>
+<span id="cb6-10"><a href="#cb6-10"></a><span class="bu">print</span>(<span class="ss">f&quot;Median Salary: $</span><span class="sc">{</span>median_salary <span class="op">*</span> <span class="dv">1000</span><span class="sc">:,.2f}</span><span class="ss">&quot;</span>) <span class="co"># Multiply by 1000 for display</span></span>
+<span id="cb6-11"><a href="#cb6-11"></a></span>
+<span id="cb6-12"><a href="#cb6-12"></a><span class="co"># Expected Output:</span></span>
+<span id="cb6-13"><a href="#cb6-13"></a><span class="co"># Mean Salary: $71,571.43</span></span>
+<span id="cb6-14"><a href="#cb6-14"></a><span class="co"># Median Salary: $59,000.00</span></span>
+<span id="cb6-15"><a href="#cb6-15"></a></span>
+<span id="cb6-16"><a href="#cb6-16"></a><span class="co"># b) Interpretation</span></span>
+<span id="cb6-17"><a href="#cb6-17"></a><span class="bu">print</span>(<span class="st">&quot;</span><span class="ch">\n</span><span class="st">Interpretation:&quot;</span>)</span>
+<span id="cb6-18"><a href="#cb6-18"></a><span class="bu">print</span>(<span class="st">&quot;The median ($59,000) likely represents the &#39;typical&#39; salary better in this case.&quot;</span>)</span>
+<span id="cb6-19"><a href="#cb6-19"></a><span class="bu">print</span>(<span class="st">&quot;The mean ($71,571.43) is significantly higher than most salaries because it is heavily influenced by the single outlier value of $150,000.&quot;</span>)</span>
+<span id="cb6-20"><a href="#cb6-20"></a><span class="bu">print</span>(<span class="st">&quot;The median, being the middle value when sorted, is less affected by extreme outliers and gives a better sense of the central tendency for the majority of employees.&quot;</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><strong>Explanation:</strong> * The mean is the arithmetic average, calculated by summing all values and dividing by the count. * The median is the middle value when the data is sorted. * Outliers (extremely high or low values compared to the rest of the data) have a much larger impact on the mean than on the median. * In this case, the $150k salary pulls the mean up significantly, making the median a more robust measure of the central point for the bulk of the data.</p>
+<hr>
+<p><strong>Solution 3: Interpreting Standard Deviation</strong></p>
+<div class="sourceCode" id="cb7"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb7-2"><a href="#cb7-2"></a></span>
+<span id="cb7-3"><a href="#cb7-3"></a>supplier_A_times <span class="op">=</span> pd.Series([<span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">3</span>, <span class="dv">5</span>, <span class="dv">4</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">5</span>])</span>
+<span id="cb7-4"><a href="#cb7-4"></a>supplier_B_times <span class="op">=</span> pd.Series([<span class="dv">1</span>, <span class="dv">6</span>, <span class="dv">2</span>, <span class="dv">7</span>, <span class="dv">1</span>, <span class="dv">5</span>, <span class="dv">2</span>, <span class="dv">6</span>])</span>
+<span id="cb7-5"><a href="#cb7-5"></a></span>
+<span id="cb7-6"><a href="#cb7-6"></a><span class="co"># a) Calculate means</span></span>
+<span id="cb7-7"><a href="#cb7-7"></a>mean_A <span class="op">=</span> supplier_A_times.mean()</span>
+<span id="cb7-8"><a href="#cb7-8"></a>mean_B <span class="op">=</span> supplier_B_times.mean()</span>
+<span id="cb7-9"><a href="#cb7-9"></a></span>
+<span id="cb7-10"><a href="#cb7-10"></a><span class="bu">print</span>(<span class="ss">f&quot;Supplier A Mean Time: </span><span class="sc">{</span>mean_A<span class="sc">:.2f}</span><span class="ss"> days&quot;</span>)</span>
+<span id="cb7-11"><a href="#cb7-11"></a><span class="bu">print</span>(<span class="ss">f&quot;Supplier B Mean Time: </span><span class="sc">{</span>mean_B<span class="sc">:.2f}</span><span class="ss"> days&quot;</span>) <span class="co"># Note: Means are the same</span></span>
+<span id="cb7-12"><a href="#cb7-12"></a></span>
+<span id="cb7-13"><a href="#cb7-13"></a><span class="co"># b) Calculate standard deviations</span></span>
+<span id="cb7-14"><a href="#cb7-14"></a>std_A <span class="op">=</span> supplier_A_times.std()</span>
+<span id="cb7-15"><a href="#cb7-15"></a>std_B <span class="op">=</span> supplier_B_times.std()</span>
+<span id="cb7-16"><a href="#cb7-16"></a></span>
+<span id="cb7-17"><a href="#cb7-17"></a><span class="bu">print</span>(<span class="ss">f&quot;Supplier A Std Dev: </span><span class="sc">{</span>std_A<span class="sc">:.2f}</span><span class="ss"> days&quot;</span>)</span>
+<span id="cb7-18"><a href="#cb7-18"></a><span class="bu">print</span>(<span class="ss">f&quot;Supplier B Std Dev: </span><span class="sc">{</span>std_B<span class="sc">:.2f}</span><span class="ss"> days&quot;</span>)</span>
+<span id="cb7-19"><a href="#cb7-19"></a></span>
+<span id="cb7-20"><a href="#cb7-20"></a><span class="co"># Expected Output:</span></span>
+<span id="cb7-21"><a href="#cb7-21"></a><span class="co"># Supplier A Mean Time: 3.88 days</span></span>
+<span id="cb7-22"><a href="#cb7-22"></a><span class="co"># Supplier B Mean Time: 3.75 days</span></span>
+<span id="cb7-23"><a href="#cb7-23"></a><span class="co"># Supplier A Std Dev: 0.83 days</span></span>
+<span id="cb7-24"><a href="#cb7-24"></a><span class="co"># Supplier B Std Dev: 2.38 days</span></span>
+<span id="cb7-25"><a href="#cb7-25"></a></span>
+<span id="cb7-26"><a href="#cb7-26"></a><span class="co"># c) Interpretation</span></span>
+<span id="cb7-27"><a href="#cb7-27"></a><span class="bu">print</span>(<span class="st">&quot;</span><span class="ch">\n</span><span class="st">Interpretation:&quot;</span>)</span>
+<span id="cb7-28"><a href="#cb7-28"></a><span class="bu">print</span>(<span class="st">&quot;Supplier A has a lower standard deviation (0.83 days) compared to Supplier B (2.38 days).&quot;</span>)</span>
+<span id="cb7-29"><a href="#cb7-29"></a><span class="bu">print</span>(<span class="st">&quot;This indicates that Supplier A&#39;s delivery times are less spread out and more consistent (closer to their average time).&quot;</span>)</span>
+<span id="cb7-30"><a href="#cb7-30"></a><span class="bu">print</span>(<span class="st">&quot;Therefore, Supplier A is more predictable or consistent in their delivery times.&quot;</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><strong>Explanation:</strong> * Standard deviation measures the typical or average amount that individual data points deviate from the mean of the dataset. * A <em>lower</em> standard deviation means the data points are clustered more closely around the mean, indicating less variability and higher consistency. * A <em>higher</em> standard deviation means the data points are more spread out, indicating greater variability and less consistency. * Even though the mean times might be similar, the standard deviation reveals differences in predictability.</p>
+<hr>
+<p><strong>Solution 4: Calculating and Interpreting Correlation</strong></p>
+<div class="sourceCode" id="cb8"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb8-2"><a href="#cb8-2"></a></span>
+<span id="cb8-3"><a href="#cb8-3"></a>training_data <span class="op">=</span> pd.DataFrame({</span>
+<span id="cb8-4"><a href="#cb8-4"></a>    <span class="st">&#39;TrainingHours&#39;</span>: [<span class="dv">10</span>, <span class="dv">15</span>, <span class="dv">8</span>, <span class="dv">20</span>, <span class="dv">12</span>, <span class="dv">18</span>, <span class="dv">5</span>, <span class="dv">22</span>],</span>
+<span id="cb8-5"><a href="#cb8-5"></a>    <span class="st">&#39;PerformanceScore&#39;</span>: [<span class="dv">75</span>, <span class="dv">85</span>, <span class="dv">70</span>, <span class="dv">92</span>, <span class="dv">80</span>, <span class="dv">88</span>, <span class="dv">60</span>, <span class="dv">95</span>]</span>
+<span id="cb8-6"><a href="#cb8-6"></a>})</span>
+<span id="cb8-7"><a href="#cb8-7"></a></span>
+<span id="cb8-8"><a href="#cb8-8"></a><span class="co"># a) Calculate correlation matrix</span></span>
+<span id="cb8-9"><a href="#cb8-9"></a>corr_matrix <span class="op">=</span> training_data.corr()</span>
+<span id="cb8-10"><a href="#cb8-10"></a><span class="bu">print</span>(<span class="st">&quot;Correlation Matrix:&quot;</span>)</span>
+<span id="cb8-11"><a href="#cb8-11"></a><span class="bu">print</span>(corr_matrix)</span>
+<span id="cb8-12"><a href="#cb8-12"></a></span>
+<span id="cb8-13"><a href="#cb8-13"></a><span class="co"># b) Extract specific coefficient</span></span>
+<span id="cb8-14"><a href="#cb8-14"></a>hours_score_corr <span class="op">=</span> corr_matrix.loc[<span class="st">&#39;TrainingHours&#39;</span>, <span class="st">&#39;PerformanceScore&#39;</span>]</span>
+<span id="cb8-15"><a href="#cb8-15"></a><span class="co"># Or: hours_score_corr = training_data[&#39;TrainingHours&#39;].corr(training_data[&#39;PerformanceScore&#39;])</span></span>
+<span id="cb8-16"><a href="#cb8-16"></a><span class="bu">print</span>(<span class="ss">f&quot;</span><span class="ch">\n</span><span class="ss">Correlation Coefficient: </span><span class="sc">{</span>hours_score_corr<span class="sc">:.3f}</span><span class="ss">&quot;</span>)</span>
+<span id="cb8-17"><a href="#cb8-17"></a></span>
+<span id="cb8-18"><a href="#cb8-18"></a><span class="co"># Expected Output:</span></span>
+<span id="cb8-19"><a href="#cb8-19"></a><span class="co"># Correlation Matrix:</span></span>
+<span id="cb8-20"><a href="#cb8-20"></a><span class="co">#                   TrainingHours  PerformanceScore</span></span>
+<span id="cb8-21"><a href="#cb8-21"></a><span class="co"># TrainingHours         1.000000          0.984037</span></span>
+<span id="cb8-22"><a href="#cb8-22"></a><span class="co"># PerformanceScore      0.984037          1.000000</span></span>
+<span id="cb8-23"><a href="#cb8-23"></a><span class="co">#</span></span>
+<span id="cb8-24"><a href="#cb8-24"></a><span class="co"># Correlation Coefficient: 0.984</span></span>
+<span id="cb8-25"><a href="#cb8-25"></a></span>
+<span id="cb8-26"><a href="#cb8-26"></a><span class="co"># c) Interpretation</span></span>
+<span id="cb8-27"><a href="#cb8-27"></a><span class="bu">print</span>(<span class="st">&quot;</span><span class="ch">\n</span><span class="st">Interpretation:&quot;</span>)</span>
+<span id="cb8-28"><a href="#cb8-28"></a><span class="bu">print</span>(<span class="ss">f&quot;The correlation coefficient of approximately </span><span class="sc">{</span>hours_score_corr<span class="sc">:.3f}</span><span class="ss"> indicates a very strong positive linear relationship between Training Hours and Performance Score in this dataset.&quot;</span>)</span>
+<span id="cb8-29"><a href="#cb8-29"></a><span class="bu">print</span>(<span class="st">&quot;This suggests that as the number of training hours increases, the performance score tends to increase as well, in a roughly linear fashion.&quot;</span>)</span>
+<span id="cb8-30"><a href="#cb8-30"></a><span class="bu">print</span>(<span class="st">&quot;However, this correlation does NOT prove that more training *causes* higher scores. Other factors could be involved (e.g., more motivated employees seek more training AND perform better).&quot;</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><strong>Explanation:</strong> * The <code>.corr()</code> method on a DataFrame calculates the pairwise Pearson correlation coefficient between all numerical columns. The value ranges from -1 to +1. * A value close to +1 (like 0.984 here) indicates a strong positive linear association – when one variable goes up, the other tends to go up linearly. * A value close to -1 indicates a strong negative linear association. * A value close to 0 indicates a weak or non-existent <em>linear</em> association. * It is crucial to state that correlation does not imply causation.</p>
+<hr>
+<p><strong>Solution 5: Visualizing Correlation</strong></p>
+<div class="sourceCode" id="cb9"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb9-2"><a href="#cb9-2"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb9-3"><a href="#cb9-3"></a></span>
+<span id="cb9-4"><a href="#cb9-4"></a>training_data <span class="op">=</span> pd.DataFrame({</span>
+<span id="cb9-5"><a href="#cb9-5"></a>    <span class="st">&#39;TrainingHours&#39;</span>: [<span class="dv">10</span>, <span class="dv">15</span>, <span class="dv">8</span>, <span class="dv">20</span>, <span class="dv">12</span>, <span class="dv">18</span>, <span class="dv">5</span>, <span class="dv">22</span>],</span>
+<span id="cb9-6"><a href="#cb9-6"></a>    <span class="st">&#39;PerformanceScore&#39;</span>: [<span class="dv">75</span>, <span class="dv">85</span>, <span class="dv">70</span>, <span class="dv">92</span>, <span class="dv">80</span>, <span class="dv">88</span>, <span class="dv">60</span>, <span class="dv">95</span>]</span>
+<span id="cb9-7"><a href="#cb9-7"></a>})</span>
+<span id="cb9-8"><a href="#cb9-8"></a></span>
+<span id="cb9-9"><a href="#cb9-9"></a><span class="co"># a) Create scatter plot</span></span>
+<span id="cb9-10"><a href="#cb9-10"></a>training_data.plot(kind<span class="op">=</span><span class="st">&#39;scatter&#39;</span>, x<span class="op">=</span><span class="st">&#39;TrainingHours&#39;</span>, y<span class="op">=</span><span class="st">&#39;PerformanceScore&#39;</span>, alpha<span class="op">=</span><span class="fl">0.7</span>)</span>
+<span id="cb9-11"><a href="#cb9-11"></a></span>
+<span id="cb9-12"><a href="#cb9-12"></a><span class="co"># b) Add title and labels</span></span>
+<span id="cb9-13"><a href="#cb9-13"></a>plt.title(<span class="st">&quot;Training Hours vs. Performance Score&quot;</span>)</span>
+<span id="cb9-14"><a href="#cb9-14"></a>plt.xlabel(<span class="st">&quot;Training Hours&quot;</span>)</span>
+<span id="cb9-15"><a href="#cb9-15"></a>plt.ylabel(<span class="st">&quot;Performance Score&quot;</span>)</span>
+<span id="cb9-16"><a href="#cb9-16"></a>plt.grid(<span class="va">True</span>, linestyle<span class="op">=</span><span class="st">&#39;:&#39;</span>)</span>
+<span id="cb9-17"><a href="#cb9-17"></a></span>
+<span id="cb9-18"><a href="#cb9-18"></a><span class="co"># c) Display plot</span></span>
+<span id="cb9-19"><a href="#cb9-19"></a>plt.show()</span>
+<span id="cb9-20"><a href="#cb9-20"></a></span>
+<span id="cb9-21"><a href="#cb9-21"></a><span class="bu">print</span>(<span class="st">&quot;</span><span class="ch">\n</span><span class="st">Visual Assessment:&quot;</span>)</span>
+<span id="cb9-22"><a href="#cb9-22"></a><span class="bu">print</span>(<span class="st">&quot;Yes, the scatter plot visually supports the strong positive correlation calculated.&quot;</span>)</span>
+<span id="cb9-23"><a href="#cb9-23"></a><span class="bu">print</span>(<span class="st">&quot;The points generally follow an upward trend from left to right, indicating that higher Training Hours tend to correspond with higher Performance Scores.&quot;</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><strong>Explanation:</strong> * A scatter plot is the standard way to visualize the relationship between two numerical variables. * <code>df.plot(kind=&#39;scatter&#39;, x=..., y=...)</code> creates the plot. * By examining the pattern of the points, we can visually assess the relationship. An upward trend suggests positive correlation, a downward trend suggests negative correlation, and a random cloud suggests little linear correlation. The tightness of the points around a potential line indicates the strength. In this case, the points form a reasonably tight upward pattern, consistent with the high positive correlation coefficient.</p>
+<hr>
+<p><strong>Solution 6: Interpreting a Simple Regression Model</strong></p>
+<p><strong>Equation:</strong> <code>ConversionRate = 8.5 - 1.5 * PageLoadTime</code></p>
+<ol type="a">
+<li><p><strong>Prediction:</strong> If <code>PageLoadTime = 2.0</code>, then: <code>ConversionRate = 8.5 - 1.5 * 2.0</code> <code>ConversionRate = 8.5 - 3.0</code> <code>ConversionRate = 5.5</code> The predicted Conversion Rate is 5.5 (likely representing 5.5%).</p></li>
+<li><p><strong>Slope Interpretation:</strong> The slope coefficient is -1.5. This means that for each additional second increase in <code>PageLoadTime</code>, the model predicts that the <code>ConversionRate</code> will <strong>decrease by 1.5 percentage points</strong>, on average, holding other factors constant (though none are included in this simple model). It quantifies the negative linear relationship between load time and conversion rate as estimated by the model.</p></li>
+</ol>
+<p><strong>Explanation:</strong> * Simple linear regression finds the best-fitting line <code>Y = intercept + slope * X</code>. * The intercept is the predicted Y value when X is 0. * The slope represents the average change in Y for a one-unit change in X. A negative slope indicates an inverse relationship. * We can use the equation to predict Y for a given X value by plugging it into the formula.</p>
+<hr>
+<p><strong>Solution 7: Applying Descriptive Analytics</strong></p>
+<div class="sourceCode" id="cb10"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb10-2"><a href="#cb10-2"></a></span>
+<span id="cb10-3"><a href="#cb10-3"></a>customer_df <span class="op">=</span> pd.DataFrame({</span>
+<span id="cb10-4"><a href="#cb10-4"></a>    <span class="st">&#39;CustomerID&#39;</span>: [<span class="st">&#39;C1&#39;</span>, <span class="st">&#39;C2&#39;</span>, <span class="st">&#39;C3&#39;</span>, <span class="st">&#39;C4&#39;</span>, <span class="st">&#39;C5&#39;</span>],</span>
+<span id="cb10-5"><a href="#cb10-5"></a>    <span class="st">&#39;Segment&#39;</span>: [<span class="st">&#39;Retail&#39;</span>, <span class="st">&#39;Wholesale&#39;</span>, <span class="st">&#39;Retail&#39;</span>, <span class="st">&#39;Retail&#39;</span>, <span class="st">&#39;Wholesale&#39;</span>],</span>
+<span id="cb10-6"><a href="#cb10-6"></a>    <span class="st">&#39;PurchaseAmount&#39;</span>: [<span class="dv">120</span>, <span class="dv">850</span>, <span class="dv">210</span>, <span class="dv">150</span>, <span class="dv">980</span>]</span>
+<span id="cb10-7"><a href="#cb10-7"></a>})</span>
+<span id="cb10-8"><a href="#cb10-8"></a></span>
+<span id="cb10-9"><a href="#cb10-9"></a><span class="co"># a) Calculate total purchase amount per segment</span></span>
+<span id="cb10-10"><a href="#cb10-10"></a>segment_totals <span class="op">=</span> customer_df.groupby(<span class="st">&#39;Segment&#39;</span>)[<span class="st">&#39;PurchaseAmount&#39;</span>].<span class="bu">sum</span>()</span>
+<span id="cb10-11"><a href="#cb10-11"></a></span>
+<span id="cb10-12"><a href="#cb10-12"></a><span class="co"># b) Print the results</span></span>
+<span id="cb10-13"><a href="#cb10-13"></a><span class="bu">print</span>(<span class="st">&quot;Total Purchase Amount by Segment:&quot;</span>)</span>
+<span id="cb10-14"><a href="#cb10-14"></a><span class="bu">print</span>(segment_totals)</span>
+<span id="cb10-15"><a href="#cb10-15"></a></span>
+<span id="cb10-16"><a href="#cb10-16"></a><span class="co"># Expected Output:</span></span>
+<span id="cb10-17"><a href="#cb10-17"></a><span class="co"># Total Purchase Amount by Segment:</span></span>
+<span id="cb10-18"><a href="#cb10-18"></a><span class="co"># Segment</span></span>
+<span id="cb10-19"><a href="#cb10-19"></a><span class="co"># Retail        480</span></span>
+<span id="cb10-20"><a href="#cb10-20"></a><span class="co"># Wholesale    1830</span></span>
+<span id="cb10-21"><a href="#cb10-21"></a><span class="co"># Name: PurchaseAmount, dtype: int64</span></span>
+<span id="cb10-22"><a href="#cb10-22"></a></span>
+<span id="cb10-23"><a href="#cb10-23"></a><span class="co"># c) Type of Analytics</span></span>
+<span id="cb10-24"><a href="#cb10-24"></a><span class="bu">print</span>(<span class="st">&quot;</span><span class="ch">\n</span><span class="st">Primary Type of Analytics: Descriptive&quot;</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><strong>Explanation:</strong> * We use the <code>.groupby(&#39;Segment&#39;)</code> method to group the DataFrame rows based on the unique values in the ‘Segment’ column. * We then select the ‘PurchaseAmount’ column from the grouped object. * Finally, we apply the <code>.sum()</code> aggregation function to calculate the total purchase amount within each group (‘Retail’ and ‘Wholesale’). * This calculation summarizes historical data (<code>PurchaseAmount</code>) based on categories (<code>Segment</code>), which is a core activity of <strong>Descriptive Analytics</strong> (answering “What happened?”).</p>
+<hr>
+<p><strong>Solution 8: Applying Visualization for Comparison</strong></p>
+<div class="sourceCode" id="cb11"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb11-2"><a href="#cb11-2"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb11-3"><a href="#cb11-3"></a></span>
+<span id="cb11-4"><a href="#cb11-4"></a><span class="co"># Assume segment_totals Series is available from Problem 7</span></span>
+<span id="cb11-5"><a href="#cb11-5"></a>segment_totals <span class="op">=</span> pd.Series({<span class="st">&#39;Retail&#39;</span>: <span class="dv">480</span>, <span class="st">&#39;Wholesale&#39;</span>: <span class="dv">1830</span>})</span>
+<span id="cb11-6"><a href="#cb11-6"></a></span>
+<span id="cb11-7"><a href="#cb11-7"></a><span class="co"># a) Choose plot type: A bar chart is most suitable for comparing sums across discrete categories.</span></span>
+<span id="cb11-8"><a href="#cb11-8"></a></span>
+<span id="cb11-9"><a href="#cb11-9"></a><span class="co"># b) Create the bar chart</span></span>
+<span id="cb11-10"><a href="#cb11-10"></a>segment_totals.plot(kind<span class="op">=</span><span class="st">&#39;bar&#39;</span>, figsize<span class="op">=</span>(<span class="dv">6</span>, <span class="dv">4</span>), color<span class="op">=</span>[<span class="st">&#39;skyblue&#39;</span>, <span class="st">&#39;lightgreen&#39;</span>])</span>
+<span id="cb11-11"><a href="#cb11-11"></a></span>
+<span id="cb11-12"><a href="#cb11-12"></a><span class="co"># c) Add title and labels</span></span>
+<span id="cb11-13"><a href="#cb11-13"></a>plt.title(<span class="st">&quot;Total Purchase Amount by Customer Segment&quot;</span>)</span>
+<span id="cb11-14"><a href="#cb11-14"></a>plt.xlabel(<span class="st">&quot;Customer Segment&quot;</span>)</span>
+<span id="cb11-15"><a href="#cb11-15"></a>plt.ylabel(<span class="st">&quot;Total Purchase Amount ($)&quot;</span>)</span>
+<span id="cb11-16"><a href="#cb11-16"></a>plt.xticks(rotation<span class="op">=</span><span class="dv">0</span>) <span class="co"># Keep x-axis labels horizontal</span></span>
+<span id="cb11-17"><a href="#cb11-17"></a></span>
+<span id="cb11-18"><a href="#cb11-18"></a><span class="co"># d) Display the chart</span></span>
+<span id="cb11-19"><a href="#cb11-19"></a>plt.tight_layout()</span>
+<span id="cb11-20"><a href="#cb11-20"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><strong>Explanation:</strong> * A bar chart (<code>kind=&#39;bar&#39;</code>) is ideal for comparing the magnitude of a numerical value (Total Purchase Amount) across different distinct categories (Customer Segment). * We use the <code>.plot()</code> method on the <code>segment_totals</code> Series created in the previous problem. Pandas automatically uses the Series index (‘Retail’, ‘Wholesale’) for the x-axis categories and the Series values for the bar heights. * Adding titles and labels makes the chart understandable. <code>plt.xticks(rotation=0)</code> ensures the category names are horizontal if they fit.</p>
+<hr>
+<p><strong>Solution 9: Analytics Process Outline</strong></p>
+<p><strong>Business Question:</strong> “How have our online sales figures changed month-over-month for the past year, and which product category saw the biggest percentage growth during that time?”</p>
+<p><strong>Process Outline:</strong></p>
 <ol type="1">
-<li><strong>Collects Customer Information:</strong>
+<li><strong>Gather &amp; Prepare Data:</strong>
 <ul>
-<li>Asks for the customer’s name</li>
-<li>Asks for the customer’s email address</li>
+<li>Load relevant data (e.g., from a CSV or database) into a Pandas DataFrame using <code>pd.read_csv()</code> or similar. Ensure it contains columns for ‘Date’, ‘SalesAmount’, and ‘ProductCategory’.</li>
+<li>Inspect the data: Use <code>.info()</code>, <code>.head()</code>, <code>.isnull().sum()</code> to check data types, missing values, and general structure.</li>
+<li>Clean Data (Module 10):
+<ul>
+<li>Convert the ‘Date’ column to datetime objects using <code>pd.to_datetime()</code>. Handle potential errors (<code>errors=&#39;coerce&#39;</code>).</li>
+<li>Ensure ‘SalesAmount’ is numeric using <code>pd.to_numeric(errors=&#39;coerce&#39;)</code> after removing any currency symbols/commas (<code>.str.replace</code>).</li>
+<li>Handle any missing values in ‘SalesAmount’ or ‘ProductCategory’ appropriately (e.g., <code>fillna(0)</code> for sales if appropriate, or drop rows using <code>dropna</code>).</li>
+<li>Filter data to include only the “past year” based on the ‘Date’ column (using boolean indexing).</li>
 </ul></li>
-<li><strong>Collects Order Information:</strong>
-<ul>
-<li>Asks for a product name</li>
-<li>Asks for the quantity ordered</li>
-<li>Asks for the unit price</li>
 </ul></li>
-<li><strong>Processes the Information:</strong>
+<li><strong>Analyze Data (Month-over-Month Trend):</strong>
 <ul>
-<li>Cleans up the input (removing extra spaces, standardizing capitalization)</li>
-<li>Calculates the subtotal (quantity × unit price)</li>
-<li>Calculates sales tax (8.5% of subtotal)</li>
-<li>Calculates the order total (subtotal + tax)</li>
-<li>Applies a 10% discount if quantity is 10 or more</li>
+<li>Set the ‘Date’ column as the DataFrame index (<code>df.set_index(&#39;Date&#39;, inplace=True)</code>).</li>
+<li>Resample the data to monthly frequency and calculate the total sales per month: <code>monthly_sales = df[&#39;SalesAmount&#39;].resample(&#39;M&#39;).sum()</code> (Note: Resampling is slightly advanced but logical here. Alternatively, extract month/year and groupby).</li>
+<li>Visualize the overall monthly trend using a line plot: <code>monthly_sales.plot(kind=&#39;line&#39;, title=&#39;Overall Monthly Sales Trend&#39;, marker=&#39;o&#39;)</code>. Use <code>plt</code> functions for labels.</li>
 </ul></li>
-<li><strong>Displays an Order Summary:</strong>
+<li><strong>Analyze Data (Category Growth):</strong>
 <ul>
-<li>Shows all customer and order information in a well-formatted layout</li>
-<li>Displays all calculated values formatted as currency with two decimal places</li>
-<li>Shows the discount amount (if applicable)</li>
+<li>Group the yearly data by ‘ProductCategory’ and then by month: <code>grouped = df.groupby([&#39;ProductCategory&#39;, pd.Grouper(key=&#39;Date&#39;, freq=&#39;M&#39;)])[&#39;SalesAmount&#39;].sum().unstack(level=&#39;ProductCategory&#39;)</code> (Advanced grouping/unstacking).</li>
+<li><em>Simpler approach without resampling/multi-index:</em> Extract ‘Month’ and ‘Year’ columns. Group by ‘ProductCategory’, ‘Year’, ‘Month’ and sum sales. Then, for each category, calculate the percentage change between the first and last month of the year (requires careful filtering/calculation, possibly using <code>.first()</code>, <code>.last()</code> on sorted groups or loops which students know).</li>
+<li>Calculate the percentage growth for each category from the start to the end of the year. Find the category with the maximum percentage growth (using <code>.pct_change()</code> on monthly data per category or manual calculation, then <code>.idxmax()</code>).</li>
 </ul></li>
-<li><strong>Validates Input:</strong>
+<li><strong>Interpret &amp; Communicate:</strong>
 <ul>
-<li>Ensures the quantity is a positive integer</li>
-<li>Ensures the price is a positive number</li>
-<li>Handles any potential errors in the conversion process</li>
+<li>Analyze the line plot from Step 2 to describe the overall monthly sales trend (e.g., increasing, decreasing, seasonal).</li>
+<li>State which product category had the highest percentage growth over the year based on the calculations in Step 3.</li>
+<li>Optionally, create a grouped bar chart showing start-of-year vs. end-of-year sales for each category to visually support the growth findings.</li>
+<li>Summarize findings clearly for the manager.</li>
 </ul></li>
 </ol>
-</section>
-<section id="starter-code" class="level2">
-<h2 class="anchored" data-anchor-id="starter-code">Starter Code</h2>
-<p>Below is a starter code template to help you begin:</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1"></a><span class="co"># Module 3 Assignment: String Manipulation, User Input, and Formatted Output</span></span>
-<span id="cb1-2"><a href="#cb1-2"></a></span>
-<span id="cb1-3"><a href="#cb1-3"></a><span class="co"># Welcome message</span></span>
-<span id="cb1-4"><a href="#cb1-4"></a><span class="bu">print</span>(<span class="st">&quot;=&quot;</span> <span class="op">*</span> <span class="dv">50</span>)</span>
-<span id="cb1-5"><a href="#cb1-5"></a><span class="bu">print</span>(<span class="st">&quot;CUSTOMER ORDER PROCESSING SYSTEM&quot;</span>)</span>
-<span id="cb1-6"><a href="#cb1-6"></a><span class="bu">print</span>(<span class="st">&quot;=&quot;</span> <span class="op">*</span> <span class="dv">50</span>)</span>
-<span id="cb1-7"><a href="#cb1-7"></a><span class="bu">print</span>(<span class="st">&quot;Please enter the following information:</span><span class="ch">\n</span><span class="st">&quot;</span>)</span>
-<span id="cb1-8"><a href="#cb1-8"></a></span>
-<span id="cb1-9"><a href="#cb1-9"></a><span class="co"># </span><span class="al">TODO</span><span class="co">: Collect customer information</span></span>
-<span id="cb1-10"><a href="#cb1-10"></a><span class="co"># 1. Ask for customer name</span></span>
-<span id="cb1-11"><a href="#cb1-11"></a><span class="co"># 2. Ask for customer email</span></span>
-<span id="cb1-12"><a href="#cb1-12"></a></span>
-<span id="cb1-13"><a href="#cb1-13"></a><span class="co"># </span><span class="al">TODO</span><span class="co">: Collect order information</span></span>
-<span id="cb1-14"><a href="#cb1-14"></a><span class="co"># 1. Ask for product name</span></span>
-<span id="cb1-15"><a href="#cb1-15"></a><span class="co"># 2. Ask for quantity</span></span>
-<span id="cb1-16"><a href="#cb1-16"></a><span class="co"># 3. Ask for unit price</span></span>
-<span id="cb1-17"><a href="#cb1-17"></a></span>
-<span id="cb1-18"><a href="#cb1-18"></a><span class="co"># </span><span class="al">TODO</span><span class="co">: Process the information</span></span>
-<span id="cb1-19"><a href="#cb1-19"></a><span class="co"># 1. Clean up input (remove extra spaces, standardize capitalization)</span></span>
-<span id="cb1-20"><a href="#cb1-20"></a><span class="co"># 2. Convert quantity and price to appropriate numeric types</span></span>
-<span id="cb1-21"><a href="#cb1-21"></a><span class="co"># 3. Calculate subtotal, tax, and total</span></span>
-<span id="cb1-22"><a href="#cb1-22"></a><span class="co"># 4. Apply discount if applicable</span></span>
-<span id="cb1-23"><a href="#cb1-23"></a></span>
-<span id="cb1-24"><a href="#cb1-24"></a><span class="co"># </span><span class="al">TODO</span><span class="co">: Display order summary</span></span>
-<span id="cb1-25"><a href="#cb1-25"></a><span class="co"># Use f-strings to create a well-formatted output</span></span>
-<span id="cb1-26"><a href="#cb1-26"></a></span>
-<span id="cb1-27"><a href="#cb1-27"></a><span class="co"># Implement error handling where appropriate</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</section>
-<section id="submission-guidelines" class="level2">
-<h2 class="anchored" data-anchor-id="submission-guidelines">Submission Guidelines</h2>
-<ul>
-<li>Save your completed assignment as a Python file named <code>module03-assignment.py</code>.</li>
-<li>Submit your file via Canvas before the deadline.</li>
-<li>Ensure your code runs without errors and meets all the assignment requirements.</li>
-</ul>
-<div class="callout callout-style-simple callout-tip">
-<div class="callout-body d-flex">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-body-container">
-<p><strong>Tip:</strong><br>
-Test your program with various inputs, including edge cases (like entering “ten” instead of “10” for quantity). Your program should handle these gracefully.</p>
-</div>
-</div>
-</div>
-</section>
-</section>
-<section id="marking-rubric" class="level1">
-<h1>Marking Rubric</h1>
-<p>The following rubric will be used to evaluate your assignment. The total possible points for this assignment is <strong>25</strong>.</p>
-<table class="caption-top table">
-<colgroup>
-<col style="width: 29%">
-<col style="width: 5%">
-<col style="width: 65%">
-</colgroup>
-<thead>
-<tr class="header">
-<th>Criterion</th>
-<th>Points</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><strong>Input Collection</strong></td>
-<td>5</td>
-<td>Correctly collects all required information using the <code>input()</code> function with clear prompts.</td>
-</tr>
-<tr class="even">
-<td><strong>String Processing</strong></td>
-<td>5</td>
-<td>Properly cleans and standardizes text input using string methods.</td>
-</tr>
-<tr class="odd">
-<td><strong>Type Conversion &amp; Calculations</strong></td>
-<td>5</td>
-<td>Accurately converts strings to numeric types and performs all required calculations.</td>
-</tr>
-<tr class="even">
-<td><strong>Error Handling</strong></td>
-<td>3</td>
-<td>Implements appropriate error handling for invalid input.</td>
-</tr>
-<tr class="odd">
-<td><strong>Output Formatting</strong></td>
-<td>5</td>
-<td>Creates professional, well-aligned output with proper currency formatting using f-strings.</td>
-</tr>
-<tr class="even">
-<td><strong>Code Structure &amp; Comments</strong></td>
-<td>2</td>
-<td>Organizes code logically with descriptive comments explaining the process.</td>
-</tr>
-<tr class="odd">
-<td><strong>Total</strong></td>
-<td><strong>25</strong></td>
-<td></td>
-</tr>
-</tbody>
-</table>
-<section id="academic-integrity-reminder" class="level2">
-<h2 class="anchored" data-anchor-id="academic-integrity-reminder">Academic Integrity Reminder</h2>
-<p>All work must be your own. Unauthorized collaboration or plagiarism is strictly prohibited and will be considered an academic violation. Please adhere to the course policies regarding academic integrity.</p>
+<p><strong>Explanation:</strong> This outline demonstrates using Pandas for data loading, cleaning (type conversion, filtering, potentially missing values), aggregation (<code>groupby</code>, <code>sum</code>), and Matplotlib/Pandas plotting (<code>.plot(kind=&#39;line&#39;)</code>, bar chart) to address a multi-part business question involving trends and comparisons.</p>
 <hr>
-<p>Sincerely,<br>
-Dr. Smith</p>
-</section>
+<p><strong>Solution 10: Interpreting a Visualization</strong></p>
+<p><strong>(Based on the imagined bar chart showing average ratings: Phone=3.5, Email=4.1, Chat=4.6)</strong></p>
+<p><strong>Interpretation:</strong> The bar chart shows that the “Chat” support channel has the highest average customer rating (4.6 stars), followed by “Email” (4.1 stars). The “Phone” support channel has the lowest average rating at 3.5 stars. This suggests customers are generally most satisfied with chat support and least satisfied with phone support, based on these average ratings.</p>
+<p><strong>Potential Diagnostic Question:</strong> “Why is the average customer rating for the ‘Phone’ support channel significantly lower than the ratings for ‘Email’ and ‘Chat’?” (This prompts investigation into specific issues with phone support, like wait times, resolution rates, or agent performance).</p>
+<p><strong>Explanation:</strong> The interpretation focuses on clearly stating what the chart displays (comparing average ratings across channels) and identifying the key takeaway (Chat is highest, Phone is lowest). The diagnostic question builds on this observation, seeking the underlying reasons (“Why?”) for the observed difference, which is the essence of diagnostic analytics.</p>
+<hr>
 </section>
 
 </main>

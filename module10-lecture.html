@@ -8,7 +8,7 @@
 
 <meta name="author" content="Dr. Smith">
 
-<title>Integrative Assignment: Module 3 – String Manipulation, User Input, and Formatted Output</title>
+<title>Module 10: Data Manipulation and Cleaning with Pandas</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -3087,18 +3087,18 @@ vertical-align: -.125em;
   <nav id="TOC" role="doc-toc" class="toc-active">
     <h2 id="toc-title">Table of contents</h2>
    
+  <ul>
+  <li><a href="#introduction-shaping-data-for-business-insights" id="toc-introduction-shaping-data-for-business-insights" class="nav-link active" data-scroll-target="#introduction-shaping-data-for-business-insights">Introduction: Shaping Data for Business Insights</a></li>
+  <li><a href="#learning-outcomes" id="toc-learning-outcomes" class="nav-link" data-scroll-target="#learning-outcomes">Learning Outcomes</a></li>
+  <li><a href="#handling-missing-data-the-details" id="toc-handling-missing-data-the-details" class="nav-link" data-scroll-target="#handling-missing-data-the-details">1. Handling Missing Data (The Details)</a>
   <ul class="collapse">
-  <li><a href="#integrative-assignment-module-3-string-manipulation-user-input-and-formatted-output" id="toc-integrative-assignment-module-3-string-manipulation-user-input-and-formatted-output" class="nav-link active" data-scroll-target="#integrative-assignment-module-3-string-manipulation-user-input-and-formatted-output">Integrative Assignment: Module 3 – String Manipulation, User Input, and Formatted Output</a>
-  <ul class="collapse">
-  <li><a href="#overview" id="toc-overview" class="nav-link" data-scroll-target="#overview">Overview</a></li>
-  <li><a href="#objectives" id="toc-objectives" class="nav-link" data-scroll-target="#objectives">Objectives</a></li>
-  <li><a href="#assignment-description" id="toc-assignment-description" class="nav-link" data-scroll-target="#assignment-description">Assignment Description</a></li>
-  <li><a href="#starter-code" id="toc-starter-code" class="nav-link" data-scroll-target="#starter-code">Starter Code</a></li>
-  <li><a href="#submission-guidelines" id="toc-submission-guidelines" class="nav-link" data-scroll-target="#submission-guidelines">Submission Guidelines</a></li>
-  </ul></li>
-  <li><a href="#marking-rubric" id="toc-marking-rubric" class="nav-link" data-scroll-target="#marking-rubric">Marking Rubric</a>
-  <ul class="collapse">
-  <li><a href="#academic-integrity-reminder" id="toc-academic-integrity-reminder" class="nav-link" data-scroll-target="#academic-integrity-reminder">Academic Integrity Reminder</a></li>
+  <li><a href="#dropping-missing-values-.dropna" id="toc-dropping-missing-values-.dropna" class="nav-link" data-scroll-target="#dropping-missing-values-.dropna">1.1 Dropping Missing Values (<code>.dropna()</code>)</a></li>
+  <li><a href="#checking-data-types-.dtypes-.info" id="toc-checking-data-types-.dtypes-.info" class="nav-link" data-scroll-target="#checking-data-types-.dtypes-.info">2.1 Checking Data Types (<code>.dtypes</code>, <code>.info()</code>)</a></li>
+  <li><a href="#adding-new-columns" id="toc-adding-new-columns" class="nav-link" data-scroll-target="#adding-new-columns">3.1 Adding New Columns</a></li>
+  <li><a href="#applying-functions-.apply" id="toc-applying-functions-.apply" class="nav-link" data-scroll-target="#applying-functions-.apply">4.1 Applying Functions (<code>.apply()</code>)</a></li>
+  <li><a href="#sorting-by-values-.sort_values" id="toc-sorting-by-values-.sort_values" class="nav-link" data-scroll-target="#sorting-by-values-.sort_values">5.1 Sorting by Values (<code>.sort_values()</code>)</a></li>
+  <li><a href="#identifying-duplicates-.duplicated" id="toc-identifying-duplicates-.duplicated" class="nav-link" data-scroll-target="#identifying-duplicates-.duplicated">6.1 Identifying Duplicates (<code>.duplicated()</code>)</a></li>
+  <li><a href="#removing-duplicates-.drop_duplicates" id="toc-removing-duplicates-.drop_duplicates" class="nav-link" data-scroll-target="#removing-duplicates-.drop_duplicates">6.2 Removing Duplicates (<code>.drop_duplicates()</code>)</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -3109,27 +3109,20 @@ vertical-align: -.125em;
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Integrative Assignment: Module 3 – String Manipulation, User Input, and Formatted Output</h1>
+<h1 class="title">Module 10: Data Manipulation and Cleaning with Pandas</h1>
 </div>
 
 
-<div class="quarto-title-meta-author">
-  <div class="quarto-title-meta-heading">Author</div>
-  <div class="quarto-title-meta-heading">Affiliation</div>
-  
-    <div class="quarto-title-meta-contents">
-    <p class="author">Dr. Smith </p>
-  </div>
-  <div class="quarto-title-meta-contents">
-        <p class="affiliation">
-            University of South Florida
-          </p>
-      </div>
-  </div>
 
 <div class="quarto-title-meta">
 
-      
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Dr. Smith </p>
+          </div>
+  </div>
+    
   
     
   </div>
@@ -3139,172 +3132,730 @@ vertical-align: -.125em;
 </header>
 
 
-<section id="integrative-assignment-module-3-string-manipulation-user-input-and-formatted-output" class="level1">
-<h1>Integrative Assignment: Module 3 – String Manipulation, User Input, and Formatted Output</h1>
-<section id="overview" class="level2">
-<h2 class="anchored" data-anchor-id="overview">Overview</h2>
-<p>In this assignment, you will demonstrate your understanding of Module 3 concepts by creating an interactive customer order processing program. This program will utilize string manipulation, user input, and formatted output to create a professional-looking order summary. This assignment will reinforce your ability to handle text data effectively, interact with users, and present information clearly – key skills for developing business applications.</p>
-</section>
-<section id="objectives" class="level2">
-<h2 class="anchored" data-anchor-id="objectives">Objectives</h2>
-<p>By completing this assignment, you will:</p>
+<section id="introduction-shaping-data-for-business-insights" class="level1">
+<h1>Introduction: Shaping Data for Business Insights</h1>
+<p>Welcome back to Module 9, we took our first major step into data analysis using the powerful Pandas library. We learned how to create and inspect Pandas Series and DataFrames, select specific pieces of data using various indexing techniques, and calculate basic descriptive statistics. You should now be comfortable loading simple datasets and getting a feel for their structure.</p>
+<p>However, as anyone who has worked with real-world business data knows, it rarely arrives in a perfectly clean and analysis-ready state. Data often suffers from:</p>
 <ul>
-<li><strong>Get and Process User Input:</strong> Use the <code>input()</code> function to collect information from users and process it appropriately.</li>
-<li><strong>Apply String Methods:</strong> Use string methods like <code>.strip()</code>, <code>.title()</code>, and other text manipulation techniques.</li>
-<li><strong>Perform Type Conversion:</strong> Convert string input to appropriate numeric types for calculations.</li>
-<li><strong>Implement Error Handling:</strong> Use basic error handling techniques to deal with invalid input.</li>
-<li><strong>Format Output with F-strings:</strong> Create professional-looking output with proper formatting and alignment.</li>
-<li><strong>Create a Complete Application:</strong> Build a program that follows the input-process-output pattern.</li>
+<li><strong>Missing Values:</strong> Information that wasn’t recorded or got lost.</li>
+<li><strong>Incorrect Data Types:</strong> Numbers stored as text, dates treated as strings.</li>
+<li><strong>Inconsistent Formatting:</strong> Variations in text entries (e.g., “USA” vs. “United States”).</li>
+<li><strong>Duplicates:</strong> The same record appearing multiple times.</li>
+<li><strong>Irrelevant Information:</strong> Columns or rows not needed for the current analysis.</li>
 </ul>
-</section>
-<section id="assignment-description" class="level2">
-<h2 class="anchored" data-anchor-id="assignment-description">Assignment Description</h2>
-<p>Imagine you work for an e-commerce company that needs a simple order processing system. Your task is to develop a Python program that:</p>
-<ol type="1">
-<li><strong>Collects Customer Information:</strong>
-<ul>
-<li>Asks for the customer’s name</li>
-<li>Asks for the customer’s email address</li>
-</ul></li>
-<li><strong>Collects Order Information:</strong>
-<ul>
-<li>Asks for a product name</li>
-<li>Asks for the quantity ordered</li>
-<li>Asks for the unit price</li>
-</ul></li>
-<li><strong>Processes the Information:</strong>
-<ul>
-<li>Cleans up the input (removing extra spaces, standardizing capitalization)</li>
-<li>Calculates the subtotal (quantity × unit price)</li>
-<li>Calculates sales tax (8.5% of subtotal)</li>
-<li>Calculates the order total (subtotal + tax)</li>
-<li>Applies a 10% discount if quantity is 10 or more</li>
-</ul></li>
-<li><strong>Displays an Order Summary:</strong>
-<ul>
-<li>Shows all customer and order information in a well-formatted layout</li>
-<li>Displays all calculated values formatted as currency with two decimal places</li>
-<li>Shows the discount amount (if applicable)</li>
-</ul></li>
-<li><strong>Validates Input:</strong>
-<ul>
-<li>Ensures the quantity is a positive integer</li>
-<li>Ensures the price is a positive number</li>
-<li>Handles any potential errors in the conversion process</li>
-</ul></li>
-</ol>
-</section>
-<section id="starter-code" class="level2">
-<h2 class="anchored" data-anchor-id="starter-code">Starter Code</h2>
-<p>Below is a starter code template to help you begin:</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1"></a><span class="co"># Module 3 Assignment: String Manipulation, User Input, and Formatted Output</span></span>
-<span id="cb1-2"><a href="#cb1-2"></a></span>
-<span id="cb1-3"><a href="#cb1-3"></a><span class="co"># Welcome message</span></span>
-<span id="cb1-4"><a href="#cb1-4"></a><span class="bu">print</span>(<span class="st">&quot;=&quot;</span> <span class="op">*</span> <span class="dv">50</span>)</span>
-<span id="cb1-5"><a href="#cb1-5"></a><span class="bu">print</span>(<span class="st">&quot;CUSTOMER ORDER PROCESSING SYSTEM&quot;</span>)</span>
-<span id="cb1-6"><a href="#cb1-6"></a><span class="bu">print</span>(<span class="st">&quot;=&quot;</span> <span class="op">*</span> <span class="dv">50</span>)</span>
-<span id="cb1-7"><a href="#cb1-7"></a><span class="bu">print</span>(<span class="st">&quot;Please enter the following information:</span><span class="ch">\n</span><span class="st">&quot;</span>)</span>
-<span id="cb1-8"><a href="#cb1-8"></a></span>
-<span id="cb1-9"><a href="#cb1-9"></a><span class="co"># </span><span class="al">TODO</span><span class="co">: Collect customer information</span></span>
-<span id="cb1-10"><a href="#cb1-10"></a><span class="co"># 1. Ask for customer name</span></span>
-<span id="cb1-11"><a href="#cb1-11"></a><span class="co"># 2. Ask for customer email</span></span>
-<span id="cb1-12"><a href="#cb1-12"></a></span>
-<span id="cb1-13"><a href="#cb1-13"></a><span class="co"># </span><span class="al">TODO</span><span class="co">: Collect order information</span></span>
-<span id="cb1-14"><a href="#cb1-14"></a><span class="co"># 1. Ask for product name</span></span>
-<span id="cb1-15"><a href="#cb1-15"></a><span class="co"># 2. Ask for quantity</span></span>
-<span id="cb1-16"><a href="#cb1-16"></a><span class="co"># 3. Ask for unit price</span></span>
-<span id="cb1-17"><a href="#cb1-17"></a></span>
-<span id="cb1-18"><a href="#cb1-18"></a><span class="co"># </span><span class="al">TODO</span><span class="co">: Process the information</span></span>
-<span id="cb1-19"><a href="#cb1-19"></a><span class="co"># 1. Clean up input (remove extra spaces, standardize capitalization)</span></span>
-<span id="cb1-20"><a href="#cb1-20"></a><span class="co"># 2. Convert quantity and price to appropriate numeric types</span></span>
-<span id="cb1-21"><a href="#cb1-21"></a><span class="co"># 3. Calculate subtotal, tax, and total</span></span>
-<span id="cb1-22"><a href="#cb1-22"></a><span class="co"># 4. Apply discount if applicable</span></span>
-<span id="cb1-23"><a href="#cb1-23"></a></span>
-<span id="cb1-24"><a href="#cb1-24"></a><span class="co"># </span><span class="al">TODO</span><span class="co">: Display order summary</span></span>
-<span id="cb1-25"><a href="#cb1-25"></a><span class="co"># Use f-strings to create a well-formatted output</span></span>
-<span id="cb1-26"><a href="#cb1-26"></a></span>
-<span id="cb1-27"><a href="#cb1-27"></a><span class="co"># Implement error handling where appropriate</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</section>
-<section id="submission-guidelines" class="level2">
-<h2 class="anchored" data-anchor-id="submission-guidelines">Submission Guidelines</h2>
-<ul>
-<li>Save your completed assignment as a Python file named <code>module03-assignment.py</code>.</li>
-<li>Submit your file via Canvas before the deadline.</li>
-<li>Ensure your code runs without errors and meets all the assignment requirements.</li>
-</ul>
-<div class="callout callout-style-simple callout-tip">
-<div class="callout-body d-flex">
+<p>Before we can derive meaningful insights or build reliable models, we must <strong>clean</strong> and <strong>manipulate</strong> the data. This process, often called data wrangling or data munging, involves transforming the raw data into a tidy and consistent format suitable for analysis. While sometimes considered tedious, it’s a <strong>critical</strong> step – garbage in, garbage out!</p>
+<p>Pandas excels not only at data analysis but also provides a comprehensive toolkit for these cleaning and manipulation tasks. In Module 10, we will build upon our Module 9 foundation and explore common techniques used to whip messy business data into shape. We’ll focus on handling missing values effectively, correcting data types, modifying DataFrame structures, applying transformations, sorting, and dealing with duplicates.</p>
+<p>Mastering these techniques will empower you to confidently prepare diverse datasets for meaningful business analysis.</p>
+<div class="callout callout-style-default callout-note callout-titled" title="Code Examples">
+<div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
-<div class="callout-body-container">
-<p><strong>Tip:</strong><br>
-Test your program with various inputs, including edge cases (like entering “ten” instead of “10” for quantity). Your program should handle these gracefully.</p>
+<div class="callout-title-container flex-fill">
+Code Examples
 </div>
+</div>
+<div class="callout-body-container callout-body">
+<p>As in Module 9, each code example below has a caption and a hypothetical link to download the code as a <code>.py</code> file. Remember to have the Pandas library installed and imported (<code>import pandas as pd</code>). We’ll also use NumPy (<code>import numpy as np</code>) for creating example missing data (<code>np.nan</code>).</p>
 </div>
 </div>
 </section>
+<section id="learning-outcomes" class="level1">
+<h1>Learning Outcomes</h1>
+<p>By the end of this module, you will be able to:</p>
+<ul>
+<li><strong>Handle Missing Data:</strong> Implement strategies for dealing with <code>NaN</code> values using <code>.dropna()</code> and <code>.fillna()</code>.</li>
+<li><strong>Correct Data Types:</strong> Convert column data types using <code>.astype()</code>, <code>pd.to_numeric()</code>, and <code>pd.to_datetime()</code>.</li>
+<li><strong>Add and Remove Columns:</strong> Create new columns based on existing data or constants, and remove unwanted columns using <code>.drop()</code>.</li>
+<li><strong>Rename Columns:</strong> Change column names for clarity using <code>.rename()</code>.</li>
+<li><strong>Apply Functions:</strong> Use <code>.apply()</code> to perform custom operations on rows or columns, and <code>.map()</code> for element-wise transformations on Series.</li>
+<li><strong>Perform String Operations:</strong> Utilize the <code>.str</code> accessor to clean and manipulate text data within Series.</li>
+<li><strong>Sort Data:</strong> Reorder DataFrames based on column values (<code>.sort_values()</code>) or index labels (<code>.sort_index()</code>).</li>
+<li><strong>Manage Duplicates:</strong> Identify (<code>.duplicated()</code>) and remove (<code>.drop_duplicates()</code>) duplicate rows.</li>
+</ul>
 </section>
-<section id="marking-rubric" class="level1">
-<h1>Marking Rubric</h1>
-<p>The following rubric will be used to evaluate your assignment. The total possible points for this assignment is <strong>25</strong>.</p>
-<table class="caption-top table">
-<colgroup>
-<col style="width: 29%">
-<col style="width: 5%">
-<col style="width: 65%">
-</colgroup>
-<thead>
-<tr class="header">
-<th>Criterion</th>
-<th>Points</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><strong>Input Collection</strong></td>
-<td>5</td>
-<td>Correctly collects all required information using the <code>input()</code> function with clear prompts.</td>
-</tr>
-<tr class="even">
-<td><strong>String Processing</strong></td>
-<td>5</td>
-<td>Properly cleans and standardizes text input using string methods.</td>
-</tr>
-<tr class="odd">
-<td><strong>Type Conversion &amp; Calculations</strong></td>
-<td>5</td>
-<td>Accurately converts strings to numeric types and performs all required calculations.</td>
-</tr>
-<tr class="even">
-<td><strong>Error Handling</strong></td>
-<td>3</td>
-<td>Implements appropriate error handling for invalid input.</td>
-</tr>
-<tr class="odd">
-<td><strong>Output Formatting</strong></td>
-<td>5</td>
-<td>Creates professional, well-aligned output with proper currency formatting using f-strings.</td>
-</tr>
-<tr class="even">
-<td><strong>Code Structure &amp; Comments</strong></td>
-<td>2</td>
-<td>Organizes code logically with descriptive comments explaining the process.</td>
-</tr>
-<tr class="odd">
-<td><strong>Total</strong></td>
-<td><strong>25</strong></td>
-<td></td>
-</tr>
-</tbody>
-</table>
-<section id="academic-integrity-reminder" class="level2">
-<h2 class="anchored" data-anchor-id="academic-integrity-reminder">Academic Integrity Reminder</h2>
-<p>All work must be your own. Unauthorized collaboration or plagiarism is strictly prohibited and will be considered an academic violation. Please adhere to the course policies regarding academic integrity.</p>
+<section id="handling-missing-data-the-details" class="level1">
+<h1>1. Handling Missing Data (The Details)</h1>
+<p>In Module 9, we learned to detect missing data (<code>NaN</code>) using <code>.isnull().sum()</code>. Now, let’s tackle how to handle it. The two primary approaches are <strong>dropping</strong> or <strong>filling</strong> the missing values. The best strategy depends on the context: how much data is missing, why it’s missing, and the goals of your analysis.</p>
+<section id="dropping-missing-values-.dropna" class="level2">
+<h2 class="anchored" data-anchor-id="dropping-missing-values-.dropna">1.1 Dropping Missing Values (<code>.dropna()</code>)</h2>
+<p>This method removes rows or columns containing <code>NaN</code> values. It’s simple but can lead to significant data loss if missing values are widespread.</p>
+<p>Key Parameters:</p>
+<ul>
+<li><code>axis</code>: <code>0</code> or <code>&#39;index&#39;</code> (default) to drop rows with <code>NaN</code>, <code>1</code> or <code>&#39;columns&#39;</code> to drop columns with <code>NaN</code>.</li>
+<li><code>how</code>: <code>&#39;any&#39;</code> (default) drops the row/column if <em>any</em> <code>NaN</code> is present, <code>&#39;all&#39;</code> drops only if <em>all</em> values are <code>NaN</code>.</li>
+<li><code>thresh</code>: An integer specifying the minimum number of <em>non-missing</em> values required to <em>keep</em> a row/column.</li>
+<li><code>subset</code>: A list of column names to consider when looking for <code>NaN</code> (only drop rows if <code>NaN</code> is in these specific columns).</li>
+<li><code>inplace</code>: <code>False</code> (default) returns a <em>new</em> DataFrame with drops. <code>True</code> modifies the <em>original</em> DataFrame directly. <strong>Use <code>inplace=True</code> with caution, or prefer assignment:</strong> <code>df = df.dropna()</code>.</li>
+</ul>
+<div class="sourceCode" id="cb1"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1"></a><span class="co">#| caption: &quot;Dropping rows and columns with missing values using .dropna() (Section 1.1)&quot;</span></span>
+<span id="cb1-2"><a href="#cb1-2"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb1-3"><a href="#cb1-3"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb1-4"><a href="#cb1-4"></a></span>
+<span id="cb1-5"><a href="#cb1-5"></a>data <span class="op">=</span> {</span>
+<span id="cb1-6"><a href="#cb1-6"></a>    <span class="st">&#39;OrderID&#39;</span>: [<span class="st">&#39;O101&#39;</span>, <span class="st">&#39;O102&#39;</span>, <span class="st">&#39;O103&#39;</span>, <span class="st">&#39;O104&#39;</span>, <span class="st">&#39;O105&#39;</span>],</span>
+<span id="cb1-7"><a href="#cb1-7"></a>    <span class="st">&#39;Product&#39;</span>: [<span class="st">&#39;A&#39;</span>, <span class="st">&#39;B&#39;</span>, np.nan, <span class="st">&#39;B&#39;</span>, <span class="st">&#39;A&#39;</span>],</span>
+<span id="cb1-8"><a href="#cb1-8"></a>    <span class="st">&#39;Quantity&#39;</span>: [<span class="dv">10</span>, <span class="dv">5</span>, <span class="dv">8</span>, np.nan, <span class="dv">7</span>],</span>
+<span id="cb1-9"><a href="#cb1-9"></a>    <span class="st">&#39;Price&#39;</span>: [<span class="fl">12.5</span>, <span class="fl">20.0</span>, <span class="fl">15.0</span>, <span class="fl">20.0</span>, <span class="fl">12.5</span>],</span>
+<span id="cb1-10"><a href="#cb1-10"></a>    <span class="st">&#39;Discount&#39;</span>: [<span class="fl">0.1</span>, np.nan, np.nan, <span class="fl">0.2</span>, np.nan] <span class="co"># Column with many NaNs</span></span>
+<span id="cb1-11"><a href="#cb1-11"></a>}</span>
+<span id="cb1-12"><a href="#cb1-12"></a>df <span class="op">=</span> pd.DataFrame(data)</span>
+<span id="cb1-13"><a href="#cb1-13"></a><span class="bu">print</span>(<span class="st">&quot;Original DataFrame:&quot;</span>)</span>
+<span id="cb1-14"><a href="#cb1-14"></a><span class="bu">print</span>(df)</span>
+<span id="cb1-15"><a href="#cb1-15"></a><span class="bu">print</span>(<span class="st">&quot;</span><span class="ch">\n</span><span class="st">Missing values count:&quot;</span>)</span>
+<span id="cb1-16"><a href="#cb1-16"></a><span class="bu">print</span>(df.isnull().<span class="bu">sum</span>())</span>
+<span id="cb1-17"><a href="#cb1-17"></a></span>
+<span id="cb1-18"><a href="#cb1-18"></a><span class="co"># --- Drop rows with ANY missing values ---</span></span>
+<span id="cb1-19"><a href="#cb1-19"></a>df_dropped_rows_any <span class="op">=</span> df.dropna() <span class="co"># axis=0, how=&#39;any&#39; by default</span></span>
+<span id="cb1-20"><a href="#cb1-20"></a><span class="bu">print</span>(<span class="st">&quot;</span><span class="ch">\n</span><span class="st">After dropping rows with any NaN:&quot;</span>)</span>
+<span id="cb1-21"><a href="#cb1-21"></a><span class="bu">print</span>(df_dropped_rows_any)</span>
+<span id="cb1-22"><a href="#cb1-22"></a></span>
+<span id="cb1-23"><a href="#cb1-23"></a><span class="co"># --- Drop rows only if ALL values are missing (less common) ---</span></span>
+<span id="cb1-24"><a href="#cb1-24"></a><span class="co"># df_dropped_rows_all = df.dropna(how=&#39;all&#39;)</span></span>
+<span id="cb1-25"><a href="#cb1-25"></a><span class="co"># print(&quot;\nAfter dropping rows where all values are NaN:&quot;)</span></span>
+<span id="cb1-26"><a href="#cb1-26"></a><span class="co"># print(df_dropped_rows_all) # No change in this example</span></span>
+<span id="cb1-27"><a href="#cb1-27"></a></span>
+<span id="cb1-28"><a href="#cb1-28"></a><span class="co"># --- Drop columns with ANY missing values ---</span></span>
+<span id="cb1-29"><a href="#cb1-29"></a>df_dropped_cols_any <span class="op">=</span> df.dropna(axis<span class="op">=</span><span class="dv">1</span>) <span class="co"># axis=&#39;columns&#39; also works</span></span>
+<span id="cb1-30"><a href="#cb1-30"></a><span class="bu">print</span>(<span class="st">&quot;</span><span class="ch">\n</span><span class="st">After dropping columns with any NaN (&#39;Product&#39;, &#39;Quantity&#39;, &#39;Discount&#39;):&quot;</span>)</span>
+<span id="cb1-31"><a href="#cb1-31"></a><span class="bu">print</span>(df_dropped_cols_any)</span>
+<span id="cb1-32"><a href="#cb1-32"></a></span>
+<span id="cb1-33"><a href="#cb1-33"></a><span class="co"># --- Drop rows where NaN appears in specific columns (&#39;Product&#39; or &#39;Quantity&#39;) ---</span></span>
+<span id="cb1-34"><a href="#cb1-34"></a>df_dropped_subset <span class="op">=</span> df.dropna(subset<span class="op">=</span>[<span class="st">&#39;Product&#39;</span>, <span class="st">&#39;Quantity&#39;</span>])</span>
+<span id="cb1-35"><a href="#cb1-35"></a><span class="bu">print</span>(<span class="st">&quot;</span><span class="ch">\n</span><span class="st">After dropping rows if NaN is in &#39;Product&#39; or &#39;Quantity&#39;:&quot;</span>)</span>
+<span id="cb1-36"><a href="#cb1-36"></a><span class="bu">print</span>(df_dropped_subset)</span>
+<span id="cb1-37"><a href="#cb1-37"></a></span>
+<span id="cb1-38"><a href="#cb1-38"></a><span class="co"># --- Keep rows that have at least 4 non-missing values ---</span></span>
+<span id="cb1-39"><a href="#cb1-39"></a>df_dropped_thresh <span class="op">=</span> df.dropna(thresh<span class="op">=</span><span class="dv">4</span>)</span>
+<span id="cb1-40"><a href="#cb1-40"></a><span class="bu">print</span>(<span class="st">&quot;</span><span class="ch">\n</span><span class="st">After dropping rows with less than 4 non-NaN values:&quot;</span>)</span>
+<span id="cb1-41"><a href="#cb1-41"></a><span class="bu">print</span>(df_dropped_thresh)</span>
+<span id="cb1-42"><a href="#cb1-42"></a></span>
+<span id="cb1-43"><a href="#cb1-43"></a><span class="co"># --- Example of inplace modification (use carefully) ---</span></span>
+<span id="cb1-44"><a href="#cb1-44"></a><span class="co"># df_copy = df.copy() # Work on a copy to preserve original df</span></span>
+<span id="cb1-45"><a href="#cb1-45"></a><span class="co"># df_copy.dropna(subset=[&#39;Product&#39;], inplace=True)</span></span>
+<span id="cb1-46"><a href="#cb1-46"></a><span class="co"># print(&quot;\nDataFrame modified inplace (dropped rows with NaN in &#39;Product&#39;):&quot;)</span></span>
+<span id="cb1-47"><a href="#cb1-47"></a><span class="co"># print(df_copy)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><a href="#">Download: <code>m10_s1_1_dropna.py</code></a> ## 1.2 Filling Missing Values (<code>.fillna()</code>)</p>
+<p>Instead of removing data, we can replace <code>NaN</code> with a specified value. This preserves data points but introduces assumptions.</p>
+<p>Common Filling Strategies:</p>
+<ul>
+<li><strong>Specific Value:</strong> Replace <code>NaN</code> with 0, “Unknown”, or another relevant constant.</li>
+<li><strong>Statistical Measure:</strong> Replace <code>NaN</code> in a numeric column with its mean, median, or mode. Median is often preferred if outliers are present.</li>
+<li><strong>Forward Fill (<code>ffill</code>):</strong> Propagate the last valid observation forward to fill the gap. Useful for time series data.</li>
+<li><strong>Backward Fill (<code>bfill</code>):</strong> Propagate the next valid observation backward to fill the gap.</li>
+</ul>
+<p>Key Parameters:</p>
+<ul>
+<li><code>value</code>: The scalar value, dictionary, Series, or DataFrame used for filling. If a dictionary, keys are column names and values are the fill values for those columns.</li>
+<li><code>method</code>: <code>&#39;ffill&#39;</code> or <code>&#39;pad&#39;</code> for forward fill, <code>&#39;bfill&#39;</code> or <code>&#39;backfill&#39;</code> for backward fill. Cannot be used with <code>value</code>.</li>
+<li><code>axis</code>: Axis along which to fill (<code>0</code> or <code>&#39;index&#39;</code>, <code>1</code> or <code>&#39;columns&#39;</code>).</li>
+<li><code>inplace</code>: <code>False</code> (default) returns a new object, <code>True</code> modifies the original. <strong>Prefer assignment:</strong> <code>df = df.fillna(...)</code>.</li>
+</ul>
+<div class="sourceCode" id="cb2"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1"></a><span class="co">#| caption: &quot;Filling missing values using .fillna() (Section 1.2)&quot;</span></span>
+<span id="cb2-2"><a href="#cb2-2"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb2-3"><a href="#cb2-3"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb2-4"><a href="#cb2-4"></a></span>
+<span id="cb2-5"><a href="#cb2-5"></a>data <span class="op">=</span> {</span>
+<span id="cb2-6"><a href="#cb2-6"></a>    <span class="st">&#39;Product&#39;</span>: [<span class="st">&#39;A&#39;</span>, <span class="st">&#39;B&#39;</span>, np.nan, <span class="st">&#39;B&#39;</span>, <span class="st">&#39;A&#39;</span>],</span>
+<span id="cb2-7"><a href="#cb2-7"></a>    <span class="st">&#39;Quantity&#39;</span>: [<span class="fl">10.0</span>, <span class="fl">5.0</span>, <span class="fl">8.0</span>, np.nan, <span class="fl">7.0</span>], <span class="co"># Use float for mean/median</span></span>
+<span id="cb2-8"><a href="#cb2-8"></a>    <span class="st">&#39;Discount&#39;</span>: [<span class="fl">0.1</span>, np.nan, np.nan, <span class="fl">0.2</span>, np.nan]</span>
+<span id="cb2-9"><a href="#cb2-9"></a>}</span>
+<span id="cb2-10"><a href="#cb2-10"></a>df <span class="op">=</span> pd.DataFrame(data)</span>
+<span id="cb2-11"><a href="#cb2-11"></a><span class="bu">print</span>(<span class="st">&quot;Original DataFrame:&quot;</span>)</span>
+<span id="cb2-12"><a href="#cb2-12"></a><span class="bu">print</span>(df)</span>
+<span id="cb2-13"><a href="#cb2-13"></a></span>
+<span id="cb2-14"><a href="#cb2-14"></a><span class="co"># --- Fill ALL NaN with 0 ---</span></span>
+<span id="cb2-15"><a href="#cb2-15"></a>df_filled_zero <span class="op">=</span> df.fillna(<span class="dv">0</span>)</span>
+<span id="cb2-16"><a href="#cb2-16"></a><span class="bu">print</span>(<span class="st">&quot;</span><span class="ch">\n</span><span class="st">After filling all NaN with 0:&quot;</span>)</span>
+<span id="cb2-17"><a href="#cb2-17"></a><span class="bu">print</span>(df_filled_zero)</span>
+<span id="cb2-18"><a href="#cb2-18"></a></span>
+<span id="cb2-19"><a href="#cb2-19"></a><span class="co"># --- Fill NaN in &#39;Quantity&#39; with its mean ---</span></span>
+<span id="cb2-20"><a href="#cb2-20"></a>mean_quantity <span class="op">=</span> df[<span class="st">&#39;Quantity&#39;</span>].mean()</span>
+<span id="cb2-21"><a href="#cb2-21"></a><span class="bu">print</span>(<span class="ss">f&quot;</span><span class="ch">\n</span><span class="ss">Mean Quantity: </span><span class="sc">{</span>mean_quantity<span class="sc">:.2f}</span><span class="ss">&quot;</span>)</span>
+<span id="cb2-22"><a href="#cb2-22"></a>df_filled_mean <span class="op">=</span> df.copy() <span class="co"># Work on a copy</span></span>
+<span id="cb2-23"><a href="#cb2-23"></a>df_filled_mean[<span class="st">&#39;Quantity&#39;</span>] <span class="op">=</span> df_filled_mean[<span class="st">&#39;Quantity&#39;</span>].fillna(mean_quantity)</span>
+<span id="cb2-24"><a href="#cb2-24"></a><span class="bu">print</span>(<span class="st">&quot;</span><span class="ch">\n</span><span class="st">After filling &#39;Quantity&#39; NaN with mean:&quot;</span>)</span>
+<span id="cb2-25"><a href="#cb2-25"></a><span class="bu">print</span>(df_filled_mean)</span>
+<span id="cb2-26"><a href="#cb2-26"></a></span>
+<span id="cb2-27"><a href="#cb2-27"></a><span class="co"># --- Fill using a dictionary for different columns ---</span></span>
+<span id="cb2-28"><a href="#cb2-28"></a>fill_values <span class="op">=</span> {<span class="st">&#39;Product&#39;</span>: <span class="st">&#39;Unknown&#39;</span>, <span class="st">&#39;Quantity&#39;</span>: df[<span class="st">&#39;Quantity&#39;</span>].median(), <span class="st">&#39;Discount&#39;</span>: <span class="fl">0.0</span>}</span>
+<span id="cb2-29"><a href="#cb2-29"></a>df_filled_dict <span class="op">=</span> df.fillna(value<span class="op">=</span>fill_values)</span>
+<span id="cb2-30"><a href="#cb2-30"></a><span class="bu">print</span>(<span class="st">&quot;</span><span class="ch">\n</span><span class="st">After filling NaN using specific values per column:&quot;</span>)</span>
+<span id="cb2-31"><a href="#cb2-31"></a><span class="bu">print</span>(df_filled_dict)</span>
+<span id="cb2-32"><a href="#cb2-32"></a></span>
+<span id="cb2-33"><a href="#cb2-33"></a><span class="co"># --- Fill NaN using Forward Fill (ffill) ---</span></span>
+<span id="cb2-34"><a href="#cb2-34"></a><span class="co"># Useful for time-ordered data (imagine rows are sequential days)</span></span>
+<span id="cb2-35"><a href="#cb2-35"></a>df_filled_ffill <span class="op">=</span> df.fillna(method<span class="op">=</span><span class="st">&#39;ffill&#39;</span>)</span>
+<span id="cb2-36"><a href="#cb2-36"></a><span class="bu">print</span>(<span class="st">&quot;</span><span class="ch">\n</span><span class="st">After forward filling NaN (propagates last valid value down):&quot;</span>)</span>
+<span id="cb2-37"><a href="#cb2-37"></a><span class="bu">print</span>(df_filled_ffill) <span class="co"># Note: First NaN in Discount remains if no prior value</span></span>
+<span id="cb2-38"><a href="#cb2-38"></a></span>
+<span id="cb2-39"><a href="#cb2-39"></a><span class="co"># --- Fill NaN using Backward Fill (bfill) ---</span></span>
+<span id="cb2-40"><a href="#cb2-40"></a>df_filled_bfill <span class="op">=</span> df.fillna(method<span class="op">=</span><span class="st">&#39;bfill&#39;</span>)</span>
+<span id="cb2-41"><a href="#cb2-41"></a><span class="bu">print</span>(<span class="st">&quot;</span><span class="ch">\n</span><span class="st">After backward filling NaN (propagates next valid value up):&quot;</span>)</span>
+<span id="cb2-42"><a href="#cb2-42"></a><span class="bu">print</span>(df_filled_bfill) <span class="co"># Note: Last NaN in Discount remains if no subsequent value</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><a href="#">Download: <code>m10_s1_2_fillna.py</code></a> # 2. Correcting Data Types</p>
+<p>Data often gets loaded with incorrect types (e.g., numbers as strings/‘objects’, dates as strings). This prevents calculations and proper analysis. Pandas provides tools to fix this.</p>
+</section>
+<section id="checking-data-types-.dtypes-.info" class="level2">
+<h2 class="anchored" data-anchor-id="checking-data-types-.dtypes-.info">2.1 Checking Data Types (<code>.dtypes</code>, <code>.info()</code>)</h2>
+<p>As covered in Module 9, always start by checking the current data types.</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1"></a><span class="co">#| caption: &quot;Checking data types (recap) (Section 2.1)&quot;</span></span>
+<span id="cb3-2"><a href="#cb3-2"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb3-3"><a href="#cb3-3"></a><span class="im">from</span> io <span class="im">import</span> StringIO</span>
+<span id="cb3-4"><a href="#cb3-4"></a></span>
+<span id="cb3-5"><a href="#cb3-5"></a><span class="co"># CSV data where Sales and Date might be loaded as objects (strings)</span></span>
+<span id="cb3-6"><a href="#cb3-6"></a>csv_data <span class="op">=</span> <span class="st">&quot;&quot;&quot;OrderID,Date,Product,Sales,Quantity</span></span>
+<span id="cb3-7"><a href="#cb3-7"></a><span class="st">O101,2025-01-15,WidgetA,&quot;1,500.00&quot;,10</span></span>
+<span id="cb3-8"><a href="#cb3-8"></a><span class="st">O102,2025-01-16,WidgetB,800.50,5</span></span>
+<span id="cb3-9"><a href="#cb3-9"></a><span class="st">O103,2025-01-16,WidgetA,&quot;1,650.90&quot;,11</span></span>
+<span id="cb3-10"><a href="#cb3-10"></a><span class="st">&quot;&quot;&quot;</span></span>
+<span id="cb3-11"><a href="#cb3-11"></a>df <span class="op">=</span> pd.read_csv(StringIO(csv_data))</span>
+<span id="cb3-12"><a href="#cb3-12"></a></span>
+<span id="cb3-13"><a href="#cb3-13"></a><span class="bu">print</span>(<span class="st">&quot;DataFrame loaded from CSV:&quot;</span>)</span>
+<span id="cb3-14"><a href="#cb3-14"></a><span class="bu">print</span>(df)</span>
+<span id="cb3-15"><a href="#cb3-15"></a></span>
+<span id="cb3-16"><a href="#cb3-16"></a><span class="bu">print</span>(<span class="st">&quot;</span><span class="ch">\n</span><span class="st">Data Types using .dtypes:&quot;</span>)</span>
+<span id="cb3-17"><a href="#cb3-17"></a><span class="bu">print</span>(df.dtypes)</span>
+<span id="cb3-18"><a href="#cb3-18"></a></span>
+<span id="cb3-19"><a href="#cb3-19"></a><span class="bu">print</span>(<span class="st">&quot;</span><span class="ch">\n</span><span class="st">DataFrame Info using .info():&quot;</span>)</span>
+<span id="cb3-20"><a href="#cb3-20"></a>df.info() <span class="co"># Note &#39;Sales&#39; and &#39;Date&#39; are likely &#39;object&#39;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><a href="#">Download: <code>m10_s2_1_check_dtypes.py</code></a> ## 2.2 Converting Data Types (<code>.astype()</code>)</p>
+<p>The <code>.astype()</code> method is the primary way to cast a Pandas object to a specified dtype.</p>
+<p>Common Conversions:</p>
+<ul>
+<li><code>int64</code>: Integer numbers.</li>
+<li><code>float64</code>: Floating-point numbers.</li>
+<li><code>str</code> or <code>object</code>: String/text data.</li>
+<li><code>bool</code>: Boolean (<code>True</code>/<code>False</code>).</li>
+<li><code>datetime64[ns]</code>: Date and time values.</li>
+<li><code>category</code>: For text data with a limited number of unique values (memory efficient).</li>
+</ul>
+<p><strong>Important:</strong> Conversions can fail if the data isn’t compatible (e.g., converting “abc” to <code>int</code>). You often need to clean the data <em>before</em> converting (like removing commas or currency symbols).</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1"></a><span class="co">#| caption: &quot;Converting data types using .astype() (Section 2.2)&quot;</span></span>
+<span id="cb4-2"><a href="#cb4-2"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb4-3"><a href="#cb4-3"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb4-4"><a href="#cb4-4"></a><span class="im">from</span> io <span class="im">import</span> StringIO</span>
+<span id="cb4-5"><a href="#cb4-5"></a></span>
+<span id="cb4-6"><a href="#cb4-6"></a>csv_data <span class="op">=</span> <span class="st">&quot;&quot;&quot;OrderID,Date,Product,Sales,Quantity,IsShipped</span></span>
+<span id="cb4-7"><a href="#cb4-7"></a><span class="st">O101,2025-01-15,WidgetA,&quot;1,500.00&quot;,10,True</span></span>
+<span id="cb4-8"><a href="#cb4-8"></a><span class="st">O102,2025-01-16,WidgetB,800.50,5,false</span></span>
+<span id="cb4-9"><a href="#cb4-9"></a><span class="st">O103,2025-01-16,WidgetA,&quot;1,650.90&quot;,11,TRUE</span></span>
+<span id="cb4-10"><a href="#cb4-10"></a><span class="st">&quot;&quot;&quot;</span></span>
+<span id="cb4-11"><a href="#cb4-11"></a>df <span class="op">=</span> pd.read_csv(StringIO(csv_data))</span>
+<span id="cb4-12"><a href="#cb4-12"></a><span class="bu">print</span>(<span class="st">&quot;Original DataFrame Dtypes:&quot;</span>)</span>
+<span id="cb4-13"><a href="#cb4-13"></a><span class="bu">print</span>(df.dtypes)</span>
+<span id="cb4-14"><a href="#cb4-14"></a></span>
+<span id="cb4-15"><a href="#cb4-15"></a><span class="co"># --- Clean &#39;Sales&#39; column first (remove comma) ---</span></span>
+<span id="cb4-16"><a href="#cb4-16"></a><span class="co"># We&#39;ll cover .str.replace in detail later, but it&#39;s needed here</span></span>
+<span id="cb4-17"><a href="#cb4-17"></a>df[<span class="st">&#39;Sales&#39;</span>] <span class="op">=</span> df[<span class="st">&#39;Sales&#39;</span>].astype(<span class="bu">str</span>).<span class="bu">str</span>.replace(<span class="st">&#39;,&#39;</span>, <span class="st">&#39;&#39;</span>)</span>
+<span id="cb4-18"><a href="#cb4-18"></a><span class="bu">print</span>(<span class="st">&quot;</span><span class="ch">\n</span><span class="st">DataFrame after cleaning Sales:&quot;</span>)</span>
+<span id="cb4-19"><a href="#cb4-19"></a><span class="bu">print</span>(df)</span>
+<span id="cb4-20"><a href="#cb4-20"></a></span>
+<span id="cb4-21"><a href="#cb4-21"></a></span>
+<span id="cb4-22"><a href="#cb4-22"></a><span class="co"># --- Convert types using .astype() ---</span></span>
+<span id="cb4-23"><a href="#cb4-23"></a><span class="cf">try</span>:</span>
+<span id="cb4-24"><a href="#cb4-24"></a>    df[<span class="st">&#39;Sales&#39;</span>] <span class="op">=</span> df[<span class="st">&#39;Sales&#39;</span>].astype(<span class="bu">float</span>)</span>
+<span id="cb4-25"><a href="#cb4-25"></a>    df[<span class="st">&#39;Quantity&#39;</span>] <span class="op">=</span> df[<span class="st">&#39;Quantity&#39;</span>].astype(<span class="bu">int</span>) <span class="co"># Can convert float-&gt;int if no decimals</span></span>
+<span id="cb4-26"><a href="#cb4-26"></a>    <span class="co"># Convert boolean-like strings to actual boolean</span></span>
+<span id="cb4-27"><a href="#cb4-27"></a>    <span class="co"># This simple conversion works for &#39;True&#39;/&#39;False&#39; but might need care for &#39;true&#39;/&#39;false&#39;</span></span>
+<span id="cb4-28"><a href="#cb4-28"></a>    <span class="co"># df[&#39;IsShipped&#39;] = df[&#39;IsShipped&#39;].astype(bool) # BE CAREFUL: Non-empty strings often become True!</span></span>
+<span id="cb4-29"><a href="#cb4-29"></a></span>
+<span id="cb4-30"><a href="#cb4-30"></a>    <span class="co"># Better way for boolean-like strings (using .map or a helper function)</span></span>
+<span id="cb4-31"><a href="#cb4-31"></a>    <span class="co"># We&#39;ll use .map later, but for now, showing a common issue with direct astype(bool)</span></span>
+<span id="cb4-32"><a href="#cb4-32"></a>    <span class="co"># Let&#39;s assume IsShipped needs robust conversion</span></span>
+<span id="cb4-33"><a href="#cb4-33"></a>    df[<span class="st">&#39;IsShipped&#39;</span>] <span class="op">=</span> df[<span class="st">&#39;IsShipped&#39;</span>].astype(<span class="bu">str</span>).<span class="bu">str</span>.lower().<span class="bu">map</span>({<span class="st">&#39;true&#39;</span>: <span class="va">True</span>, <span class="st">&#39;false&#39;</span>: <span class="va">False</span>})</span>
+<span id="cb4-34"><a href="#cb4-34"></a></span>
+<span id="cb4-35"><a href="#cb4-35"></a></span>
+<span id="cb4-36"><a href="#cb4-36"></a>    <span class="co"># Convert &#39;Date&#39; string to datetime objects (specialized function preferred)</span></span>
+<span id="cb4-37"><a href="#cb4-37"></a>    <span class="co"># df[&#39;Date&#39;] = df[&#39;Date&#39;].astype(&#39;datetime64[ns]&#39;) # Can work if format is standard</span></span>
+<span id="cb4-38"><a href="#cb4-38"></a>    <span class="co"># A more robust way using pd.to_datetime:</span></span>
+<span id="cb4-39"><a href="#cb4-39"></a>    df[<span class="st">&#39;Date&#39;</span>] <span class="op">=</span> pd.to_datetime(df[<span class="st">&#39;Date&#39;</span>])</span>
+<span id="cb4-40"><a href="#cb4-40"></a></span>
+<span id="cb4-41"><a href="#cb4-41"></a>    <span class="bu">print</span>(<span class="st">&quot;</span><span class="ch">\n</span><span class="st">DataFrame Dtypes after conversion:&quot;</span>)</span>
+<span id="cb4-42"><a href="#cb4-42"></a>    <span class="bu">print</span>(df.dtypes)</span>
+<span id="cb4-43"><a href="#cb4-43"></a>    <span class="bu">print</span>(<span class="st">&quot;</span><span class="ch">\n</span><span class="st">DataFrame after conversion:&quot;</span>)</span>
+<span id="cb4-44"><a href="#cb4-44"></a>    <span class="bu">print</span>(df)</span>
+<span id="cb4-45"><a href="#cb4-45"></a></span>
+<span id="cb4-46"><a href="#cb4-46"></a><span class="cf">except</span> <span class="pp">ValueError</span> <span class="im">as</span> e:</span>
+<span id="cb4-47"><a href="#cb4-47"></a>    <span class="bu">print</span>(<span class="ss">f&quot;</span><span class="ch">\n</span><span class="ss">Error during conversion: </span><span class="sc">{</span>e<span class="sc">}</span><span class="ss">. Data might need more cleaning.&quot;</span>)</span>
+<span id="cb4-48"><a href="#cb4-48"></a></span>
+<span id="cb4-49"><a href="#cb4-49"></a><span class="co"># --- Convert &#39;Product&#39; to category type (example) ---</span></span>
+<span id="cb4-50"><a href="#cb4-50"></a>df[<span class="st">&#39;Product_Category&#39;</span>] <span class="op">=</span> df[<span class="st">&#39;Product&#39;</span>].astype(<span class="st">&#39;category&#39;</span>)</span>
+<span id="cb4-51"><a href="#cb4-51"></a><span class="bu">print</span>(<span class="st">&quot;</span><span class="ch">\n</span><span class="st">DataFrame Dtypes after adding Category:&quot;</span>)</span>
+<span id="cb4-52"><a href="#cb4-52"></a><span class="bu">print</span>(df.dtypes)</span>
+<span id="cb4-53"><a href="#cb4-53"></a><span class="bu">print</span>(<span class="st">&quot;</span><span class="ch">\n</span><span class="st">Memory usage comparison (Object vs Category):&quot;</span>)</span>
+<span id="cb4-54"><a href="#cb4-54"></a><span class="bu">print</span>(df[[<span class="st">&#39;Product&#39;</span>, <span class="st">&#39;Product_Category&#39;</span>]].memory_usage(deep<span class="op">=</span><span class="va">True</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><a href="#">Download: <code>m10_s2_2_astype.py</code></a> ## 2.3 Robust Conversions: <code>pd.to_numeric()</code> and <code>pd.to_datetime()</code></p>
+<p>For converting to numbers or dates, Pandas offers dedicated functions that provide more control, especially over errors.</p>
+<ul>
+<li><code>pd.to_numeric(series, errors=&#39;raise&#39;|&#39;coerce&#39;|&#39;ignore&#39;)</code>:
+<ul>
+<li><code>errors=&#39;raise&#39;</code> (default): Raises an error if conversion fails.</li>
+<li><code>errors=&#39;coerce&#39;</code>: Replaces unconvertible values with <code>NaN</code>. <strong>Very useful!</strong></li>
+<li><code>errors=&#39;ignore&#39;</code>: Returns the original series if conversion fails.</li>
+</ul></li>
+<li><code>pd.to_datetime(series, errors=&#39;raise&#39;|&#39;coerce&#39;|&#39;ignore&#39;, format=...)</code>:
+<ul>
+<li>Similar <code>errors</code> handling.</li>
+<li><code>format</code>: Specify the expected date format string (e.g., <code>&#39;%Y-%m-%d&#39;</code>, <code>&#39;%m/%d/%Y&#39;</code>) for faster or non-standard parsing.</li>
+</ul></li>
+</ul>
+<div class="sourceCode" id="cb5"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1"></a><span class="co">#| caption: &quot;Using pd.to_numeric and pd.to_datetime for robust conversion (Section 2.3)&quot;</span></span>
+<span id="cb5-2"><a href="#cb5-2"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb5-3"><a href="#cb5-3"></a></span>
+<span id="cb5-4"><a href="#cb5-4"></a>data <span class="op">=</span> {</span>
+<span id="cb5-5"><a href="#cb5-5"></a>    <span class="st">&#39;Value&#39;</span>: [<span class="st">&#39;100&#39;</span>, <span class="st">&#39;25.5&#39;</span>, <span class="st">&#39;N/A&#39;</span>, <span class="st">&#39;-50&#39;</span>, <span class="st">&#39;3,000&#39;</span>],</span>
+<span id="cb5-6"><a href="#cb5-6"></a>    <span class="st">&#39;DateStr&#39;</span>: [<span class="st">&#39;2025-03-27&#39;</span>, <span class="st">&#39;2025/03/28&#39;</span>, <span class="st">&#39;Invalid Date&#39;</span>, <span class="st">&#39;03/29/2025&#39;</span>, <span class="st">&#39;2025-Mar-30&#39;</span>]</span>
+<span id="cb5-7"><a href="#cb5-7"></a>}</span>
+<span id="cb5-8"><a href="#cb5-8"></a>df <span class="op">=</span> pd.DataFrame(data)</span>
+<span id="cb5-9"><a href="#cb5-9"></a><span class="bu">print</span>(<span class="st">&quot;Original DataFrame:&quot;</span>)</span>
+<span id="cb5-10"><a href="#cb5-10"></a><span class="bu">print</span>(df)</span>
+<span id="cb5-11"><a href="#cb5-11"></a><span class="bu">print</span>(df.dtypes)</span>
+<span id="cb5-12"><a href="#cb5-12"></a></span>
+<span id="cb5-13"><a href="#cb5-13"></a><span class="co"># --- Convert &#39;Value&#39; to numeric, coercing errors ---</span></span>
+<span id="cb5-14"><a href="#cb5-14"></a><span class="co"># First, clean potential issues like commas</span></span>
+<span id="cb5-15"><a href="#cb5-15"></a>df[<span class="st">&#39;Value_Cleaned&#39;</span>] <span class="op">=</span> df[<span class="st">&#39;Value&#39;</span>].astype(<span class="bu">str</span>).<span class="bu">str</span>.replace(<span class="st">&#39;,&#39;</span>, <span class="st">&#39;&#39;</span>)</span>
+<span id="cb5-16"><a href="#cb5-16"></a>df[<span class="st">&#39;Value_Numeric&#39;</span>] <span class="op">=</span> pd.to_numeric(df[<span class="st">&#39;Value_Cleaned&#39;</span>], errors<span class="op">=</span><span class="st">&#39;coerce&#39;</span>)</span>
+<span id="cb5-17"><a href="#cb5-17"></a><span class="bu">print</span>(<span class="st">&quot;</span><span class="ch">\n</span><span class="st">After converting &#39;Value&#39; with errors=&#39;coerce&#39;:&quot;</span>)</span>
+<span id="cb5-18"><a href="#cb5-18"></a><span class="bu">print</span>(df[[<span class="st">&#39;Value&#39;</span>, <span class="st">&#39;Value_Cleaned&#39;</span>, <span class="st">&#39;Value_Numeric&#39;</span>]])</span>
+<span id="cb5-19"><a href="#cb5-19"></a><span class="bu">print</span>(df[<span class="st">&#39;Value_Numeric&#39;</span>].dtype) <span class="co"># Should be float64</span></span>
+<span id="cb5-20"><a href="#cb5-20"></a></span>
+<span id="cb5-21"><a href="#cb5-21"></a><span class="co"># --- Convert &#39;DateStr&#39; to datetime, coercing errors ---</span></span>
+<span id="cb5-22"><a href="#cb5-22"></a>df[<span class="st">&#39;Date_dt&#39;</span>] <span class="op">=</span> pd.to_datetime(df[<span class="st">&#39;DateStr&#39;</span>], errors<span class="op">=</span><span class="st">&#39;coerce&#39;</span>)</span>
+<span id="cb5-23"><a href="#cb5-23"></a><span class="bu">print</span>(<span class="st">&quot;</span><span class="ch">\n</span><span class="st">After converting &#39;DateStr&#39; with errors=&#39;coerce&#39;:&quot;</span>)</span>
+<span id="cb5-24"><a href="#cb5-24"></a><span class="bu">print</span>(df[[<span class="st">&#39;DateStr&#39;</span>, <span class="st">&#39;Date_dt&#39;</span>]])</span>
+<span id="cb5-25"><a href="#cb5-25"></a><span class="bu">print</span>(df[<span class="st">&#39;Date_dt&#39;</span>].dtype) <span class="co"># Should be datetime64[ns]</span></span>
+<span id="cb5-26"><a href="#cb5-26"></a></span>
+<span id="cb5-27"><a href="#cb5-27"></a><span class="co"># --- Convert &#39;DateStr&#39; specifying a format (if consistent) ---</span></span>
+<span id="cb5-28"><a href="#cb5-28"></a><span class="co"># Example if all dates were like &#39;MM/DD/YYYY&#39;</span></span>
+<span id="cb5-29"><a href="#cb5-29"></a><span class="co"># df[&#39;Date_dt_formatted&#39;] = pd.to_datetime(df[&#39;DateStr&#39;], format=&#39;%m/%d/%Y&#39;, errors=&#39;coerce&#39;)</span></span>
+<span id="cb5-30"><a href="#cb5-30"></a><span class="co"># print(&quot;\nConverting with specified format:&quot;)</span></span>
+<span id="cb5-31"><a href="#cb5-31"></a><span class="co"># print(df[[&#39;DateStr&#39;, &#39;Date_dt_formatted&#39;]])</span></span>
+<span id="cb5-32"><a href="#cb5-32"></a></span>
+<span id="cb5-33"><a href="#cb5-33"></a><span class="co"># Check for NaNs introduced by coercion</span></span>
+<span id="cb5-34"><a href="#cb5-34"></a><span class="bu">print</span>(<span class="st">&quot;</span><span class="ch">\n</span><span class="st">NaNs after coercion:&quot;</span>)</span>
+<span id="cb5-35"><a href="#cb5-35"></a><span class="bu">print</span>(df.isnull().<span class="bu">sum</span>())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><a href="#">Download: <code>m10_s2_3_robust_conversion.py</code></a> # 3. Modifying Columns</p>
+<p>Often, you’ll need to add new columns, remove irrelevant ones, or rename existing ones for clarity.</p>
+</section>
+<section id="adding-new-columns" class="level2">
+<h2 class="anchored" data-anchor-id="adding-new-columns">3.1 Adding New Columns</h2>
+<p>Create a new column by simply assigning values to it using <code>df[&#39;NewColumnName&#39;] = ...</code>. The values can be:</p>
+<ul>
+<li>A single scalar value (broadcast to all rows).</li>
+<li>A Pandas Series (aligned by index).</li>
+<li>A Python list or NumPy array (must match the DataFrame’s length).</li>
+<li>Calculated from existing columns.</li>
+</ul>
+<div class="sourceCode" id="cb6"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1"></a><span class="co">#| caption: &quot;Adding new columns to a DataFrame (Section 3.1)&quot;</span></span>
+<span id="cb6-2"><a href="#cb6-2"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb6-3"><a href="#cb6-3"></a></span>
+<span id="cb6-4"><a href="#cb6-4"></a>data <span class="op">=</span> {</span>
+<span id="cb6-5"><a href="#cb6-5"></a>    <span class="st">&#39;Product&#39;</span>: [<span class="st">&#39;A&#39;</span>, <span class="st">&#39;B&#39;</span>, <span class="st">&#39;C&#39;</span>],</span>
+<span id="cb6-6"><a href="#cb6-6"></a>    <span class="st">&#39;Price&#39;</span>: [<span class="fl">10.0</span>, <span class="fl">25.5</span>, <span class="fl">5.0</span>],</span>
+<span id="cb6-7"><a href="#cb6-7"></a>    <span class="st">&#39;Quantity&#39;</span>: [<span class="dv">100</span>, <span class="dv">50</span>, <span class="dv">200</span>]</span>
+<span id="cb6-8"><a href="#cb6-8"></a>}</span>
+<span id="cb6-9"><a href="#cb6-9"></a>df <span class="op">=</span> pd.DataFrame(data)</span>
+<span id="cb6-10"><a href="#cb6-10"></a><span class="bu">print</span>(<span class="st">&quot;Original DataFrame:&quot;</span>)</span>
+<span id="cb6-11"><a href="#cb6-11"></a><span class="bu">print</span>(df)</span>
+<span id="cb6-12"><a href="#cb6-12"></a></span>
+<span id="cb6-13"><a href="#cb6-13"></a><span class="co"># --- Add a column with a constant value ---</span></span>
+<span id="cb6-14"><a href="#cb6-14"></a>df[<span class="st">&#39;Location&#39;</span>] <span class="op">=</span> <span class="st">&#39;Warehouse A&#39;</span></span>
+<span id="cb6-15"><a href="#cb6-15"></a><span class="bu">print</span>(<span class="st">&quot;</span><span class="ch">\n</span><span class="st">After adding &#39;Location&#39; column:&quot;</span>)</span>
+<span id="cb6-16"><a href="#cb6-16"></a><span class="bu">print</span>(df)</span>
+<span id="cb6-17"><a href="#cb6-17"></a></span>
+<span id="cb6-18"><a href="#cb6-18"></a><span class="co"># --- Add a column calculated from existing columns ---</span></span>
+<span id="cb6-19"><a href="#cb6-19"></a>df[<span class="st">&#39;TotalValue&#39;</span>] <span class="op">=</span> df[<span class="st">&#39;Price&#39;</span>] <span class="op">*</span> df[<span class="st">&#39;Quantity&#39;</span>]</span>
+<span id="cb6-20"><a href="#cb6-20"></a><span class="bu">print</span>(<span class="st">&quot;</span><span class="ch">\n</span><span class="st">After adding &#39;TotalValue&#39; column:&quot;</span>)</span>
+<span id="cb6-21"><a href="#cb6-21"></a><span class="bu">print</span>(df)</span>
+<span id="cb6-22"><a href="#cb6-22"></a></span>
+<span id="cb6-23"><a href="#cb6-23"></a><span class="co"># --- Add a column using a list (must match length) ---</span></span>
+<span id="cb6-24"><a href="#cb6-24"></a>stock_status <span class="op">=</span> [<span class="st">&#39;In Stock&#39;</span>, <span class="st">&#39;Low Stock&#39;</span>, <span class="st">&#39;In Stock&#39;</span>]</span>
+<span id="cb6-25"><a href="#cb6-25"></a><span class="cf">if</span> <span class="bu">len</span>(stock_status) <span class="op">==</span> <span class="bu">len</span>(df):</span>
+<span id="cb6-26"><a href="#cb6-26"></a>    df[<span class="st">&#39;Status&#39;</span>] <span class="op">=</span> stock_status</span>
+<span id="cb6-27"><a href="#cb6-27"></a>    <span class="bu">print</span>(<span class="st">&quot;</span><span class="ch">\n</span><span class="st">After adding &#39;Status&#39; column from list:&quot;</span>)</span>
+<span id="cb6-28"><a href="#cb6-28"></a>    <span class="bu">print</span>(df)</span>
+<span id="cb6-29"><a href="#cb6-29"></a><span class="cf">else</span>:</span>
+<span id="cb6-30"><a href="#cb6-30"></a>    <span class="bu">print</span>(<span class="st">&quot;</span><span class="ch">\n</span><span class="st">Error: List length doesn&#39;t match DataFrame length.&quot;</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><a href="#">Download: <code>m10_s3_1_add_columns.py</code></a> ## 3.2 Removing Columns (<code>.drop()</code>)</p>
+<p>The <code>.drop()</code> method can remove both rows (using <code>index</code> labels) and columns. For columns, specify the column name(s) and <code>axis=1</code>.</p>
+<p>Key Parameters:</p>
+<ul>
+<li><code>labels</code>: Single label or list-like of index or column labels to drop.</li>
+<li><code>axis</code>: <code>0</code> or <code>&#39;index&#39;</code> for rows, <code>1</code> or <code>&#39;columns&#39;</code> for columns. <strong>Must be set to 1 for columns.</strong></li>
+<li><code>index</code>: Alternative to <code>labels</code> for dropping rows by index label.</li>
+<li><code>columns</code>: Alternative to <code>labels</code> for dropping columns by name. <strong>Often clearer.</strong></li>
+<li><code>inplace</code>: <code>False</code> (default) returns a new DataFrame, <code>True</code> modifies the original. <strong>Prefer assignment:</strong> <code>df = df.drop(...)</code>.</li>
+</ul>
+<div class="sourceCode" id="cb7"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1"></a><span class="co">#| caption: &quot;Removing columns from a DataFrame using .drop() (Section 3.2)&quot;</span></span>
+<span id="cb7-2"><a href="#cb7-2"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb7-3"><a href="#cb7-3"></a></span>
+<span id="cb7-4"><a href="#cb7-4"></a>data <span class="op">=</span> {</span>
+<span id="cb7-5"><a href="#cb7-5"></a>    <span class="st">&#39;OrderID&#39;</span>: [<span class="st">&#39;O101&#39;</span>, <span class="st">&#39;O102&#39;</span>, <span class="st">&#39;O103&#39;</span>],</span>
+<span id="cb7-6"><a href="#cb7-6"></a>    <span class="st">&#39;Product&#39;</span>: [<span class="st">&#39;A&#39;</span>, <span class="st">&#39;B&#39;</span>, <span class="st">&#39;A&#39;</span>],</span>
+<span id="cb7-7"><a href="#cb7-7"></a>    <span class="st">&#39;Quantity&#39;</span>: [<span class="dv">10</span>, <span class="dv">5</span>, <span class="dv">8</span>],</span>
+<span id="cb7-8"><a href="#cb7-8"></a>    <span class="st">&#39;Price&#39;</span>: [<span class="fl">12.5</span>, <span class="fl">20.0</span>, <span class="fl">15.0</span>],</span>
+<span id="cb7-9"><a href="#cb7-9"></a>    <span class="st">&#39;InternalCode&#39;</span>: [<span class="st">&#39;X1&#39;</span>, <span class="st">&#39;Y2&#39;</span>, <span class="st">&#39;Z3&#39;</span>] <span class="co"># Column to remove</span></span>
+<span id="cb7-10"><a href="#cb7-10"></a>}</span>
+<span id="cb7-11"><a href="#cb7-11"></a>df <span class="op">=</span> pd.DataFrame(data)</span>
+<span id="cb7-12"><a href="#cb7-12"></a><span class="bu">print</span>(<span class="st">&quot;Original DataFrame:&quot;</span>)</span>
+<span id="cb7-13"><a href="#cb7-13"></a><span class="bu">print</span>(df)</span>
+<span id="cb7-14"><a href="#cb7-14"></a></span>
+<span id="cb7-15"><a href="#cb7-15"></a><span class="co"># --- Remove a single column (&#39;InternalCode&#39;) ---</span></span>
+<span id="cb7-16"><a href="#cb7-16"></a><span class="co"># Method 1: Using labels and axis</span></span>
+<span id="cb7-17"><a href="#cb7-17"></a>df_dropped_single <span class="op">=</span> df.drop(<span class="st">&#39;InternalCode&#39;</span>, axis<span class="op">=</span><span class="dv">1</span>)</span>
+<span id="cb7-18"><a href="#cb7-18"></a><span class="bu">print</span>(<span class="st">&quot;</span><span class="ch">\n</span><span class="st">After dropping &#39;InternalCode&#39; (using labels, axis=1):&quot;</span>)</span>
+<span id="cb7-19"><a href="#cb7-19"></a><span class="bu">print</span>(df_dropped_single)</span>
+<span id="cb7-20"><a href="#cb7-20"></a></span>
+<span id="cb7-21"><a href="#cb7-21"></a><span class="co"># Method 2: Using the &#39;columns&#39; parameter (often clearer)</span></span>
+<span id="cb7-22"><a href="#cb7-22"></a>df_dropped_single_alt <span class="op">=</span> df.drop(columns<span class="op">=</span><span class="st">&#39;InternalCode&#39;</span>)</span>
+<span id="cb7-23"><a href="#cb7-23"></a><span class="bu">print</span>(<span class="st">&quot;</span><span class="ch">\n</span><span class="st">After dropping &#39;InternalCode&#39; (using columns parameter):&quot;</span>)</span>
+<span id="cb7-24"><a href="#cb7-24"></a><span class="bu">print</span>(df_dropped_single_alt)</span>
+<span id="cb7-25"><a href="#cb7-25"></a></span>
+<span id="cb7-26"><a href="#cb7-26"></a><span class="co"># --- Remove multiple columns (&#39;Quantity&#39;, &#39;Price&#39;) ---</span></span>
+<span id="cb7-27"><a href="#cb7-27"></a>columns_to_drop <span class="op">=</span> [<span class="st">&#39;Quantity&#39;</span>, <span class="st">&#39;Price&#39;</span>]</span>
+<span id="cb7-28"><a href="#cb7-28"></a>df_dropped_multi <span class="op">=</span> df.drop(columns<span class="op">=</span>columns_to_drop)</span>
+<span id="cb7-29"><a href="#cb7-29"></a><span class="bu">print</span>(<span class="ss">f&quot;</span><span class="ch">\n</span><span class="ss">After dropping columns </span><span class="sc">{</span>columns_to_drop<span class="sc">}</span><span class="ss">:&quot;</span>)</span>
+<span id="cb7-30"><a href="#cb7-30"></a><span class="bu">print</span>(df_dropped_multi)</span>
+<span id="cb7-31"><a href="#cb7-31"></a></span>
+<span id="cb7-32"><a href="#cb7-32"></a><span class="co"># --- Example of inplace modification ---</span></span>
+<span id="cb7-33"><a href="#cb7-33"></a><span class="co"># df_copy = df.copy()</span></span>
+<span id="cb7-34"><a href="#cb7-34"></a><span class="co"># df_copy.drop(columns=[&#39;InternalCode&#39;], inplace=True)</span></span>
+<span id="cb7-35"><a href="#cb7-35"></a><span class="co"># print(&quot;\nDataFrame modified inplace (dropped &#39;InternalCode&#39;):&quot;)</span></span>
+<span id="cb7-36"><a href="#cb7-36"></a><span class="co"># print(df_copy)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><a href="#">Download: <code>m10_s3_2_drop_columns.py</code></a> ## 3.3 Renaming Columns (<code>.rename()</code>)</p>
+<p>Use <code>.rename()</code> to change the names of one or more columns (or index labels).</p>
+<p>Key Parameters:</p>
+<ul>
+<li><code>mapper</code>: A dictionary-like object mapping old names to new names.</li>
+<li><code>index</code>: Dictionary mapping old index labels to new index labels.</li>
+<li><code>columns</code>: Dictionary mapping old column names to new column names. <strong>Most common use.</strong></li>
+<li><code>axis</code>: <code>0</code> or <code>&#39;index&#39;</code>, <code>1</code> or <code>&#39;columns&#39;</code>. Inferred if <code>index</code> or <code>columns</code> argument is used.</li>
+<li><code>inplace</code>: <code>False</code> (default) returns a new DataFrame, <code>True</code> modifies the original. <strong>Prefer assignment:</strong> <code>df = df.rename(...)</code>.</li>
+</ul>
+<div class="sourceCode" id="cb8"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1"></a><span class="co">#| caption: &quot;Renaming columns using .rename() (Section 3.3)&quot;</span></span>
+<span id="cb8-2"><a href="#cb8-2"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb8-3"><a href="#cb8-3"></a></span>
+<span id="cb8-4"><a href="#cb8-4"></a>data <span class="op">=</span> {</span>
+<span id="cb8-5"><a href="#cb8-5"></a>    <span class="st">&#39;order_id&#39;</span>: [<span class="st">&#39;O101&#39;</span>, <span class="st">&#39;O102&#39;</span>, <span class="st">&#39;O103&#39;</span>],</span>
+<span id="cb8-6"><a href="#cb8-6"></a>    <span class="st">&#39;prod_name&#39;</span>: [<span class="st">&#39;A&#39;</span>, <span class="st">&#39;B&#39;</span>, <span class="st">&#39;A&#39;</span>],</span>
+<span id="cb8-7"><a href="#cb8-7"></a>    <span class="st">&#39;qty&#39;</span>: [<span class="dv">10</span>, <span class="dv">5</span>, <span class="dv">8</span>]</span>
+<span id="cb8-8"><a href="#cb8-8"></a>}</span>
+<span id="cb8-9"><a href="#cb8-9"></a>df <span class="op">=</span> pd.DataFrame(data)</span>
+<span id="cb8-10"><a href="#cb8-10"></a><span class="bu">print</span>(<span class="st">&quot;Original DataFrame:&quot;</span>)</span>
+<span id="cb8-11"><a href="#cb8-11"></a><span class="bu">print</span>(df)</span>
+<span id="cb8-12"><a href="#cb8-12"></a></span>
+<span id="cb8-13"><a href="#cb8-13"></a><span class="co"># --- Rename specific columns ---</span></span>
+<span id="cb8-14"><a href="#cb8-14"></a>rename_map <span class="op">=</span> {</span>
+<span id="cb8-15"><a href="#cb8-15"></a>    <span class="st">&#39;order_id&#39;</span>: <span class="st">&#39;OrderID&#39;</span>,</span>
+<span id="cb8-16"><a href="#cb8-16"></a>    <span class="st">&#39;prod_name&#39;</span>: <span class="st">&#39;Product&#39;</span>,</span>
+<span id="cb8-17"><a href="#cb8-17"></a>    <span class="st">&#39;qty&#39;</span>: <span class="st">&#39;Quantity&#39;</span></span>
+<span id="cb8-18"><a href="#cb8-18"></a>}</span>
+<span id="cb8-19"><a href="#cb8-19"></a>df_renamed <span class="op">=</span> df.rename(columns<span class="op">=</span>rename_map)</span>
+<span id="cb8-20"><a href="#cb8-20"></a><span class="bu">print</span>(<span class="st">&quot;</span><span class="ch">\n</span><span class="st">DataFrame after renaming columns:&quot;</span>)</span>
+<span id="cb8-21"><a href="#cb8-21"></a><span class="bu">print</span>(df_renamed)</span>
+<span id="cb8-22"><a href="#cb8-22"></a></span>
+<span id="cb8-23"><a href="#cb8-23"></a><span class="co"># --- Rename only one column ---</span></span>
+<span id="cb8-24"><a href="#cb8-24"></a>df_renamed_single <span class="op">=</span> df.rename(columns<span class="op">=</span>{<span class="st">&#39;prod_name&#39;</span>: <span class="st">&#39;Product Name&#39;</span>})</span>
+<span id="cb8-25"><a href="#cb8-25"></a><span class="bu">print</span>(<span class="st">&quot;</span><span class="ch">\n</span><span class="st">DataFrame after renaming only &#39;prod_name&#39;:&quot;</span>)</span>
+<span id="cb8-26"><a href="#cb8-26"></a><span class="bu">print</span>(df_renamed_single)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><a href="#">Download: <code>m10_s3_3_rename_columns.py</code></a> # 4. Applying Functions and String Methods</p>
+<p>Pandas allows you to apply custom or built-in functions to your data for more complex transformations.</p>
+</section>
+<section id="applying-functions-.apply" class="level2">
+<h2 class="anchored" data-anchor-id="applying-functions-.apply">4.1 Applying Functions (<code>.apply()</code>)</h2>
+<p><code>.apply()</code> operates on entire rows or columns of a DataFrame.</p>
+<ul>
+<li><code>df.apply(func, axis=0)</code>: Applies <code>func</code> to each <strong>column</strong> (passes each column Series to <code>func</code>). Default.</li>
+<li><code>df.apply(func, axis=1)</code>: Applies <code>func</code> to each <strong>row</strong> (passes each row Series to <code>func</code>).</li>
+</ul>
+<p>The function <code>func</code> can be a built-in function, a NumPy function, or a custom function you define (often using <code>lambda</code> for simple cases).</p>
+<div class="sourceCode" id="cb9"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1"></a><span class="co">#| caption: &quot;Using .apply() for column-wise and row-wise operations (Section 4.1)&quot;</span></span>
+<span id="cb9-2"><a href="#cb9-2"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb9-3"><a href="#cb9-3"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb9-4"><a href="#cb9-4"></a></span>
+<span id="cb9-5"><a href="#cb9-5"></a>data <span class="op">=</span> {</span>
+<span id="cb9-6"><a href="#cb9-6"></a>    <span class="st">&#39;A&#39;</span>: [<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>],</span>
+<span id="cb9-7"><a href="#cb9-7"></a>    <span class="st">&#39;B&#39;</span>: [<span class="dv">10</span>, <span class="dv">20</span>, <span class="dv">30</span>, <span class="dv">40</span>],</span>
+<span id="cb9-8"><a href="#cb9-8"></a>    <span class="st">&#39;C&#39;</span>: [<span class="dv">100</span>, <span class="dv">200</span>, <span class="dv">300</span>, <span class="dv">400</span>]</span>
+<span id="cb9-9"><a href="#cb9-9"></a>}</span>
+<span id="cb9-10"><a href="#cb9-10"></a>df <span class="op">=</span> pd.DataFrame(data)</span>
+<span id="cb9-11"><a href="#cb9-11"></a><span class="bu">print</span>(<span class="st">&quot;Original DataFrame:&quot;</span>)</span>
+<span id="cb9-12"><a href="#cb9-12"></a><span class="bu">print</span>(df)</span>
+<span id="cb9-13"><a href="#cb9-13"></a></span>
+<span id="cb9-14"><a href="#cb9-14"></a><span class="co"># --- Apply a function column-wise (axis=0, default) ---</span></span>
+<span id="cb9-15"><a href="#cb9-15"></a><span class="co"># Example: Calculate the range (max-min) for each column</span></span>
+<span id="cb9-16"><a href="#cb9-16"></a><span class="kw">def</span> col_range(series):</span>
+<span id="cb9-17"><a href="#cb9-17"></a>    <span class="cf">return</span> series.<span class="bu">max</span>() <span class="op">-</span> series.<span class="bu">min</span>()</span>
+<span id="cb9-18"><a href="#cb9-18"></a></span>
+<span id="cb9-19"><a href="#cb9-19"></a>column_ranges <span class="op">=</span> df.<span class="bu">apply</span>(col_range) <span class="co"># axis=0 is default</span></span>
+<span id="cb9-20"><a href="#cb9-20"></a><span class="bu">print</span>(<span class="st">&quot;</span><span class="ch">\n</span><span class="st">Range calculated for each column:&quot;</span>)</span>
+<span id="cb9-21"><a href="#cb9-21"></a><span class="bu">print</span>(column_ranges)</span>
+<span id="cb9-22"><a href="#cb9-22"></a></span>
+<span id="cb9-23"><a href="#cb9-23"></a><span class="co"># Using NumPy function directly</span></span>
+<span id="cb9-24"><a href="#cb9-24"></a>column_means_np <span class="op">=</span> df.<span class="bu">apply</span>(np.mean)</span>
+<span id="cb9-25"><a href="#cb9-25"></a><span class="bu">print</span>(<span class="st">&quot;</span><span class="ch">\n</span><span class="st">Mean calculated for each column using np.mean:&quot;</span>)</span>
+<span id="cb9-26"><a href="#cb9-26"></a><span class="bu">print</span>(column_means_np)</span>
+<span id="cb9-27"><a href="#cb9-27"></a></span>
+<span id="cb9-28"><a href="#cb9-28"></a></span>
+<span id="cb9-29"><a href="#cb9-29"></a><span class="co"># --- Apply a function row-wise (axis=1) ---</span></span>
+<span id="cb9-30"><a href="#cb9-30"></a><span class="co"># Example: Calculate the sum for each row</span></span>
+<span id="cb9-31"><a href="#cb9-31"></a>row_sums <span class="op">=</span> df.<span class="bu">apply</span>(np.<span class="bu">sum</span>, axis<span class="op">=</span><span class="dv">1</span>)</span>
+<span id="cb9-32"><a href="#cb9-32"></a><span class="bu">print</span>(<span class="st">&quot;</span><span class="ch">\n</span><span class="st">Sum calculated for each row:&quot;</span>)</span>
+<span id="cb9-33"><a href="#cb9-33"></a><span class="bu">print</span>(row_sums)</span>
+<span id="cb9-34"><a href="#cb9-34"></a></span>
+<span id="cb9-35"><a href="#cb9-35"></a><span class="co"># Example: Using a lambda function to find max value in each row</span></span>
+<span id="cb9-36"><a href="#cb9-36"></a>row_max <span class="op">=</span> df.<span class="bu">apply</span>(<span class="kw">lambda</span> row: row.<span class="bu">max</span>(), axis<span class="op">=</span><span class="dv">1</span>)</span>
+<span id="cb9-37"><a href="#cb9-37"></a><span class="bu">print</span>(<span class="st">&quot;</span><span class="ch">\n</span><span class="st">Max value found for each row using lambda:&quot;</span>)</span>
+<span id="cb9-38"><a href="#cb9-38"></a><span class="bu">print</span>(row_max)</span>
+<span id="cb9-39"><a href="#cb9-39"></a></span>
+<span id="cb9-40"><a href="#cb9-40"></a><span class="co"># Example: Create a new column based on a condition across the row</span></span>
+<span id="cb9-41"><a href="#cb9-41"></a>df[<span class="st">&#39;RowSum&#39;</span>] <span class="op">=</span> df.<span class="bu">apply</span>(np.<span class="bu">sum</span>, axis<span class="op">=</span><span class="dv">1</span>) <span class="co"># Add row sum first</span></span>
+<span id="cb9-42"><a href="#cb9-42"></a>df[<span class="st">&#39;Category&#39;</span>] <span class="op">=</span> df.<span class="bu">apply</span>(<span class="kw">lambda</span> row: <span class="st">&#39;High&#39;</span> <span class="cf">if</span> row[<span class="st">&#39;RowSum&#39;</span>] <span class="op">&gt;</span> <span class="dv">250</span> <span class="cf">else</span> <span class="st">&#39;Low&#39;</span>, axis<span class="op">=</span><span class="dv">1</span>)</span>
+<span id="cb9-43"><a href="#cb9-43"></a><span class="bu">print</span>(<span class="st">&quot;</span><span class="ch">\n</span><span class="st">DataFrame after adding row-wise calculated category:&quot;</span>)</span>
+<span id="cb9-44"><a href="#cb9-44"></a><span class="bu">print</span>(df)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><a href="#">Download: <code>m10_s4_1_apply.py</code></a> ## 4.2 Mapping Values (<code>.map()</code>)</p>
+<p><code>.map()</code> is a <strong>Series</strong> method used for element-wise transformations based on a function, dictionary, or another Series. It’s particularly useful for substituting values in a column.</p>
+<div class="sourceCode" id="cb10"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1"></a><span class="co">#| caption: &quot;Using .map() for element-wise substitution on a Series (Section 4.2)&quot;</span></span>
+<span id="cb10-2"><a href="#cb10-2"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb10-3"><a href="#cb10-3"></a></span>
+<span id="cb10-4"><a href="#cb10-4"></a>data <span class="op">=</span> {</span>
+<span id="cb10-5"><a href="#cb10-5"></a>    <span class="st">&#39;EmployeeID&#39;</span>: [<span class="st">&#39;E101&#39;</span>, <span class="st">&#39;E102&#39;</span>, <span class="st">&#39;E103&#39;</span>, <span class="st">&#39;E104&#39;</span>],</span>
+<span id="cb10-6"><a href="#cb10-6"></a>    <span class="st">&#39;DepartmentCode&#39;</span>: [<span class="st">&#39;HR&#39;</span>, <span class="st">&#39;SALES&#39;</span>, <span class="st">&#39;IT&#39;</span>, <span class="st">&#39;SALES&#39;</span>],</span>
+<span id="cb10-7"><a href="#cb10-7"></a>    <span class="st">&#39;Performance&#39;</span>: [<span class="dv">3</span>, <span class="dv">5</span>, <span class="dv">4</span>, <span class="dv">2</span>] <span class="co"># Rating 1-5</span></span>
+<span id="cb10-8"><a href="#cb10-8"></a>}</span>
+<span id="cb10-9"><a href="#cb10-9"></a>df <span class="op">=</span> pd.DataFrame(data)</span>
+<span id="cb10-10"><a href="#cb10-10"></a><span class="bu">print</span>(<span class="st">&quot;Original DataFrame:&quot;</span>)</span>
+<span id="cb10-11"><a href="#cb10-11"></a><span class="bu">print</span>(df)</span>
+<span id="cb10-12"><a href="#cb10-12"></a></span>
+<span id="cb10-13"><a href="#cb10-13"></a><span class="co"># --- Map Department Codes to Full Names using a dictionary ---</span></span>
+<span id="cb10-14"><a href="#cb10-14"></a>dept_map <span class="op">=</span> {<span class="st">&#39;HR&#39;</span>: <span class="st">&#39;Human Resources&#39;</span>, <span class="st">&#39;SALES&#39;</span>: <span class="st">&#39;Sales&#39;</span>, <span class="st">&#39;IT&#39;</span>: <span class="st">&#39;Information Technology&#39;</span>}</span>
+<span id="cb10-15"><a href="#cb10-15"></a>df[<span class="st">&#39;DepartmentName&#39;</span>] <span class="op">=</span> df[<span class="st">&#39;DepartmentCode&#39;</span>].<span class="bu">map</span>(dept_map)</span>
+<span id="cb10-16"><a href="#cb10-16"></a><span class="bu">print</span>(<span class="st">&quot;</span><span class="ch">\n</span><span class="st">After mapping Department Codes:&quot;</span>)</span>
+<span id="cb10-17"><a href="#cb10-17"></a><span class="bu">print</span>(df)</span>
+<span id="cb10-18"><a href="#cb10-18"></a></span>
+<span id="cb10-19"><a href="#cb10-19"></a><span class="co"># --- Map Performance Ratings to Descriptions using a function ---</span></span>
+<span id="cb10-20"><a href="#cb10-20"></a><span class="kw">def</span> map_performance(rating):</span>
+<span id="cb10-21"><a href="#cb10-21"></a>    <span class="cf">if</span> rating <span class="op">&gt;=</span> <span class="dv">4</span>:</span>
+<span id="cb10-22"><a href="#cb10-22"></a>        <span class="cf">return</span> <span class="st">&#39;Excellent&#39;</span></span>
+<span id="cb10-23"><a href="#cb10-23"></a>    <span class="cf">elif</span> rating <span class="op">==</span> <span class="dv">3</span>:</span>
+<span id="cb10-24"><a href="#cb10-24"></a>        <span class="cf">return</span> <span class="st">&#39;Good&#39;</span></span>
+<span id="cb10-25"><a href="#cb10-25"></a>    <span class="cf">else</span>:</span>
+<span id="cb10-26"><a href="#cb10-26"></a>        <span class="cf">return</span> <span class="st">&#39;Needs Improvement&#39;</span></span>
+<span id="cb10-27"><a href="#cb10-27"></a></span>
+<span id="cb10-28"><a href="#cb10-28"></a>df[<span class="st">&#39;PerformanceDesc&#39;</span>] <span class="op">=</span> df[<span class="st">&#39;Performance&#39;</span>].<span class="bu">map</span>(map_performance)</span>
+<span id="cb10-29"><a href="#cb10-29"></a><span class="bu">print</span>(<span class="st">&quot;</span><span class="ch">\n</span><span class="st">After mapping Performance Ratings:&quot;</span>)</span>
+<span id="cb10-30"><a href="#cb10-30"></a><span class="bu">print</span>(df)</span>
+<span id="cb10-31"><a href="#cb10-31"></a></span>
+<span id="cb10-32"><a href="#cb10-32"></a><span class="co"># --- Using map for simple calculation (less common than direct operation) ---</span></span>
+<span id="cb10-33"><a href="#cb10-33"></a>df[<span class="st">&#39;PerformancePlusOne&#39;</span>] <span class="op">=</span> df[<span class="st">&#39;Performance&#39;</span>].<span class="bu">map</span>(<span class="kw">lambda</span> x: x <span class="op">+</span> <span class="dv">1</span>)</span>
+<span id="cb10-34"><a href="#cb10-34"></a><span class="bu">print</span>(<span class="st">&quot;</span><span class="ch">\n</span><span class="st">After mapping Performance + 1 (lambda):&quot;</span>)</span>
+<span id="cb10-35"><a href="#cb10-35"></a><span class="bu">print</span>(df)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><a href="#">Download: <code>m10_s4_2_map.py</code></a> ## 4.3 String Manipulation (<code>.str</code> Accessor)</p>
+<p>Pandas Series have a special <code>.str</code> accessor that provides vectorized string processing methods, mirroring Python’s built-in string methods. This is crucial for cleaning text data.</p>
+<p>Common <code>.str</code> methods:</p>
+<ul>
+<li><code>.lower()</code>, <code>.upper()</code>: Change case.</li>
+<li><code>.strip()</code>, <code>.lstrip()</code>, <code>.rstrip()</code>: Remove whitespace.</li>
+<li><code>.replace(old, new)</code>: Replace substrings.</li>
+<li><code>.contains(pattern)</code>: Check if substring exists (returns boolean).</li>
+<li><code>.startswith(pattern)</code>, <code>.endswith(pattern)</code>: Check start/end.</li>
+<li><code>.split(delimiter)</code>: Split strings into lists.</li>
+<li><code>.len()</code>: Get length of strings.</li>
+<li><code>.extract(regex)</code>: Extract patterns using regular expressions (more advanced).</li>
+</ul>
+<div class="sourceCode" id="cb11"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1"></a><span class="co">#| caption: &quot;Cleaning and manipulating text data using the .str accessor (Section 4.3)&quot;</span></span>
+<span id="cb11-2"><a href="#cb11-2"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb11-3"><a href="#cb11-3"></a></span>
+<span id="cb11-4"><a href="#cb11-4"></a>data <span class="op">=</span> {</span>
+<span id="cb11-5"><a href="#cb11-5"></a>    <span class="st">&#39;ProductName&#39;</span>: [<span class="st">&#39; Widget A &#39;</span>, <span class="st">&#39;widget b&#39;</span>, <span class="st">&#39;WIDGET C&#39;</span>, <span class="st">&#39;Gizmo Extra &#39;</span>],</span>
+<span id="cb11-6"><a href="#cb11-6"></a>    <span class="st">&#39;Description&#39;</span>: [<span class="st">&#39;SKU:123-A Blue&#39;</span>, <span class="st">&#39;SKU:456-B Red&#39;</span>, <span class="st">&#39;SKU:789-C Green&#39;</span>, <span class="st">&#39;SKU:101-X Blue&#39;</span>],</span>
+<span id="cb11-7"><a href="#cb11-7"></a>    <span class="st">&#39;Category&#39;</span>: [<span class="st">&#39;Widgets&#39;</span>, <span class="st">&#39;Widgets&#39;</span>, <span class="st">&#39;Widgets&#39;</span>, <span class="st">&#39;Gizmos&#39;</span>]</span>
+<span id="cb11-8"><a href="#cb11-8"></a>}</span>
+<span id="cb11-9"><a href="#cb11-9"></a>df <span class="op">=</span> pd.DataFrame(data)</span>
+<span id="cb11-10"><a href="#cb11-10"></a><span class="bu">print</span>(<span class="st">&quot;Original DataFrame:&quot;</span>)</span>
+<span id="cb11-11"><a href="#cb11-11"></a><span class="bu">print</span>(df)</span>
+<span id="cb11-12"><a href="#cb11-12"></a></span>
+<span id="cb11-13"><a href="#cb11-13"></a><span class="co"># --- Clean &#39;ProductName&#39; ---</span></span>
+<span id="cb11-14"><a href="#cb11-14"></a><span class="co"># Convert to lowercase and remove leading/trailing whitespace</span></span>
+<span id="cb11-15"><a href="#cb11-15"></a>df[<span class="st">&#39;ProductName_Clean&#39;</span>] <span class="op">=</span> df[<span class="st">&#39;ProductName&#39;</span>].<span class="bu">str</span>.lower().<span class="bu">str</span>.strip()</span>
+<span id="cb11-16"><a href="#cb11-16"></a><span class="bu">print</span>(<span class="st">&quot;</span><span class="ch">\n</span><span class="st">After cleaning ProductName:&quot;</span>)</span>
+<span id="cb11-17"><a href="#cb11-17"></a><span class="bu">print</span>(df[[<span class="st">&#39;ProductName&#39;</span>, <span class="st">&#39;ProductName_Clean&#39;</span>]])</span>
+<span id="cb11-18"><a href="#cb11-18"></a></span>
+<span id="cb11-19"><a href="#cb11-19"></a><span class="co"># --- Extract SKU from &#39;Description&#39; ---</span></span>
+<span id="cb11-20"><a href="#cb11-20"></a><span class="co"># Example: Extract the part after &#39;SKU:&#39; and before the first space</span></span>
+<span id="cb11-21"><a href="#cb11-21"></a>df[<span class="st">&#39;SKU&#39;</span>] <span class="op">=</span> df[<span class="st">&#39;Description&#39;</span>].<span class="bu">str</span>.split(<span class="st">&#39;:&#39;</span>).<span class="bu">str</span>[<span class="dv">1</span>].<span class="bu">str</span>.split(<span class="st">&#39;-&#39;</span>).<span class="bu">str</span>[<span class="dv">0</span>].<span class="bu">str</span>.strip()</span>
+<span id="cb11-22"><a href="#cb11-22"></a><span class="co"># More robust with .extract() and regex later, but split works here</span></span>
+<span id="cb11-23"><a href="#cb11-23"></a><span class="bu">print</span>(<span class="st">&quot;</span><span class="ch">\n</span><span class="st">After extracting SKU:&quot;</span>)</span>
+<span id="cb11-24"><a href="#cb11-24"></a><span class="bu">print</span>(df[[<span class="st">&#39;Description&#39;</span>, <span class="st">&#39;SKU&#39;</span>]])</span>
+<span id="cb11-25"><a href="#cb11-25"></a></span>
+<span id="cb11-26"><a href="#cb11-26"></a><span class="co"># --- Check if &#39;Description&#39; contains &#39;Blue&#39; ---</span></span>
+<span id="cb11-27"><a href="#cb11-27"></a>df[<span class="st">&#39;IsBlue&#39;</span>] <span class="op">=</span> df[<span class="st">&#39;Description&#39;</span>].<span class="bu">str</span>.contains(<span class="st">&#39;Blue&#39;</span>, case<span class="op">=</span><span class="va">False</span>) <span class="co"># case=False ignores case</span></span>
+<span id="cb11-28"><a href="#cb11-28"></a><span class="bu">print</span>(<span class="st">&quot;</span><span class="ch">\n</span><span class="st">Checking for &#39;Blue&#39; in Description:&quot;</span>)</span>
+<span id="cb11-29"><a href="#cb11-29"></a><span class="bu">print</span>(df[[<span class="st">&#39;Description&#39;</span>, <span class="st">&#39;IsBlue&#39;</span>]])</span>
+<span id="cb11-30"><a href="#cb11-30"></a></span>
+<span id="cb11-31"><a href="#cb11-31"></a><span class="co"># --- Replace &#39;Widgets&#39; with &#39;WGT&#39; in &#39;Category&#39; ---</span></span>
+<span id="cb11-32"><a href="#cb11-32"></a>df[<span class="st">&#39;CategoryCode&#39;</span>] <span class="op">=</span> df[<span class="st">&#39;Category&#39;</span>].<span class="bu">str</span>.replace(<span class="st">&#39;Widgets&#39;</span>, <span class="st">&#39;WGT&#39;</span>).<span class="bu">str</span>.replace(<span class="st">&#39;Gizmos&#39;</span>, <span class="st">&#39;GZM&#39;</span>)</span>
+<span id="cb11-33"><a href="#cb11-33"></a><span class="bu">print</span>(<span class="st">&quot;</span><span class="ch">\n</span><span class="st">Replacing Category names:&quot;</span>)</span>
+<span id="cb11-34"><a href="#cb11-34"></a><span class="bu">print</span>(df[[<span class="st">&#39;Category&#39;</span>, <span class="st">&#39;CategoryCode&#39;</span>]])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><a href="#">Download: <code>m10_s4_3_string_methods.py</code></a> # 5. Sorting Data</p>
+<p>Organizing your data by sorting based on values or the index is often necessary before analysis or reporting.</p>
+</section>
+<section id="sorting-by-values-.sort_values" class="level2">
+<h2 class="anchored" data-anchor-id="sorting-by-values-.sort_values">5.1 Sorting by Values (<code>.sort_values()</code>)</h2>
+<p>Sorts the DataFrame based on the values in one or more columns.</p>
+<p>Key Parameters:</p>
+<ul>
+<li><code>by</code>: Single column name or list of column names to sort by.</li>
+<li><code>axis</code>: <code>0</code> or <code>&#39;index&#39;</code> (default) to sort rows, <code>1</code> or <code>&#39;columns&#39;</code> to sort columns (less common).</li>
+<li><code>ascending</code>: <code>True</code> (default) for ascending order, <code>False</code> for descending. Can be a list matching <code>by</code> for mixed orders.</li>
+<li><code>inplace</code>: <code>False</code> (default) returns a new sorted DataFrame, <code>True</code> modifies the original.</li>
+<li><code>na_position</code>: <code>&#39;last&#39;</code> (default) puts <code>NaN</code>s at the end, <code>&#39;first&#39;</code> puts them at the beginning.</li>
+</ul>
+<div class="sourceCode" id="cb12"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1"></a><span class="co">#| caption: &quot;Sorting a DataFrame by column values using .sort_values() (Section 5.1)&quot;</span></span>
+<span id="cb12-2"><a href="#cb12-2"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb12-3"><a href="#cb12-3"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb12-4"><a href="#cb12-4"></a></span>
+<span id="cb12-5"><a href="#cb12-5"></a>data <span class="op">=</span> {</span>
+<span id="cb12-6"><a href="#cb12-6"></a>    <span class="st">&#39;Product&#39;</span>: [<span class="st">&#39;B&#39;</span>, <span class="st">&#39;A&#39;</span>, <span class="st">&#39;C&#39;</span>, <span class="st">&#39;A&#39;</span>, <span class="st">&#39;B&#39;</span>],</span>
+<span id="cb12-7"><a href="#cb12-7"></a>    <span class="st">&#39;Sales&#39;</span>: [<span class="dv">200</span>, <span class="dv">150</span>, <span class="dv">100</span>, <span class="dv">160</span>, np.nan],</span>
+<span id="cb12-8"><a href="#cb12-8"></a>    <span class="st">&#39;Quantity&#39;</span>: [<span class="dv">10</span>, <span class="dv">8</span>, <span class="dv">5</span>, <span class="dv">9</span>, <span class="dv">7</span>]</span>
+<span id="cb12-9"><a href="#cb12-9"></a>}</span>
+<span id="cb12-10"><a href="#cb12-10"></a>df <span class="op">=</span> pd.DataFrame(data)</span>
+<span id="cb12-11"><a href="#cb12-11"></a><span class="bu">print</span>(<span class="st">&quot;Original DataFrame:&quot;</span>)</span>
+<span id="cb12-12"><a href="#cb12-12"></a><span class="bu">print</span>(df)</span>
+<span id="cb12-13"><a href="#cb12-13"></a></span>
+<span id="cb12-14"><a href="#cb12-14"></a><span class="co"># --- Sort by &#39;Sales&#39; in ascending order (NaNs last) ---</span></span>
+<span id="cb12-15"><a href="#cb12-15"></a>df_sorted_sales_asc <span class="op">=</span> df.sort_values(by<span class="op">=</span><span class="st">&#39;Sales&#39;</span>)</span>
+<span id="cb12-16"><a href="#cb12-16"></a><span class="bu">print</span>(<span class="st">&quot;</span><span class="ch">\n</span><span class="st">Sorted by &#39;Sales&#39; (ascending, NaNs last):&quot;</span>)</span>
+<span id="cb12-17"><a href="#cb12-17"></a><span class="bu">print</span>(df_sorted_sales_asc)</span>
+<span id="cb12-18"><a href="#cb12-18"></a></span>
+<span id="cb12-19"><a href="#cb12-19"></a><span class="co"># --- Sort by &#39;Sales&#39; in descending order (NaNs first) ---</span></span>
+<span id="cb12-20"><a href="#cb12-20"></a>df_sorted_sales_desc <span class="op">=</span> df.sort_values(by<span class="op">=</span><span class="st">&#39;Sales&#39;</span>, ascending<span class="op">=</span><span class="va">False</span>, na_position<span class="op">=</span><span class="st">&#39;first&#39;</span>)</span>
+<span id="cb12-21"><a href="#cb12-21"></a><span class="bu">print</span>(<span class="st">&quot;</span><span class="ch">\n</span><span class="st">Sorted by &#39;Sales&#39; (descending, NaNs first):&quot;</span>)</span>
+<span id="cb12-22"><a href="#cb12-22"></a><span class="bu">print</span>(df_sorted_sales_desc)</span>
+<span id="cb12-23"><a href="#cb12-23"></a></span>
+<span id="cb12-24"><a href="#cb12-24"></a><span class="co"># --- Sort by &#39;Product&#39; (ascending) then &#39;Sales&#39; (descending) ---</span></span>
+<span id="cb12-25"><a href="#cb12-25"></a>df_sorted_multi <span class="op">=</span> df.sort_values(by<span class="op">=</span>[<span class="st">&#39;Product&#39;</span>, <span class="st">&#39;Sales&#39;</span>], ascending<span class="op">=</span>[<span class="va">True</span>, <span class="va">False</span>])</span>
+<span id="cb12-26"><a href="#cb12-26"></a><span class="bu">print</span>(<span class="st">&quot;</span><span class="ch">\n</span><span class="st">Sorted by &#39;Product&#39; (asc) then &#39;Sales&#39; (desc):&quot;</span>)</span>
+<span id="cb12-27"><a href="#cb12-27"></a><span class="bu">print</span>(df_sorted_multi)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><a href="#">Download: <code>m10_s5_1_sort_values.py</code></a> ## 5.2 Sorting by Index (<code>.sort_index()</code>)</p>
+<p>Sorts the DataFrame based on its index labels.</p>
+<p>Key Parameters:</p>
+<ul>
+<li><code>axis</code>: <code>0</code> or <code>&#39;index&#39;</code> (default) to sort by row index, <code>1</code> or <code>&#39;columns&#39;</code> to sort by column names.</li>
+<li><code>ascending</code>: <code>True</code> (default) for ascending order, <code>False</code> for descending.</li>
+<li><code>inplace</code>: <code>False</code> (default), <code>True</code> modifies original.</li>
+</ul>
+<div class="sourceCode" id="cb13"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1"></a><span class="co">#| caption: &quot;Sorting a DataFrame by its index using .sort_index() (Section 5.2)&quot;</span></span>
+<span id="cb13-2"><a href="#cb13-2"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb13-3"><a href="#cb13-3"></a></span>
+<span id="cb13-4"><a href="#cb13-4"></a>data <span class="op">=</span> {</span>
+<span id="cb13-5"><a href="#cb13-5"></a>    <span class="st">&#39;Sales&#39;</span>: [<span class="dv">2500</span>, <span class="dv">2800</span>, <span class="dv">2650</span>, <span class="dv">3100</span>]</span>
+<span id="cb13-6"><a href="#cb13-6"></a>}</span>
+<span id="cb13-7"><a href="#cb13-7"></a><span class="co"># Index is not sorted initially</span></span>
+<span id="cb13-8"><a href="#cb13-8"></a>months <span class="op">=</span> [<span class="st">&quot;Mar&quot;</span>, <span class="st">&quot;Jan&quot;</span>, <span class="st">&quot;Apr&quot;</span>, <span class="st">&quot;Feb&quot;</span>]</span>
+<span id="cb13-9"><a href="#cb13-9"></a>df <span class="op">=</span> pd.DataFrame(data, index<span class="op">=</span>months)</span>
+<span id="cb13-10"><a href="#cb13-10"></a><span class="bu">print</span>(<span class="st">&quot;Original DataFrame (unsorted index):&quot;</span>)</span>
+<span id="cb13-11"><a href="#cb13-11"></a><span class="bu">print</span>(df)</span>
+<span id="cb13-12"><a href="#cb13-12"></a></span>
+<span id="cb13-13"><a href="#cb13-13"></a><span class="co"># --- Sort by index labels (ascending) ---</span></span>
+<span id="cb13-14"><a href="#cb13-14"></a>df_sorted_index_asc <span class="op">=</span> df.sort_index()</span>
+<span id="cb13-15"><a href="#cb13-15"></a><span class="bu">print</span>(<span class="st">&quot;</span><span class="ch">\n</span><span class="st">Sorted by index (ascending):&quot;</span>)</span>
+<span id="cb13-16"><a href="#cb13-16"></a><span class="bu">print</span>(df_sorted_index_asc)</span>
+<span id="cb13-17"><a href="#cb13-17"></a></span>
+<span id="cb13-18"><a href="#cb13-18"></a><span class="co"># --- Sort by index labels (descending) ---</span></span>
+<span id="cb13-19"><a href="#cb13-19"></a>df_sorted_index_desc <span class="op">=</span> df.sort_index(ascending<span class="op">=</span><span class="va">False</span>)</span>
+<span id="cb13-20"><a href="#cb13-20"></a><span class="bu">print</span>(<span class="st">&quot;</span><span class="ch">\n</span><span class="st">Sorted by index (descending):&quot;</span>)</span>
+<span id="cb13-21"><a href="#cb13-21"></a><span class="bu">print</span>(df_sorted_index_desc)</span>
+<span id="cb13-22"><a href="#cb13-22"></a></span>
+<span id="cb13-23"><a href="#cb13-23"></a><span class="co"># --- Sort by column names (axis=1) ---</span></span>
+<span id="cb13-24"><a href="#cb13-24"></a>df_sorted_cols <span class="op">=</span> df.sort_index(axis<span class="op">=</span><span class="dv">1</span>, ascending<span class="op">=</span><span class="va">False</span>) <span class="co"># Sorts columns &#39;Sales&#39; -&gt; &#39;Sales&#39; (no change here)</span></span>
+<span id="cb13-25"><a href="#cb13-25"></a><span class="bu">print</span>(<span class="st">&quot;</span><span class="ch">\n</span><span class="st">Sorted by column names (descending, axis=1):&quot;</span>)</span>
+<span id="cb13-26"><a href="#cb13-26"></a><span class="bu">print</span>(df_sorted_cols) <span class="co"># No visible change if only one column</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><a href="#">Download: <code>m10_s5_2_sort_index.py</code></a> # 6. Dealing with Duplicates</p>
+<p>Duplicate rows can skew analysis results (e.g., double-counting sales). Pandas helps identify and remove them.</p>
+</section>
+<section id="identifying-duplicates-.duplicated" class="level2">
+<h2 class="anchored" data-anchor-id="identifying-duplicates-.duplicated">6.1 Identifying Duplicates (<code>.duplicated()</code>)</h2>
+<p>Returns a boolean Series indicating which rows are duplicates. By default, it considers all columns and marks all occurrences <em>except the first</em> as duplicates.</p>
+<p>Key Parameters:</p>
+<ul>
+<li><code>subset</code>: List of column names to consider when identifying duplicates. If <code>None</code> (default), use all columns.</li>
+<li><code>keep</code>: <code>&#39;first&#39;</code> (default) marks duplicates except for the first occurrence. <code>&#39;last&#39;</code> marks duplicates except for the last occurrence. <code>False</code> marks <em>all</em> duplicates as <code>True</code>.</li>
+</ul>
+</section>
+<section id="removing-duplicates-.drop_duplicates" class="level2">
+<h2 class="anchored" data-anchor-id="removing-duplicates-.drop_duplicates">6.2 Removing Duplicates (<code>.drop_duplicates()</code>)</h2>
+<p>Removes duplicate rows based on the criteria specified. It uses the same <code>subset</code> and <code>keep</code> parameters as <code>.duplicated()</code>.</p>
+<div class="sourceCode" id="cb14"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1"></a><span class="co">#| caption: &quot;Identifying and removing duplicate rows (Section 6.1 &amp; 6.2)&quot;</span></span>
+<span id="cb14-2"><a href="#cb14-2"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb14-3"><a href="#cb14-3"></a></span>
+<span id="cb14-4"><a href="#cb14-4"></a>data <span class="op">=</span> {</span>
+<span id="cb14-5"><a href="#cb14-5"></a>    <span class="st">&#39;OrderID&#39;</span>: [<span class="st">&#39;O101&#39;</span>, <span class="st">&#39;O102&#39;</span>, <span class="st">&#39;O103&#39;</span>, <span class="st">&#39;O101&#39;</span>, <span class="st">&#39;O104&#39;</span>, <span class="st">&#39;O102&#39;</span>],</span>
+<span id="cb14-6"><a href="#cb14-6"></a>    <span class="st">&#39;Product&#39;</span>: [<span class="st">&#39;A&#39;</span>, <span class="st">&#39;B&#39;</span>, <span class="st">&#39;C&#39;</span>, <span class="st">&#39;A&#39;</span>, <span class="st">&#39;D&#39;</span>, <span class="st">&#39;B&#39;</span>],</span>
+<span id="cb14-7"><a href="#cb14-7"></a>    <span class="st">&#39;Quantity&#39;</span>: [<span class="dv">10</span>, <span class="dv">5</span>, <span class="dv">8</span>, <span class="dv">10</span>, <span class="dv">15</span>, <span class="dv">5</span>]</span>
+<span id="cb14-8"><a href="#cb14-8"></a>}</span>
+<span id="cb14-9"><a href="#cb14-9"></a>df <span class="op">=</span> pd.DataFrame(data)</span>
+<span id="cb14-10"><a href="#cb14-10"></a><span class="bu">print</span>(<span class="st">&quot;Original DataFrame with Duplicates:&quot;</span>)</span>
+<span id="cb14-11"><a href="#cb14-11"></a><span class="bu">print</span>(df)</span>
+<span id="cb14-12"><a href="#cb14-12"></a></span>
+<span id="cb14-13"><a href="#cb14-13"></a><span class="co"># --- Identify duplicate rows (considering all columns) ---</span></span>
+<span id="cb14-14"><a href="#cb14-14"></a>duplicates_bool <span class="op">=</span> df.duplicated()</span>
+<span id="cb14-15"><a href="#cb14-15"></a><span class="bu">print</span>(<span class="st">&quot;</span><span class="ch">\n</span><span class="st">Boolean Series indicating duplicates (keep=&#39;first&#39;):&quot;</span>)</span>
+<span id="cb14-16"><a href="#cb14-16"></a><span class="bu">print</span>(duplicates_bool)</span>
+<span id="cb14-17"><a href="#cb14-17"></a></span>
+<span id="cb14-18"><a href="#cb14-18"></a><span class="co"># Show the actual duplicate rows</span></span>
+<span id="cb14-19"><a href="#cb14-19"></a><span class="bu">print</span>(<span class="st">&quot;</span><span class="ch">\n</span><span class="st">Duplicate rows (excluding first occurrence):&quot;</span>)</span>
+<span id="cb14-20"><a href="#cb14-20"></a><span class="bu">print</span>(df[duplicates_bool])</span>
+<span id="cb14-21"><a href="#cb14-21"></a></span>
+<span id="cb14-22"><a href="#cb14-22"></a><span class="co"># --- Identify duplicates based on subset of columns (&#39;OrderID&#39;) ---</span></span>
+<span id="cb14-23"><a href="#cb14-23"></a>duplicates_subset_bool <span class="op">=</span> df.duplicated(subset<span class="op">=</span>[<span class="st">&#39;OrderID&#39;</span>])</span>
+<span id="cb14-24"><a href="#cb14-24"></a><span class="bu">print</span>(<span class="st">&quot;</span><span class="ch">\n</span><span class="st">Boolean Series for duplicates based on &#39;OrderID&#39;:&quot;</span>)</span>
+<span id="cb14-25"><a href="#cb14-25"></a><span class="bu">print</span>(duplicates_subset_bool)</span>
+<span id="cb14-26"><a href="#cb14-26"></a><span class="bu">print</span>(<span class="st">&quot;</span><span class="ch">\n</span><span class="st">Duplicate rows based on &#39;OrderID&#39; (excluding first occurrence):&quot;</span>)</span>
+<span id="cb14-27"><a href="#cb14-27"></a><span class="bu">print</span>(df[duplicates_subset_bool])</span>
+<span id="cb14-28"><a href="#cb14-28"></a></span>
+<span id="cb14-29"><a href="#cb14-29"></a></span>
+<span id="cb14-30"><a href="#cb14-30"></a><span class="co"># --- Mark ALL occurrences of duplicates ---</span></span>
+<span id="cb14-31"><a href="#cb14-31"></a>all_duplicates_bool <span class="op">=</span> df.duplicated(keep<span class="op">=</span><span class="va">False</span>)</span>
+<span id="cb14-32"><a href="#cb14-32"></a><span class="bu">print</span>(<span class="st">&quot;</span><span class="ch">\n</span><span class="st">Boolean Series marking ALL duplicate rows:&quot;</span>)</span>
+<span id="cb14-33"><a href="#cb14-33"></a><span class="bu">print</span>(all_duplicates_bool)</span>
+<span id="cb14-34"><a href="#cb14-34"></a><span class="bu">print</span>(<span class="st">&quot;</span><span class="ch">\n</span><span class="st">All rows that have duplicates:&quot;</span>)</span>
+<span id="cb14-35"><a href="#cb14-35"></a><span class="bu">print</span>(df[all_duplicates_bool])</span>
+<span id="cb14-36"><a href="#cb14-36"></a></span>
+<span id="cb14-37"><a href="#cb14-37"></a></span>
+<span id="cb14-38"><a href="#cb14-38"></a><span class="co"># --- Remove duplicate rows (keeping the first occurrence) ---</span></span>
+<span id="cb14-39"><a href="#cb14-39"></a>df_deduped_first <span class="op">=</span> df.drop_duplicates() <span class="co"># keep=&#39;first&#39; by default</span></span>
+<span id="cb14-40"><a href="#cb14-40"></a><span class="bu">print</span>(<span class="st">&quot;</span><span class="ch">\n</span><span class="st">DataFrame after removing duplicates (keeping first):&quot;</span>)</span>
+<span id="cb14-41"><a href="#cb14-41"></a><span class="bu">print</span>(df_deduped_first)</span>
+<span id="cb14-42"><a href="#cb14-42"></a></span>
+<span id="cb14-43"><a href="#cb14-43"></a><span class="co"># --- Remove duplicate rows (keeping the last occurrence) ---</span></span>
+<span id="cb14-44"><a href="#cb14-44"></a>df_deduped_last <span class="op">=</span> df.drop_duplicates(keep<span class="op">=</span><span class="st">&#39;last&#39;</span>)</span>
+<span id="cb14-45"><a href="#cb14-45"></a><span class="bu">print</span>(<span class="st">&quot;</span><span class="ch">\n</span><span class="st">DataFrame after removing duplicates (keeping last):&quot;</span>)</span>
+<span id="cb14-46"><a href="#cb14-46"></a><span class="bu">print</span>(df_deduped_last)</span>
+<span id="cb14-47"><a href="#cb14-47"></a></span>
+<span id="cb14-48"><a href="#cb14-48"></a><span class="co"># --- Remove duplicates based on &#39;OrderID&#39;, keeping first ---</span></span>
+<span id="cb14-49"><a href="#cb14-49"></a>df_deduped_subset <span class="op">=</span> df.drop_duplicates(subset<span class="op">=</span>[<span class="st">&#39;OrderID&#39;</span>], keep<span class="op">=</span><span class="st">&#39;first&#39;</span>)</span>
+<span id="cb14-50"><a href="#cb14-50"></a><span class="bu">print</span>(<span class="st">&quot;</span><span class="ch">\n</span><span class="st">DataFrame after removing duplicates based on &#39;OrderID&#39; (keeping first):&quot;</span>)</span>
+<span id="cb14-51"><a href="#cb14-51"></a><span class="bu">print</span>(df_deduped_subset)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><a href="#">Download: <code>m10_s6_duplicates.py</code></a> # 7. Summary: Refining Your Data Toolkit</p>
+<p>Module 10 has equipped you with essential Pandas techniques for tackling the common challenges of messy real-world data. Data cleaning and manipulation are fundamental skills for any data analysis task in a business context.</p>
+<p>Key Takeaways:</p>
+<ul>
+<li><strong>Missing Data (<code>NaN</code>):</strong> Can be systematically <strong>dropped</strong> (<code>.dropna()</code>) based on various criteria or strategically <strong>filled</strong> (<code>.fillna()</code>) using constants, statistics, or propagation methods (<code>ffill</code>/<code>bfill</code>).</li>
+<li><strong>Data Types:</strong> Incorrect types hinder analysis. Check with <code>.dtypes</code> or <code>.info()</code>, and convert using <code>.astype()</code> or the more robust <code>pd.to_numeric()</code> and <code>pd.to_datetime()</code> (often using <code>errors=&#39;coerce&#39;</code>).</li>
+<li><strong>Column Modification:</strong> Easily <strong>add</strong> new columns (direct assignment, calculations), <strong>remove</strong> unwanted ones (<code>.drop(columns=...)</code>), and <strong>rename</strong> columns for clarity (<code>.rename(columns=...)</code>).</li>
+<li><strong>Applying Functions:</strong> Perform complex transformations using <code>.apply()</code> (row/column-wise) and <code>.map()</code> (element-wise on Series). Lambda functions offer concise custom logic.</li>
+<li><strong>String Manipulation:</strong> The <code>.str</code> accessor provides powerful, vectorized methods for cleaning and transforming text data (case, whitespace, replacing, splitting, extracting).</li>
+<li><strong>Sorting:</strong> Order data effectively using <code>.sort_values()</code> (based on column values) and <code>.sort_index()</code> (based on index labels).</li>
+<li><strong>Duplicates:</strong> Detect (<code>.duplicated()</code>) and remove (<code>.drop_duplicates()</code>) redundant rows, optionally considering only a subset of columns.</li>
+</ul>
+<p>Remember that data cleaning is often an iterative process. You might identify an issue, apply a transformation, re-inspect the data, and repeat. These Pandas functions provide the building blocks for creating clean, reliable datasets ready for the next stages of analysis, such as grouping, aggregation, merging (covered in future modules), and visualization.</p>
+<p>Practice these techniques! Try applying them to different small datasets or variations of the examples provided. The more comfortable you become with manipulating DataFrames, the more effective your business analyses will be.</p>
 <hr>
-<p>Sincerely,<br>
-Dr. Smith</p>
+<p><strong>Dr. Smith</strong> University of South Florida</p>
+<p>Next: Proceed to Module 10 Practice Exercises.</p>
 </section>
 </section>
 

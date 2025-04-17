@@ -8,7 +8,7 @@
 
 <meta name="author" content="Dr. Smith">
 
-<title>Integrative Assignment: Module 3 – String Manipulation, User Input, and Formatted Output</title>
+<title>Integrative Assignment: Module 12 – Business Analytics Fundamentals and Applications</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -3088,12 +3088,13 @@ vertical-align: -.125em;
     <h2 id="toc-title">Table of contents</h2>
    
   <ul class="collapse">
-  <li><a href="#integrative-assignment-module-3-string-manipulation-user-input-and-formatted-output" id="toc-integrative-assignment-module-3-string-manipulation-user-input-and-formatted-output" class="nav-link active" data-scroll-target="#integrative-assignment-module-3-string-manipulation-user-input-and-formatted-output">Integrative Assignment: Module 3 – String Manipulation, User Input, and Formatted Output</a>
+  <li><a href="#integrative-assignment-module-12-business-analytics-fundamentals-and-applications" id="toc-integrative-assignment-module-12-business-analytics-fundamentals-and-applications" class="nav-link active" data-scroll-target="#integrative-assignment-module-12-business-analytics-fundamentals-and-applications">Integrative Assignment: Module 12 – Business Analytics Fundamentals and Applications</a>
   <ul class="collapse">
   <li><a href="#overview" id="toc-overview" class="nav-link" data-scroll-target="#overview">Overview</a></li>
   <li><a href="#objectives" id="toc-objectives" class="nav-link" data-scroll-target="#objectives">Objectives</a></li>
   <li><a href="#assignment-description" id="toc-assignment-description" class="nav-link" data-scroll-target="#assignment-description">Assignment Description</a></li>
   <li><a href="#starter-code" id="toc-starter-code" class="nav-link" data-scroll-target="#starter-code">Starter Code</a></li>
+  <li><a href="#detailed-task-requirements" id="toc-detailed-task-requirements" class="nav-link" data-scroll-target="#detailed-task-requirements">Detailed Task Requirements</a></li>
   <li><a href="#submission-guidelines" id="toc-submission-guidelines" class="nav-link" data-scroll-target="#submission-guidelines">Submission Guidelines</a></li>
   </ul></li>
   <li><a href="#marking-rubric" id="toc-marking-rubric" class="nav-link" data-scroll-target="#marking-rubric">Marking Rubric</a>
@@ -3109,7 +3110,7 @@ vertical-align: -.125em;
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Integrative Assignment: Module 3 – String Manipulation, User Input, and Formatted Output</h1>
+<h1 class="title">Integrative Assignment: Module 12 – Business Analytics Fundamentals and Applications</h1>
 </div>
 
 
@@ -3139,98 +3140,500 @@ vertical-align: -.125em;
 </header>
 
 
-<section id="integrative-assignment-module-3-string-manipulation-user-input-and-formatted-output" class="level1">
-<h1>Integrative Assignment: Module 3 – String Manipulation, User Input, and Formatted Output</h1>
+<section id="integrative-assignment-module-12-business-analytics-fundamentals-and-applications" class="level1">
+<h1>Integrative Assignment: Module 12 – Business Analytics Fundamentals and Applications</h1>
 <section id="overview" class="level2">
 <h2 class="anchored" data-anchor-id="overview">Overview</h2>
-<p>In this assignment, you will demonstrate your understanding of Module 3 concepts by creating an interactive customer order processing program. This program will utilize string manipulation, user input, and formatted output to create a professional-looking order summary. This assignment will reinforce your ability to handle text data effectively, interact with users, and present information clearly – key skills for developing business applications.</p>
+<p>In this capstone assignment, you will apply your Python skills to a comprehensive business analytics scenario for “GreenGrocer,” a growing chain of organic grocery stores. You’ll analyze their sales, customer, and operational data to provide insights and recommendations that can guide business decision-making. This assignment integrates the programming fundamentals, data manipulation techniques, visualization skills, and analytical concepts you’ve learned throughout the course.</p>
 </section>
 <section id="objectives" class="level2">
 <h2 class="anchored" data-anchor-id="objectives">Objectives</h2>
 <p>By completing this assignment, you will:</p>
 <ul>
-<li><strong>Get and Process User Input:</strong> Use the <code>input()</code> function to collect information from users and process it appropriately.</li>
-<li><strong>Apply String Methods:</strong> Use string methods like <code>.strip()</code>, <code>.title()</code>, and other text manipulation techniques.</li>
-<li><strong>Perform Type Conversion:</strong> Convert string input to appropriate numeric types for calculations.</li>
-<li><strong>Implement Error Handling:</strong> Use basic error handling techniques to deal with invalid input.</li>
-<li><strong>Format Output with F-strings:</strong> Create professional-looking output with proper formatting and alignment.</li>
-<li><strong>Create a Complete Application:</strong> Build a program that follows the input-process-output pattern.</li>
+<li><strong>Apply the Analytics Spectrum:</strong> Conduct descriptive, diagnostic, and basic predictive analyses on business data.</li>
+<li><strong>Integrate Python Skills:</strong> Combine programming fundamentals, Pandas, and Matplotlib for end-to-end analysis.</li>
+<li><strong>Calculate Key Metrics:</strong> Compute and interpret descriptive statistics relevant to business performance.</li>
+<li><strong>Analyze Relationships:</strong> Identify correlations between business variables and understand their implications.</li>
+<li><strong>Create Insightful Visualizations:</strong> Develop appropriate charts to illustrate business patterns and trends.</li>
+<li><strong>Build Simple Predictive Models:</strong> Apply basic regression to forecast business outcomes.</li>
+<li><strong>Communicate Findings:</strong> Transform technical analysis into business insights and recommendations.</li>
 </ul>
 </section>
 <section id="assignment-description" class="level2">
 <h2 class="anchored" data-anchor-id="assignment-description">Assignment Description</h2>
-<p>Imagine you work for an e-commerce company that needs a simple order processing system. Your task is to develop a Python program that:</p>
+<p>GreenGrocer operates five organic grocery stores across Florida and has collected data on their operations for the past year. The company’s management team is preparing their annual strategy review and needs your help analyzing their data to understand current performance and identify opportunities for improvement.</p>
+<p>You have been provided with:</p>
 <ol type="1">
-<li><strong>Collects Customer Information:</strong>
+<li><strong>Sales data:</strong> Transaction records including date, store location, department, product category, sales amount, and profit margin</li>
+<li><strong>Customer data:</strong> Loyalty program member information including demographics, shopping frequency, and average basket size</li>
+<li><strong>Operational data:</strong> Store metrics including square footage, staff count, inventory levels, and marketing spend</li>
+</ol>
+<p>As their data analyst, you’ll use Python to analyze this data and prepare a report answering key business questions spanning the analytics spectrum:</p>
+<ol type="1">
+<li><strong>Descriptive Analytics (What happened?):</strong>
 <ul>
-<li>Asks for the customer’s name</li>
-<li>Asks for the customer’s email address</li>
+<li>How are sales distributed across stores, departments, and product categories?</li>
+<li>What are the key customer segments based on demographics and shopping behavior?</li>
 </ul></li>
-<li><strong>Collects Order Information:</strong>
+<li><strong>Diagnostic Analytics (Why did it happen?):</strong>
 <ul>
-<li>Asks for a product name</li>
-<li>Asks for the quantity ordered</li>
-<li>Asks for the unit price</li>
+<li>What factors correlate with higher sales or profit margins?</li>
+<li>How do store characteristics relate to performance?</li>
 </ul></li>
-<li><strong>Processes the Information:</strong>
+<li><strong>Predictive Analytics (What might happen?):</strong>
 <ul>
-<li>Cleans up the input (removing extra spaces, standardizing capitalization)</li>
-<li>Calculates the subtotal (quantity × unit price)</li>
-<li>Calculates sales tax (8.5% of subtotal)</li>
-<li>Calculates the order total (subtotal + tax)</li>
-<li>Applies a 10% discount if quantity is 10 or more</li>
+<li>Can we predict future sales based on current trends and factors?</li>
+<li>Which factors best predict a store’s performance?</li>
 </ul></li>
-<li><strong>Displays an Order Summary:</strong>
+<li><strong>Prescriptive Analytics (What should we do?):</strong>
 <ul>
-<li>Shows all customer and order information in a well-formatted layout</li>
-<li>Displays all calculated values formatted as currency with two decimal places</li>
-<li>Shows the discount amount (if applicable)</li>
-</ul></li>
-<li><strong>Validates Input:</strong>
-<ul>
-<li>Ensures the quantity is a positive integer</li>
-<li>Ensures the price is a positive number</li>
-<li>Handles any potential errors in the conversion process</li>
+<li>What recommendations can be made to improve overall performance?</li>
+<li>How should resources be allocated across stores and departments?</li>
 </ul></li>
 </ol>
 </section>
 <section id="starter-code" class="level2">
 <h2 class="anchored" data-anchor-id="starter-code">Starter Code</h2>
 <p>Below is a starter code template to help you begin:</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1"></a><span class="co"># Module 3 Assignment: String Manipulation, User Input, and Formatted Output</span></span>
-<span id="cb1-2"><a href="#cb1-2"></a></span>
-<span id="cb1-3"><a href="#cb1-3"></a><span class="co"># Welcome message</span></span>
-<span id="cb1-4"><a href="#cb1-4"></a><span class="bu">print</span>(<span class="st">&quot;=&quot;</span> <span class="op">*</span> <span class="dv">50</span>)</span>
-<span id="cb1-5"><a href="#cb1-5"></a><span class="bu">print</span>(<span class="st">&quot;CUSTOMER ORDER PROCESSING SYSTEM&quot;</span>)</span>
-<span id="cb1-6"><a href="#cb1-6"></a><span class="bu">print</span>(<span class="st">&quot;=&quot;</span> <span class="op">*</span> <span class="dv">50</span>)</span>
-<span id="cb1-7"><a href="#cb1-7"></a><span class="bu">print</span>(<span class="st">&quot;Please enter the following information:</span><span class="ch">\n</span><span class="st">&quot;</span>)</span>
-<span id="cb1-8"><a href="#cb1-8"></a></span>
-<span id="cb1-9"><a href="#cb1-9"></a><span class="co"># </span><span class="al">TODO</span><span class="co">: Collect customer information</span></span>
-<span id="cb1-10"><a href="#cb1-10"></a><span class="co"># 1. Ask for customer name</span></span>
-<span id="cb1-11"><a href="#cb1-11"></a><span class="co"># 2. Ask for customer email</span></span>
-<span id="cb1-12"><a href="#cb1-12"></a></span>
-<span id="cb1-13"><a href="#cb1-13"></a><span class="co"># </span><span class="al">TODO</span><span class="co">: Collect order information</span></span>
-<span id="cb1-14"><a href="#cb1-14"></a><span class="co"># 1. Ask for product name</span></span>
-<span id="cb1-15"><a href="#cb1-15"></a><span class="co"># 2. Ask for quantity</span></span>
-<span id="cb1-16"><a href="#cb1-16"></a><span class="co"># 3. Ask for unit price</span></span>
-<span id="cb1-17"><a href="#cb1-17"></a></span>
-<span id="cb1-18"><a href="#cb1-18"></a><span class="co"># </span><span class="al">TODO</span><span class="co">: Process the information</span></span>
-<span id="cb1-19"><a href="#cb1-19"></a><span class="co"># 1. Clean up input (remove extra spaces, standardize capitalization)</span></span>
-<span id="cb1-20"><a href="#cb1-20"></a><span class="co"># 2. Convert quantity and price to appropriate numeric types</span></span>
-<span id="cb1-21"><a href="#cb1-21"></a><span class="co"># 3. Calculate subtotal, tax, and total</span></span>
-<span id="cb1-22"><a href="#cb1-22"></a><span class="co"># 4. Apply discount if applicable</span></span>
-<span id="cb1-23"><a href="#cb1-23"></a></span>
-<span id="cb1-24"><a href="#cb1-24"></a><span class="co"># </span><span class="al">TODO</span><span class="co">: Display order summary</span></span>
-<span id="cb1-25"><a href="#cb1-25"></a><span class="co"># Use f-strings to create a well-formatted output</span></span>
-<span id="cb1-26"><a href="#cb1-26"></a></span>
-<span id="cb1-27"><a href="#cb1-27"></a><span class="co"># Implement error handling where appropriate</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1"></a><span class="co"># Module 12 Assignment: Business Analytics Fundamentals and Applications</span></span>
+<span id="cb1-2"><a href="#cb1-2"></a><span class="co"># GreenGrocer Data Analysis</span></span>
+<span id="cb1-3"><a href="#cb1-3"></a></span>
+<span id="cb1-4"><a href="#cb1-4"></a><span class="co"># Import required libraries</span></span>
+<span id="cb1-5"><a href="#cb1-5"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb1-6"><a href="#cb1-6"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb1-7"><a href="#cb1-7"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb1-8"><a href="#cb1-8"></a><span class="im">from</span> scipy <span class="im">import</span> stats</span>
+<span id="cb1-9"><a href="#cb1-9"></a></span>
+<span id="cb1-10"><a href="#cb1-10"></a><span class="co"># Welcome message</span></span>
+<span id="cb1-11"><a href="#cb1-11"></a><span class="bu">print</span>(<span class="st">&quot;=&quot;</span> <span class="op">*</span> <span class="dv">60</span>)</span>
+<span id="cb1-12"><a href="#cb1-12"></a><span class="bu">print</span>(<span class="st">&quot;GREENGROCER BUSINESS ANALYTICS&quot;</span>)</span>
+<span id="cb1-13"><a href="#cb1-13"></a><span class="bu">print</span>(<span class="st">&quot;=&quot;</span> <span class="op">*</span> <span class="dv">60</span>)</span>
+<span id="cb1-14"><a href="#cb1-14"></a></span>
+<span id="cb1-15"><a href="#cb1-15"></a><span class="co"># ----- USE THE FOLLOWING CODE TO CREATE SAMPLE DATA (DO NOT MODIFY) -----</span></span>
+<span id="cb1-16"><a href="#cb1-16"></a><span class="co"># Set seed for reproducibility</span></span>
+<span id="cb1-17"><a href="#cb1-17"></a>np.random.seed(<span class="dv">42</span>)</span>
+<span id="cb1-18"><a href="#cb1-18"></a></span>
+<span id="cb1-19"><a href="#cb1-19"></a><span class="co"># Store information</span></span>
+<span id="cb1-20"><a href="#cb1-20"></a>stores <span class="op">=</span> [<span class="st">&quot;Tampa&quot;</span>, <span class="st">&quot;Orlando&quot;</span>, <span class="st">&quot;Miami&quot;</span>, <span class="st">&quot;Jacksonville&quot;</span>, <span class="st">&quot;Gainesville&quot;</span>]</span>
+<span id="cb1-21"><a href="#cb1-21"></a>store_data <span class="op">=</span> {</span>
+<span id="cb1-22"><a href="#cb1-22"></a>    <span class="st">&quot;Store&quot;</span>: stores,</span>
+<span id="cb1-23"><a href="#cb1-23"></a>    <span class="st">&quot;SquareFootage&quot;</span>: [<span class="dv">15000</span>, <span class="dv">12000</span>, <span class="dv">18000</span>, <span class="dv">10000</span>, <span class="dv">8000</span>],</span>
+<span id="cb1-24"><a href="#cb1-24"></a>    <span class="st">&quot;StaffCount&quot;</span>: [<span class="dv">45</span>, <span class="dv">35</span>, <span class="dv">55</span>, <span class="dv">30</span>, <span class="dv">25</span>],</span>
+<span id="cb1-25"><a href="#cb1-25"></a>    <span class="st">&quot;YearsOpen&quot;</span>: [<span class="dv">5</span>, <span class="dv">3</span>, <span class="dv">7</span>, <span class="dv">2</span>, <span class="dv">1</span>],</span>
+<span id="cb1-26"><a href="#cb1-26"></a>    <span class="st">&quot;WeeklyMarketingSpend&quot;</span>: [<span class="dv">2500</span>, <span class="dv">2000</span>, <span class="dv">3000</span>, <span class="dv">1800</span>, <span class="dv">1500</span>]</span>
+<span id="cb1-27"><a href="#cb1-27"></a>}</span>
+<span id="cb1-28"><a href="#cb1-28"></a></span>
+<span id="cb1-29"><a href="#cb1-29"></a><span class="co"># Create store dataframe</span></span>
+<span id="cb1-30"><a href="#cb1-30"></a>store_df <span class="op">=</span> pd.DataFrame(store_data)</span>
+<span id="cb1-31"><a href="#cb1-31"></a></span>
+<span id="cb1-32"><a href="#cb1-32"></a><span class="co"># Product categories and departments</span></span>
+<span id="cb1-33"><a href="#cb1-33"></a>departments <span class="op">=</span> [<span class="st">&quot;Produce&quot;</span>, <span class="st">&quot;Dairy&quot;</span>, <span class="st">&quot;Bakery&quot;</span>, <span class="st">&quot;Grocery&quot;</span>, <span class="st">&quot;Prepared Foods&quot;</span>]</span>
+<span id="cb1-34"><a href="#cb1-34"></a>categories <span class="op">=</span> {</span>
+<span id="cb1-35"><a href="#cb1-35"></a>    <span class="st">&quot;Produce&quot;</span>: [<span class="st">&quot;Organic Vegetables&quot;</span>, <span class="st">&quot;Organic Fruits&quot;</span>, <span class="st">&quot;Fresh Herbs&quot;</span>],</span>
+<span id="cb1-36"><a href="#cb1-36"></a>    <span class="st">&quot;Dairy&quot;</span>: [<span class="st">&quot;Milk &amp; Cream&quot;</span>, <span class="st">&quot;Cheese&quot;</span>, <span class="st">&quot;Yogurt&quot;</span>],</span>
+<span id="cb1-37"><a href="#cb1-37"></a>    <span class="st">&quot;Bakery&quot;</span>: [<span class="st">&quot;Bread&quot;</span>, <span class="st">&quot;Pastries&quot;</span>, <span class="st">&quot;Cakes&quot;</span>],</span>
+<span id="cb1-38"><a href="#cb1-38"></a>    <span class="st">&quot;Grocery&quot;</span>: [<span class="st">&quot;Grains&quot;</span>, <span class="st">&quot;Canned Goods&quot;</span>, <span class="st">&quot;Snacks&quot;</span>],</span>
+<span id="cb1-39"><a href="#cb1-39"></a>    <span class="st">&quot;Prepared Foods&quot;</span>: [<span class="st">&quot;Hot Bar&quot;</span>, <span class="st">&quot;Salad Bar&quot;</span>, <span class="st">&quot;Sandwiches&quot;</span>]</span>
+<span id="cb1-40"><a href="#cb1-40"></a>}</span>
+<span id="cb1-41"><a href="#cb1-41"></a></span>
+<span id="cb1-42"><a href="#cb1-42"></a><span class="co"># Generate sales data for each store</span></span>
+<span id="cb1-43"><a href="#cb1-43"></a>sales_data <span class="op">=</span> []</span>
+<span id="cb1-44"><a href="#cb1-44"></a>dates <span class="op">=</span> pd.date_range(start<span class="op">=</span><span class="st">&quot;2023-01-01&quot;</span>, end<span class="op">=</span><span class="st">&quot;2023-12-31&quot;</span>, freq<span class="op">=</span><span class="st">&quot;D&quot;</span>)</span>
+<span id="cb1-45"><a href="#cb1-45"></a></span>
+<span id="cb1-46"><a href="#cb1-46"></a><span class="co"># Base performance factors for each store (relative scale)</span></span>
+<span id="cb1-47"><a href="#cb1-47"></a>store_performance <span class="op">=</span> {</span>
+<span id="cb1-48"><a href="#cb1-48"></a>    <span class="st">&quot;Tampa&quot;</span>: <span class="fl">1.0</span>, </span>
+<span id="cb1-49"><a href="#cb1-49"></a>    <span class="st">&quot;Orlando&quot;</span>: <span class="fl">0.85</span>, </span>
+<span id="cb1-50"><a href="#cb1-50"></a>    <span class="st">&quot;Miami&quot;</span>: <span class="fl">1.2</span>, </span>
+<span id="cb1-51"><a href="#cb1-51"></a>    <span class="st">&quot;Jacksonville&quot;</span>: <span class="fl">0.75</span>, </span>
+<span id="cb1-52"><a href="#cb1-52"></a>    <span class="st">&quot;Gainesville&quot;</span>: <span class="fl">0.65</span></span>
+<span id="cb1-53"><a href="#cb1-53"></a>}</span>
+<span id="cb1-54"><a href="#cb1-54"></a></span>
+<span id="cb1-55"><a href="#cb1-55"></a><span class="co"># Base performance factors for each department (relative scale)</span></span>
+<span id="cb1-56"><a href="#cb1-56"></a>dept_performance <span class="op">=</span> {</span>
+<span id="cb1-57"><a href="#cb1-57"></a>    <span class="st">&quot;Produce&quot;</span>: <span class="fl">1.2</span>,</span>
+<span id="cb1-58"><a href="#cb1-58"></a>    <span class="st">&quot;Dairy&quot;</span>: <span class="fl">1.0</span>,</span>
+<span id="cb1-59"><a href="#cb1-59"></a>    <span class="st">&quot;Bakery&quot;</span>: <span class="fl">0.85</span>,</span>
+<span id="cb1-60"><a href="#cb1-60"></a>    <span class="st">&quot;Grocery&quot;</span>: <span class="fl">0.95</span>,</span>
+<span id="cb1-61"><a href="#cb1-61"></a>    <span class="st">&quot;Prepared Foods&quot;</span>: <span class="fl">1.1</span></span>
+<span id="cb1-62"><a href="#cb1-62"></a>}</span>
+<span id="cb1-63"><a href="#cb1-63"></a></span>
+<span id="cb1-64"><a href="#cb1-64"></a><span class="co"># Generate daily sales data for each store, department, and category</span></span>
+<span id="cb1-65"><a href="#cb1-65"></a><span class="cf">for</span> date <span class="kw">in</span> dates:</span>
+<span id="cb1-66"><a href="#cb1-66"></a>    <span class="co"># Seasonal factor (higher in summer and December)</span></span>
+<span id="cb1-67"><a href="#cb1-67"></a>    month <span class="op">=</span> date.month</span>
+<span id="cb1-68"><a href="#cb1-68"></a>    seasonal_factor <span class="op">=</span> <span class="fl">1.0</span></span>
+<span id="cb1-69"><a href="#cb1-69"></a>    <span class="cf">if</span> month <span class="kw">in</span> [<span class="dv">6</span>, <span class="dv">7</span>, <span class="dv">8</span>]:  <span class="co"># Summer</span></span>
+<span id="cb1-70"><a href="#cb1-70"></a>        seasonal_factor <span class="op">=</span> <span class="fl">1.15</span></span>
+<span id="cb1-71"><a href="#cb1-71"></a>    <span class="cf">elif</span> month <span class="op">==</span> <span class="dv">12</span>:  <span class="co"># December</span></span>
+<span id="cb1-72"><a href="#cb1-72"></a>        seasonal_factor <span class="op">=</span> <span class="fl">1.25</span></span>
+<span id="cb1-73"><a href="#cb1-73"></a>    <span class="cf">elif</span> month <span class="kw">in</span> [<span class="dv">1</span>, <span class="dv">2</span>]:  <span class="co"># Winter</span></span>
+<span id="cb1-74"><a href="#cb1-74"></a>        seasonal_factor <span class="op">=</span> <span class="fl">0.9</span></span>
+<span id="cb1-75"><a href="#cb1-75"></a>    </span>
+<span id="cb1-76"><a href="#cb1-76"></a>    <span class="co"># Day of week factor (weekends are busier)</span></span>
+<span id="cb1-77"><a href="#cb1-77"></a>    dow_factor <span class="op">=</span> <span class="fl">1.3</span> <span class="cf">if</span> date.dayofweek <span class="op">&gt;=</span> <span class="dv">5</span> <span class="cf">else</span> <span class="fl">1.0</span>  <span class="co"># Weekend vs weekday</span></span>
+<span id="cb1-78"><a href="#cb1-78"></a>    </span>
+<span id="cb1-79"><a href="#cb1-79"></a>    <span class="cf">for</span> store <span class="kw">in</span> stores:</span>
+<span id="cb1-80"><a href="#cb1-80"></a>        store_factor <span class="op">=</span> store_performance[store]</span>
+<span id="cb1-81"><a href="#cb1-81"></a>        </span>
+<span id="cb1-82"><a href="#cb1-82"></a>        <span class="cf">for</span> dept <span class="kw">in</span> departments:</span>
+<span id="cb1-83"><a href="#cb1-83"></a>            dept_factor <span class="op">=</span> dept_performance[dept]</span>
+<span id="cb1-84"><a href="#cb1-84"></a>            </span>
+<span id="cb1-85"><a href="#cb1-85"></a>            <span class="cf">for</span> category <span class="kw">in</span> categories[dept]:</span>
+<span id="cb1-86"><a href="#cb1-86"></a>                <span class="co"># Base sales amount</span></span>
+<span id="cb1-87"><a href="#cb1-87"></a>                base_sales <span class="op">=</span> np.random.normal(loc<span class="op">=</span><span class="dv">500</span>, scale<span class="op">=</span><span class="dv">100</span>)</span>
+<span id="cb1-88"><a href="#cb1-88"></a>                </span>
+<span id="cb1-89"><a href="#cb1-89"></a>                <span class="co"># Calculate final sales with all factors and some randomness</span></span>
+<span id="cb1-90"><a href="#cb1-90"></a>                sales_amount <span class="op">=</span> base_sales <span class="op">*</span> store_factor <span class="op">*</span> dept_factor <span class="op">*</span> seasonal_factor <span class="op">*</span> dow_factor</span>
+<span id="cb1-91"><a href="#cb1-91"></a>                sales_amount <span class="op">=</span> sales_amount <span class="op">*</span> np.random.normal(loc<span class="op">=</span><span class="fl">1.0</span>, scale<span class="op">=</span><span class="fl">0.1</span>)  <span class="co"># Add noise</span></span>
+<span id="cb1-92"><a href="#cb1-92"></a>                </span>
+<span id="cb1-93"><a href="#cb1-93"></a>                <span class="co"># Calculate profit margin (different base margins for departments)</span></span>
+<span id="cb1-94"><a href="#cb1-94"></a>                base_margin <span class="op">=</span> {</span>
+<span id="cb1-95"><a href="#cb1-95"></a>                    <span class="st">&quot;Produce&quot;</span>: <span class="fl">0.25</span>,</span>
+<span id="cb1-96"><a href="#cb1-96"></a>                    <span class="st">&quot;Dairy&quot;</span>: <span class="fl">0.22</span>,</span>
+<span id="cb1-97"><a href="#cb1-97"></a>                    <span class="st">&quot;Bakery&quot;</span>: <span class="fl">0.35</span>,</span>
+<span id="cb1-98"><a href="#cb1-98"></a>                    <span class="st">&quot;Grocery&quot;</span>: <span class="fl">0.20</span>,</span>
+<span id="cb1-99"><a href="#cb1-99"></a>                    <span class="st">&quot;Prepared Foods&quot;</span>: <span class="fl">0.40</span></span>
+<span id="cb1-100"><a href="#cb1-100"></a>                }[dept]</span>
+<span id="cb1-101"><a href="#cb1-101"></a>                profit_margin <span class="op">=</span> base_margin <span class="op">*</span> np.random.normal(loc<span class="op">=</span><span class="fl">1.0</span>, scale<span class="op">=</span><span class="fl">0.05</span>)</span>
+<span id="cb1-102"><a href="#cb1-102"></a>                profit_margin <span class="op">=</span> <span class="bu">max</span>(<span class="bu">min</span>(profit_margin, <span class="fl">0.5</span>), <span class="fl">0.15</span>)  <span class="co"># Keep within reasonable range</span></span>
+<span id="cb1-103"><a href="#cb1-103"></a>                </span>
+<span id="cb1-104"><a href="#cb1-104"></a>                <span class="co"># Calculate profit</span></span>
+<span id="cb1-105"><a href="#cb1-105"></a>                profit <span class="op">=</span> sales_amount <span class="op">*</span> profit_margin</span>
+<span id="cb1-106"><a href="#cb1-106"></a>                </span>
+<span id="cb1-107"><a href="#cb1-107"></a>                <span class="co"># Add record</span></span>
+<span id="cb1-108"><a href="#cb1-108"></a>                sales_data.append({</span>
+<span id="cb1-109"><a href="#cb1-109"></a>                    <span class="st">&quot;Date&quot;</span>: date,</span>
+<span id="cb1-110"><a href="#cb1-110"></a>                    <span class="st">&quot;Store&quot;</span>: store,</span>
+<span id="cb1-111"><a href="#cb1-111"></a>                    <span class="st">&quot;Department&quot;</span>: dept,</span>
+<span id="cb1-112"><a href="#cb1-112"></a>                    <span class="st">&quot;Category&quot;</span>: category,</span>
+<span id="cb1-113"><a href="#cb1-113"></a>                    <span class="st">&quot;Sales&quot;</span>: <span class="bu">round</span>(sales_amount, <span class="dv">2</span>),</span>
+<span id="cb1-114"><a href="#cb1-114"></a>                    <span class="st">&quot;ProfitMargin&quot;</span>: <span class="bu">round</span>(profit_margin, <span class="dv">4</span>),</span>
+<span id="cb1-115"><a href="#cb1-115"></a>                    <span class="st">&quot;Profit&quot;</span>: <span class="bu">round</span>(profit, <span class="dv">2</span>)</span>
+<span id="cb1-116"><a href="#cb1-116"></a>                })</span>
+<span id="cb1-117"><a href="#cb1-117"></a></span>
+<span id="cb1-118"><a href="#cb1-118"></a><span class="co"># Create sales dataframe</span></span>
+<span id="cb1-119"><a href="#cb1-119"></a>sales_df <span class="op">=</span> pd.DataFrame(sales_data)</span>
+<span id="cb1-120"><a href="#cb1-120"></a></span>
+<span id="cb1-121"><a href="#cb1-121"></a><span class="co"># Generate customer data</span></span>
+<span id="cb1-122"><a href="#cb1-122"></a>customer_data <span class="op">=</span> []</span>
+<span id="cb1-123"><a href="#cb1-123"></a>total_customers <span class="op">=</span> <span class="dv">5000</span></span>
+<span id="cb1-124"><a href="#cb1-124"></a></span>
+<span id="cb1-125"><a href="#cb1-125"></a><span class="co"># Age distribution parameters</span></span>
+<span id="cb1-126"><a href="#cb1-126"></a>age_mean, age_std <span class="op">=</span> <span class="dv">42</span>, <span class="dv">15</span></span>
+<span id="cb1-127"><a href="#cb1-127"></a></span>
+<span id="cb1-128"><a href="#cb1-128"></a><span class="co"># Income distribution parameters (in $1000s)</span></span>
+<span id="cb1-129"><a href="#cb1-129"></a>income_mean, income_std <span class="op">=</span> <span class="dv">85</span>, <span class="dv">30</span></span>
+<span id="cb1-130"><a href="#cb1-130"></a></span>
+<span id="cb1-131"><a href="#cb1-131"></a><span class="co"># Create customer segments (will indirectly influence spending)</span></span>
+<span id="cb1-132"><a href="#cb1-132"></a>segments <span class="op">=</span> [<span class="st">&quot;Health Enthusiast&quot;</span>, <span class="st">&quot;Gourmet Cook&quot;</span>, <span class="st">&quot;Family Shopper&quot;</span>, <span class="st">&quot;Budget Organic&quot;</span>, <span class="st">&quot;Occasional Visitor&quot;</span>]</span>
+<span id="cb1-133"><a href="#cb1-133"></a>segment_probabilities <span class="op">=</span> [<span class="fl">0.25</span>, <span class="fl">0.20</span>, <span class="fl">0.30</span>, <span class="fl">0.15</span>, <span class="fl">0.10</span>]</span>
+<span id="cb1-134"><a href="#cb1-134"></a></span>
+<span id="cb1-135"><a href="#cb1-135"></a><span class="co"># Store preference probabilities (matches store performance somewhat)</span></span>
+<span id="cb1-136"><a href="#cb1-136"></a>store_probs <span class="op">=</span> {</span>
+<span id="cb1-137"><a href="#cb1-137"></a>    <span class="st">&quot;Tampa&quot;</span>: <span class="fl">0.25</span>,</span>
+<span id="cb1-138"><a href="#cb1-138"></a>    <span class="st">&quot;Orlando&quot;</span>: <span class="fl">0.20</span>,</span>
+<span id="cb1-139"><a href="#cb1-139"></a>    <span class="st">&quot;Miami&quot;</span>: <span class="fl">0.30</span>,</span>
+<span id="cb1-140"><a href="#cb1-140"></a>    <span class="st">&quot;Jacksonville&quot;</span>: <span class="fl">0.15</span>,</span>
+<span id="cb1-141"><a href="#cb1-141"></a>    <span class="st">&quot;Gainesville&quot;</span>: <span class="fl">0.10</span></span>
+<span id="cb1-142"><a href="#cb1-142"></a>}</span>
+<span id="cb1-143"><a href="#cb1-143"></a></span>
+<span id="cb1-144"><a href="#cb1-144"></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(total_customers):</span>
+<span id="cb1-145"><a href="#cb1-145"></a>    <span class="co"># Basic demographics</span></span>
+<span id="cb1-146"><a href="#cb1-146"></a>    age <span class="op">=</span> <span class="bu">int</span>(np.random.normal(loc<span class="op">=</span>age_mean, scale<span class="op">=</span>age_std))</span>
+<span id="cb1-147"><a href="#cb1-147"></a>    age <span class="op">=</span> <span class="bu">max</span>(<span class="bu">min</span>(age, <span class="dv">85</span>), <span class="dv">18</span>)  <span class="co"># Keep age in reasonable range</span></span>
+<span id="cb1-148"><a href="#cb1-148"></a>    </span>
+<span id="cb1-149"><a href="#cb1-149"></a>    gender <span class="op">=</span> np.random.choice([<span class="st">&quot;M&quot;</span>, <span class="st">&quot;F&quot;</span>], p<span class="op">=</span>[<span class="fl">0.48</span>, <span class="fl">0.52</span>])</span>
+<span id="cb1-150"><a href="#cb1-150"></a>    </span>
+<span id="cb1-151"><a href="#cb1-151"></a>    income <span class="op">=</span> <span class="bu">int</span>(np.random.normal(loc<span class="op">=</span>income_mean, scale<span class="op">=</span>income_std))</span>
+<span id="cb1-152"><a href="#cb1-152"></a>    income <span class="op">=</span> <span class="bu">max</span>(income, <span class="dv">20</span>)  <span class="co"># Minimum income</span></span>
+<span id="cb1-153"><a href="#cb1-153"></a>    </span>
+<span id="cb1-154"><a href="#cb1-154"></a>    <span class="co"># Customer segment</span></span>
+<span id="cb1-155"><a href="#cb1-155"></a>    segment <span class="op">=</span> np.random.choice(segments, p<span class="op">=</span>segment_probabilities)</span>
+<span id="cb1-156"><a href="#cb1-156"></a>    </span>
+<span id="cb1-157"><a href="#cb1-157"></a>    <span class="co"># Preferred store</span></span>
+<span id="cb1-158"><a href="#cb1-158"></a>    preferred_store <span class="op">=</span> np.random.choice(stores, p<span class="op">=</span><span class="bu">list</span>(store_probs.values()))</span>
+<span id="cb1-159"><a href="#cb1-159"></a>    </span>
+<span id="cb1-160"><a href="#cb1-160"></a>    <span class="co"># Shopping behavior - influenced by segment</span></span>
+<span id="cb1-161"><a href="#cb1-161"></a>    <span class="cf">if</span> segment <span class="op">==</span> <span class="st">&quot;Health Enthusiast&quot;</span>:</span>
+<span id="cb1-162"><a href="#cb1-162"></a>        visit_frequency <span class="op">=</span> np.random.randint(<span class="dv">8</span>, <span class="dv">15</span>)  <span class="co"># Visits per month</span></span>
+<span id="cb1-163"><a href="#cb1-163"></a>        avg_basket <span class="op">=</span> np.random.normal(loc<span class="op">=</span><span class="dv">75</span>, scale<span class="op">=</span><span class="dv">15</span>)</span>
+<span id="cb1-164"><a href="#cb1-164"></a>    <span class="cf">elif</span> segment <span class="op">==</span> <span class="st">&quot;Gourmet Cook&quot;</span>:</span>
+<span id="cb1-165"><a href="#cb1-165"></a>        visit_frequency <span class="op">=</span> np.random.randint(<span class="dv">4</span>, <span class="dv">10</span>)</span>
+<span id="cb1-166"><a href="#cb1-166"></a>        avg_basket <span class="op">=</span> np.random.normal(loc<span class="op">=</span><span class="dv">120</span>, scale<span class="op">=</span><span class="dv">25</span>)</span>
+<span id="cb1-167"><a href="#cb1-167"></a>    <span class="cf">elif</span> segment <span class="op">==</span> <span class="st">&quot;Family Shopper&quot;</span>:</span>
+<span id="cb1-168"><a href="#cb1-168"></a>        visit_frequency <span class="op">=</span> np.random.randint(<span class="dv">5</span>, <span class="dv">12</span>)</span>
+<span id="cb1-169"><a href="#cb1-169"></a>        avg_basket <span class="op">=</span> np.random.normal(loc<span class="op">=</span><span class="dv">150</span>, scale<span class="op">=</span><span class="dv">30</span>)</span>
+<span id="cb1-170"><a href="#cb1-170"></a>    <span class="cf">elif</span> segment <span class="op">==</span> <span class="st">&quot;Budget Organic&quot;</span>:</span>
+<span id="cb1-171"><a href="#cb1-171"></a>        visit_frequency <span class="op">=</span> np.random.randint(<span class="dv">6</span>, <span class="dv">10</span>)</span>
+<span id="cb1-172"><a href="#cb1-172"></a>        avg_basket <span class="op">=</span> np.random.normal(loc<span class="op">=</span><span class="dv">60</span>, scale<span class="op">=</span><span class="dv">10</span>)</span>
+<span id="cb1-173"><a href="#cb1-173"></a>    <span class="cf">else</span>:  <span class="co"># Occasional Visitor</span></span>
+<span id="cb1-174"><a href="#cb1-174"></a>        visit_frequency <span class="op">=</span> np.random.randint(<span class="dv">1</span>, <span class="dv">5</span>)</span>
+<span id="cb1-175"><a href="#cb1-175"></a>        avg_basket <span class="op">=</span> np.random.normal(loc<span class="op">=</span><span class="dv">45</span>, scale<span class="op">=</span><span class="dv">15</span>)</span>
+<span id="cb1-176"><a href="#cb1-176"></a>    </span>
+<span id="cb1-177"><a href="#cb1-177"></a>    <span class="co"># Ensure values are reasonable</span></span>
+<span id="cb1-178"><a href="#cb1-178"></a>    visit_frequency <span class="op">=</span> <span class="bu">max</span>(<span class="bu">min</span>(visit_frequency, <span class="dv">30</span>), <span class="dv">1</span>)</span>
+<span id="cb1-179"><a href="#cb1-179"></a>    avg_basket <span class="op">=</span> <span class="bu">max</span>(avg_basket, <span class="dv">15</span>)</span>
+<span id="cb1-180"><a href="#cb1-180"></a>    </span>
+<span id="cb1-181"><a href="#cb1-181"></a>    <span class="co"># Loyalty tier based on combination of frequency and spending</span></span>
+<span id="cb1-182"><a href="#cb1-182"></a>    monthly_spend <span class="op">=</span> visit_frequency <span class="op">*</span> avg_basket</span>
+<span id="cb1-183"><a href="#cb1-183"></a>    <span class="cf">if</span> monthly_spend <span class="op">&gt;</span> <span class="dv">1000</span>:</span>
+<span id="cb1-184"><a href="#cb1-184"></a>        loyalty_tier <span class="op">=</span> <span class="st">&quot;Platinum&quot;</span></span>
+<span id="cb1-185"><a href="#cb1-185"></a>    <span class="cf">elif</span> monthly_spend <span class="op">&gt;</span> <span class="dv">500</span>:</span>
+<span id="cb1-186"><a href="#cb1-186"></a>        loyalty_tier <span class="op">=</span> <span class="st">&quot;Gold&quot;</span></span>
+<span id="cb1-187"><a href="#cb1-187"></a>    <span class="cf">elif</span> monthly_spend <span class="op">&gt;</span> <span class="dv">200</span>:</span>
+<span id="cb1-188"><a href="#cb1-188"></a>        loyalty_tier <span class="op">=</span> <span class="st">&quot;Silver&quot;</span></span>
+<span id="cb1-189"><a href="#cb1-189"></a>    <span class="cf">else</span>:</span>
+<span id="cb1-190"><a href="#cb1-190"></a>        loyalty_tier <span class="op">=</span> <span class="st">&quot;Bronze&quot;</span></span>
+<span id="cb1-191"><a href="#cb1-191"></a>    </span>
+<span id="cb1-192"><a href="#cb1-192"></a>    <span class="co"># Add to customer data</span></span>
+<span id="cb1-193"><a href="#cb1-193"></a>    customer_data.append({</span>
+<span id="cb1-194"><a href="#cb1-194"></a>        <span class="st">&quot;CustomerID&quot;</span>: <span class="ss">f&quot;C</span><span class="sc">{</span>i<span class="op">+</span><span class="dv">1</span><span class="sc">:04d}</span><span class="ss">&quot;</span>,</span>
+<span id="cb1-195"><a href="#cb1-195"></a>        <span class="st">&quot;Age&quot;</span>: age,</span>
+<span id="cb1-196"><a href="#cb1-196"></a>        <span class="st">&quot;Gender&quot;</span>: gender,</span>
+<span id="cb1-197"><a href="#cb1-197"></a>        <span class="st">&quot;Income&quot;</span>: income <span class="op">*</span> <span class="dv">1000</span>,  <span class="co"># Convert to actual income</span></span>
+<span id="cb1-198"><a href="#cb1-198"></a>        <span class="st">&quot;Segment&quot;</span>: segment,</span>
+<span id="cb1-199"><a href="#cb1-199"></a>        <span class="st">&quot;PreferredStore&quot;</span>: preferred_store,</span>
+<span id="cb1-200"><a href="#cb1-200"></a>        <span class="st">&quot;VisitsPerMonth&quot;</span>: visit_frequency,</span>
+<span id="cb1-201"><a href="#cb1-201"></a>        <span class="st">&quot;AvgBasketSize&quot;</span>: <span class="bu">round</span>(avg_basket, <span class="dv">2</span>),</span>
+<span id="cb1-202"><a href="#cb1-202"></a>        <span class="st">&quot;MonthlySpend&quot;</span>: <span class="bu">round</span>(visit_frequency <span class="op">*</span> avg_basket, <span class="dv">2</span>),</span>
+<span id="cb1-203"><a href="#cb1-203"></a>        <span class="st">&quot;LoyaltyTier&quot;</span>: loyalty_tier</span>
+<span id="cb1-204"><a href="#cb1-204"></a>    })</span>
+<span id="cb1-205"><a href="#cb1-205"></a></span>
+<span id="cb1-206"><a href="#cb1-206"></a><span class="co"># Create customer dataframe</span></span>
+<span id="cb1-207"><a href="#cb1-207"></a>customer_df <span class="op">=</span> pd.DataFrame(customer_data)</span>
+<span id="cb1-208"><a href="#cb1-208"></a></span>
+<span id="cb1-209"><a href="#cb1-209"></a><span class="co"># Create some calculated operational metrics for stores</span></span>
+<span id="cb1-210"><a href="#cb1-210"></a>operational_data <span class="op">=</span> []</span>
+<span id="cb1-211"><a href="#cb1-211"></a></span>
+<span id="cb1-212"><a href="#cb1-212"></a><span class="cf">for</span> store <span class="kw">in</span> stores:</span>
+<span id="cb1-213"><a href="#cb1-213"></a>    <span class="co"># Get store details</span></span>
+<span id="cb1-214"><a href="#cb1-214"></a>    store_row <span class="op">=</span> store_df[store_df[<span class="st">&quot;Store&quot;</span>] <span class="op">==</span> store].iloc[<span class="dv">0</span>]</span>
+<span id="cb1-215"><a href="#cb1-215"></a>    square_footage <span class="op">=</span> store_row[<span class="st">&quot;SquareFootage&quot;</span>]</span>
+<span id="cb1-216"><a href="#cb1-216"></a>    staff_count <span class="op">=</span> store_row[<span class="st">&quot;StaffCount&quot;</span>]</span>
+<span id="cb1-217"><a href="#cb1-217"></a>    </span>
+<span id="cb1-218"><a href="#cb1-218"></a>    <span class="co"># Calculate store metrics</span></span>
+<span id="cb1-219"><a href="#cb1-219"></a>    store_sales <span class="op">=</span> sales_df[sales_df[<span class="st">&quot;Store&quot;</span>] <span class="op">==</span> store][<span class="st">&quot;Sales&quot;</span>].<span class="bu">sum</span>()</span>
+<span id="cb1-220"><a href="#cb1-220"></a>    store_profit <span class="op">=</span> sales_df[sales_df[<span class="st">&quot;Store&quot;</span>] <span class="op">==</span> store][<span class="st">&quot;Profit&quot;</span>].<span class="bu">sum</span>()</span>
+<span id="cb1-221"><a href="#cb1-221"></a>    </span>
+<span id="cb1-222"><a href="#cb1-222"></a>    <span class="co"># Calculate derived metrics</span></span>
+<span id="cb1-223"><a href="#cb1-223"></a>    sales_per_sqft <span class="op">=</span> store_sales <span class="op">/</span> square_footage</span>
+<span id="cb1-224"><a href="#cb1-224"></a>    profit_per_sqft <span class="op">=</span> store_profit <span class="op">/</span> square_footage</span>
+<span id="cb1-225"><a href="#cb1-225"></a>    sales_per_staff <span class="op">=</span> store_sales <span class="op">/</span> staff_count</span>
+<span id="cb1-226"><a href="#cb1-226"></a>    inventory_turnover <span class="op">=</span> np.random.uniform(<span class="dv">12</span>, <span class="dv">18</span>) <span class="op">*</span> store_performance[store]</span>
+<span id="cb1-227"><a href="#cb1-227"></a>    customer_satisfaction <span class="op">=</span> <span class="bu">min</span>(<span class="dv">5</span>, np.random.normal(loc<span class="op">=</span><span class="fl">4.0</span>, scale<span class="op">=</span><span class="fl">0.3</span>) <span class="op">*</span> </span>
+<span id="cb1-228"><a href="#cb1-228"></a>                                (store_performance[store] <span class="op">**</span> <span class="fl">0.5</span>))</span>
+<span id="cb1-229"><a href="#cb1-229"></a>    </span>
+<span id="cb1-230"><a href="#cb1-230"></a>    <span class="co"># Add to operational data</span></span>
+<span id="cb1-231"><a href="#cb1-231"></a>    operational_data.append({</span>
+<span id="cb1-232"><a href="#cb1-232"></a>        <span class="st">&quot;Store&quot;</span>: store,</span>
+<span id="cb1-233"><a href="#cb1-233"></a>        <span class="st">&quot;AnnualSales&quot;</span>: <span class="bu">round</span>(store_sales, <span class="dv">2</span>),</span>
+<span id="cb1-234"><a href="#cb1-234"></a>        <span class="st">&quot;AnnualProfit&quot;</span>: <span class="bu">round</span>(store_profit, <span class="dv">2</span>),</span>
+<span id="cb1-235"><a href="#cb1-235"></a>        <span class="st">&quot;SalesPerSqFt&quot;</span>: <span class="bu">round</span>(sales_per_sqft, <span class="dv">2</span>),</span>
+<span id="cb1-236"><a href="#cb1-236"></a>        <span class="st">&quot;ProfitPerSqFt&quot;</span>: <span class="bu">round</span>(profit_per_sqft, <span class="dv">2</span>),</span>
+<span id="cb1-237"><a href="#cb1-237"></a>        <span class="st">&quot;SalesPerStaff&quot;</span>: <span class="bu">round</span>(sales_per_staff, <span class="dv">2</span>),</span>
+<span id="cb1-238"><a href="#cb1-238"></a>        <span class="st">&quot;InventoryTurnover&quot;</span>: <span class="bu">round</span>(inventory_turnover, <span class="dv">2</span>),</span>
+<span id="cb1-239"><a href="#cb1-239"></a>        <span class="st">&quot;CustomerSatisfaction&quot;</span>: <span class="bu">round</span>(customer_satisfaction, <span class="dv">2</span>)</span>
+<span id="cb1-240"><a href="#cb1-240"></a>    })</span>
+<span id="cb1-241"><a href="#cb1-241"></a></span>
+<span id="cb1-242"><a href="#cb1-242"></a><span class="co"># Create operational dataframe</span></span>
+<span id="cb1-243"><a href="#cb1-243"></a>operational_df <span class="op">=</span> pd.DataFrame(operational_data)</span>
+<span id="cb1-244"><a href="#cb1-244"></a></span>
+<span id="cb1-245"><a href="#cb1-245"></a><span class="co"># Print data info</span></span>
+<span id="cb1-246"><a href="#cb1-246"></a><span class="bu">print</span>(<span class="st">&quot;</span><span class="ch">\n</span><span class="st">Dataframes created successfully. Ready for analysis!&quot;</span>)</span>
+<span id="cb1-247"><a href="#cb1-247"></a><span class="bu">print</span>(<span class="ss">f&quot;Sales data shape: </span><span class="sc">{</span>sales_df<span class="sc">.</span>shape<span class="sc">}</span><span class="ss">&quot;</span>)</span>
+<span id="cb1-248"><a href="#cb1-248"></a><span class="bu">print</span>(<span class="ss">f&quot;Customer data shape: </span><span class="sc">{</span>customer_df<span class="sc">.</span>shape<span class="sc">}</span><span class="ss">&quot;</span>)</span>
+<span id="cb1-249"><a href="#cb1-249"></a><span class="bu">print</span>(<span class="ss">f&quot;Store data shape: </span><span class="sc">{</span>store_df<span class="sc">.</span>shape<span class="sc">}</span><span class="ss">&quot;</span>)</span>
+<span id="cb1-250"><a href="#cb1-250"></a><span class="bu">print</span>(<span class="ss">f&quot;Operational data shape: </span><span class="sc">{</span>operational_df<span class="sc">.</span>shape<span class="sc">}</span><span class="ss">&quot;</span>)</span>
+<span id="cb1-251"><a href="#cb1-251"></a></span>
+<span id="cb1-252"><a href="#cb1-252"></a><span class="co"># Print sample of each dataframe</span></span>
+<span id="cb1-253"><a href="#cb1-253"></a><span class="bu">print</span>(<span class="st">&quot;</span><span class="ch">\n</span><span class="st">Sales Data Sample:&quot;</span>)</span>
+<span id="cb1-254"><a href="#cb1-254"></a><span class="bu">print</span>(sales_df.head(<span class="dv">3</span>))</span>
+<span id="cb1-255"><a href="#cb1-255"></a><span class="bu">print</span>(<span class="st">&quot;</span><span class="ch">\n</span><span class="st">Customer Data Sample:&quot;</span>)</span>
+<span id="cb1-256"><a href="#cb1-256"></a><span class="bu">print</span>(customer_df.head(<span class="dv">3</span>))</span>
+<span id="cb1-257"><a href="#cb1-257"></a><span class="bu">print</span>(<span class="st">&quot;</span><span class="ch">\n</span><span class="st">Store Data Sample:&quot;</span>)</span>
+<span id="cb1-258"><a href="#cb1-258"></a><span class="bu">print</span>(store_df)</span>
+<span id="cb1-259"><a href="#cb1-259"></a><span class="bu">print</span>(<span class="st">&quot;</span><span class="ch">\n</span><span class="st">Operational Data Sample:&quot;</span>)</span>
+<span id="cb1-260"><a href="#cb1-260"></a><span class="bu">print</span>(operational_df)</span>
+<span id="cb1-261"><a href="#cb1-261"></a><span class="co"># ----- </span><span class="re">END</span><span class="co"> OF DATA CREATION -----</span></span>
+<span id="cb1-262"><a href="#cb1-262"></a></span>
+<span id="cb1-263"><a href="#cb1-263"></a></span>
+<span id="cb1-264"><a href="#cb1-264"></a><span class="co"># </span><span class="al">TODO</span><span class="co"> 1: Descriptive Analytics - Overview of Current Performance</span></span>
+<span id="cb1-265"><a href="#cb1-265"></a><span class="co"># 1.1 Calculate and display basic descriptive statistics for sales and profit</span></span>
+<span id="cb1-266"><a href="#cb1-266"></a><span class="kw">def</span> analyze_sales_performance():</span>
+<span id="cb1-267"><a href="#cb1-267"></a>    <span class="co">&quot;&quot;&quot;</span></span>
+<span id="cb1-268"><a href="#cb1-268"></a><span class="co">    Analyze overall sales performance with descriptive statistics</span></span>
+<span id="cb1-269"><a href="#cb1-269"></a><span class="co">    &quot;&quot;&quot;</span></span>
+<span id="cb1-270"><a href="#cb1-270"></a>    <span class="co"># Your code here</span></span>
+<span id="cb1-271"><a href="#cb1-271"></a>    <span class="cf">pass</span></span>
+<span id="cb1-272"><a href="#cb1-272"></a></span>
+<span id="cb1-273"><a href="#cb1-273"></a><span class="co"># 1.2 Create visualizations showing sales distribution by store, department, and time</span></span>
+<span id="cb1-274"><a href="#cb1-274"></a><span class="kw">def</span> visualize_sales_distribution():</span>
+<span id="cb1-275"><a href="#cb1-275"></a>    <span class="co">&quot;&quot;&quot;</span></span>
+<span id="cb1-276"><a href="#cb1-276"></a><span class="co">    Create visualizations showing how sales are distributed</span></span>
+<span id="cb1-277"><a href="#cb1-277"></a><span class="co">    &quot;&quot;&quot;</span></span>
+<span id="cb1-278"><a href="#cb1-278"></a>    <span class="co"># Your code here</span></span>
+<span id="cb1-279"><a href="#cb1-279"></a>    <span class="cf">pass</span></span>
+<span id="cb1-280"><a href="#cb1-280"></a></span>
+<span id="cb1-281"><a href="#cb1-281"></a><span class="co"># 1.3 Analyze customer segments and their spending patterns</span></span>
+<span id="cb1-282"><a href="#cb1-282"></a><span class="kw">def</span> analyze_customer_segments():</span>
+<span id="cb1-283"><a href="#cb1-283"></a>    <span class="co">&quot;&quot;&quot;</span></span>
+<span id="cb1-284"><a href="#cb1-284"></a><span class="co">    Analyze customer segments and their relationship to spending</span></span>
+<span id="cb1-285"><a href="#cb1-285"></a><span class="co">    &quot;&quot;&quot;</span></span>
+<span id="cb1-286"><a href="#cb1-286"></a>    <span class="co"># Your code here</span></span>
+<span id="cb1-287"><a href="#cb1-287"></a>    <span class="cf">pass</span></span>
+<span id="cb1-288"><a href="#cb1-288"></a></span>
+<span id="cb1-289"><a href="#cb1-289"></a></span>
+<span id="cb1-290"><a href="#cb1-290"></a><span class="co"># </span><span class="al">TODO</span><span class="co"> 2: Diagnostic Analytics - Understanding Relationships</span></span>
+<span id="cb1-291"><a href="#cb1-291"></a><span class="co"># 2.1 Identify factors correlated with sales performance</span></span>
+<span id="cb1-292"><a href="#cb1-292"></a><span class="kw">def</span> analyze_sales_correlations():</span>
+<span id="cb1-293"><a href="#cb1-293"></a>    <span class="co">&quot;&quot;&quot;</span></span>
+<span id="cb1-294"><a href="#cb1-294"></a><span class="co">    Analyze correlations between various factors and sales performance</span></span>
+<span id="cb1-295"><a href="#cb1-295"></a><span class="co">    &quot;&quot;&quot;</span></span>
+<span id="cb1-296"><a href="#cb1-296"></a>    <span class="co"># Your code here</span></span>
+<span id="cb1-297"><a href="#cb1-297"></a>    <span class="cf">pass</span></span>
+<span id="cb1-298"><a href="#cb1-298"></a></span>
+<span id="cb1-299"><a href="#cb1-299"></a><span class="co"># 2.2 Compare stores based on operational metrics</span></span>
+<span id="cb1-300"><a href="#cb1-300"></a><span class="kw">def</span> compare_store_performance():</span>
+<span id="cb1-301"><a href="#cb1-301"></a>    <span class="co">&quot;&quot;&quot;</span></span>
+<span id="cb1-302"><a href="#cb1-302"></a><span class="co">    Compare stores across different operational metrics</span></span>
+<span id="cb1-303"><a href="#cb1-303"></a><span class="co">    &quot;&quot;&quot;</span></span>
+<span id="cb1-304"><a href="#cb1-304"></a>    <span class="co"># Your code here</span></span>
+<span id="cb1-305"><a href="#cb1-305"></a>    <span class="cf">pass</span></span>
+<span id="cb1-306"><a href="#cb1-306"></a></span>
+<span id="cb1-307"><a href="#cb1-307"></a><span class="co"># 2.3 Analyze seasonal patterns and their impact</span></span>
+<span id="cb1-308"><a href="#cb1-308"></a><span class="kw">def</span> analyze_seasonal_patterns():</span>
+<span id="cb1-309"><a href="#cb1-309"></a>    <span class="co">&quot;&quot;&quot;</span></span>
+<span id="cb1-310"><a href="#cb1-310"></a><span class="co">    Identify and visualize seasonal patterns in sales data</span></span>
+<span id="cb1-311"><a href="#cb1-311"></a><span class="co">    &quot;&quot;&quot;</span></span>
+<span id="cb1-312"><a href="#cb1-312"></a>    <span class="co"># Your code here</span></span>
+<span id="cb1-313"><a href="#cb1-313"></a>    <span class="cf">pass</span></span>
+<span id="cb1-314"><a href="#cb1-314"></a></span>
+<span id="cb1-315"><a href="#cb1-315"></a></span>
+<span id="cb1-316"><a href="#cb1-316"></a><span class="co"># </span><span class="al">TODO</span><span class="co"> 3: Predictive Analytics - Basic Forecasting</span></span>
+<span id="cb1-317"><a href="#cb1-317"></a><span class="co"># 3.1 Create a simple linear regression model to predict store sales</span></span>
+<span id="cb1-318"><a href="#cb1-318"></a><span class="kw">def</span> predict_store_sales():</span>
+<span id="cb1-319"><a href="#cb1-319"></a>    <span class="co">&quot;&quot;&quot;</span></span>
+<span id="cb1-320"><a href="#cb1-320"></a><span class="co">    Use linear regression to predict store sales based on store characteristics</span></span>
+<span id="cb1-321"><a href="#cb1-321"></a><span class="co">    &quot;&quot;&quot;</span></span>
+<span id="cb1-322"><a href="#cb1-322"></a>    <span class="co"># Your code here</span></span>
+<span id="cb1-323"><a href="#cb1-323"></a>    <span class="cf">pass</span></span>
+<span id="cb1-324"><a href="#cb1-324"></a></span>
+<span id="cb1-325"><a href="#cb1-325"></a><span class="co"># 3.2 Forecast departmental sales trends</span></span>
+<span id="cb1-326"><a href="#cb1-326"></a><span class="kw">def</span> forecast_department_sales():</span>
+<span id="cb1-327"><a href="#cb1-327"></a>    <span class="co">&quot;&quot;&quot;</span></span>
+<span id="cb1-328"><a href="#cb1-328"></a><span class="co">    Analyze and forecast departmental sales trends</span></span>
+<span id="cb1-329"><a href="#cb1-329"></a><span class="co">    &quot;&quot;&quot;</span></span>
+<span id="cb1-330"><a href="#cb1-330"></a>    <span class="co"># Your code here</span></span>
+<span id="cb1-331"><a href="#cb1-331"></a>    <span class="cf">pass</span></span>
+<span id="cb1-332"><a href="#cb1-332"></a></span>
+<span id="cb1-333"><a href="#cb1-333"></a></span>
+<span id="cb1-334"><a href="#cb1-334"></a><span class="co"># </span><span class="al">TODO</span><span class="co"> 4: Integrated Analysis - Business Insights and Recommendations</span></span>
+<span id="cb1-335"><a href="#cb1-335"></a><span class="co"># 4.1 Identify the most profitable combinations of store, department, and customer segments</span></span>
+<span id="cb1-336"><a href="#cb1-336"></a><span class="kw">def</span> identify_profit_opportunities():</span>
+<span id="cb1-337"><a href="#cb1-337"></a>    <span class="co">&quot;&quot;&quot;</span></span>
+<span id="cb1-338"><a href="#cb1-338"></a><span class="co">    Identify the most profitable combinations and potential opportunities</span></span>
+<span id="cb1-339"><a href="#cb1-339"></a><span class="co">    &quot;&quot;&quot;</span></span>
+<span id="cb1-340"><a href="#cb1-340"></a>    <span class="co"># Your code here</span></span>
+<span id="cb1-341"><a href="#cb1-341"></a>    <span class="cf">pass</span></span>
+<span id="cb1-342"><a href="#cb1-342"></a></span>
+<span id="cb1-343"><a href="#cb1-343"></a><span class="co"># 4.2 Develop recommendations for improving performance</span></span>
+<span id="cb1-344"><a href="#cb1-344"></a><span class="kw">def</span> develop_recommendations():</span>
+<span id="cb1-345"><a href="#cb1-345"></a>    <span class="co">&quot;&quot;&quot;</span></span>
+<span id="cb1-346"><a href="#cb1-346"></a><span class="co">    Develop actionable recommendations based on the analysis</span></span>
+<span id="cb1-347"><a href="#cb1-347"></a><span class="co">    &quot;&quot;&quot;</span></span>
+<span id="cb1-348"><a href="#cb1-348"></a>    <span class="co"># Your code here</span></span>
+<span id="cb1-349"><a href="#cb1-349"></a>    <span class="cf">pass</span></span>
+<span id="cb1-350"><a href="#cb1-350"></a></span>
+<span id="cb1-351"><a href="#cb1-351"></a></span>
+<span id="cb1-352"><a href="#cb1-352"></a><span class="co"># </span><span class="al">TODO</span><span class="co"> 5: Summary Report</span></span>
+<span id="cb1-353"><a href="#cb1-353"></a><span class="kw">def</span> generate_executive_summary():</span>
+<span id="cb1-354"><a href="#cb1-354"></a>    <span class="co">&quot;&quot;&quot;</span></span>
+<span id="cb1-355"><a href="#cb1-355"></a><span class="co">    Generate an executive summary of key findings and recommendations</span></span>
+<span id="cb1-356"><a href="#cb1-356"></a><span class="co">    &quot;&quot;&quot;</span></span>
+<span id="cb1-357"><a href="#cb1-357"></a>    <span class="co"># Your code here</span></span>
+<span id="cb1-358"><a href="#cb1-358"></a>    <span class="cf">pass</span></span>
+<span id="cb1-359"><a href="#cb1-359"></a></span>
+<span id="cb1-360"><a href="#cb1-360"></a></span>
+<span id="cb1-361"><a href="#cb1-361"></a><span class="co"># Main function to execute all analyses</span></span>
+<span id="cb1-362"><a href="#cb1-362"></a><span class="kw">def</span> main():</span>
+<span id="cb1-363"><a href="#cb1-363"></a>    <span class="bu">print</span>(<span class="st">&quot;</span><span class="ch">\n</span><span class="st">&quot;</span> <span class="op">+</span> <span class="st">&quot;=&quot;</span> <span class="op">*</span> <span class="dv">60</span>)</span>
+<span id="cb1-364"><a href="#cb1-364"></a>    <span class="bu">print</span>(<span class="st">&quot;GREENGROCER BUSINESS ANALYTICS RESULTS&quot;</span>)</span>
+<span id="cb1-365"><a href="#cb1-365"></a>    <span class="bu">print</span>(<span class="st">&quot;=&quot;</span> <span class="op">*</span> <span class="dv">60</span>)</span>
+<span id="cb1-366"><a href="#cb1-366"></a>    </span>
+<span id="cb1-367"><a href="#cb1-367"></a>    <span class="co"># Execute analyses in a logical order</span></span>
+<span id="cb1-368"><a href="#cb1-368"></a>    <span class="bu">print</span>(<span class="st">&quot;</span><span class="ch">\n</span><span class="st">--- DESCRIPTIVE ANALYTICS: CURRENT PERFORMANCE ---&quot;</span>)</span>
+<span id="cb1-369"><a href="#cb1-369"></a>    analyze_sales_performance()</span>
+<span id="cb1-370"><a href="#cb1-370"></a>    visualize_sales_distribution()</span>
+<span id="cb1-371"><a href="#cb1-371"></a>    analyze_customer_segments()</span>
+<span id="cb1-372"><a href="#cb1-372"></a>    </span>
+<span id="cb1-373"><a href="#cb1-373"></a>    <span class="bu">print</span>(<span class="st">&quot;</span><span class="ch">\n</span><span class="st">--- DIAGNOSTIC ANALYTICS: UNDERSTANDING RELATIONSHIPS ---&quot;</span>)</span>
+<span id="cb1-374"><a href="#cb1-374"></a>    analyze_sales_correlations()</span>
+<span id="cb1-375"><a href="#cb1-375"></a>    compare_store_performance()</span>
+<span id="cb1-376"><a href="#cb1-376"></a>    analyze_seasonal_patterns()</span>
+<span id="cb1-377"><a href="#cb1-377"></a>    </span>
+<span id="cb1-378"><a href="#cb1-378"></a>    <span class="bu">print</span>(<span class="st">&quot;</span><span class="ch">\n</span><span class="st">--- PREDICTIVE ANALYTICS: FORECASTING ---&quot;</span>)</span>
+<span id="cb1-379"><a href="#cb1-379"></a>    predict_store_sales()</span>
+<span id="cb1-380"><a href="#cb1-380"></a>    forecast_department_sales()</span>
+<span id="cb1-381"><a href="#cb1-381"></a>    </span>
+<span id="cb1-382"><a href="#cb1-382"></a>    <span class="bu">print</span>(<span class="st">&quot;</span><span class="ch">\n</span><span class="st">--- BUSINESS INSIGHTS AND RECOMMENDATIONS ---&quot;</span>)</span>
+<span id="cb1-383"><a href="#cb1-383"></a>    identify_profit_opportunities()</span>
+<span id="cb1-384"><a href="#cb1-384"></a>    develop_recommendations()</span>
+<span id="cb1-385"><a href="#cb1-385"></a>    </span>
+<span id="cb1-386"><a href="#cb1-386"></a>    <span class="bu">print</span>(<span class="st">&quot;</span><span class="ch">\n</span><span class="st">--- EXECUTIVE SUMMARY ---&quot;</span>)</span>
+<span id="cb1-387"><a href="#cb1-387"></a>    generate_executive_summary()</span>
+<span id="cb1-388"><a href="#cb1-388"></a></span>
+<span id="cb1-389"><a href="#cb1-389"></a><span class="co"># Run the main function</span></span>
+<span id="cb1-390"><a href="#cb1-390"></a><span class="cf">if</span> <span class="va">__name__</span> <span class="op">==</span> <span class="st">&quot;__main__&quot;</span>:</span>
+<span id="cb1-391"><a href="#cb1-391"></a>    main()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="detailed-task-requirements" class="level2">
+<h2 class="anchored" data-anchor-id="detailed-task-requirements">Detailed Task Requirements</h2>
+<section id="descriptive-analytics-8-points" class="level3">
+<h3 class="anchored" data-anchor-id="descriptive-analytics-8-points">1. Descriptive Analytics (8 points)</h3>
+<ul>
+<li><strong>1.1 Sales Performance Analysis (3 points)</strong>: Calculate key descriptive statistics (mean, median, standard deviation, etc.) for sales and profit data. Compare performance across stores and departments using appropriate statistical measures.</li>
+<li><strong>1.2 Sales Distribution Visualization (3 points)</strong>: Create at least three different visualization types (bar charts, line charts, etc.) showing sales distribution by store, department, and time period.</li>
+<li><strong>1.3 Customer Segment Analysis (2 points)</strong>: Analyze the customer data to identify key segments and their spending patterns. Visualize segment distribution and characteristics.</li>
+</ul>
+</section>
+<section id="diagnostic-analytics-8-points" class="level3">
+<h3 class="anchored" data-anchor-id="diagnostic-analytics-8-points">2. Diagnostic Analytics (8 points)</h3>
+<ul>
+<li><strong>2.1 Correlation Analysis (3 points)</strong>: Calculate and interpret correlations between various factors (store characteristics, operational metrics) and sales/profit performance. Visualize significant correlations with appropriate charts.</li>
+<li><strong>2.2 Store Performance Comparison (3 points)</strong>: Compare stores across different operational metrics and identify factors that distinguish high-performing from low-performing stores.</li>
+<li><strong>2.3 Seasonal Pattern Analysis (2 points)</strong>: Analyze how sales vary by month, day of week, and season. Create visualizations that clearly illustrate these patterns.</li>
+</ul>
+</section>
+<section id="predictive-analytics-6-points" class="level3">
+<h3 class="anchored" data-anchor-id="predictive-analytics-6-points">3. Predictive Analytics (6 points)</h3>
+<ul>
+<li><strong>3.1 Store Sales Prediction (4 points)</strong>: Develop a simple linear regression model to predict store sales based on store characteristics (square footage, staff count, etc.). Interpret the model coefficients and assess model fit.</li>
+<li><strong>3.2 Department Sales Forecasting (2 points)</strong>: Analyze department sales trends over time and create a basic forecast using trend analysis or simple moving averages.</li>
+</ul>
+</section>
+<section id="integrated-analysis-5-points" class="level3">
+<h3 class="anchored" data-anchor-id="integrated-analysis-5-points">4. Integrated Analysis (5 points)</h3>
+<ul>
+<li><strong>4.1 Profit Opportunity Identification (2 points)</strong>: Identify the most profitable combinations of store, department, and customer segments. Highlight specific opportunities for improvement.</li>
+<li><strong>4.2 Performance Recommendations (3 points)</strong>: Develop at least five specific, actionable recommendations based on your analysis to improve GreenGrocer’s performance.</li>
+</ul>
+</section>
+<section id="executive-summary-3-points" class="level3">
+<h3 class="anchored" data-anchor-id="executive-summary-3-points">5. Executive Summary (3 points)</h3>
+<ul>
+<li>Create a concise, business-focused executive summary (3-5 paragraphs) highlighting key findings and recommendations. This should translate technical analysis into business language appropriate for management stakeholders.</li>
+</ul>
+</section>
 </section>
 <section id="submission-guidelines" class="level2">
 <h2 class="anchored" data-anchor-id="submission-guidelines">Submission Guidelines</h2>
 <ul>
-<li>Save your completed assignment as a Python file named <code>module03-assignment.py</code>.</li>
+<li>Save your completed assignment as a Python file named <code>module12-assignment.py</code>.</li>
 <li>Submit your file via Canvas before the deadline.</li>
 <li>Ensure your code runs without errors and meets all the assignment requirements.</li>
+<li>Include comments explaining your analysis approach and interpretations of results.</li>
+<li>Format your output clearly with section headings, summaries, and well-labeled visualizations.</li>
 </ul>
 <div class="callout callout-style-simple callout-tip">
 <div class="callout-body d-flex">
@@ -3239,7 +3642,18 @@ vertical-align: -.125em;
 </div>
 <div class="callout-body-container">
 <p><strong>Tip:</strong><br>
-Test your program with various inputs, including edge cases (like entering “ten” instead of “10” for quantity). Your program should handle these gracefully.</p>
+Focus on connecting your technical analysis to business implications. For each statistical calculation or visualization, explain what it means for GreenGrocer’s performance and decision-making. Remember that the ultimate goal is to provide actionable insights, not just numbers or charts.</p>
+</div>
+</div>
+</div>
+<div class="callout callout-style-simple callout-warning">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-body-container">
+<p><strong>Important:</strong><br>
+When interpreting correlation results, remember that correlation does not imply causation. Consider alternative explanations for observed relationships and note any limitations of your analysis. Additionally, ensure your recommendations are specific, measurable, and realistic given the constraints of a retail grocery business.</p>
 </div>
 </div>
 </div>
@@ -3247,10 +3661,10 @@ Test your program with various inputs, including edge cases (like entering “te
 </section>
 <section id="marking-rubric" class="level1">
 <h1>Marking Rubric</h1>
-<p>The following rubric will be used to evaluate your assignment. The total possible points for this assignment is <strong>25</strong>.</p>
+<p>The following rubric will be used to evaluate your assignment. The total possible points for this assignment is <strong>30</strong>.</p>
 <table class="caption-top table">
 <colgroup>
-<col style="width: 29%">
+<col style="width: 28%">
 <col style="width: 5%">
 <col style="width: 65%">
 </colgroup>
@@ -3263,38 +3677,33 @@ Test your program with various inputs, including edge cases (like entering “te
 </thead>
 <tbody>
 <tr class="odd">
-<td><strong>Input Collection</strong></td>
-<td>5</td>
-<td>Correctly collects all required information using the <code>input()</code> function with clear prompts.</td>
+<td><strong>Descriptive Analytics</strong></td>
+<td>8</td>
+<td>Effectively calculates and visualizes current performance metrics with appropriate interpretations.</td>
 </tr>
 <tr class="even">
-<td><strong>String Processing</strong></td>
-<td>5</td>
-<td>Properly cleans and standardizes text input using string methods.</td>
+<td><strong>Diagnostic Analytics</strong></td>
+<td>8</td>
+<td>Successfully identifies and interprets relationships between variables with meaningful visualizations.</td>
 </tr>
 <tr class="odd">
-<td><strong>Type Conversion &amp; Calculations</strong></td>
-<td>5</td>
-<td>Accurately converts strings to numeric types and performs all required calculations.</td>
+<td><strong>Predictive Analytics</strong></td>
+<td>6</td>
+<td>Correctly implements and interprets basic forecasting models with reasonable assumptions.</td>
 </tr>
 <tr class="even">
-<td><strong>Error Handling</strong></td>
+<td><strong>Integrated Analysis</strong></td>
+<td>5</td>
+<td>Provides insightful business opportunities and actionable recommendations based on the analysis.</td>
+</tr>
+<tr class="odd">
+<td><strong>Executive Summary</strong></td>
 <td>3</td>
-<td>Implements appropriate error handling for invalid input.</td>
-</tr>
-<tr class="odd">
-<td><strong>Output Formatting</strong></td>
-<td>5</td>
-<td>Creates professional, well-aligned output with proper currency formatting using f-strings.</td>
+<td>Creates a clear, concise summary of key findings and recommendations in business language.</td>
 </tr>
 <tr class="even">
-<td><strong>Code Structure &amp; Comments</strong></td>
-<td>2</td>
-<td>Organizes code logically with descriptive comments explaining the process.</td>
-</tr>
-<tr class="odd">
 <td><strong>Total</strong></td>
-<td><strong>25</strong></td>
+<td><strong>30</strong></td>
 <td></td>
 </tr>
 </tbody>
