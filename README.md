@@ -4,8 +4,6 @@ Testing links:
 
 * Module01
   * [Lecture](./module01-lecture.html): 
-  * [Practice Problems](./module01-problem-set.html):
-  * [Assignment](./module01-assignment.html):
   * [Summary](./module01-summary.html):
 * Module02
   * [Lecture](./module02-lecture.html):
