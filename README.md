@@ -2,6 +2,8 @@ Modules to support python course.
 
 Testing links:
 
+[Syllabus](ism2411-syllabus.html)
+
 * Module01
   * [Lecture](./module01-lecture.html): 
   * [Summary](./module01-summary.html):
