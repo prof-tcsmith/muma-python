@@ -3,6 +3,7 @@ Modules to support python course.
 Testing links:
 
 [ISM2411 Syllabus](ism2411-syllabus.html)
+
 [ISM4641 Syllabus](ism4641-syllabus.html)
 
 * Module01
